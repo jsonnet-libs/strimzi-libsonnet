@@ -2,6 +2,7 @@
   local d = (import 'doc-util/main.libsonnet'),
   '#':: d.pkg(name='v1beta2', url='', help=''),
   kafka: (import 'kafka.libsonnet'),
+  kafkaBridge: (import 'kafkaBridge.libsonnet'),
   kafkaConnect: (import 'kafkaConnect.libsonnet'),
   kafkaConnectS2I: (import 'kafkaConnectS2I.libsonnet'),
   kafkaConnector: (import 'kafkaConnector.libsonnet'),

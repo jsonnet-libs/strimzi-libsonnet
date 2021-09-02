@@ -7,6 +7,7 @@ permalink: /0.24/kafka/v1beta2/
 
 
 * [kafka](kafka.md)
+* [kafkaBridge](kafkaBridge.md)
 * [kafkaConnect](kafkaConnect.md)
 * [kafkaConnectS2I](kafkaConnectS2I.md)
 * [kafkaConnector](kafkaConnector.md)
