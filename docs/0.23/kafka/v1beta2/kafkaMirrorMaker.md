@@ -248,11 +248,11 @@ permalink: /0.23/kafka/v1beta2/kafkaMirrorMaker/
 new(name)
 ```
 
-new returns an instance of Kafkamirrormaker
+new returns an instance of KafkaMirrorMaker
 
 ## obj metadata
 
-ObjectMeta is metadata that all persisted resources must have, which includes all objects users must create.
+"ObjectMeta is metadata that all persisted resources must have, which includes all objects users must create."
 
 ### fn metadata.withAnnotations
 
@@ -260,7 +260,7 @@ ObjectMeta is metadata that all persisted resources must have, which includes al
 withAnnotations(annotations)
 ```
 
-Annotations is an unstructured key value map stored with a resource that may be set by external tools to store and retrieve arbitrary metadata. They are not queryable and should be preserved when modifying objects. More info: http://kubernetes.io/docs/user-guide/annotations
+"Annotations is an unstructured key value map stored with a resource that may be set by external tools to store and retrieve arbitrary metadata. They are not queryable and should be preserved when modifying objects. More info: http://kubernetes.io/docs/user-guide/annotations"
 
 ### fn metadata.withAnnotationsMixin
 
@@ -268,7 +268,7 @@ Annotations is an unstructured key value map stored with a resource that may be 
 withAnnotationsMixin(annotations)
 ```
 
-Annotations is an unstructured key value map stored with a resource that may be set by external tools to store and retrieve arbitrary metadata. They are not queryable and should be preserved when modifying objects. More info: http://kubernetes.io/docs/user-guide/annotations
+"Annotations is an unstructured key value map stored with a resource that may be set by external tools to store and retrieve arbitrary metadata. They are not queryable and should be preserved when modifying objects. More info: http://kubernetes.io/docs/user-guide/annotations"
 
 **Note:** This function appends passed data to existing values
 
@@ -278,7 +278,7 @@ Annotations is an unstructured key value map stored with a resource that may be 
 withClusterName(clusterName)
 ```
 
-The name of the cluster which the object belongs to. This is used to distinguish resources with same name and namespace in different clusters. This field is not set anywhere right now and apiserver is going to ignore it if set in create or update request.
+"The name of the cluster which the object belongs to. This is used to distinguish resources with same name and namespace in different clusters. This field is not set anywhere right now and apiserver is going to ignore it if set in create or update request."
 
 ### fn metadata.withCreationTimestamp
 
@@ -286,7 +286,7 @@ The name of the cluster which the object belongs to. This is used to distinguish
 withCreationTimestamp(creationTimestamp)
 ```
 
-Time is a wrapper around time.Time which supports correct marshaling to YAML and JSON.  Wrappers are provided for many of the factory methods that the time package offers.
+"Time is a wrapper around time.Time which supports correct marshaling to YAML and JSON.  Wrappers are provided for many of the factory methods that the time package offers."
 
 ### fn metadata.withDeletionGracePeriodSeconds
 
@@ -294,7 +294,7 @@ Time is a wrapper around time.Time which supports correct marshaling to YAML and
 withDeletionGracePeriodSeconds(deletionGracePeriodSeconds)
 ```
 
-Number of seconds allowed for this object to gracefully terminate before it will be removed from the system. Only set when deletionTimestamp is also set. May only be shortened. Read-only.
+"Number of seconds allowed for this object to gracefully terminate before it will be removed from the system. Only set when deletionTimestamp is also set. May only be shortened. Read-only."
 
 ### fn metadata.withDeletionTimestamp
 
@@ -302,7 +302,7 @@ Number of seconds allowed for this object to gracefully terminate before it will
 withDeletionTimestamp(deletionTimestamp)
 ```
 
-Time is a wrapper around time.Time which supports correct marshaling to YAML and JSON.  Wrappers are provided for many of the factory methods that the time package offers.
+"Time is a wrapper around time.Time which supports correct marshaling to YAML and JSON.  Wrappers are provided for many of the factory methods that the time package offers."
 
 ### fn metadata.withFinalizers
 
@@ -310,7 +310,7 @@ Time is a wrapper around time.Time which supports correct marshaling to YAML and
 withFinalizers(finalizers)
 ```
 
-Must be empty before the object is deleted from the registry. Each entry is an identifier for the responsible component that will remove the entry from the list. If the deletionTimestamp of the object is non-nil, entries in this list can only be removed. Finalizers may be processed and removed in any order.  Order is NOT enforced because it introduces significant risk of stuck finalizers. finalizers is a shared field, any actor with permission can reorder it. If the finalizer list is processed in order, then this can lead to a situation in which the component responsible for the first finalizer in the list is waiting for a signal (field value, external system, or other) produced by a component responsible for a finalizer later in the list, resulting in a deadlock. Without enforced ordering finalizers are free to order amongst themselves and are not vulnerable to ordering changes in the list.
+"Must be empty before the object is deleted from the registry. Each entry is an identifier for the responsible component that will remove the entry from the list. If the deletionTimestamp of the object is non-nil, entries in this list can only be removed. Finalizers may be processed and removed in any order.  Order is NOT enforced because it introduces significant risk of stuck finalizers. finalizers is a shared field, any actor with permission can reorder it. If the finalizer list is processed in order, then this can lead to a situation in which the component responsible for the first finalizer in the list is waiting for a signal (field value, external system, or other) produced by a component responsible for a finalizer later in the list, resulting in a deadlock. Without enforced ordering finalizers are free to order amongst themselves and are not vulnerable to ordering changes in the list."
 
 ### fn metadata.withFinalizersMixin
 
@@ -318,7 +318,7 @@ Must be empty before the object is deleted from the registry. Each entry is an i
 withFinalizersMixin(finalizers)
 ```
 
-Must be empty before the object is deleted from the registry. Each entry is an identifier for the responsible component that will remove the entry from the list. If the deletionTimestamp of the object is non-nil, entries in this list can only be removed. Finalizers may be processed and removed in any order.  Order is NOT enforced because it introduces significant risk of stuck finalizers. finalizers is a shared field, any actor with permission can reorder it. If the finalizer list is processed in order, then this can lead to a situation in which the component responsible for the first finalizer in the list is waiting for a signal (field value, external system, or other) produced by a component responsible for a finalizer later in the list, resulting in a deadlock. Without enforced ordering finalizers are free to order amongst themselves and are not vulnerable to ordering changes in the list.
+"Must be empty before the object is deleted from the registry. Each entry is an identifier for the responsible component that will remove the entry from the list. If the deletionTimestamp of the object is non-nil, entries in this list can only be removed. Finalizers may be processed and removed in any order.  Order is NOT enforced because it introduces significant risk of stuck finalizers. finalizers is a shared field, any actor with permission can reorder it. If the finalizer list is processed in order, then this can lead to a situation in which the component responsible for the first finalizer in the list is waiting for a signal (field value, external system, or other) produced by a component responsible for a finalizer later in the list, resulting in a deadlock. Without enforced ordering finalizers are free to order amongst themselves and are not vulnerable to ordering changes in the list."
 
 **Note:** This function appends passed data to existing values
 
@@ -328,11 +328,7 @@ Must be empty before the object is deleted from the registry. Each entry is an i
 withGenerateName(generateName)
 ```
 
-GenerateName is an optional prefix, used by the server, to generate a unique name ONLY IF the Name field has not been provided. If this field is used, the name returned to the client will be different than the name passed. This value will also be combined with a unique suffix. The provided value has the same validation rules as the Name field, and may be truncated by the length of the suffix required to make the value unique on the server.
-
-If this field is specified and the generated name exists, the server will NOT return a 409 - instead, it will either return 201 Created or 500 with Reason ServerTimeout indicating a unique name could not be found in the time allotted, and the client should retry (optionally after the time indicated in the Retry-After header).
-
-Applied only if Name is not specified. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#idempotency
+"GenerateName is an optional prefix, used by the server, to generate a unique name ONLY IF the Name field has not been provided. If this field is used, the name returned to the client will be different than the name passed. This value will also be combined with a unique suffix. The provided value has the same validation rules as the Name field, and may be truncated by the length of the suffix required to make the value unique on the server.\n\nIf this field is specified and the generated name exists, the server will NOT return a 409 - instead, it will either return 201 Created or 500 with Reason ServerTimeout indicating a unique name could not be found in the time allotted, and the client should retry (optionally after the time indicated in the Retry-After header).\n\nApplied only if Name is not specified. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#idempotency"
 
 ### fn metadata.withGeneration
 
@@ -340,7 +336,7 @@ Applied only if Name is not specified. More info: https://git.k8s.io/community/c
 withGeneration(generation)
 ```
 
-A sequence number representing a specific generation of the desired state. Populated by the system. Read-only.
+"A sequence number representing a specific generation of the desired state. Populated by the system. Read-only."
 
 ### fn metadata.withLabels
 
@@ -348,7 +344,7 @@ A sequence number representing a specific generation of the desired state. Popul
 withLabels(labels)
 ```
 
-Map of string keys and values that can be used to organize and categorize (scope and select) objects. May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels
+"Map of string keys and values that can be used to organize and categorize (scope and select) objects. May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels"
 
 ### fn metadata.withLabelsMixin
 
@@ -356,7 +352,7 @@ Map of string keys and values that can be used to organize and categorize (scope
 withLabelsMixin(labels)
 ```
 
-Map of string keys and values that can be used to organize and categorize (scope and select) objects. May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels
+"Map of string keys and values that can be used to organize and categorize (scope and select) objects. May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels"
 
 **Note:** This function appends passed data to existing values
 
@@ -366,7 +362,7 @@ Map of string keys and values that can be used to organize and categorize (scope
 withManagedFields(managedFields)
 ```
 
-ManagedFields maps workflow-id and version to the set of fields that are managed by that workflow. This is mostly for internal housekeeping, and users typically shouldn't need to set or understand this field. A workflow can be the user's name, a controller's name, or the name of a specific apply path like 'ci-cd'. The set of fields is always in the version that the workflow used when modifying the object.
+"ManagedFields maps workflow-id and version to the set of fields that are managed by that workflow. This is mostly for internal housekeeping, and users typically shouldn't need to set or understand this field. A workflow can be the user's name, a controller's name, or the name of a specific apply path like \"ci-cd\". The set of fields is always in the version that the workflow used when modifying the object."
 
 ### fn metadata.withManagedFieldsMixin
 
@@ -374,7 +370,7 @@ ManagedFields maps workflow-id and version to the set of fields that are managed
 withManagedFieldsMixin(managedFields)
 ```
 
-ManagedFields maps workflow-id and version to the set of fields that are managed by that workflow. This is mostly for internal housekeeping, and users typically shouldn't need to set or understand this field. A workflow can be the user's name, a controller's name, or the name of a specific apply path like 'ci-cd'. The set of fields is always in the version that the workflow used when modifying the object.
+"ManagedFields maps workflow-id and version to the set of fields that are managed by that workflow. This is mostly for internal housekeeping, and users typically shouldn't need to set or understand this field. A workflow can be the user's name, a controller's name, or the name of a specific apply path like \"ci-cd\". The set of fields is always in the version that the workflow used when modifying the object."
 
 **Note:** This function appends passed data to existing values
 
@@ -384,7 +380,7 @@ ManagedFields maps workflow-id and version to the set of fields that are managed
 withName(name)
 ```
 
-Name must be unique within a namespace. Is required when creating resources, although some resources may allow a client to request the generation of an appropriate name automatically. Name is primarily intended for creation idempotence and configuration definition. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names
+"Name must be unique within a namespace. Is required when creating resources, although some resources may allow a client to request the generation of an appropriate name automatically. Name is primarily intended for creation idempotence and configuration definition. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names"
 
 ### fn metadata.withNamespace
 
@@ -392,9 +388,7 @@ Name must be unique within a namespace. Is required when creating resources, alt
 withNamespace(namespace)
 ```
 
-Namespace defines the space within which each name must be unique. An empty namespace is equivalent to the "default" namespace, but "default" is the canonical representation. Not all objects are required to be scoped to a namespace - the value of this field for those objects will be empty.
-
-Must be a DNS_LABEL. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/namespaces
+"Namespace defines the space within which each name must be unique. An empty namespace is equivalent to the \"default\" namespace, but \"default\" is the canonical representation. Not all objects are required to be scoped to a namespace - the value of this field for those objects will be empty.\n\nMust be a DNS_LABEL. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/namespaces"
 
 ### fn metadata.withOwnerReferences
 
@@ -402,7 +396,7 @@ Must be a DNS_LABEL. Cannot be updated. More info: http://kubernetes.io/docs/use
 withOwnerReferences(ownerReferences)
 ```
 
-List of objects depended by this object. If ALL objects in the list have been deleted, this object will be garbage collected. If this object is managed by a controller, then an entry in this list will point to this controller, with the controller field set to true. There cannot be more than one managing controller.
+"List of objects depended by this object. If ALL objects in the list have been deleted, this object will be garbage collected. If this object is managed by a controller, then an entry in this list will point to this controller, with the controller field set to true. There cannot be more than one managing controller."
 
 ### fn metadata.withOwnerReferencesMixin
 
@@ -410,7 +404,7 @@ List of objects depended by this object. If ALL objects in the list have been de
 withOwnerReferencesMixin(ownerReferences)
 ```
 
-List of objects depended by this object. If ALL objects in the list have been deleted, this object will be garbage collected. If this object is managed by a controller, then an entry in this list will point to this controller, with the controller field set to true. There cannot be more than one managing controller.
+"List of objects depended by this object. If ALL objects in the list have been deleted, this object will be garbage collected. If this object is managed by a controller, then an entry in this list will point to this controller, with the controller field set to true. There cannot be more than one managing controller."
 
 **Note:** This function appends passed data to existing values
 
@@ -420,9 +414,7 @@ List of objects depended by this object. If ALL objects in the list have been de
 withResourceVersion(resourceVersion)
 ```
 
-An opaque value that represents the internal version of this object that can be used by clients to determine when objects have changed. May be used for optimistic concurrency, change detection, and the watch operation on a resource or set of resources. Clients must treat these values as opaque and passed unmodified back to the server. They may only be valid for a particular resource or set of resources.
-
-Populated by the system. Read-only. Value must be treated as opaque by clients and . More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency
+"An opaque value that represents the internal version of this object that can be used by clients to determine when objects have changed. May be used for optimistic concurrency, change detection, and the watch operation on a resource or set of resources. Clients must treat these values as opaque and passed unmodified back to the server. They may only be valid for a particular resource or set of resources.\n\nPopulated by the system. Read-only. Value must be treated as opaque by clients and . More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency"
 
 ### fn metadata.withSelfLink
 
@@ -430,9 +422,7 @@ Populated by the system. Read-only. Value must be treated as opaque by clients a
 withSelfLink(selfLink)
 ```
 
-SelfLink is a URL representing this object. Populated by the system. Read-only.
-
-DEPRECATED Kubernetes will stop propagating this field in 1.20 release and the field is planned to be removed in 1.21 release.
+"SelfLink is a URL representing this object. Populated by the system. Read-only.\n\nDEPRECATED Kubernetes will stop propagating this field in 1.20 release and the field is planned to be removed in 1.21 release."
 
 ### fn metadata.withUid
 
@@ -440,13 +430,11 @@ DEPRECATED Kubernetes will stop propagating this field in 1.20 release and the f
 withUid(uid)
 ```
 
-UID is the unique in time and space value for this object. It is typically generated by the server on successful creation of a resource and is not allowed to change on PUT operations.
-
-Populated by the system. Read-only. More info: http://kubernetes.io/docs/user-guide/identifiers#uids
+"UID is the unique in time and space value for this object. It is typically generated by the server on successful creation of a resource and is not allowed to change on PUT operations.\n\nPopulated by the system. Read-only. More info: http://kubernetes.io/docs/user-guide/identifiers#uids"
 
 ## obj spec
 
-The specification of Kafka MirrorMaker.
+"The specification of Kafka MirrorMaker."
 
 ### fn spec.withImage
 
@@ -454,7 +442,7 @@ The specification of Kafka MirrorMaker.
 withImage(image)
 ```
 
-The docker image for the pods.
+"The docker image for the pods."
 
 ### fn spec.withReplicas
 
@@ -462,7 +450,7 @@ The docker image for the pods.
 withReplicas(replicas)
 ```
 
-The number of pods in the `Deployment`.
+"The number of pods in the `Deployment`."
 
 ### fn spec.withVersion
 
@@ -470,7 +458,7 @@ The number of pods in the `Deployment`.
 withVersion(version)
 ```
 
-The Kafka MirrorMaker version. Defaults to {DefaultKafkaVersion}. Consult the documentation to understand the process required to upgrade or downgrade the version.
+"The Kafka MirrorMaker version. Defaults to {DefaultKafkaVersion}. Consult the documentation to understand the process required to upgrade or downgrade the version."
 
 ### fn spec.withWhitelist
 
@@ -478,11 +466,11 @@ The Kafka MirrorMaker version. Defaults to {DefaultKafkaVersion}. Consult the do
 withWhitelist(whitelist)
 ```
 
-List of topics which are included for mirroring. This option allows any regular expression using Java-style regular expressions. Mirroring two topics named A and B is achieved by using the whitelist `'A\|B'`. Or, as a special case, you can mirror all topics using the whitelist '*'. You can also specify multiple regular expressions separated by commas.
+"List of topics which are included for mirroring. This option allows any regular expression using Java-style regular expressions. Mirroring two topics named A and B is achieved by using the whitelist `'A\\|B'`. Or, as a special case, you can mirror all topics using the whitelist '*'. You can also specify multiple regular expressions separated by commas."
 
 ## obj spec.consumer
 
-Configuration of source cluster.
+"Configuration of source cluster."
 
 ### fn spec.consumer.withBootstrapServers
 
@@ -490,7 +478,7 @@ Configuration of source cluster.
 withBootstrapServers(bootstrapServers)
 ```
 
-A list of host:port pairs for establishing the initial connection to the Kafka cluster.
+"A list of host:port pairs for establishing the initial connection to the Kafka cluster."
 
 ### fn spec.consumer.withConfig
 
@@ -498,7 +486,7 @@ A list of host:port pairs for establishing the initial connection to the Kafka c
 withConfig(config)
 ```
 
-The MirrorMaker consumer config. Properties with the following prefixes cannot be set: ssl., bootstrap.servers, group.id, sasl., security., interceptor.classes (with the exception of: ssl.endpoint.identification.algorithm, ssl.cipher.suites, ssl.protocol, ssl.enabled.protocols).
+"The MirrorMaker consumer config. Properties with the following prefixes cannot be set: ssl., bootstrap.servers, group.id, sasl., security., interceptor.classes (with the exception of: ssl.endpoint.identification.algorithm, ssl.cipher.suites, ssl.protocol, ssl.enabled.protocols)."
 
 ### fn spec.consumer.withGroupId
 
@@ -506,7 +494,7 @@ The MirrorMaker consumer config. Properties with the following prefixes cannot b
 withGroupId(groupId)
 ```
 
-A unique string that identifies the consumer group this consumer belongs to.
+"A unique string that identifies the consumer group this consumer belongs to."
 
 ### fn spec.consumer.withNumStreams
 
@@ -514,7 +502,7 @@ A unique string that identifies the consumer group this consumer belongs to.
 withNumStreams(numStreams)
 ```
 
-Specifies the number of consumer stream threads to create.
+"Specifies the number of consumer stream threads to create."
 
 ### fn spec.consumer.withOffsetCommitInterval
 
@@ -522,11 +510,11 @@ Specifies the number of consumer stream threads to create.
 withOffsetCommitInterval(offsetCommitInterval)
 ```
 
-Specifies the offset auto-commit interval in ms. Default value is 60000.
+"Specifies the offset auto-commit interval in ms. Default value is 60000."
 
 ## obj spec.consumer.authentication
 
-Authentication configuration for connecting to the cluster.
+"Authentication configuration for connecting to the cluster."
 
 ### fn spec.consumer.authentication.withAccessTokenIsJwt
 
@@ -534,7 +522,7 @@ Authentication configuration for connecting to the cluster.
 withAccessTokenIsJwt(accessTokenIsJwt)
 ```
 
-Configure whether access token should be treated as JWT. This should be set to `false` if the authorization server returns opaque tokens. Defaults to `true`.
+"Configure whether access token should be treated as JWT. This should be set to `false` if the authorization server returns opaque tokens. Defaults to `true`."
 
 ### fn spec.consumer.authentication.withClientId
 
@@ -542,7 +530,7 @@ Configure whether access token should be treated as JWT. This should be set to `
 withClientId(clientId)
 ```
 
-OAuth Client ID which the Kafka client can use to authenticate against the OAuth server and use the token endpoint URI.
+"OAuth Client ID which the Kafka client can use to authenticate against the OAuth server and use the token endpoint URI."
 
 ### fn spec.consumer.authentication.withDisableTlsHostnameVerification
 
@@ -550,7 +538,7 @@ OAuth Client ID which the Kafka client can use to authenticate against the OAuth
 withDisableTlsHostnameVerification(disableTlsHostnameVerification)
 ```
 
-Enable or disable TLS hostname verification. Default value is `false`.
+"Enable or disable TLS hostname verification. Default value is `false`."
 
 ### fn spec.consumer.authentication.withMaxTokenExpirySeconds
 
@@ -558,7 +546,7 @@ Enable or disable TLS hostname verification. Default value is `false`.
 withMaxTokenExpirySeconds(maxTokenExpirySeconds)
 ```
 
-Set or limit time-to-live of the access tokens to the specified number of seconds. This should be set if the authorization server returns opaque tokens.
+"Set or limit time-to-live of the access tokens to the specified number of seconds. This should be set if the authorization server returns opaque tokens."
 
 ### fn spec.consumer.authentication.withScope
 
@@ -566,7 +554,7 @@ Set or limit time-to-live of the access tokens to the specified number of second
 withScope(scope)
 ```
 
-OAuth scope to use when authenticating against the authorization server. Some authorization servers require this to be set. The possible values depend on how authorization server is configured. By default `scope` is not specified when doing the token endpoint request.
+"OAuth scope to use when authenticating against the authorization server. Some authorization servers require this to be set. The possible values depend on how authorization server is configured. By default `scope` is not specified when doing the token endpoint request."
 
 ### fn spec.consumer.authentication.withTlsTrustedCertificates
 
@@ -574,7 +562,7 @@ OAuth scope to use when authenticating against the authorization server. Some au
 withTlsTrustedCertificates(tlsTrustedCertificates)
 ```
 
-Trusted certificates for TLS connection to the OAuth server.
+"Trusted certificates for TLS connection to the OAuth server."
 
 ### fn spec.consumer.authentication.withTlsTrustedCertificatesMixin
 
@@ -582,7 +570,7 @@ Trusted certificates for TLS connection to the OAuth server.
 withTlsTrustedCertificatesMixin(tlsTrustedCertificates)
 ```
 
-Trusted certificates for TLS connection to the OAuth server.
+"Trusted certificates for TLS connection to the OAuth server."
 
 **Note:** This function appends passed data to existing values
 
@@ -592,7 +580,7 @@ Trusted certificates for TLS connection to the OAuth server.
 withTokenEndpointUri(tokenEndpointUri)
 ```
 
-Authorization server token endpoint URI.
+"Authorization server token endpoint URI."
 
 ### fn spec.consumer.authentication.withType
 
@@ -600,7 +588,7 @@ Authorization server token endpoint URI.
 withType(type)
 ```
 
-Authentication type. Currently the only supported types are `tls`, `scram-sha-512`, and `plain`. `scram-sha-512` type uses SASL SCRAM-SHA-512 Authentication. `plain` type uses SASL PLAIN Authentication. `oauth` type uses SASL OAUTHBEARER Authentication. The `tls` type uses TLS Client Authentication. The `tls` type is supported only over TLS connections.
+"Authentication type. Currently the only supported types are `tls`, `scram-sha-512`, and `plain`. `scram-sha-512` type uses SASL SCRAM-SHA-512 Authentication. `plain` type uses SASL PLAIN Authentication. `oauth` type uses SASL OAUTHBEARER Authentication. The `tls` type uses TLS Client Authentication. The `tls` type is supported only over TLS connections."
 
 ### fn spec.consumer.authentication.withUsername
 
@@ -608,11 +596,11 @@ Authentication type. Currently the only supported types are `tls`, `scram-sha-51
 withUsername(username)
 ```
 
-Username used for the authentication.
+"Username used for the authentication."
 
 ## obj spec.consumer.authentication.accessToken
 
-Link to Kubernetes Secret containing the access token which was obtained from the authorization server.
+"Link to Kubernetes Secret containing the access token which was obtained from the authorization server."
 
 ### fn spec.consumer.authentication.accessToken.withKey
 
@@ -620,7 +608,7 @@ Link to Kubernetes Secret containing the access token which was obtained from th
 withKey(key)
 ```
 
-The key under which the secret value is stored in the Kubernetes Secret.
+"The key under which the secret value is stored in the Kubernetes Secret."
 
 ### fn spec.consumer.authentication.accessToken.withSecretName
 
@@ -628,11 +616,11 @@ The key under which the secret value is stored in the Kubernetes Secret.
 withSecretName(secretName)
 ```
 
-The name of the Kubernetes Secret containing the secret value.
+"The name of the Kubernetes Secret containing the secret value."
 
 ## obj spec.consumer.authentication.certificateAndKey
 
-Reference to the `Secret` which holds the certificate and private key pair.
+"Reference to the `Secret` which holds the certificate and private key pair."
 
 ### fn spec.consumer.authentication.certificateAndKey.withCertificate
 
@@ -640,7 +628,7 @@ Reference to the `Secret` which holds the certificate and private key pair.
 withCertificate(certificate)
 ```
 
-The name of the file certificate in the Secret.
+"The name of the file certificate in the Secret."
 
 ### fn spec.consumer.authentication.certificateAndKey.withKey
 
@@ -648,7 +636,7 @@ The name of the file certificate in the Secret.
 withKey(key)
 ```
 
-The name of the private key in the Secret.
+"The name of the private key in the Secret."
 
 ### fn spec.consumer.authentication.certificateAndKey.withSecretName
 
@@ -656,11 +644,11 @@ The name of the private key in the Secret.
 withSecretName(secretName)
 ```
 
-The name of the Secret containing the certificate.
+"The name of the Secret containing the certificate."
 
 ## obj spec.consumer.authentication.clientSecret
 
-Link to Kubernetes Secret containing the OAuth client secret which the Kafka client can use to authenticate against the OAuth server and use the token endpoint URI.
+"Link to Kubernetes Secret containing the OAuth client secret which the Kafka client can use to authenticate against the OAuth server and use the token endpoint URI."
 
 ### fn spec.consumer.authentication.clientSecret.withKey
 
@@ -668,7 +656,7 @@ Link to Kubernetes Secret containing the OAuth client secret which the Kafka cli
 withKey(key)
 ```
 
-The key under which the secret value is stored in the Kubernetes Secret.
+"The key under which the secret value is stored in the Kubernetes Secret."
 
 ### fn spec.consumer.authentication.clientSecret.withSecretName
 
@@ -676,11 +664,11 @@ The key under which the secret value is stored in the Kubernetes Secret.
 withSecretName(secretName)
 ```
 
-The name of the Kubernetes Secret containing the secret value.
+"The name of the Kubernetes Secret containing the secret value."
 
 ## obj spec.consumer.authentication.passwordSecret
 
-Reference to the `Secret` which holds the password.
+"Reference to the `Secret` which holds the password."
 
 ### fn spec.consumer.authentication.passwordSecret.withPassword
 
@@ -688,7 +676,7 @@ Reference to the `Secret` which holds the password.
 withPassword(password)
 ```
 
-The name of the key in the Secret under which the password is stored.
+"The name of the key in the Secret under which the password is stored."
 
 ### fn spec.consumer.authentication.passwordSecret.withSecretName
 
@@ -696,11 +684,11 @@ The name of the key in the Secret under which the password is stored.
 withSecretName(secretName)
 ```
 
-The name of the Secret containing the password.
+"The name of the Secret containing the password."
 
 ## obj spec.consumer.authentication.refreshToken
 
-Link to Kubernetes Secret containing the refresh token which can be used to obtain access token from the authorization server.
+"Link to Kubernetes Secret containing the refresh token which can be used to obtain access token from the authorization server."
 
 ### fn spec.consumer.authentication.refreshToken.withKey
 
@@ -708,7 +696,7 @@ Link to Kubernetes Secret containing the refresh token which can be used to obta
 withKey(key)
 ```
 
-The key under which the secret value is stored in the Kubernetes Secret.
+"The key under which the secret value is stored in the Kubernetes Secret."
 
 ### fn spec.consumer.authentication.refreshToken.withSecretName
 
@@ -716,11 +704,11 @@ The key under which the secret value is stored in the Kubernetes Secret.
 withSecretName(secretName)
 ```
 
-The name of the Kubernetes Secret containing the secret value.
+"The name of the Kubernetes Secret containing the secret value."
 
 ## obj spec.consumer.tls
 
-TLS configuration for connecting MirrorMaker to the cluster.
+"TLS configuration for connecting MirrorMaker to the cluster."
 
 ### fn spec.consumer.tls.withTrustedCertificates
 
@@ -728,7 +716,7 @@ TLS configuration for connecting MirrorMaker to the cluster.
 withTrustedCertificates(trustedCertificates)
 ```
 
-Trusted certificates for TLS connection.
+"Trusted certificates for TLS connection."
 
 ### fn spec.consumer.tls.withTrustedCertificatesMixin
 
@@ -736,13 +724,13 @@ Trusted certificates for TLS connection.
 withTrustedCertificatesMixin(trustedCertificates)
 ```
 
-Trusted certificates for TLS connection.
+"Trusted certificates for TLS connection."
 
 **Note:** This function appends passed data to existing values
 
 ## obj spec.jvmOptions
 
-JVM Options for pods.
+"JVM Options for pods."
 
 ### fn spec.jvmOptions.withGcLoggingEnabled
 
@@ -750,7 +738,7 @@ JVM Options for pods.
 withGcLoggingEnabled(gcLoggingEnabled)
 ```
 
-Specifies whether the Garbage Collection logging is enabled. The default is false.
+"Specifies whether the Garbage Collection logging is enabled. The default is false."
 
 ### fn spec.jvmOptions.withJavaSystemProperties
 
@@ -758,7 +746,7 @@ Specifies whether the Garbage Collection logging is enabled. The default is fals
 withJavaSystemProperties(javaSystemProperties)
 ```
 
-A map of additional system properties which will be passed using the `-D` option to the JVM.
+"A map of additional system properties which will be passed using the `-D` option to the JVM."
 
 ### fn spec.jvmOptions.withJavaSystemPropertiesMixin
 
@@ -766,7 +754,7 @@ A map of additional system properties which will be passed using the `-D` option
 withJavaSystemPropertiesMixin(javaSystemProperties)
 ```
 
-A map of additional system properties which will be passed using the `-D` option to the JVM.
+"A map of additional system properties which will be passed using the `-D` option to the JVM."
 
 **Note:** This function appends passed data to existing values
 
@@ -776,7 +764,7 @@ A map of additional system properties which will be passed using the `-D` option
 withXX(XX)
 ```
 
-A map of -XX options to the JVM.
+"A map of -XX options to the JVM."
 
 ### fn spec.jvmOptions.withXms
 
@@ -784,7 +772,7 @@ A map of -XX options to the JVM.
 withXms(Xms)
 ```
 
--Xms option to to the JVM.
+"-Xms option to to the JVM."
 
 ### fn spec.jvmOptions.withXmx
 
@@ -792,11 +780,11 @@ withXms(Xms)
 withXmx(Xmx)
 ```
 
--Xmx option to to the JVM.
+"-Xmx option to to the JVM."
 
 ## obj spec.livenessProbe
 
-Pod liveness checking.
+"Pod liveness checking."
 
 ### fn spec.livenessProbe.withFailureThreshold
 
@@ -804,7 +792,7 @@ Pod liveness checking.
 withFailureThreshold(failureThreshold)
 ```
 
-Minimum consecutive failures for the probe to be considered failed after having succeeded. Defaults to 3. Minimum value is 1.
+"Minimum consecutive failures for the probe to be considered failed after having succeeded. Defaults to 3. Minimum value is 1."
 
 ### fn spec.livenessProbe.withInitialDelaySeconds
 
@@ -812,7 +800,7 @@ Minimum consecutive failures for the probe to be considered failed after having 
 withInitialDelaySeconds(initialDelaySeconds)
 ```
 
-The initial delay before first the health is first checked. Default to 15 seconds. Minimum value is 0.
+"The initial delay before first the health is first checked. Default to 15 seconds. Minimum value is 0."
 
 ### fn spec.livenessProbe.withPeriodSeconds
 
@@ -820,7 +808,7 @@ The initial delay before first the health is first checked. Default to 15 second
 withPeriodSeconds(periodSeconds)
 ```
 
-How often (in seconds) to perform the probe. Default to 10 seconds. Minimum value is 1.
+"How often (in seconds) to perform the probe. Default to 10 seconds. Minimum value is 1."
 
 ### fn spec.livenessProbe.withSuccessThreshold
 
@@ -828,7 +816,7 @@ How often (in seconds) to perform the probe. Default to 10 seconds. Minimum valu
 withSuccessThreshold(successThreshold)
 ```
 
-Minimum consecutive successes for the probe to be considered successful after having failed. Defaults to 1. Must be 1 for liveness. Minimum value is 1.
+"Minimum consecutive successes for the probe to be considered successful after having failed. Defaults to 1. Must be 1 for liveness. Minimum value is 1."
 
 ### fn spec.livenessProbe.withTimeoutSeconds
 
@@ -836,11 +824,11 @@ Minimum consecutive successes for the probe to be considered successful after ha
 withTimeoutSeconds(timeoutSeconds)
 ```
 
-The timeout for each attempted health check. Default to 5 seconds. Minimum value is 1.
+"The timeout for each attempted health check. Default to 5 seconds. Minimum value is 1."
 
 ## obj spec.logging
 
-Logging configuration for MirrorMaker.
+"Logging configuration for MirrorMaker."
 
 ### fn spec.logging.withLoggers
 
@@ -848,7 +836,7 @@ Logging configuration for MirrorMaker.
 withLoggers(loggers)
 ```
 
-A Map from logger name to logger level.
+"A Map from logger name to logger level."
 
 ### fn spec.logging.withType
 
@@ -856,15 +844,15 @@ A Map from logger name to logger level.
 withType(type)
 ```
 
-Logging type, must be either 'inline' or 'external'.
+"Logging type, must be either 'inline' or 'external'."
 
 ## obj spec.logging.valueFrom
 
-`ConfigMap` entry where the logging configuration is stored. 
+"`ConfigMap` entry where the logging configuration is stored. "
 
 ## obj spec.logging.valueFrom.configMapKeyRef
 
-Reference to the key in the ConfigMap containing the configuration.
+"Reference to the key in the ConfigMap containing the configuration."
 
 ### fn spec.logging.valueFrom.configMapKeyRef.withKey
 
@@ -892,7 +880,7 @@ withOptional(optional)
 
 ## obj spec.metricsConfig
 
-Metrics configuration.
+"Metrics configuration."
 
 ### fn spec.metricsConfig.withType
 
@@ -900,15 +888,15 @@ Metrics configuration.
 withType(type)
 ```
 
-Metrics type. Only 'jmxPrometheusExporter' supported currently.
+"Metrics type. Only 'jmxPrometheusExporter' supported currently."
 
 ## obj spec.metricsConfig.valueFrom
 
-ConfigMap entry where the Prometheus JMX Exporter configuration is stored. For details of the structure of this configuration, see the {JMXExporter}.
+"ConfigMap entry where the Prometheus JMX Exporter configuration is stored. For details of the structure of this configuration, see the {JMXExporter}."
 
 ## obj spec.metricsConfig.valueFrom.configMapKeyRef
 
-Reference to the key in the ConfigMap containing the configuration.
+"Reference to the key in the ConfigMap containing the configuration."
 
 ### fn spec.metricsConfig.valueFrom.configMapKeyRef.withKey
 
@@ -936,7 +924,7 @@ withOptional(optional)
 
 ## obj spec.producer
 
-Configuration of target cluster.
+"Configuration of target cluster."
 
 ### fn spec.producer.withAbortOnSendFailure
 
@@ -944,7 +932,7 @@ Configuration of target cluster.
 withAbortOnSendFailure(abortOnSendFailure)
 ```
 
-Flag to set the MirrorMaker to exit on a failed send. Default value is `true`.
+"Flag to set the MirrorMaker to exit on a failed send. Default value is `true`."
 
 ### fn spec.producer.withBootstrapServers
 
@@ -952,7 +940,7 @@ Flag to set the MirrorMaker to exit on a failed send. Default value is `true`.
 withBootstrapServers(bootstrapServers)
 ```
 
-A list of host:port pairs for establishing the initial connection to the Kafka cluster.
+"A list of host:port pairs for establishing the initial connection to the Kafka cluster."
 
 ### fn spec.producer.withConfig
 
@@ -960,11 +948,11 @@ A list of host:port pairs for establishing the initial connection to the Kafka c
 withConfig(config)
 ```
 
-The MirrorMaker producer config. Properties with the following prefixes cannot be set: ssl., bootstrap.servers, sasl., security., interceptor.classes (with the exception of: ssl.endpoint.identification.algorithm, ssl.cipher.suites, ssl.protocol, ssl.enabled.protocols).
+"The MirrorMaker producer config. Properties with the following prefixes cannot be set: ssl., bootstrap.servers, sasl., security., interceptor.classes (with the exception of: ssl.endpoint.identification.algorithm, ssl.cipher.suites, ssl.protocol, ssl.enabled.protocols)."
 
 ## obj spec.producer.authentication
 
-Authentication configuration for connecting to the cluster.
+"Authentication configuration for connecting to the cluster."
 
 ### fn spec.producer.authentication.withAccessTokenIsJwt
 
@@ -972,7 +960,7 @@ Authentication configuration for connecting to the cluster.
 withAccessTokenIsJwt(accessTokenIsJwt)
 ```
 
-Configure whether access token should be treated as JWT. This should be set to `false` if the authorization server returns opaque tokens. Defaults to `true`.
+"Configure whether access token should be treated as JWT. This should be set to `false` if the authorization server returns opaque tokens. Defaults to `true`."
 
 ### fn spec.producer.authentication.withClientId
 
@@ -980,7 +968,7 @@ Configure whether access token should be treated as JWT. This should be set to `
 withClientId(clientId)
 ```
 
-OAuth Client ID which the Kafka client can use to authenticate against the OAuth server and use the token endpoint URI.
+"OAuth Client ID which the Kafka client can use to authenticate against the OAuth server and use the token endpoint URI."
 
 ### fn spec.producer.authentication.withDisableTlsHostnameVerification
 
@@ -988,7 +976,7 @@ OAuth Client ID which the Kafka client can use to authenticate against the OAuth
 withDisableTlsHostnameVerification(disableTlsHostnameVerification)
 ```
 
-Enable or disable TLS hostname verification. Default value is `false`.
+"Enable or disable TLS hostname verification. Default value is `false`."
 
 ### fn spec.producer.authentication.withMaxTokenExpirySeconds
 
@@ -996,7 +984,7 @@ Enable or disable TLS hostname verification. Default value is `false`.
 withMaxTokenExpirySeconds(maxTokenExpirySeconds)
 ```
 
-Set or limit time-to-live of the access tokens to the specified number of seconds. This should be set if the authorization server returns opaque tokens.
+"Set or limit time-to-live of the access tokens to the specified number of seconds. This should be set if the authorization server returns opaque tokens."
 
 ### fn spec.producer.authentication.withScope
 
@@ -1004,7 +992,7 @@ Set or limit time-to-live of the access tokens to the specified number of second
 withScope(scope)
 ```
 
-OAuth scope to use when authenticating against the authorization server. Some authorization servers require this to be set. The possible values depend on how authorization server is configured. By default `scope` is not specified when doing the token endpoint request.
+"OAuth scope to use when authenticating against the authorization server. Some authorization servers require this to be set. The possible values depend on how authorization server is configured. By default `scope` is not specified when doing the token endpoint request."
 
 ### fn spec.producer.authentication.withTlsTrustedCertificates
 
@@ -1012,7 +1000,7 @@ OAuth scope to use when authenticating against the authorization server. Some au
 withTlsTrustedCertificates(tlsTrustedCertificates)
 ```
 
-Trusted certificates for TLS connection to the OAuth server.
+"Trusted certificates for TLS connection to the OAuth server."
 
 ### fn spec.producer.authentication.withTlsTrustedCertificatesMixin
 
@@ -1020,7 +1008,7 @@ Trusted certificates for TLS connection to the OAuth server.
 withTlsTrustedCertificatesMixin(tlsTrustedCertificates)
 ```
 
-Trusted certificates for TLS connection to the OAuth server.
+"Trusted certificates for TLS connection to the OAuth server."
 
 **Note:** This function appends passed data to existing values
 
@@ -1030,7 +1018,7 @@ Trusted certificates for TLS connection to the OAuth server.
 withTokenEndpointUri(tokenEndpointUri)
 ```
 
-Authorization server token endpoint URI.
+"Authorization server token endpoint URI."
 
 ### fn spec.producer.authentication.withType
 
@@ -1038,7 +1026,7 @@ Authorization server token endpoint URI.
 withType(type)
 ```
 
-Authentication type. Currently the only supported types are `tls`, `scram-sha-512`, and `plain`. `scram-sha-512` type uses SASL SCRAM-SHA-512 Authentication. `plain` type uses SASL PLAIN Authentication. `oauth` type uses SASL OAUTHBEARER Authentication. The `tls` type uses TLS Client Authentication. The `tls` type is supported only over TLS connections.
+"Authentication type. Currently the only supported types are `tls`, `scram-sha-512`, and `plain`. `scram-sha-512` type uses SASL SCRAM-SHA-512 Authentication. `plain` type uses SASL PLAIN Authentication. `oauth` type uses SASL OAUTHBEARER Authentication. The `tls` type uses TLS Client Authentication. The `tls` type is supported only over TLS connections."
 
 ### fn spec.producer.authentication.withUsername
 
@@ -1046,11 +1034,11 @@ Authentication type. Currently the only supported types are `tls`, `scram-sha-51
 withUsername(username)
 ```
 
-Username used for the authentication.
+"Username used for the authentication."
 
 ## obj spec.producer.authentication.accessToken
 
-Link to Kubernetes Secret containing the access token which was obtained from the authorization server.
+"Link to Kubernetes Secret containing the access token which was obtained from the authorization server."
 
 ### fn spec.producer.authentication.accessToken.withKey
 
@@ -1058,7 +1046,7 @@ Link to Kubernetes Secret containing the access token which was obtained from th
 withKey(key)
 ```
 
-The key under which the secret value is stored in the Kubernetes Secret.
+"The key under which the secret value is stored in the Kubernetes Secret."
 
 ### fn spec.producer.authentication.accessToken.withSecretName
 
@@ -1066,11 +1054,11 @@ The key under which the secret value is stored in the Kubernetes Secret.
 withSecretName(secretName)
 ```
 
-The name of the Kubernetes Secret containing the secret value.
+"The name of the Kubernetes Secret containing the secret value."
 
 ## obj spec.producer.authentication.certificateAndKey
 
-Reference to the `Secret` which holds the certificate and private key pair.
+"Reference to the `Secret` which holds the certificate and private key pair."
 
 ### fn spec.producer.authentication.certificateAndKey.withCertificate
 
@@ -1078,7 +1066,7 @@ Reference to the `Secret` which holds the certificate and private key pair.
 withCertificate(certificate)
 ```
 
-The name of the file certificate in the Secret.
+"The name of the file certificate in the Secret."
 
 ### fn spec.producer.authentication.certificateAndKey.withKey
 
@@ -1086,7 +1074,7 @@ The name of the file certificate in the Secret.
 withKey(key)
 ```
 
-The name of the private key in the Secret.
+"The name of the private key in the Secret."
 
 ### fn spec.producer.authentication.certificateAndKey.withSecretName
 
@@ -1094,11 +1082,11 @@ The name of the private key in the Secret.
 withSecretName(secretName)
 ```
 
-The name of the Secret containing the certificate.
+"The name of the Secret containing the certificate."
 
 ## obj spec.producer.authentication.clientSecret
 
-Link to Kubernetes Secret containing the OAuth client secret which the Kafka client can use to authenticate against the OAuth server and use the token endpoint URI.
+"Link to Kubernetes Secret containing the OAuth client secret which the Kafka client can use to authenticate against the OAuth server and use the token endpoint URI."
 
 ### fn spec.producer.authentication.clientSecret.withKey
 
@@ -1106,7 +1094,7 @@ Link to Kubernetes Secret containing the OAuth client secret which the Kafka cli
 withKey(key)
 ```
 
-The key under which the secret value is stored in the Kubernetes Secret.
+"The key under which the secret value is stored in the Kubernetes Secret."
 
 ### fn spec.producer.authentication.clientSecret.withSecretName
 
@@ -1114,11 +1102,11 @@ The key under which the secret value is stored in the Kubernetes Secret.
 withSecretName(secretName)
 ```
 
-The name of the Kubernetes Secret containing the secret value.
+"The name of the Kubernetes Secret containing the secret value."
 
 ## obj spec.producer.authentication.passwordSecret
 
-Reference to the `Secret` which holds the password.
+"Reference to the `Secret` which holds the password."
 
 ### fn spec.producer.authentication.passwordSecret.withPassword
 
@@ -1126,7 +1114,7 @@ Reference to the `Secret` which holds the password.
 withPassword(password)
 ```
 
-The name of the key in the Secret under which the password is stored.
+"The name of the key in the Secret under which the password is stored."
 
 ### fn spec.producer.authentication.passwordSecret.withSecretName
 
@@ -1134,11 +1122,11 @@ The name of the key in the Secret under which the password is stored.
 withSecretName(secretName)
 ```
 
-The name of the Secret containing the password.
+"The name of the Secret containing the password."
 
 ## obj spec.producer.authentication.refreshToken
 
-Link to Kubernetes Secret containing the refresh token which can be used to obtain access token from the authorization server.
+"Link to Kubernetes Secret containing the refresh token which can be used to obtain access token from the authorization server."
 
 ### fn spec.producer.authentication.refreshToken.withKey
 
@@ -1146,7 +1134,7 @@ Link to Kubernetes Secret containing the refresh token which can be used to obta
 withKey(key)
 ```
 
-The key under which the secret value is stored in the Kubernetes Secret.
+"The key under which the secret value is stored in the Kubernetes Secret."
 
 ### fn spec.producer.authentication.refreshToken.withSecretName
 
@@ -1154,11 +1142,11 @@ The key under which the secret value is stored in the Kubernetes Secret.
 withSecretName(secretName)
 ```
 
-The name of the Kubernetes Secret containing the secret value.
+"The name of the Kubernetes Secret containing the secret value."
 
 ## obj spec.producer.tls
 
-TLS configuration for connecting MirrorMaker to the cluster.
+"TLS configuration for connecting MirrorMaker to the cluster."
 
 ### fn spec.producer.tls.withTrustedCertificates
 
@@ -1166,7 +1154,7 @@ TLS configuration for connecting MirrorMaker to the cluster.
 withTrustedCertificates(trustedCertificates)
 ```
 
-Trusted certificates for TLS connection.
+"Trusted certificates for TLS connection."
 
 ### fn spec.producer.tls.withTrustedCertificatesMixin
 
@@ -1174,13 +1162,13 @@ Trusted certificates for TLS connection.
 withTrustedCertificatesMixin(trustedCertificates)
 ```
 
-Trusted certificates for TLS connection.
+"Trusted certificates for TLS connection."
 
 **Note:** This function appends passed data to existing values
 
 ## obj spec.readinessProbe
 
-Pod readiness checking.
+"Pod readiness checking."
 
 ### fn spec.readinessProbe.withFailureThreshold
 
@@ -1188,7 +1176,7 @@ Pod readiness checking.
 withFailureThreshold(failureThreshold)
 ```
 
-Minimum consecutive failures for the probe to be considered failed after having succeeded. Defaults to 3. Minimum value is 1.
+"Minimum consecutive failures for the probe to be considered failed after having succeeded. Defaults to 3. Minimum value is 1."
 
 ### fn spec.readinessProbe.withInitialDelaySeconds
 
@@ -1196,7 +1184,7 @@ Minimum consecutive failures for the probe to be considered failed after having 
 withInitialDelaySeconds(initialDelaySeconds)
 ```
 
-The initial delay before first the health is first checked. Default to 15 seconds. Minimum value is 0.
+"The initial delay before first the health is first checked. Default to 15 seconds. Minimum value is 0."
 
 ### fn spec.readinessProbe.withPeriodSeconds
 
@@ -1204,7 +1192,7 @@ The initial delay before first the health is first checked. Default to 15 second
 withPeriodSeconds(periodSeconds)
 ```
 
-How often (in seconds) to perform the probe. Default to 10 seconds. Minimum value is 1.
+"How often (in seconds) to perform the probe. Default to 10 seconds. Minimum value is 1."
 
 ### fn spec.readinessProbe.withSuccessThreshold
 
@@ -1212,7 +1200,7 @@ How often (in seconds) to perform the probe. Default to 10 seconds. Minimum valu
 withSuccessThreshold(successThreshold)
 ```
 
-Minimum consecutive successes for the probe to be considered successful after having failed. Defaults to 1. Must be 1 for liveness. Minimum value is 1.
+"Minimum consecutive successes for the probe to be considered successful after having failed. Defaults to 1. Must be 1 for liveness. Minimum value is 1."
 
 ### fn spec.readinessProbe.withTimeoutSeconds
 
@@ -1220,11 +1208,11 @@ Minimum consecutive successes for the probe to be considered successful after ha
 withTimeoutSeconds(timeoutSeconds)
 ```
 
-The timeout for each attempted health check. Default to 5 seconds. Minimum value is 1.
+"The timeout for each attempted health check. Default to 5 seconds. Minimum value is 1."
 
 ## obj spec.resources
 
-CPU and memory resources to reserve.
+"CPU and memory resources to reserve."
 
 ### fn spec.resources.withLimits
 
@@ -1244,11 +1232,11 @@ withRequests(requests)
 
 ## obj spec.template
 
-Template to specify how Kafka MirrorMaker resources, `Deployments` and `Pods`, are generated.
+"Template to specify how Kafka MirrorMaker resources, `Deployments` and `Pods`, are generated."
 
 ## obj spec.template.deployment
 
-Template for Kafka MirrorMaker `Deployment`.
+"Template for Kafka MirrorMaker `Deployment`."
 
 ### fn spec.template.deployment.withDeploymentStrategy
 
@@ -1256,11 +1244,11 @@ Template for Kafka MirrorMaker `Deployment`.
 withDeploymentStrategy(deploymentStrategy)
 ```
 
-DeploymentStrategy which will be used for this Deployment. Valid values are `RollingUpdate` and `Recreate`. Defaults to `RollingUpdate`.
+"DeploymentStrategy which will be used for this Deployment. Valid values are `RollingUpdate` and `Recreate`. Defaults to `RollingUpdate`."
 
 ## obj spec.template.deployment.metadata
 
-Metadata applied to the resource.
+"Metadata applied to the resource."
 
 ### fn spec.template.deployment.metadata.withAnnotations
 
@@ -1268,7 +1256,7 @@ Metadata applied to the resource.
 withAnnotations(annotations)
 ```
 
-Annotations added to the resource template. Can be applied to different resources such as `StatefulSets`, `Deployments`, `Pods`, and `Services`.
+"Annotations added to the resource template. Can be applied to different resources such as `StatefulSets`, `Deployments`, `Pods`, and `Services`."
 
 ### fn spec.template.deployment.metadata.withLabels
 
@@ -1276,11 +1264,11 @@ Annotations added to the resource template. Can be applied to different resource
 withLabels(labels)
 ```
 
-Labels added to the resource template. Can be applied to different resources such as `StatefulSets`, `Deployments`, `Pods`, and `Services`.
+"Labels added to the resource template. Can be applied to different resources such as `StatefulSets`, `Deployments`, `Pods`, and `Services`."
 
 ## obj spec.template.mirrorMakerContainer
 
-Template for Kafka MirrorMaker container.
+"Template for Kafka MirrorMaker container."
 
 ### fn spec.template.mirrorMakerContainer.withEnv
 
@@ -1288,7 +1276,7 @@ Template for Kafka MirrorMaker container.
 withEnv(env)
 ```
 
-Environment variables which should be applied to the container.
+"Environment variables which should be applied to the container."
 
 ### fn spec.template.mirrorMakerContainer.withEnvMixin
 
@@ -1296,13 +1284,13 @@ Environment variables which should be applied to the container.
 withEnvMixin(env)
 ```
 
-Environment variables which should be applied to the container.
+"Environment variables which should be applied to the container."
 
 **Note:** This function appends passed data to existing values
 
 ## obj spec.template.mirrorMakerContainer.securityContext
 
-Security context for the container.
+"Security context for the container."
 
 ### fn spec.template.mirrorMakerContainer.securityContext.withAllowPrivilegeEscalation
 
@@ -1486,7 +1474,7 @@ withRunAsUserName(runAsUserName)
 
 ## obj spec.template.pod
 
-Template for Kafka MirrorMaker `Pods`.
+"Template for Kafka MirrorMaker `Pods`."
 
 ### fn spec.template.pod.withEnableServiceLinks
 
@@ -1494,7 +1482,7 @@ Template for Kafka MirrorMaker `Pods`.
 withEnableServiceLinks(enableServiceLinks)
 ```
 
-Indicates whether information about services should be injected into Pod's environment variables.
+"Indicates whether information about services should be injected into Pod's environment variables."
 
 ### fn spec.template.pod.withHostAliases
 
@@ -1502,7 +1490,7 @@ Indicates whether information about services should be injected into Pod's envir
 withHostAliases(hostAliases)
 ```
 
-The pod's HostAliases. HostAliases is an optional list of hosts and IPs that will be injected into the Pod's hosts file if specified.
+"The pod's HostAliases. HostAliases is an optional list of hosts and IPs that will be injected into the Pod's hosts file if specified."
 
 ### fn spec.template.pod.withHostAliasesMixin
 
@@ -1510,7 +1498,7 @@ The pod's HostAliases. HostAliases is an optional list of hosts and IPs that wil
 withHostAliasesMixin(hostAliases)
 ```
 
-The pod's HostAliases. HostAliases is an optional list of hosts and IPs that will be injected into the Pod's hosts file if specified.
+"The pod's HostAliases. HostAliases is an optional list of hosts and IPs that will be injected into the Pod's hosts file if specified."
 
 **Note:** This function appends passed data to existing values
 
@@ -1520,7 +1508,7 @@ The pod's HostAliases. HostAliases is an optional list of hosts and IPs that wil
 withImagePullSecrets(imagePullSecrets)
 ```
 
-List of references to secrets in the same namespace to use for pulling any of the images used by this Pod. When the `STRIMZI_IMAGE_PULL_SECRETS` environment variable in Cluster Operator and the `imagePullSecrets` option are specified, only the `imagePullSecrets` variable is used and the `STRIMZI_IMAGE_PULL_SECRETS` variable is ignored.
+"List of references to secrets in the same namespace to use for pulling any of the images used by this Pod. When the `STRIMZI_IMAGE_PULL_SECRETS` environment variable in Cluster Operator and the `imagePullSecrets` option are specified, only the `imagePullSecrets` variable is used and the `STRIMZI_IMAGE_PULL_SECRETS` variable is ignored."
 
 ### fn spec.template.pod.withImagePullSecretsMixin
 
@@ -1528,7 +1516,7 @@ List of references to secrets in the same namespace to use for pulling any of th
 withImagePullSecretsMixin(imagePullSecrets)
 ```
 
-List of references to secrets in the same namespace to use for pulling any of the images used by this Pod. When the `STRIMZI_IMAGE_PULL_SECRETS` environment variable in Cluster Operator and the `imagePullSecrets` option are specified, only the `imagePullSecrets` variable is used and the `STRIMZI_IMAGE_PULL_SECRETS` variable is ignored.
+"List of references to secrets in the same namespace to use for pulling any of the images used by this Pod. When the `STRIMZI_IMAGE_PULL_SECRETS` environment variable in Cluster Operator and the `imagePullSecrets` option are specified, only the `imagePullSecrets` variable is used and the `STRIMZI_IMAGE_PULL_SECRETS` variable is ignored."
 
 **Note:** This function appends passed data to existing values
 
@@ -1538,7 +1526,7 @@ List of references to secrets in the same namespace to use for pulling any of th
 withPriorityClassName(priorityClassName)
 ```
 
-The name of the priority class used to assign priority to the pods. For more information about priority classes, see {K8sPriorityClass}.
+"The name of the priority class used to assign priority to the pods. For more information about priority classes, see {K8sPriorityClass}."
 
 ### fn spec.template.pod.withSchedulerName
 
@@ -1546,7 +1534,7 @@ The name of the priority class used to assign priority to the pods. For more inf
 withSchedulerName(schedulerName)
 ```
 
-The name of the scheduler used to dispatch this `Pod`. If not specified, the default scheduler will be used.
+"The name of the scheduler used to dispatch this `Pod`. If not specified, the default scheduler will be used."
 
 ### fn spec.template.pod.withTerminationGracePeriodSeconds
 
@@ -1554,7 +1542,7 @@ The name of the scheduler used to dispatch this `Pod`. If not specified, the def
 withTerminationGracePeriodSeconds(terminationGracePeriodSeconds)
 ```
 
-The grace period is the duration in seconds after the processes running in the pod are sent a termination signal, and the time when the processes are forcibly halted with a kill signal. Set this value to longer than the expected cleanup time for your process. Value must be a non-negative integer. A zero value indicates delete immediately. You might need to increase the grace period for very large Kafka clusters, so that the Kafka brokers have enough time to transfer their work to another broker before they are terminated. Defaults to 30 seconds.
+"The grace period is the duration in seconds after the processes running in the pod are sent a termination signal, and the time when the processes are forcibly halted with a kill signal. Set this value to longer than the expected cleanup time for your process. Value must be a non-negative integer. A zero value indicates delete immediately. You might need to increase the grace period for very large Kafka clusters, so that the Kafka brokers have enough time to transfer their work to another broker before they are terminated. Defaults to 30 seconds."
 
 ### fn spec.template.pod.withTolerations
 
@@ -1562,7 +1550,7 @@ The grace period is the duration in seconds after the processes running in the p
 withTolerations(tolerations)
 ```
 
-The pod's tolerations.
+"The pod's tolerations."
 
 ### fn spec.template.pod.withTolerationsMixin
 
@@ -1570,7 +1558,7 @@ The pod's tolerations.
 withTolerationsMixin(tolerations)
 ```
 
-The pod's tolerations.
+"The pod's tolerations."
 
 **Note:** This function appends passed data to existing values
 
@@ -1580,7 +1568,7 @@ The pod's tolerations.
 withTopologySpreadConstraints(topologySpreadConstraints)
 ```
 
-The pod's topology spread constraints.
+"The pod's topology spread constraints."
 
 ### fn spec.template.pod.withTopologySpreadConstraintsMixin
 
@@ -1588,13 +1576,13 @@ The pod's topology spread constraints.
 withTopologySpreadConstraintsMixin(topologySpreadConstraints)
 ```
 
-The pod's topology spread constraints.
+"The pod's topology spread constraints."
 
 **Note:** This function appends passed data to existing values
 
 ## obj spec.template.pod.affinity
 
-The pod's affinity rules.
+"The pod's affinity rules."
 
 ## obj spec.template.pod.affinity.nodeAffinity
 
@@ -1722,7 +1710,7 @@ withRequiredDuringSchedulingIgnoredDuringExecutionMixin(requiredDuringScheduling
 
 ## obj spec.template.pod.metadata
 
-Metadata applied to the resource.
+"Metadata applied to the resource."
 
 ### fn spec.template.pod.metadata.withAnnotations
 
@@ -1730,7 +1718,7 @@ Metadata applied to the resource.
 withAnnotations(annotations)
 ```
 
-Annotations added to the resource template. Can be applied to different resources such as `StatefulSets`, `Deployments`, `Pods`, and `Services`.
+"Annotations added to the resource template. Can be applied to different resources such as `StatefulSets`, `Deployments`, `Pods`, and `Services`."
 
 ### fn spec.template.pod.metadata.withLabels
 
@@ -1738,11 +1726,11 @@ Annotations added to the resource template. Can be applied to different resource
 withLabels(labels)
 ```
 
-Labels added to the resource template. Can be applied to different resources such as `StatefulSets`, `Deployments`, `Pods`, and `Services`.
+"Labels added to the resource template. Can be applied to different resources such as `StatefulSets`, `Deployments`, `Pods`, and `Services`."
 
 ## obj spec.template.pod.securityContext
 
-Configures pod-level security attributes and common container settings.
+"Configures pod-level security attributes and common container settings."
 
 ### fn spec.template.pod.securityContext.withFsGroup
 
@@ -1906,7 +1894,7 @@ withRunAsUserName(runAsUserName)
 
 ## obj spec.template.podDisruptionBudget
 
-Template for Kafka MirrorMaker `PodDisruptionBudget`.
+"Template for Kafka MirrorMaker `PodDisruptionBudget`."
 
 ### fn spec.template.podDisruptionBudget.withMaxUnavailable
 
@@ -1914,11 +1902,11 @@ Template for Kafka MirrorMaker `PodDisruptionBudget`.
 withMaxUnavailable(maxUnavailable)
 ```
 
-Maximum number of unavailable pods to allow automatic Pod eviction. A Pod eviction is allowed when the `maxUnavailable` number of pods or fewer are unavailable after the eviction. Setting this value to 0 prevents all voluntary evictions, so the pods must be evicted manually. Defaults to 1.
+"Maximum number of unavailable pods to allow automatic Pod eviction. A Pod eviction is allowed when the `maxUnavailable` number of pods or fewer are unavailable after the eviction. Setting this value to 0 prevents all voluntary evictions, so the pods must be evicted manually. Defaults to 1."
 
 ## obj spec.template.podDisruptionBudget.metadata
 
-Metadata to apply to the `PodDistruptionBugetTemplate` resource.
+"Metadata to apply to the `PodDistruptionBugetTemplate` resource."
 
 ### fn spec.template.podDisruptionBudget.metadata.withAnnotations
 
@@ -1926,7 +1914,7 @@ Metadata to apply to the `PodDistruptionBugetTemplate` resource.
 withAnnotations(annotations)
 ```
 
-Annotations added to the resource template. Can be applied to different resources such as `StatefulSets`, `Deployments`, `Pods`, and `Services`.
+"Annotations added to the resource template. Can be applied to different resources such as `StatefulSets`, `Deployments`, `Pods`, and `Services`."
 
 ### fn spec.template.podDisruptionBudget.metadata.withLabels
 
@@ -1934,11 +1922,11 @@ Annotations added to the resource template. Can be applied to different resource
 withLabels(labels)
 ```
 
-Labels added to the resource template. Can be applied to different resources such as `StatefulSets`, `Deployments`, `Pods`, and `Services`.
+"Labels added to the resource template. Can be applied to different resources such as `StatefulSets`, `Deployments`, `Pods`, and `Services`."
 
 ## obj spec.tracing
 
-The configuration of tracing in Kafka MirrorMaker.
+"The configuration of tracing in Kafka MirrorMaker."
 
 ### fn spec.tracing.withType
 
@@ -1946,4 +1934,4 @@ The configuration of tracing in Kafka MirrorMaker.
 withType(type)
 ```
 
-Type of the tracing used. Currently the only supported type is `jaeger` for Jaeger tracing.
+"Type of the tracing used. Currently the only supported type is `jaeger` for Jaeger tracing."
