@@ -84,10 +84,14 @@
       secret: {
         '#metadata':: d.obj(help='"Metadata applied to the resource."'),
         metadata: {
-          '#withAnnotations':: d.fn(help='"Annotations added to the resource template. Can be applied to different resources such as `StatefulSets`, `Deployments`, `Pods`, and `Services`."', args=[d.arg(name='annotations', type=d.T.any)]),
+          '#withAnnotations':: d.fn(help='"Annotations added to the resource template. Can be applied to different resources such as `StatefulSets`, `Deployments`, `Pods`, and `Services`."', args=[d.arg(name='annotations', type=d.T.object)]),
           withAnnotations(annotations): { spec+: { template+: { secret+: { metadata+: { annotations: annotations } } } } },
-          '#withLabels':: d.fn(help='"Labels added to the resource template. Can be applied to different resources such as `StatefulSets`, `Deployments`, `Pods`, and `Services`."', args=[d.arg(name='labels', type=d.T.any)]),
+          '#withAnnotationsMixin':: d.fn(help='"Annotations added to the resource template. Can be applied to different resources such as `StatefulSets`, `Deployments`, `Pods`, and `Services`."\n\n**Note:** This function appends passed data to existing values', args=[d.arg(name='annotations', type=d.T.object)]),
+          withAnnotationsMixin(annotations): { spec+: { template+: { secret+: { metadata+: { annotations+: annotations } } } } },
+          '#withLabels':: d.fn(help='"Labels added to the resource template. Can be applied to different resources such as `StatefulSets`, `Deployments`, `Pods`, and `Services`."', args=[d.arg(name='labels', type=d.T.object)]),
           withLabels(labels): { spec+: { template+: { secret+: { metadata+: { labels: labels } } } } },
+          '#withLabelsMixin':: d.fn(help='"Labels added to the resource template. Can be applied to different resources such as `StatefulSets`, `Deployments`, `Pods`, and `Services`."\n\n**Note:** This function appends passed data to existing values', args=[d.arg(name='labels', type=d.T.object)]),
+          withLabelsMixin(labels): { spec+: { template+: { secret+: { metadata+: { labels+: labels } } } } },
         },
       },
     },

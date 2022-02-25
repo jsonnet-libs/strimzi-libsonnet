@@ -34,6 +34,7 @@ permalink: /0.24/kafka/v1beta2/kafkaConnector/
 * [`obj spec`](#obj-spec)
   * [`fn withClass(class)`](#fn-specwithclass)
   * [`fn withConfig(config)`](#fn-specwithconfig)
+  * [`fn withConfigMixin(config)`](#fn-specwithconfigmixin)
   * [`fn withPause(pause)`](#fn-specwithpause)
   * [`fn withTasksMax(tasksMax)`](#fn-specwithtasksmax)
 
@@ -248,6 +249,16 @@ withConfig(config)
 ```
 
 "The Kafka Connector configuration. The following properties cannot be set: connector.class, tasks.max."
+
+### fn spec.withConfigMixin
+
+```ts
+withConfigMixin(config)
+```
+
+"The Kafka Connector configuration. The following properties cannot be set: connector.class, tasks.max."
+
+**Note:** This function appends passed data to existing values
 
 ### fn spec.withPause
 

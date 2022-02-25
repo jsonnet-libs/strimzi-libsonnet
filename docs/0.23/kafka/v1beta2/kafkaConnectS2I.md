@@ -35,6 +35,7 @@ permalink: /0.23/kafka/v1beta2/kafkaConnectS2I/
   * [`fn withBootstrapServers(bootstrapServers)`](#fn-specwithbootstrapservers)
   * [`fn withClientRackInitImage(clientRackInitImage)`](#fn-specwithclientrackinitimage)
   * [`fn withConfig(config)`](#fn-specwithconfig)
+  * [`fn withConfigMixin(config)`](#fn-specwithconfigmixin)
   * [`fn withImage(image)`](#fn-specwithimage)
   * [`fn withInsecureSourceRepository(insecureSourceRepository)`](#fn-specwithinsecuresourcerepository)
   * [`fn withReplicas(replicas)`](#fn-specwithreplicas)
@@ -77,10 +78,14 @@ permalink: /0.23/kafka/v1beta2/kafkaConnectS2I/
       * [`fn withType(type)`](#fn-specbuildoutputwithtype)
     * [`obj spec.build.resources`](#obj-specbuildresources)
       * [`fn withLimits(limits)`](#fn-specbuildresourceswithlimits)
+      * [`fn withLimitsMixin(limits)`](#fn-specbuildresourceswithlimitsmixin)
       * [`fn withRequests(requests)`](#fn-specbuildresourceswithrequests)
+      * [`fn withRequestsMixin(requests)`](#fn-specbuildresourceswithrequestsmixin)
   * [`obj spec.buildResources`](#obj-specbuildresources)
     * [`fn withLimits(limits)`](#fn-specbuildresourceswithlimits)
+    * [`fn withLimitsMixin(limits)`](#fn-specbuildresourceswithlimitsmixin)
     * [`fn withRequests(requests)`](#fn-specbuildresourceswithrequests)
+    * [`fn withRequestsMixin(requests)`](#fn-specbuildresourceswithrequestsmixin)
   * [`obj spec.externalConfiguration`](#obj-specexternalconfiguration)
     * [`fn withEnv(env)`](#fn-specexternalconfigurationwithenv)
     * [`fn withEnvMixin(env)`](#fn-specexternalconfigurationwithenvmixin)
@@ -94,6 +99,7 @@ permalink: /0.23/kafka/v1beta2/kafkaConnectS2I/
     * [`fn withJavaSystemProperties(javaSystemProperties)`](#fn-specjvmoptionswithjavasystemproperties)
     * [`fn withJavaSystemPropertiesMixin(javaSystemProperties)`](#fn-specjvmoptionswithjavasystempropertiesmixin)
     * [`fn withXX(XX)`](#fn-specjvmoptionswithxx)
+    * [`fn withXXMixin(XX)`](#fn-specjvmoptionswithxxmixin)
     * [`fn withXms(Xms)`](#fn-specjvmoptionswithxms)
     * [`fn withXmx(Xmx)`](#fn-specjvmoptionswithxmx)
   * [`obj spec.livenessProbe`](#obj-speclivenessprobe)
@@ -104,6 +110,7 @@ permalink: /0.23/kafka/v1beta2/kafkaConnectS2I/
     * [`fn withTimeoutSeconds(timeoutSeconds)`](#fn-speclivenessprobewithtimeoutseconds)
   * [`obj spec.logging`](#obj-speclogging)
     * [`fn withLoggers(loggers)`](#fn-specloggingwithloggers)
+    * [`fn withLoggersMixin(loggers)`](#fn-specloggingwithloggersmixin)
     * [`fn withType(type)`](#fn-specloggingwithtype)
     * [`obj spec.logging.valueFrom`](#obj-specloggingvaluefrom)
       * [`obj spec.logging.valueFrom.configMapKeyRef`](#obj-specloggingvaluefromconfigmapkeyref)
@@ -127,7 +134,9 @@ permalink: /0.23/kafka/v1beta2/kafkaConnectS2I/
     * [`fn withTimeoutSeconds(timeoutSeconds)`](#fn-specreadinessprobewithtimeoutseconds)
   * [`obj spec.resources`](#obj-specresources)
     * [`fn withLimits(limits)`](#fn-specresourceswithlimits)
+    * [`fn withLimitsMixin(limits)`](#fn-specresourceswithlimitsmixin)
     * [`fn withRequests(requests)`](#fn-specresourceswithrequests)
+    * [`fn withRequestsMixin(requests)`](#fn-specresourceswithrequestsmixin)
   * [`obj spec.template`](#obj-spectemplate)
     * [`obj spec.template.apiService`](#obj-spectemplateapiservice)
       * [`fn withIpFamilies(ipFamilies)`](#fn-spectemplateapiservicewithipfamilies)
@@ -135,11 +144,15 @@ permalink: /0.23/kafka/v1beta2/kafkaConnectS2I/
       * [`fn withIpFamilyPolicy(ipFamilyPolicy)`](#fn-spectemplateapiservicewithipfamilypolicy)
       * [`obj spec.template.apiService.metadata`](#obj-spectemplateapiservicemetadata)
         * [`fn withAnnotations(annotations)`](#fn-spectemplateapiservicemetadatawithannotations)
+        * [`fn withAnnotationsMixin(annotations)`](#fn-spectemplateapiservicemetadatawithannotationsmixin)
         * [`fn withLabels(labels)`](#fn-spectemplateapiservicemetadatawithlabels)
+        * [`fn withLabelsMixin(labels)`](#fn-spectemplateapiservicemetadatawithlabelsmixin)
     * [`obj spec.template.buildConfig`](#obj-spectemplatebuildconfig)
       * [`obj spec.template.buildConfig.metadata`](#obj-spectemplatebuildconfigmetadata)
         * [`fn withAnnotations(annotations)`](#fn-spectemplatebuildconfigmetadatawithannotations)
+        * [`fn withAnnotationsMixin(annotations)`](#fn-spectemplatebuildconfigmetadatawithannotationsmixin)
         * [`fn withLabels(labels)`](#fn-spectemplatebuildconfigmetadatawithlabels)
+        * [`fn withLabelsMixin(labels)`](#fn-spectemplatebuildconfigmetadatawithlabelsmixin)
     * [`obj spec.template.buildContainer`](#obj-spectemplatebuildcontainer)
       * [`fn withEnv(env)`](#fn-spectemplatebuildcontainerwithenv)
       * [`fn withEnvMixin(env)`](#fn-spectemplatebuildcontainerwithenvmixin)
@@ -200,7 +213,9 @@ permalink: /0.23/kafka/v1beta2/kafkaConnectS2I/
           * [`fn withRequiredDuringSchedulingIgnoredDuringExecutionMixin(requiredDuringSchedulingIgnoredDuringExecution)`](#fn-spectemplatebuildpodaffinitypodantiaffinitywithrequiredduringschedulingignoredduringexecutionmixin)
       * [`obj spec.template.buildPod.metadata`](#obj-spectemplatebuildpodmetadata)
         * [`fn withAnnotations(annotations)`](#fn-spectemplatebuildpodmetadatawithannotations)
+        * [`fn withAnnotationsMixin(annotations)`](#fn-spectemplatebuildpodmetadatawithannotationsmixin)
         * [`fn withLabels(labels)`](#fn-spectemplatebuildpodmetadatawithlabels)
+        * [`fn withLabelsMixin(labels)`](#fn-spectemplatebuildpodmetadatawithlabelsmixin)
       * [`obj spec.template.buildPod.securityContext`](#obj-spectemplatebuildpodsecuritycontext)
         * [`fn withFsGroup(fsGroup)`](#fn-spectemplatebuildpodsecuritycontextwithfsgroup)
         * [`fn withFsGroupChangePolicy(fsGroupChangePolicy)`](#fn-spectemplatebuildpodsecuritycontextwithfsgroupchangepolicy)
@@ -226,7 +241,9 @@ permalink: /0.23/kafka/v1beta2/kafkaConnectS2I/
     * [`obj spec.template.clusterRoleBinding`](#obj-spectemplateclusterrolebinding)
       * [`obj spec.template.clusterRoleBinding.metadata`](#obj-spectemplateclusterrolebindingmetadata)
         * [`fn withAnnotations(annotations)`](#fn-spectemplateclusterrolebindingmetadatawithannotations)
+        * [`fn withAnnotationsMixin(annotations)`](#fn-spectemplateclusterrolebindingmetadatawithannotationsmixin)
         * [`fn withLabels(labels)`](#fn-spectemplateclusterrolebindingmetadatawithlabels)
+        * [`fn withLabelsMixin(labels)`](#fn-spectemplateclusterrolebindingmetadatawithlabelsmixin)
     * [`obj spec.template.connectContainer`](#obj-spectemplateconnectcontainer)
       * [`fn withEnv(env)`](#fn-spectemplateconnectcontainerwithenv)
       * [`fn withEnvMixin(env)`](#fn-spectemplateconnectcontainerwithenvmixin)
@@ -259,7 +276,9 @@ permalink: /0.23/kafka/v1beta2/kafkaConnectS2I/
       * [`fn withDeploymentStrategy(deploymentStrategy)`](#fn-spectemplatedeploymentwithdeploymentstrategy)
       * [`obj spec.template.deployment.metadata`](#obj-spectemplatedeploymentmetadata)
         * [`fn withAnnotations(annotations)`](#fn-spectemplatedeploymentmetadatawithannotations)
+        * [`fn withAnnotationsMixin(annotations)`](#fn-spectemplatedeploymentmetadatawithannotationsmixin)
         * [`fn withLabels(labels)`](#fn-spectemplatedeploymentmetadatawithlabels)
+        * [`fn withLabelsMixin(labels)`](#fn-spectemplatedeploymentmetadatawithlabelsmixin)
     * [`obj spec.template.initContainer`](#obj-spectemplateinitcontainer)
       * [`fn withEnv(env)`](#fn-spectemplateinitcontainerwithenv)
       * [`fn withEnvMixin(env)`](#fn-spectemplateinitcontainerwithenvmixin)
@@ -320,7 +339,9 @@ permalink: /0.23/kafka/v1beta2/kafkaConnectS2I/
           * [`fn withRequiredDuringSchedulingIgnoredDuringExecutionMixin(requiredDuringSchedulingIgnoredDuringExecution)`](#fn-spectemplatepodaffinitypodantiaffinitywithrequiredduringschedulingignoredduringexecutionmixin)
       * [`obj spec.template.pod.metadata`](#obj-spectemplatepodmetadata)
         * [`fn withAnnotations(annotations)`](#fn-spectemplatepodmetadatawithannotations)
+        * [`fn withAnnotationsMixin(annotations)`](#fn-spectemplatepodmetadatawithannotationsmixin)
         * [`fn withLabels(labels)`](#fn-spectemplatepodmetadatawithlabels)
+        * [`fn withLabelsMixin(labels)`](#fn-spectemplatepodmetadatawithlabelsmixin)
       * [`obj spec.template.pod.securityContext`](#obj-spectemplatepodsecuritycontext)
         * [`fn withFsGroup(fsGroup)`](#fn-spectemplatepodsecuritycontextwithfsgroup)
         * [`fn withFsGroupChangePolicy(fsGroupChangePolicy)`](#fn-spectemplatepodsecuritycontextwithfsgroupchangepolicy)
@@ -347,7 +368,9 @@ permalink: /0.23/kafka/v1beta2/kafkaConnectS2I/
       * [`fn withMaxUnavailable(maxUnavailable)`](#fn-spectemplatepoddisruptionbudgetwithmaxunavailable)
       * [`obj spec.template.podDisruptionBudget.metadata`](#obj-spectemplatepoddisruptionbudgetmetadata)
         * [`fn withAnnotations(annotations)`](#fn-spectemplatepoddisruptionbudgetmetadatawithannotations)
+        * [`fn withAnnotationsMixin(annotations)`](#fn-spectemplatepoddisruptionbudgetmetadatawithannotationsmixin)
         * [`fn withLabels(labels)`](#fn-spectemplatepoddisruptionbudgetmetadatawithlabels)
+        * [`fn withLabelsMixin(labels)`](#fn-spectemplatepoddisruptionbudgetmetadatawithlabelsmixin)
   * [`obj spec.tls`](#obj-spectls)
     * [`fn withTrustedCertificates(trustedCertificates)`](#fn-spectlswithtrustedcertificates)
     * [`fn withTrustedCertificatesMixin(trustedCertificates)`](#fn-spectlswithtrustedcertificatesmixin)
@@ -573,6 +596,16 @@ withConfig(config)
 ```
 
 "The Kafka Connect configuration. Properties with the following prefixes cannot be set: ssl., sasl., security., listeners, plugin.path, rest., bootstrap.servers, consumer.interceptor.classes, producer.interceptor.classes (with the exception of: ssl.endpoint.identification.algorithm, ssl.cipher.suites, ssl.protocol, ssl.enabled.protocols)."
+
+### fn spec.withConfigMixin
+
+```ts
+withConfigMixin(config)
+```
+
+"The Kafka Connect configuration. Properties with the following prefixes cannot be set: ssl., sasl., security., listeners, plugin.path, rest., bootstrap.servers, consumer.interceptor.classes, producer.interceptor.classes (with the exception of: ssl.endpoint.identification.algorithm, ssl.cipher.suites, ssl.protocol, ssl.enabled.protocols)."
+
+**Note:** This function appends passed data to existing values
 
 ### fn spec.withImage
 
@@ -880,6 +913,16 @@ withLimits(limits)
 
 
 
+### fn spec.build.resources.withLimitsMixin
+
+```ts
+withLimitsMixin(limits)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
 ### fn spec.build.resources.withRequests
 
 ```ts
@@ -887,6 +930,16 @@ withRequests(requests)
 ```
 
 
+
+### fn spec.build.resources.withRequestsMixin
+
+```ts
+withRequestsMixin(requests)
+```
+
+
+
+**Note:** This function appends passed data to existing values
 
 ## obj spec.buildResources
 
@@ -900,6 +953,16 @@ withLimits(limits)
 
 
 
+### fn spec.buildResources.withLimitsMixin
+
+```ts
+withLimitsMixin(limits)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
 ### fn spec.buildResources.withRequests
 
 ```ts
@@ -907,6 +970,16 @@ withRequests(requests)
 ```
 
 
+
+### fn spec.buildResources.withRequestsMixin
+
+```ts
+withRequestsMixin(requests)
+```
+
+
+
+**Note:** This function appends passed data to existing values
 
 ## obj spec.externalConfiguration
 
@@ -1002,6 +1075,16 @@ withXX(XX)
 
 "A map of -XX options to the JVM."
 
+### fn spec.jvmOptions.withXXMixin
+
+```ts
+withXXMixin(XX)
+```
+
+"A map of -XX options to the JVM."
+
+**Note:** This function appends passed data to existing values
+
 ### fn spec.jvmOptions.withXms
 
 ```ts
@@ -1073,6 +1156,16 @@ withLoggers(loggers)
 ```
 
 "A Map from logger name to logger level."
+
+### fn spec.logging.withLoggersMixin
+
+```ts
+withLoggersMixin(loggers)
+```
+
+"A Map from logger name to logger level."
+
+**Note:** This function appends passed data to existing values
 
 ### fn spec.logging.withType
 
@@ -1226,6 +1319,16 @@ withLimits(limits)
 
 
 
+### fn spec.resources.withLimitsMixin
+
+```ts
+withLimitsMixin(limits)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
 ### fn spec.resources.withRequests
 
 ```ts
@@ -1233,6 +1336,16 @@ withRequests(requests)
 ```
 
 
+
+### fn spec.resources.withRequestsMixin
+
+```ts
+withRequestsMixin(requests)
+```
+
+
+
+**Note:** This function appends passed data to existing values
 
 ## obj spec.template
 
@@ -1280,6 +1393,16 @@ withAnnotations(annotations)
 
 "Annotations added to the resource template. Can be applied to different resources such as `StatefulSets`, `Deployments`, `Pods`, and `Services`."
 
+### fn spec.template.apiService.metadata.withAnnotationsMixin
+
+```ts
+withAnnotationsMixin(annotations)
+```
+
+"Annotations added to the resource template. Can be applied to different resources such as `StatefulSets`, `Deployments`, `Pods`, and `Services`."
+
+**Note:** This function appends passed data to existing values
+
 ### fn spec.template.apiService.metadata.withLabels
 
 ```ts
@@ -1287,6 +1410,16 @@ withLabels(labels)
 ```
 
 "Labels added to the resource template. Can be applied to different resources such as `StatefulSets`, `Deployments`, `Pods`, and `Services`."
+
+### fn spec.template.apiService.metadata.withLabelsMixin
+
+```ts
+withLabelsMixin(labels)
+```
+
+"Labels added to the resource template. Can be applied to different resources such as `StatefulSets`, `Deployments`, `Pods`, and `Services`."
+
+**Note:** This function appends passed data to existing values
 
 ## obj spec.template.buildConfig
 
@@ -1304,6 +1437,16 @@ withAnnotations(annotations)
 
 "Annotations added to the resource template. Can be applied to different resources such as `StatefulSets`, `Deployments`, `Pods`, and `Services`."
 
+### fn spec.template.buildConfig.metadata.withAnnotationsMixin
+
+```ts
+withAnnotationsMixin(annotations)
+```
+
+"Annotations added to the resource template. Can be applied to different resources such as `StatefulSets`, `Deployments`, `Pods`, and `Services`."
+
+**Note:** This function appends passed data to existing values
+
 ### fn spec.template.buildConfig.metadata.withLabels
 
 ```ts
@@ -1311,6 +1454,16 @@ withLabels(labels)
 ```
 
 "Labels added to the resource template. Can be applied to different resources such as `StatefulSets`, `Deployments`, `Pods`, and `Services`."
+
+### fn spec.template.buildConfig.metadata.withLabelsMixin
+
+```ts
+withLabelsMixin(labels)
+```
+
+"Labels added to the resource template. Can be applied to different resources such as `StatefulSets`, `Deployments`, `Pods`, and `Services`."
+
+**Note:** This function appends passed data to existing values
 
 ## obj spec.template.buildContainer
 
@@ -1766,6 +1919,16 @@ withAnnotations(annotations)
 
 "Annotations added to the resource template. Can be applied to different resources such as `StatefulSets`, `Deployments`, `Pods`, and `Services`."
 
+### fn spec.template.buildPod.metadata.withAnnotationsMixin
+
+```ts
+withAnnotationsMixin(annotations)
+```
+
+"Annotations added to the resource template. Can be applied to different resources such as `StatefulSets`, `Deployments`, `Pods`, and `Services`."
+
+**Note:** This function appends passed data to existing values
+
 ### fn spec.template.buildPod.metadata.withLabels
 
 ```ts
@@ -1773,6 +1936,16 @@ withLabels(labels)
 ```
 
 "Labels added to the resource template. Can be applied to different resources such as `StatefulSets`, `Deployments`, `Pods`, and `Services`."
+
+### fn spec.template.buildPod.metadata.withLabelsMixin
+
+```ts
+withLabelsMixin(labels)
+```
+
+"Labels added to the resource template. Can be applied to different resources such as `StatefulSets`, `Deployments`, `Pods`, and `Services`."
+
+**Note:** This function appends passed data to existing values
 
 ## obj spec.template.buildPod.securityContext
 
@@ -1954,6 +2127,16 @@ withAnnotations(annotations)
 
 "Annotations added to the resource template. Can be applied to different resources such as `StatefulSets`, `Deployments`, `Pods`, and `Services`."
 
+### fn spec.template.clusterRoleBinding.metadata.withAnnotationsMixin
+
+```ts
+withAnnotationsMixin(annotations)
+```
+
+"Annotations added to the resource template. Can be applied to different resources such as `StatefulSets`, `Deployments`, `Pods`, and `Services`."
+
+**Note:** This function appends passed data to existing values
+
 ### fn spec.template.clusterRoleBinding.metadata.withLabels
 
 ```ts
@@ -1961,6 +2144,16 @@ withLabels(labels)
 ```
 
 "Labels added to the resource template. Can be applied to different resources such as `StatefulSets`, `Deployments`, `Pods`, and `Services`."
+
+### fn spec.template.clusterRoleBinding.metadata.withLabelsMixin
+
+```ts
+withLabelsMixin(labels)
+```
+
+"Labels added to the resource template. Can be applied to different resources such as `StatefulSets`, `Deployments`, `Pods`, and `Services`."
+
+**Note:** This function appends passed data to existing values
 
 ## obj spec.template.connectContainer
 
@@ -2192,6 +2385,16 @@ withAnnotations(annotations)
 
 "Annotations added to the resource template. Can be applied to different resources such as `StatefulSets`, `Deployments`, `Pods`, and `Services`."
 
+### fn spec.template.deployment.metadata.withAnnotationsMixin
+
+```ts
+withAnnotationsMixin(annotations)
+```
+
+"Annotations added to the resource template. Can be applied to different resources such as `StatefulSets`, `Deployments`, `Pods`, and `Services`."
+
+**Note:** This function appends passed data to existing values
+
 ### fn spec.template.deployment.metadata.withLabels
 
 ```ts
@@ -2199,6 +2402,16 @@ withLabels(labels)
 ```
 
 "Labels added to the resource template. Can be applied to different resources such as `StatefulSets`, `Deployments`, `Pods`, and `Services`."
+
+### fn spec.template.deployment.metadata.withLabelsMixin
+
+```ts
+withLabelsMixin(labels)
+```
+
+"Labels added to the resource template. Can be applied to different resources such as `StatefulSets`, `Deployments`, `Pods`, and `Services`."
+
+**Note:** This function appends passed data to existing values
 
 ## obj spec.template.initContainer
 
@@ -2654,6 +2867,16 @@ withAnnotations(annotations)
 
 "Annotations added to the resource template. Can be applied to different resources such as `StatefulSets`, `Deployments`, `Pods`, and `Services`."
 
+### fn spec.template.pod.metadata.withAnnotationsMixin
+
+```ts
+withAnnotationsMixin(annotations)
+```
+
+"Annotations added to the resource template. Can be applied to different resources such as `StatefulSets`, `Deployments`, `Pods`, and `Services`."
+
+**Note:** This function appends passed data to existing values
+
 ### fn spec.template.pod.metadata.withLabels
 
 ```ts
@@ -2661,6 +2884,16 @@ withLabels(labels)
 ```
 
 "Labels added to the resource template. Can be applied to different resources such as `StatefulSets`, `Deployments`, `Pods`, and `Services`."
+
+### fn spec.template.pod.metadata.withLabelsMixin
+
+```ts
+withLabelsMixin(labels)
+```
+
+"Labels added to the resource template. Can be applied to different resources such as `StatefulSets`, `Deployments`, `Pods`, and `Services`."
+
+**Note:** This function appends passed data to existing values
 
 ## obj spec.template.pod.securityContext
 
@@ -2850,6 +3083,16 @@ withAnnotations(annotations)
 
 "Annotations added to the resource template. Can be applied to different resources such as `StatefulSets`, `Deployments`, `Pods`, and `Services`."
 
+### fn spec.template.podDisruptionBudget.metadata.withAnnotationsMixin
+
+```ts
+withAnnotationsMixin(annotations)
+```
+
+"Annotations added to the resource template. Can be applied to different resources such as `StatefulSets`, `Deployments`, `Pods`, and `Services`."
+
+**Note:** This function appends passed data to existing values
+
 ### fn spec.template.podDisruptionBudget.metadata.withLabels
 
 ```ts
@@ -2857,6 +3100,16 @@ withLabels(labels)
 ```
 
 "Labels added to the resource template. Can be applied to different resources such as `StatefulSets`, `Deployments`, `Pods`, and `Services`."
+
+### fn spec.template.podDisruptionBudget.metadata.withLabelsMixin
+
+```ts
+withLabelsMixin(labels)
+```
+
+"Labels added to the resource template. Can be applied to different resources such as `StatefulSets`, `Deployments`, `Pods`, and `Services`."
+
+**Note:** This function appends passed data to existing values
 
 ## obj spec.tls
 

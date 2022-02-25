@@ -53,8 +53,10 @@
   } + self.metadata.withName(name=name),
   '#spec':: d.obj(help='"The specification of the topic."'),
   spec: {
-    '#withConfig':: d.fn(help='"The topic configuration."', args=[d.arg(name='config', type=d.T.any)]),
+    '#withConfig':: d.fn(help='"The topic configuration."', args=[d.arg(name='config', type=d.T.object)]),
     withConfig(config): { spec+: { config: config } },
+    '#withConfigMixin':: d.fn(help='"The topic configuration."\n\n**Note:** This function appends passed data to existing values', args=[d.arg(name='config', type=d.T.object)]),
+    withConfigMixin(config): { spec+: { config+: config } },
     '#withPartitions':: d.fn(help='"The number of partitions the topic should have. This cannot be decreased after topic creation. It can be increased after topic creation, but it is important to understand the consequences that has, especially for topics with semantic partitioning. When absent this will default to the broker configuration for `num.partitions`."', args=[d.arg(name='partitions', type=d.T.integer)]),
     withPartitions(partitions): { spec+: { partitions: partitions } },
     '#withReplicas':: d.fn(help='"The number of replicas the topic should have. When absent this will default to the broker configuration for `default.replication.factor`."', args=[d.arg(name='replicas', type=d.T.integer)]),

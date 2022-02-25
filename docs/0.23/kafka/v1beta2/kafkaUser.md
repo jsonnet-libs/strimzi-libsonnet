@@ -46,7 +46,9 @@ permalink: /0.23/kafka/v1beta2/kafkaUser/
     * [`obj spec.template.secret`](#obj-spectemplatesecret)
       * [`obj spec.template.secret.metadata`](#obj-spectemplatesecretmetadata)
         * [`fn withAnnotations(annotations)`](#fn-spectemplatesecretmetadatawithannotations)
+        * [`fn withAnnotationsMixin(annotations)`](#fn-spectemplatesecretmetadatawithannotationsmixin)
         * [`fn withLabels(labels)`](#fn-spectemplatesecretmetadatawithlabels)
+        * [`fn withLabelsMixin(labels)`](#fn-spectemplatesecretmetadatawithlabelsmixin)
 
 ## Fields
 
@@ -334,6 +336,16 @@ withAnnotations(annotations)
 
 "Annotations added to the resource template. Can be applied to different resources such as `StatefulSets`, `Deployments`, `Pods`, and `Services`."
 
+### fn spec.template.secret.metadata.withAnnotationsMixin
+
+```ts
+withAnnotationsMixin(annotations)
+```
+
+"Annotations added to the resource template. Can be applied to different resources such as `StatefulSets`, `Deployments`, `Pods`, and `Services`."
+
+**Note:** This function appends passed data to existing values
+
 ### fn spec.template.secret.metadata.withLabels
 
 ```ts
@@ -341,3 +353,13 @@ withLabels(labels)
 ```
 
 "Labels added to the resource template. Can be applied to different resources such as `StatefulSets`, `Deployments`, `Pods`, and `Services`."
+
+### fn spec.template.secret.metadata.withLabelsMixin
+
+```ts
+withLabelsMixin(labels)
+```
+
+"Labels added to the resource template. Can be applied to different resources such as `StatefulSets`, `Deployments`, `Pods`, and `Services`."
+
+**Note:** This function appends passed data to existing values

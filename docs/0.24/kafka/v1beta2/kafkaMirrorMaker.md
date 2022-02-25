@@ -40,6 +40,7 @@ permalink: /0.24/kafka/v1beta2/kafkaMirrorMaker/
   * [`obj spec.consumer`](#obj-specconsumer)
     * [`fn withBootstrapServers(bootstrapServers)`](#fn-specconsumerwithbootstrapservers)
     * [`fn withConfig(config)`](#fn-specconsumerwithconfig)
+    * [`fn withConfigMixin(config)`](#fn-specconsumerwithconfigmixin)
     * [`fn withGroupId(groupId)`](#fn-specconsumerwithgroupid)
     * [`fn withNumStreams(numStreams)`](#fn-specconsumerwithnumstreams)
     * [`fn withOffsetCommitInterval(offsetCommitInterval)`](#fn-specconsumerwithoffsetcommitinterval)
@@ -79,6 +80,7 @@ permalink: /0.24/kafka/v1beta2/kafkaMirrorMaker/
     * [`fn withJavaSystemProperties(javaSystemProperties)`](#fn-specjvmoptionswithjavasystemproperties)
     * [`fn withJavaSystemPropertiesMixin(javaSystemProperties)`](#fn-specjvmoptionswithjavasystempropertiesmixin)
     * [`fn withXX(XX)`](#fn-specjvmoptionswithxx)
+    * [`fn withXXMixin(XX)`](#fn-specjvmoptionswithxxmixin)
     * [`fn withXms(Xms)`](#fn-specjvmoptionswithxms)
     * [`fn withXmx(Xmx)`](#fn-specjvmoptionswithxmx)
   * [`obj spec.livenessProbe`](#obj-speclivenessprobe)
@@ -89,6 +91,7 @@ permalink: /0.24/kafka/v1beta2/kafkaMirrorMaker/
     * [`fn withTimeoutSeconds(timeoutSeconds)`](#fn-speclivenessprobewithtimeoutseconds)
   * [`obj spec.logging`](#obj-speclogging)
     * [`fn withLoggers(loggers)`](#fn-specloggingwithloggers)
+    * [`fn withLoggersMixin(loggers)`](#fn-specloggingwithloggersmixin)
     * [`fn withType(type)`](#fn-specloggingwithtype)
     * [`obj spec.logging.valueFrom`](#obj-specloggingvaluefrom)
       * [`obj spec.logging.valueFrom.configMapKeyRef`](#obj-specloggingvaluefromconfigmapkeyref)
@@ -106,6 +109,7 @@ permalink: /0.24/kafka/v1beta2/kafkaMirrorMaker/
     * [`fn withAbortOnSendFailure(abortOnSendFailure)`](#fn-specproducerwithabortonsendfailure)
     * [`fn withBootstrapServers(bootstrapServers)`](#fn-specproducerwithbootstrapservers)
     * [`fn withConfig(config)`](#fn-specproducerwithconfig)
+    * [`fn withConfigMixin(config)`](#fn-specproducerwithconfigmixin)
     * [`obj spec.producer.authentication`](#obj-specproducerauthentication)
       * [`fn withAccessTokenIsJwt(accessTokenIsJwt)`](#fn-specproducerauthenticationwithaccesstokenisjwt)
       * [`fn withAudience(audience)`](#fn-specproducerauthenticationwithaudience)
@@ -145,13 +149,17 @@ permalink: /0.24/kafka/v1beta2/kafkaMirrorMaker/
     * [`fn withTimeoutSeconds(timeoutSeconds)`](#fn-specreadinessprobewithtimeoutseconds)
   * [`obj spec.resources`](#obj-specresources)
     * [`fn withLimits(limits)`](#fn-specresourceswithlimits)
+    * [`fn withLimitsMixin(limits)`](#fn-specresourceswithlimitsmixin)
     * [`fn withRequests(requests)`](#fn-specresourceswithrequests)
+    * [`fn withRequestsMixin(requests)`](#fn-specresourceswithrequestsmixin)
   * [`obj spec.template`](#obj-spectemplate)
     * [`obj spec.template.deployment`](#obj-spectemplatedeployment)
       * [`fn withDeploymentStrategy(deploymentStrategy)`](#fn-spectemplatedeploymentwithdeploymentstrategy)
       * [`obj spec.template.deployment.metadata`](#obj-spectemplatedeploymentmetadata)
         * [`fn withAnnotations(annotations)`](#fn-spectemplatedeploymentmetadatawithannotations)
+        * [`fn withAnnotationsMixin(annotations)`](#fn-spectemplatedeploymentmetadatawithannotationsmixin)
         * [`fn withLabels(labels)`](#fn-spectemplatedeploymentmetadatawithlabels)
+        * [`fn withLabelsMixin(labels)`](#fn-spectemplatedeploymentmetadatawithlabelsmixin)
     * [`obj spec.template.mirrorMakerContainer`](#obj-spectemplatemirrormakercontainer)
       * [`fn withEnv(env)`](#fn-spectemplatemirrormakercontainerwithenv)
       * [`fn withEnvMixin(env)`](#fn-spectemplatemirrormakercontainerwithenvmixin)
@@ -212,7 +220,9 @@ permalink: /0.24/kafka/v1beta2/kafkaMirrorMaker/
           * [`fn withRequiredDuringSchedulingIgnoredDuringExecutionMixin(requiredDuringSchedulingIgnoredDuringExecution)`](#fn-spectemplatepodaffinitypodantiaffinitywithrequiredduringschedulingignoredduringexecutionmixin)
       * [`obj spec.template.pod.metadata`](#obj-spectemplatepodmetadata)
         * [`fn withAnnotations(annotations)`](#fn-spectemplatepodmetadatawithannotations)
+        * [`fn withAnnotationsMixin(annotations)`](#fn-spectemplatepodmetadatawithannotationsmixin)
         * [`fn withLabels(labels)`](#fn-spectemplatepodmetadatawithlabels)
+        * [`fn withLabelsMixin(labels)`](#fn-spectemplatepodmetadatawithlabelsmixin)
       * [`obj spec.template.pod.securityContext`](#obj-spectemplatepodsecuritycontext)
         * [`fn withFsGroup(fsGroup)`](#fn-spectemplatepodsecuritycontextwithfsgroup)
         * [`fn withFsGroupChangePolicy(fsGroupChangePolicy)`](#fn-spectemplatepodsecuritycontextwithfsgroupchangepolicy)
@@ -239,11 +249,15 @@ permalink: /0.24/kafka/v1beta2/kafkaMirrorMaker/
       * [`fn withMaxUnavailable(maxUnavailable)`](#fn-spectemplatepoddisruptionbudgetwithmaxunavailable)
       * [`obj spec.template.podDisruptionBudget.metadata`](#obj-spectemplatepoddisruptionbudgetmetadata)
         * [`fn withAnnotations(annotations)`](#fn-spectemplatepoddisruptionbudgetmetadatawithannotations)
+        * [`fn withAnnotationsMixin(annotations)`](#fn-spectemplatepoddisruptionbudgetmetadatawithannotationsmixin)
         * [`fn withLabels(labels)`](#fn-spectemplatepoddisruptionbudgetmetadatawithlabels)
+        * [`fn withLabelsMixin(labels)`](#fn-spectemplatepoddisruptionbudgetmetadatawithlabelsmixin)
     * [`obj spec.template.serviceAccount`](#obj-spectemplateserviceaccount)
       * [`obj spec.template.serviceAccount.metadata`](#obj-spectemplateserviceaccountmetadata)
         * [`fn withAnnotations(annotations)`](#fn-spectemplateserviceaccountmetadatawithannotations)
+        * [`fn withAnnotationsMixin(annotations)`](#fn-spectemplateserviceaccountmetadatawithannotationsmixin)
         * [`fn withLabels(labels)`](#fn-spectemplateserviceaccountmetadatawithlabels)
+        * [`fn withLabelsMixin(labels)`](#fn-spectemplateserviceaccountmetadatawithlabelsmixin)
   * [`obj spec.tracing`](#obj-spectracing)
     * [`fn withType(type)`](#fn-spectracingwithtype)
 
@@ -502,6 +516,16 @@ withConfig(config)
 ```
 
 "The MirrorMaker consumer config. Properties with the following prefixes cannot be set: ssl., bootstrap.servers, group.id, sasl., security., interceptor.classes (with the exception of: ssl.endpoint.identification.algorithm, ssl.cipher.suites, ssl.protocol, ssl.enabled.protocols)."
+
+### fn spec.consumer.withConfigMixin
+
+```ts
+withConfigMixin(config)
+```
+
+"The MirrorMaker consumer config. Properties with the following prefixes cannot be set: ssl., bootstrap.servers, group.id, sasl., security., interceptor.classes (with the exception of: ssl.endpoint.identification.algorithm, ssl.cipher.suites, ssl.protocol, ssl.enabled.protocols)."
+
+**Note:** This function appends passed data to existing values
 
 ### fn spec.consumer.withGroupId
 
@@ -789,6 +813,16 @@ withXX(XX)
 
 "A map of -XX options to the JVM."
 
+### fn spec.jvmOptions.withXXMixin
+
+```ts
+withXXMixin(XX)
+```
+
+"A map of -XX options to the JVM."
+
+**Note:** This function appends passed data to existing values
+
 ### fn spec.jvmOptions.withXms
 
 ```ts
@@ -860,6 +894,16 @@ withLoggers(loggers)
 ```
 
 "A Map from logger name to logger level."
+
+### fn spec.logging.withLoggersMixin
+
+```ts
+withLoggersMixin(loggers)
+```
+
+"A Map from logger name to logger level."
+
+**Note:** This function appends passed data to existing values
 
 ### fn spec.logging.withType
 
@@ -972,6 +1016,16 @@ withConfig(config)
 ```
 
 "The MirrorMaker producer config. Properties with the following prefixes cannot be set: ssl., bootstrap.servers, sasl., security., interceptor.classes (with the exception of: ssl.endpoint.identification.algorithm, ssl.cipher.suites, ssl.protocol, ssl.enabled.protocols)."
+
+### fn spec.producer.withConfigMixin
+
+```ts
+withConfigMixin(config)
+```
+
+"The MirrorMaker producer config. Properties with the following prefixes cannot be set: ssl., bootstrap.servers, sasl., security., interceptor.classes (with the exception of: ssl.endpoint.identification.algorithm, ssl.cipher.suites, ssl.protocol, ssl.enabled.protocols)."
+
+**Note:** This function appends passed data to existing values
 
 ## obj spec.producer.authentication
 
@@ -1253,6 +1307,16 @@ withLimits(limits)
 
 
 
+### fn spec.resources.withLimitsMixin
+
+```ts
+withLimitsMixin(limits)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
 ### fn spec.resources.withRequests
 
 ```ts
@@ -1260,6 +1324,16 @@ withRequests(requests)
 ```
 
 
+
+### fn spec.resources.withRequestsMixin
+
+```ts
+withRequestsMixin(requests)
+```
+
+
+
+**Note:** This function appends passed data to existing values
 
 ## obj spec.template
 
@@ -1289,6 +1363,16 @@ withAnnotations(annotations)
 
 "Annotations added to the resource template. Can be applied to different resources such as `StatefulSets`, `Deployments`, `Pods`, and `Services`."
 
+### fn spec.template.deployment.metadata.withAnnotationsMixin
+
+```ts
+withAnnotationsMixin(annotations)
+```
+
+"Annotations added to the resource template. Can be applied to different resources such as `StatefulSets`, `Deployments`, `Pods`, and `Services`."
+
+**Note:** This function appends passed data to existing values
+
 ### fn spec.template.deployment.metadata.withLabels
 
 ```ts
@@ -1296,6 +1380,16 @@ withLabels(labels)
 ```
 
 "Labels added to the resource template. Can be applied to different resources such as `StatefulSets`, `Deployments`, `Pods`, and `Services`."
+
+### fn spec.template.deployment.metadata.withLabelsMixin
+
+```ts
+withLabelsMixin(labels)
+```
+
+"Labels added to the resource template. Can be applied to different resources such as `StatefulSets`, `Deployments`, `Pods`, and `Services`."
+
+**Note:** This function appends passed data to existing values
 
 ## obj spec.template.mirrorMakerContainer
 
@@ -1751,6 +1845,16 @@ withAnnotations(annotations)
 
 "Annotations added to the resource template. Can be applied to different resources such as `StatefulSets`, `Deployments`, `Pods`, and `Services`."
 
+### fn spec.template.pod.metadata.withAnnotationsMixin
+
+```ts
+withAnnotationsMixin(annotations)
+```
+
+"Annotations added to the resource template. Can be applied to different resources such as `StatefulSets`, `Deployments`, `Pods`, and `Services`."
+
+**Note:** This function appends passed data to existing values
+
 ### fn spec.template.pod.metadata.withLabels
 
 ```ts
@@ -1758,6 +1862,16 @@ withLabels(labels)
 ```
 
 "Labels added to the resource template. Can be applied to different resources such as `StatefulSets`, `Deployments`, `Pods`, and `Services`."
+
+### fn spec.template.pod.metadata.withLabelsMixin
+
+```ts
+withLabelsMixin(labels)
+```
+
+"Labels added to the resource template. Can be applied to different resources such as `StatefulSets`, `Deployments`, `Pods`, and `Services`."
+
+**Note:** This function appends passed data to existing values
 
 ## obj spec.template.pod.securityContext
 
@@ -1947,6 +2061,16 @@ withAnnotations(annotations)
 
 "Annotations added to the resource template. Can be applied to different resources such as `StatefulSets`, `Deployments`, `Pods`, and `Services`."
 
+### fn spec.template.podDisruptionBudget.metadata.withAnnotationsMixin
+
+```ts
+withAnnotationsMixin(annotations)
+```
+
+"Annotations added to the resource template. Can be applied to different resources such as `StatefulSets`, `Deployments`, `Pods`, and `Services`."
+
+**Note:** This function appends passed data to existing values
+
 ### fn spec.template.podDisruptionBudget.metadata.withLabels
 
 ```ts
@@ -1954,6 +2078,16 @@ withLabels(labels)
 ```
 
 "Labels added to the resource template. Can be applied to different resources such as `StatefulSets`, `Deployments`, `Pods`, and `Services`."
+
+### fn spec.template.podDisruptionBudget.metadata.withLabelsMixin
+
+```ts
+withLabelsMixin(labels)
+```
+
+"Labels added to the resource template. Can be applied to different resources such as `StatefulSets`, `Deployments`, `Pods`, and `Services`."
+
+**Note:** This function appends passed data to existing values
 
 ## obj spec.template.serviceAccount
 
@@ -1971,6 +2105,16 @@ withAnnotations(annotations)
 
 "Annotations added to the resource template. Can be applied to different resources such as `StatefulSets`, `Deployments`, `Pods`, and `Services`."
 
+### fn spec.template.serviceAccount.metadata.withAnnotationsMixin
+
+```ts
+withAnnotationsMixin(annotations)
+```
+
+"Annotations added to the resource template. Can be applied to different resources such as `StatefulSets`, `Deployments`, `Pods`, and `Services`."
+
+**Note:** This function appends passed data to existing values
+
 ### fn spec.template.serviceAccount.metadata.withLabels
 
 ```ts
@@ -1978,6 +2122,16 @@ withLabels(labels)
 ```
 
 "Labels added to the resource template. Can be applied to different resources such as `StatefulSets`, `Deployments`, `Pods`, and `Services`."
+
+### fn spec.template.serviceAccount.metadata.withLabelsMixin
+
+```ts
+withLabelsMixin(labels)
+```
+
+"Labels added to the resource template. Can be applied to different resources such as `StatefulSets`, `Deployments`, `Pods`, and `Services`."
+
+**Note:** This function appends passed data to existing values
 
 ## obj spec.tracing
 

@@ -55,8 +55,10 @@
   spec: {
     '#withClass':: d.fn(help='"The Class for the Kafka Connector."', args=[d.arg(name='class', type=d.T.string)]),
     withClass(class): { spec+: { class: class } },
-    '#withConfig':: d.fn(help='"The Kafka Connector configuration. The following properties cannot be set: connector.class, tasks.max."', args=[d.arg(name='config', type=d.T.any)]),
+    '#withConfig':: d.fn(help='"The Kafka Connector configuration. The following properties cannot be set: connector.class, tasks.max."', args=[d.arg(name='config', type=d.T.object)]),
     withConfig(config): { spec+: { config: config } },
+    '#withConfigMixin':: d.fn(help='"The Kafka Connector configuration. The following properties cannot be set: connector.class, tasks.max."\n\n**Note:** This function appends passed data to existing values', args=[d.arg(name='config', type=d.T.object)]),
+    withConfigMixin(config): { spec+: { config+: config } },
     '#withPause':: d.fn(help='"Whether the connector should be paused. Defaults to false."', args=[d.arg(name='pause', type=d.T.boolean)]),
     withPause(pause): { spec+: { pause: pause } },
     '#withTasksMax':: d.fn(help='"The maximum number of tasks for the Kafka Connector."', args=[d.arg(name='tasksMax', type=d.T.integer)]),

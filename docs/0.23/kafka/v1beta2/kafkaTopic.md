@@ -33,6 +33,7 @@ permalink: /0.23/kafka/v1beta2/kafkaTopic/
   * [`fn withUid(uid)`](#fn-metadatawithuid)
 * [`obj spec`](#obj-spec)
   * [`fn withConfig(config)`](#fn-specwithconfig)
+  * [`fn withConfigMixin(config)`](#fn-specwithconfigmixin)
   * [`fn withPartitions(partitions)`](#fn-specwithpartitions)
   * [`fn withReplicas(replicas)`](#fn-specwithreplicas)
   * [`fn withTopicName(topicName)`](#fn-specwithtopicname)
@@ -240,6 +241,16 @@ withConfig(config)
 ```
 
 "The topic configuration."
+
+### fn spec.withConfigMixin
+
+```ts
+withConfigMixin(config)
+```
+
+"The topic configuration."
+
+**Note:** This function appends passed data to existing values
 
 ### fn spec.withPartitions
 
