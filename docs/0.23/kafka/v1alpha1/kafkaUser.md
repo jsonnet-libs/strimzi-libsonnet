@@ -22,8 +22,6 @@ permalink: /0.23/kafka/v1alpha1/kafkaUser/
   * [`fn withGeneration(generation)`](#fn-metadatawithgeneration)
   * [`fn withLabels(labels)`](#fn-metadatawithlabels)
   * [`fn withLabelsMixin(labels)`](#fn-metadatawithlabelsmixin)
-  * [`fn withManagedFields(managedFields)`](#fn-metadatawithmanagedfields)
-  * [`fn withManagedFieldsMixin(managedFields)`](#fn-metadatawithmanagedfieldsmixin)
   * [`fn withName(name)`](#fn-metadatawithname)
   * [`fn withNamespace(namespace)`](#fn-metadatawithnamespace)
   * [`fn withOwnerReferences(ownerReferences)`](#fn-metadatawithownerreferences)
@@ -38,6 +36,14 @@ permalink: /0.23/kafka/v1alpha1/kafkaUser/
     * [`fn withAcls(acls)`](#fn-specauthorizationwithacls)
     * [`fn withAclsMixin(acls)`](#fn-specauthorizationwithaclsmixin)
     * [`fn withType(type)`](#fn-specauthorizationwithtype)
+    * [`obj spec.authorization.acls`](#obj-specauthorizationacls)
+      * [`fn withHost(host)`](#fn-specauthorizationaclswithhost)
+      * [`fn withOperation(operation)`](#fn-specauthorizationaclswithoperation)
+      * [`fn withType(type)`](#fn-specauthorizationaclswithtype)
+      * [`obj spec.authorization.acls.resource`](#obj-specauthorizationaclsresource)
+        * [`fn withName(name)`](#fn-specauthorizationaclsresourcewithname)
+        * [`fn withPatternType(patternType)`](#fn-specauthorizationaclsresourcewithpatterntype)
+        * [`fn withType(type)`](#fn-specauthorizationaclsresourcewithtype)
   * [`obj spec.quotas`](#obj-specquotas)
     * [`fn withConsumerByteRate(consumerByteRate)`](#fn-specquotaswithconsumerbyterate)
     * [`fn withProducerByteRate(producerByteRate)`](#fn-specquotaswithproducerbyterate)
@@ -166,24 +172,6 @@ withLabelsMixin(labels)
 
 **Note:** This function appends passed data to existing values
 
-### fn metadata.withManagedFields
-
-```ts
-withManagedFields(managedFields)
-```
-
-"ManagedFields maps workflow-id and version to the set of fields that are managed by that workflow. This is mostly for internal housekeeping, and users typically shouldn't need to set or understand this field. A workflow can be the user's name, a controller's name, or the name of a specific apply path like \"ci-cd\". The set of fields is always in the version that the workflow used when modifying the object."
-
-### fn metadata.withManagedFieldsMixin
-
-```ts
-withManagedFieldsMixin(managedFields)
-```
-
-"ManagedFields maps workflow-id and version to the set of fields that are managed by that workflow. This is mostly for internal housekeeping, and users typically shouldn't need to set or understand this field. A workflow can be the user's name, a controller's name, or the name of a specific apply path like \"ci-cd\". The set of fields is always in the version that the workflow used when modifying the object."
-
-**Note:** This function appends passed data to existing values
-
 ### fn metadata.withName
 
 ```ts
@@ -287,6 +275,62 @@ withType(type)
 ```
 
 "Authorization type. Currently the only supported type is `simple`. `simple` authorization type uses Kafka's `kafka.security.authorizer.AclAuthorizer` class for authorization."
+
+## obj spec.authorization.acls
+
+"List of ACL rules which should be applied to this user."
+
+### fn spec.authorization.acls.withHost
+
+```ts
+withHost(host)
+```
+
+"The host from which the action described in the ACL rule is allowed or denied."
+
+### fn spec.authorization.acls.withOperation
+
+```ts
+withOperation(operation)
+```
+
+"Operation which will be allowed or denied. Supported operations are: Read, Write, Create, Delete, Alter, Describe, ClusterAction, AlterConfigs, DescribeConfigs, IdempotentWrite and All."
+
+### fn spec.authorization.acls.withType
+
+```ts
+withType(type)
+```
+
+"The type of the rule. Currently the only supported type is `allow`. ACL rules with type `allow` are used to allow user to execute the specified operations. Default value is `allow`."
+
+## obj spec.authorization.acls.resource
+
+"Indicates the resource for which given ACL rule applies."
+
+### fn spec.authorization.acls.resource.withName
+
+```ts
+withName(name)
+```
+
+"Name of resource for which given ACL rule applies. Can be combined with `patternType` field to use prefix pattern."
+
+### fn spec.authorization.acls.resource.withPatternType
+
+```ts
+withPatternType(patternType)
+```
+
+"Describes the pattern used in the resource field. The supported types are `literal` and `prefix`. With `literal` pattern type, the resource field will be used as a definition of a full name. With `prefix` pattern type, the resource name will be used only as a prefix. Default value is `literal`."
+
+### fn spec.authorization.acls.resource.withType
+
+```ts
+withType(type)
+```
+
+"Resource type. The available resource types are `topic`, `group`, `cluster`, and `transactionalId`."
 
 ## obj spec.quotas
 

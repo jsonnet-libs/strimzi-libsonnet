@@ -22,8 +22,6 @@ permalink: /0.23/kafka/v1beta2/kafka/
   * [`fn withGeneration(generation)`](#fn-metadatawithgeneration)
   * [`fn withLabels(labels)`](#fn-metadatawithlabels)
   * [`fn withLabelsMixin(labels)`](#fn-metadatawithlabelsmixin)
-  * [`fn withManagedFields(managedFields)`](#fn-metadatawithmanagedfields)
-  * [`fn withManagedFieldsMixin(managedFields)`](#fn-metadatawithmanagedfieldsmixin)
   * [`fn withName(name)`](#fn-metadatawithname)
   * [`fn withNamespace(namespace)`](#fn-metadatawithnamespace)
   * [`fn withOwnerReferences(ownerReferences)`](#fn-metadatawithownerreferences)
@@ -59,10 +57,13 @@ permalink: /0.23/kafka/v1beta2/kafka/
       * [`fn withGcLoggingEnabled(gcLoggingEnabled)`](#fn-speccruisecontroljvmoptionswithgcloggingenabled)
       * [`fn withJavaSystemProperties(javaSystemProperties)`](#fn-speccruisecontroljvmoptionswithjavasystemproperties)
       * [`fn withJavaSystemPropertiesMixin(javaSystemProperties)`](#fn-speccruisecontroljvmoptionswithjavasystempropertiesmixin)
-      * [`fn withXX(XX)`](#fn-speccruisecontroljvmoptionswithxx)
-      * [`fn withXXMixin(XX)`](#fn-speccruisecontroljvmoptionswithxxmixin)
-      * [`fn withXms(Xms)`](#fn-speccruisecontroljvmoptionswithxms)
-      * [`fn withXmx(Xmx)`](#fn-speccruisecontroljvmoptionswithxmx)
+      * [`fn withXX(_XX)`](#fn-speccruisecontroljvmoptionswithxx)
+      * [`fn withXXMixin(_XX)`](#fn-speccruisecontroljvmoptionswithxxmixin)
+      * [`fn withXms(_Xms)`](#fn-speccruisecontroljvmoptionswithxms)
+      * [`fn withXmx(_Xmx)`](#fn-speccruisecontroljvmoptionswithxmx)
+      * [`obj spec.cruiseControl.jvmOptions.javaSystemProperties`](#obj-speccruisecontroljvmoptionsjavasystemproperties)
+        * [`fn withName(name)`](#fn-speccruisecontroljvmoptionsjavasystempropertieswithname)
+        * [`fn withValue(value)`](#fn-speccruisecontroljvmoptionsjavasystempropertieswithvalue)
     * [`obj spec.cruiseControl.livenessProbe`](#obj-speccruisecontrollivenessprobe)
       * [`fn withFailureThreshold(failureThreshold)`](#fn-speccruisecontrollivenessprobewithfailurethreshold)
       * [`fn withInitialDelaySeconds(initialDelaySeconds)`](#fn-speccruisecontrollivenessprobewithinitialdelayseconds)
@@ -109,6 +110,9 @@ permalink: /0.23/kafka/v1beta2/kafka/
       * [`obj spec.cruiseControl.template.cruiseControlContainer`](#obj-speccruisecontroltemplatecruisecontrolcontainer)
         * [`fn withEnv(env)`](#fn-speccruisecontroltemplatecruisecontrolcontainerwithenv)
         * [`fn withEnvMixin(env)`](#fn-speccruisecontroltemplatecruisecontrolcontainerwithenvmixin)
+        * [`obj spec.cruiseControl.template.cruiseControlContainer.env`](#obj-speccruisecontroltemplatecruisecontrolcontainerenv)
+          * [`fn withName(name)`](#fn-speccruisecontroltemplatecruisecontrolcontainerenvwithname)
+          * [`fn withValue(value)`](#fn-speccruisecontroltemplatecruisecontrolcontainerenvwithvalue)
         * [`obj spec.cruiseControl.template.cruiseControlContainer.securityContext`](#obj-speccruisecontroltemplatecruisecontrolcontainersecuritycontext)
           * [`fn withAllowPrivilegeEscalation(allowPrivilegeEscalation)`](#fn-speccruisecontroltemplatecruisecontrolcontainersecuritycontextwithallowprivilegeescalation)
           * [`fn withPrivileged(privileged)`](#fn-speccruisecontroltemplatecruisecontrolcontainersecuritycontextwithprivileged)
@@ -157,19 +161,117 @@ permalink: /0.23/kafka/v1beta2/kafka/
           * [`obj spec.cruiseControl.template.pod.affinity.nodeAffinity`](#obj-speccruisecontroltemplatepodaffinitynodeaffinity)
             * [`fn withPreferredDuringSchedulingIgnoredDuringExecution(preferredDuringSchedulingIgnoredDuringExecution)`](#fn-speccruisecontroltemplatepodaffinitynodeaffinitywithpreferredduringschedulingignoredduringexecution)
             * [`fn withPreferredDuringSchedulingIgnoredDuringExecutionMixin(preferredDuringSchedulingIgnoredDuringExecution)`](#fn-speccruisecontroltemplatepodaffinitynodeaffinitywithpreferredduringschedulingignoredduringexecutionmixin)
+            * [`obj spec.cruiseControl.template.pod.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution`](#obj-speccruisecontroltemplatepodaffinitynodeaffinitypreferredduringschedulingignoredduringexecution)
+              * [`fn withWeight(weight)`](#fn-speccruisecontroltemplatepodaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionwithweight)
+              * [`obj spec.cruiseControl.template.pod.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference`](#obj-speccruisecontroltemplatepodaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreference)
+                * [`fn withMatchExpressions(matchExpressions)`](#fn-speccruisecontroltemplatepodaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencewithmatchexpressions)
+                * [`fn withMatchExpressionsMixin(matchExpressions)`](#fn-speccruisecontroltemplatepodaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencewithmatchexpressionsmixin)
+                * [`fn withMatchFields(matchFields)`](#fn-speccruisecontroltemplatepodaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencewithmatchfields)
+                * [`fn withMatchFieldsMixin(matchFields)`](#fn-speccruisecontroltemplatepodaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencewithmatchfieldsmixin)
+                * [`obj spec.cruiseControl.template.pod.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchExpressions`](#obj-speccruisecontroltemplatepodaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchexpressions)
+                  * [`fn withKey(key)`](#fn-speccruisecontroltemplatepodaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchexpressionswithkey)
+                  * [`fn withOperator(operator)`](#fn-speccruisecontroltemplatepodaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchexpressionswithoperator)
+                  * [`fn withValues(values)`](#fn-speccruisecontroltemplatepodaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchexpressionswithvalues)
+                  * [`fn withValuesMixin(values)`](#fn-speccruisecontroltemplatepodaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchexpressionswithvaluesmixin)
+                * [`obj spec.cruiseControl.template.pod.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchFields`](#obj-speccruisecontroltemplatepodaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchfields)
+                  * [`fn withKey(key)`](#fn-speccruisecontroltemplatepodaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchfieldswithkey)
+                  * [`fn withOperator(operator)`](#fn-speccruisecontroltemplatepodaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchfieldswithoperator)
+                  * [`fn withValues(values)`](#fn-speccruisecontroltemplatepodaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchfieldswithvalues)
+                  * [`fn withValuesMixin(values)`](#fn-speccruisecontroltemplatepodaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchfieldswithvaluesmixin)
             * [`obj spec.cruiseControl.template.pod.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution`](#obj-speccruisecontroltemplatepodaffinitynodeaffinityrequiredduringschedulingignoredduringexecution)
               * [`fn withNodeSelectorTerms(nodeSelectorTerms)`](#fn-speccruisecontroltemplatepodaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionwithnodeselectorterms)
               * [`fn withNodeSelectorTermsMixin(nodeSelectorTerms)`](#fn-speccruisecontroltemplatepodaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionwithnodeselectortermsmixin)
+              * [`obj spec.cruiseControl.template.pod.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms`](#obj-speccruisecontroltemplatepodaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectorterms)
+                * [`fn withMatchExpressions(matchExpressions)`](#fn-speccruisecontroltemplatepodaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermswithmatchexpressions)
+                * [`fn withMatchExpressionsMixin(matchExpressions)`](#fn-speccruisecontroltemplatepodaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermswithmatchexpressionsmixin)
+                * [`fn withMatchFields(matchFields)`](#fn-speccruisecontroltemplatepodaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermswithmatchfields)
+                * [`fn withMatchFieldsMixin(matchFields)`](#fn-speccruisecontroltemplatepodaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermswithmatchfieldsmixin)
+                * [`obj spec.cruiseControl.template.pod.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchExpressions`](#obj-speccruisecontroltemplatepodaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchexpressions)
+                  * [`fn withKey(key)`](#fn-speccruisecontroltemplatepodaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchexpressionswithkey)
+                  * [`fn withOperator(operator)`](#fn-speccruisecontroltemplatepodaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchexpressionswithoperator)
+                  * [`fn withValues(values)`](#fn-speccruisecontroltemplatepodaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchexpressionswithvalues)
+                  * [`fn withValuesMixin(values)`](#fn-speccruisecontroltemplatepodaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchexpressionswithvaluesmixin)
+                * [`obj spec.cruiseControl.template.pod.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchFields`](#obj-speccruisecontroltemplatepodaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchfields)
+                  * [`fn withKey(key)`](#fn-speccruisecontroltemplatepodaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchfieldswithkey)
+                  * [`fn withOperator(operator)`](#fn-speccruisecontroltemplatepodaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchfieldswithoperator)
+                  * [`fn withValues(values)`](#fn-speccruisecontroltemplatepodaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchfieldswithvalues)
+                  * [`fn withValuesMixin(values)`](#fn-speccruisecontroltemplatepodaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchfieldswithvaluesmixin)
           * [`obj spec.cruiseControl.template.pod.affinity.podAffinity`](#obj-speccruisecontroltemplatepodaffinitypodaffinity)
             * [`fn withPreferredDuringSchedulingIgnoredDuringExecution(preferredDuringSchedulingIgnoredDuringExecution)`](#fn-speccruisecontroltemplatepodaffinitypodaffinitywithpreferredduringschedulingignoredduringexecution)
             * [`fn withPreferredDuringSchedulingIgnoredDuringExecutionMixin(preferredDuringSchedulingIgnoredDuringExecution)`](#fn-speccruisecontroltemplatepodaffinitypodaffinitywithpreferredduringschedulingignoredduringexecutionmixin)
             * [`fn withRequiredDuringSchedulingIgnoredDuringExecution(requiredDuringSchedulingIgnoredDuringExecution)`](#fn-speccruisecontroltemplatepodaffinitypodaffinitywithrequiredduringschedulingignoredduringexecution)
             * [`fn withRequiredDuringSchedulingIgnoredDuringExecutionMixin(requiredDuringSchedulingIgnoredDuringExecution)`](#fn-speccruisecontroltemplatepodaffinitypodaffinitywithrequiredduringschedulingignoredduringexecutionmixin)
+            * [`obj spec.cruiseControl.template.pod.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution`](#obj-speccruisecontroltemplatepodaffinitypodaffinitypreferredduringschedulingignoredduringexecution)
+              * [`fn withWeight(weight)`](#fn-speccruisecontroltemplatepodaffinitypodaffinitypreferredduringschedulingignoredduringexecutionwithweight)
+              * [`obj spec.cruiseControl.template.pod.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm`](#obj-speccruisecontroltemplatepodaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinityterm)
+                * [`fn withNamespaces(namespaces)`](#fn-speccruisecontroltemplatepodaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermwithnamespaces)
+                * [`fn withNamespacesMixin(namespaces)`](#fn-speccruisecontroltemplatepodaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermwithnamespacesmixin)
+                * [`fn withTopologyKey(topologyKey)`](#fn-speccruisecontroltemplatepodaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermwithtopologykey)
+                * [`obj spec.cruiseControl.template.pod.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector`](#obj-speccruisecontroltemplatepodaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselector)
+                  * [`fn withMatchExpressions(matchExpressions)`](#fn-speccruisecontroltemplatepodaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectorwithmatchexpressions)
+                  * [`fn withMatchExpressionsMixin(matchExpressions)`](#fn-speccruisecontroltemplatepodaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectorwithmatchexpressionsmixin)
+                  * [`fn withMatchLabels(matchLabels)`](#fn-speccruisecontroltemplatepodaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectorwithmatchlabels)
+                  * [`fn withMatchLabelsMixin(matchLabels)`](#fn-speccruisecontroltemplatepodaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectorwithmatchlabelsmixin)
+                  * [`obj spec.cruiseControl.template.pod.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions`](#obj-speccruisecontroltemplatepodaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressions)
+                    * [`fn withKey(key)`](#fn-speccruisecontroltemplatepodaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressionswithkey)
+                    * [`fn withOperator(operator)`](#fn-speccruisecontroltemplatepodaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressionswithoperator)
+                    * [`fn withValues(values)`](#fn-speccruisecontroltemplatepodaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressionswithvalues)
+                    * [`fn withValuesMixin(values)`](#fn-speccruisecontroltemplatepodaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressionswithvaluesmixin)
+            * [`obj spec.cruiseControl.template.pod.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution`](#obj-speccruisecontroltemplatepodaffinitypodaffinityrequiredduringschedulingignoredduringexecution)
+              * [`fn withNamespaces(namespaces)`](#fn-speccruisecontroltemplatepodaffinitypodaffinityrequiredduringschedulingignoredduringexecutionwithnamespaces)
+              * [`fn withNamespacesMixin(namespaces)`](#fn-speccruisecontroltemplatepodaffinitypodaffinityrequiredduringschedulingignoredduringexecutionwithnamespacesmixin)
+              * [`fn withTopologyKey(topologyKey)`](#fn-speccruisecontroltemplatepodaffinitypodaffinityrequiredduringschedulingignoredduringexecutionwithtopologykey)
+              * [`obj spec.cruiseControl.template.pod.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector`](#obj-speccruisecontroltemplatepodaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselector)
+                * [`fn withMatchExpressions(matchExpressions)`](#fn-speccruisecontroltemplatepodaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectorwithmatchexpressions)
+                * [`fn withMatchExpressionsMixin(matchExpressions)`](#fn-speccruisecontroltemplatepodaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectorwithmatchexpressionsmixin)
+                * [`fn withMatchLabels(matchLabels)`](#fn-speccruisecontroltemplatepodaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectorwithmatchlabels)
+                * [`fn withMatchLabelsMixin(matchLabels)`](#fn-speccruisecontroltemplatepodaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectorwithmatchlabelsmixin)
+                * [`obj spec.cruiseControl.template.pod.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions`](#obj-speccruisecontroltemplatepodaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressions)
+                  * [`fn withKey(key)`](#fn-speccruisecontroltemplatepodaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressionswithkey)
+                  * [`fn withOperator(operator)`](#fn-speccruisecontroltemplatepodaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressionswithoperator)
+                  * [`fn withValues(values)`](#fn-speccruisecontroltemplatepodaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressionswithvalues)
+                  * [`fn withValuesMixin(values)`](#fn-speccruisecontroltemplatepodaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressionswithvaluesmixin)
           * [`obj spec.cruiseControl.template.pod.affinity.podAntiAffinity`](#obj-speccruisecontroltemplatepodaffinitypodantiaffinity)
             * [`fn withPreferredDuringSchedulingIgnoredDuringExecution(preferredDuringSchedulingIgnoredDuringExecution)`](#fn-speccruisecontroltemplatepodaffinitypodantiaffinitywithpreferredduringschedulingignoredduringexecution)
             * [`fn withPreferredDuringSchedulingIgnoredDuringExecutionMixin(preferredDuringSchedulingIgnoredDuringExecution)`](#fn-speccruisecontroltemplatepodaffinitypodantiaffinitywithpreferredduringschedulingignoredduringexecutionmixin)
             * [`fn withRequiredDuringSchedulingIgnoredDuringExecution(requiredDuringSchedulingIgnoredDuringExecution)`](#fn-speccruisecontroltemplatepodaffinitypodantiaffinitywithrequiredduringschedulingignoredduringexecution)
             * [`fn withRequiredDuringSchedulingIgnoredDuringExecutionMixin(requiredDuringSchedulingIgnoredDuringExecution)`](#fn-speccruisecontroltemplatepodaffinitypodantiaffinitywithrequiredduringschedulingignoredduringexecutionmixin)
+            * [`obj spec.cruiseControl.template.pod.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution`](#obj-speccruisecontroltemplatepodaffinitypodantiaffinitypreferredduringschedulingignoredduringexecution)
+              * [`fn withWeight(weight)`](#fn-speccruisecontroltemplatepodaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionwithweight)
+              * [`obj spec.cruiseControl.template.pod.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm`](#obj-speccruisecontroltemplatepodaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinityterm)
+                * [`fn withNamespaces(namespaces)`](#fn-speccruisecontroltemplatepodaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermwithnamespaces)
+                * [`fn withNamespacesMixin(namespaces)`](#fn-speccruisecontroltemplatepodaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermwithnamespacesmixin)
+                * [`fn withTopologyKey(topologyKey)`](#fn-speccruisecontroltemplatepodaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermwithtopologykey)
+                * [`obj spec.cruiseControl.template.pod.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector`](#obj-speccruisecontroltemplatepodaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselector)
+                  * [`fn withMatchExpressions(matchExpressions)`](#fn-speccruisecontroltemplatepodaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectorwithmatchexpressions)
+                  * [`fn withMatchExpressionsMixin(matchExpressions)`](#fn-speccruisecontroltemplatepodaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectorwithmatchexpressionsmixin)
+                  * [`fn withMatchLabels(matchLabels)`](#fn-speccruisecontroltemplatepodaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectorwithmatchlabels)
+                  * [`fn withMatchLabelsMixin(matchLabels)`](#fn-speccruisecontroltemplatepodaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectorwithmatchlabelsmixin)
+                  * [`obj spec.cruiseControl.template.pod.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions`](#obj-speccruisecontroltemplatepodaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressions)
+                    * [`fn withKey(key)`](#fn-speccruisecontroltemplatepodaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressionswithkey)
+                    * [`fn withOperator(operator)`](#fn-speccruisecontroltemplatepodaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressionswithoperator)
+                    * [`fn withValues(values)`](#fn-speccruisecontroltemplatepodaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressionswithvalues)
+                    * [`fn withValuesMixin(values)`](#fn-speccruisecontroltemplatepodaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressionswithvaluesmixin)
+            * [`obj spec.cruiseControl.template.pod.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution`](#obj-speccruisecontroltemplatepodaffinitypodantiaffinityrequiredduringschedulingignoredduringexecution)
+              * [`fn withNamespaces(namespaces)`](#fn-speccruisecontroltemplatepodaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionwithnamespaces)
+              * [`fn withNamespacesMixin(namespaces)`](#fn-speccruisecontroltemplatepodaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionwithnamespacesmixin)
+              * [`fn withTopologyKey(topologyKey)`](#fn-speccruisecontroltemplatepodaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionwithtopologykey)
+              * [`obj spec.cruiseControl.template.pod.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector`](#obj-speccruisecontroltemplatepodaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselector)
+                * [`fn withMatchExpressions(matchExpressions)`](#fn-speccruisecontroltemplatepodaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectorwithmatchexpressions)
+                * [`fn withMatchExpressionsMixin(matchExpressions)`](#fn-speccruisecontroltemplatepodaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectorwithmatchexpressionsmixin)
+                * [`fn withMatchLabels(matchLabels)`](#fn-speccruisecontroltemplatepodaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectorwithmatchlabels)
+                * [`fn withMatchLabelsMixin(matchLabels)`](#fn-speccruisecontroltemplatepodaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectorwithmatchlabelsmixin)
+                * [`obj spec.cruiseControl.template.pod.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions`](#obj-speccruisecontroltemplatepodaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressions)
+                  * [`fn withKey(key)`](#fn-speccruisecontroltemplatepodaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressionswithkey)
+                  * [`fn withOperator(operator)`](#fn-speccruisecontroltemplatepodaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressionswithoperator)
+                  * [`fn withValues(values)`](#fn-speccruisecontroltemplatepodaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressionswithvalues)
+                  * [`fn withValuesMixin(values)`](#fn-speccruisecontroltemplatepodaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressionswithvaluesmixin)
+        * [`obj spec.cruiseControl.template.pod.hostAliases`](#obj-speccruisecontroltemplatepodhostaliases)
+          * [`fn withHostnames(hostnames)`](#fn-speccruisecontroltemplatepodhostaliaseswithhostnames)
+          * [`fn withHostnamesMixin(hostnames)`](#fn-speccruisecontroltemplatepodhostaliaseswithhostnamesmixin)
+          * [`fn withIp(ip)`](#fn-speccruisecontroltemplatepodhostaliaseswithip)
+        * [`obj spec.cruiseControl.template.pod.imagePullSecrets`](#obj-speccruisecontroltemplatepodimagepullsecrets)
+          * [`fn withName(name)`](#fn-speccruisecontroltemplatepodimagepullsecretswithname)
         * [`obj spec.cruiseControl.template.pod.metadata`](#obj-speccruisecontroltemplatepodmetadata)
           * [`fn withAnnotations(annotations)`](#fn-speccruisecontroltemplatepodmetadatawithannotations)
           * [`fn withAnnotationsMixin(annotations)`](#fn-speccruisecontroltemplatepodmetadatawithannotationsmixin)
@@ -193,10 +295,33 @@ permalink: /0.23/kafka/v1beta2/kafka/
           * [`obj spec.cruiseControl.template.pod.securityContext.seccompProfile`](#obj-speccruisecontroltemplatepodsecuritycontextseccompprofile)
             * [`fn withLocalhostProfile(localhostProfile)`](#fn-speccruisecontroltemplatepodsecuritycontextseccompprofilewithlocalhostprofile)
             * [`fn withType(type)`](#fn-speccruisecontroltemplatepodsecuritycontextseccompprofilewithtype)
+          * [`obj spec.cruiseControl.template.pod.securityContext.sysctls`](#obj-speccruisecontroltemplatepodsecuritycontextsysctls)
+            * [`fn withName(name)`](#fn-speccruisecontroltemplatepodsecuritycontextsysctlswithname)
+            * [`fn withValue(value)`](#fn-speccruisecontroltemplatepodsecuritycontextsysctlswithvalue)
           * [`obj spec.cruiseControl.template.pod.securityContext.windowsOptions`](#obj-speccruisecontroltemplatepodsecuritycontextwindowsoptions)
             * [`fn withGmsaCredentialSpec(gmsaCredentialSpec)`](#fn-speccruisecontroltemplatepodsecuritycontextwindowsoptionswithgmsacredentialspec)
             * [`fn withGmsaCredentialSpecName(gmsaCredentialSpecName)`](#fn-speccruisecontroltemplatepodsecuritycontextwindowsoptionswithgmsacredentialspecname)
             * [`fn withRunAsUserName(runAsUserName)`](#fn-speccruisecontroltemplatepodsecuritycontextwindowsoptionswithrunasusername)
+        * [`obj spec.cruiseControl.template.pod.tolerations`](#obj-speccruisecontroltemplatepodtolerations)
+          * [`fn withEffect(effect)`](#fn-speccruisecontroltemplatepodtolerationswitheffect)
+          * [`fn withKey(key)`](#fn-speccruisecontroltemplatepodtolerationswithkey)
+          * [`fn withOperator(operator)`](#fn-speccruisecontroltemplatepodtolerationswithoperator)
+          * [`fn withTolerationSeconds(tolerationSeconds)`](#fn-speccruisecontroltemplatepodtolerationswithtolerationseconds)
+          * [`fn withValue(value)`](#fn-speccruisecontroltemplatepodtolerationswithvalue)
+        * [`obj spec.cruiseControl.template.pod.topologySpreadConstraints`](#obj-speccruisecontroltemplatepodtopologyspreadconstraints)
+          * [`fn withMaxSkew(maxSkew)`](#fn-speccruisecontroltemplatepodtopologyspreadconstraintswithmaxskew)
+          * [`fn withTopologyKey(topologyKey)`](#fn-speccruisecontroltemplatepodtopologyspreadconstraintswithtopologykey)
+          * [`fn withWhenUnsatisfiable(whenUnsatisfiable)`](#fn-speccruisecontroltemplatepodtopologyspreadconstraintswithwhenunsatisfiable)
+          * [`obj spec.cruiseControl.template.pod.topologySpreadConstraints.labelSelector`](#obj-speccruisecontroltemplatepodtopologyspreadconstraintslabelselector)
+            * [`fn withMatchExpressions(matchExpressions)`](#fn-speccruisecontroltemplatepodtopologyspreadconstraintslabelselectorwithmatchexpressions)
+            * [`fn withMatchExpressionsMixin(matchExpressions)`](#fn-speccruisecontroltemplatepodtopologyspreadconstraintslabelselectorwithmatchexpressionsmixin)
+            * [`fn withMatchLabels(matchLabels)`](#fn-speccruisecontroltemplatepodtopologyspreadconstraintslabelselectorwithmatchlabels)
+            * [`fn withMatchLabelsMixin(matchLabels)`](#fn-speccruisecontroltemplatepodtopologyspreadconstraintslabelselectorwithmatchlabelsmixin)
+            * [`obj spec.cruiseControl.template.pod.topologySpreadConstraints.labelSelector.matchExpressions`](#obj-speccruisecontroltemplatepodtopologyspreadconstraintslabelselectormatchexpressions)
+              * [`fn withKey(key)`](#fn-speccruisecontroltemplatepodtopologyspreadconstraintslabelselectormatchexpressionswithkey)
+              * [`fn withOperator(operator)`](#fn-speccruisecontroltemplatepodtopologyspreadconstraintslabelselectormatchexpressionswithoperator)
+              * [`fn withValues(values)`](#fn-speccruisecontroltemplatepodtopologyspreadconstraintslabelselectormatchexpressionswithvalues)
+              * [`fn withValuesMixin(values)`](#fn-speccruisecontroltemplatepodtopologyspreadconstraintslabelselectormatchexpressionswithvaluesmixin)
       * [`obj spec.cruiseControl.template.podDisruptionBudget`](#obj-speccruisecontroltemplatepoddisruptionbudget)
         * [`fn withMaxUnavailable(maxUnavailable)`](#fn-speccruisecontroltemplatepoddisruptionbudgetwithmaxunavailable)
         * [`obj spec.cruiseControl.template.podDisruptionBudget.metadata`](#obj-speccruisecontroltemplatepoddisruptionbudgetmetadata)
@@ -207,6 +332,9 @@ permalink: /0.23/kafka/v1beta2/kafka/
       * [`obj spec.cruiseControl.template.tlsSidecarContainer`](#obj-speccruisecontroltemplatetlssidecarcontainer)
         * [`fn withEnv(env)`](#fn-speccruisecontroltemplatetlssidecarcontainerwithenv)
         * [`fn withEnvMixin(env)`](#fn-speccruisecontroltemplatetlssidecarcontainerwithenvmixin)
+        * [`obj spec.cruiseControl.template.tlsSidecarContainer.env`](#obj-speccruisecontroltemplatetlssidecarcontainerenv)
+          * [`fn withName(name)`](#fn-speccruisecontroltemplatetlssidecarcontainerenvwithname)
+          * [`fn withValue(value)`](#fn-speccruisecontroltemplatetlssidecarcontainerenvwithvalue)
         * [`obj spec.cruiseControl.template.tlsSidecarContainer.securityContext`](#obj-speccruisecontroltemplatetlssidecarcontainersecuritycontext)
           * [`fn withAllowPrivilegeEscalation(allowPrivilegeEscalation)`](#fn-speccruisecontroltemplatetlssidecarcontainersecuritycontextwithallowprivilegeescalation)
           * [`fn withPrivileged(privileged)`](#fn-speccruisecontroltemplatetlssidecarcontainersecuritycontextwithprivileged)
@@ -277,19 +405,117 @@ permalink: /0.23/kafka/v1beta2/kafka/
           * [`obj spec.entityOperator.template.pod.affinity.nodeAffinity`](#obj-specentityoperatortemplatepodaffinitynodeaffinity)
             * [`fn withPreferredDuringSchedulingIgnoredDuringExecution(preferredDuringSchedulingIgnoredDuringExecution)`](#fn-specentityoperatortemplatepodaffinitynodeaffinitywithpreferredduringschedulingignoredduringexecution)
             * [`fn withPreferredDuringSchedulingIgnoredDuringExecutionMixin(preferredDuringSchedulingIgnoredDuringExecution)`](#fn-specentityoperatortemplatepodaffinitynodeaffinitywithpreferredduringschedulingignoredduringexecutionmixin)
+            * [`obj spec.entityOperator.template.pod.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution`](#obj-specentityoperatortemplatepodaffinitynodeaffinitypreferredduringschedulingignoredduringexecution)
+              * [`fn withWeight(weight)`](#fn-specentityoperatortemplatepodaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionwithweight)
+              * [`obj spec.entityOperator.template.pod.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference`](#obj-specentityoperatortemplatepodaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreference)
+                * [`fn withMatchExpressions(matchExpressions)`](#fn-specentityoperatortemplatepodaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencewithmatchexpressions)
+                * [`fn withMatchExpressionsMixin(matchExpressions)`](#fn-specentityoperatortemplatepodaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencewithmatchexpressionsmixin)
+                * [`fn withMatchFields(matchFields)`](#fn-specentityoperatortemplatepodaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencewithmatchfields)
+                * [`fn withMatchFieldsMixin(matchFields)`](#fn-specentityoperatortemplatepodaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencewithmatchfieldsmixin)
+                * [`obj spec.entityOperator.template.pod.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchExpressions`](#obj-specentityoperatortemplatepodaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchexpressions)
+                  * [`fn withKey(key)`](#fn-specentityoperatortemplatepodaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchexpressionswithkey)
+                  * [`fn withOperator(operator)`](#fn-specentityoperatortemplatepodaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchexpressionswithoperator)
+                  * [`fn withValues(values)`](#fn-specentityoperatortemplatepodaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchexpressionswithvalues)
+                  * [`fn withValuesMixin(values)`](#fn-specentityoperatortemplatepodaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchexpressionswithvaluesmixin)
+                * [`obj spec.entityOperator.template.pod.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchFields`](#obj-specentityoperatortemplatepodaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchfields)
+                  * [`fn withKey(key)`](#fn-specentityoperatortemplatepodaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchfieldswithkey)
+                  * [`fn withOperator(operator)`](#fn-specentityoperatortemplatepodaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchfieldswithoperator)
+                  * [`fn withValues(values)`](#fn-specentityoperatortemplatepodaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchfieldswithvalues)
+                  * [`fn withValuesMixin(values)`](#fn-specentityoperatortemplatepodaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchfieldswithvaluesmixin)
             * [`obj spec.entityOperator.template.pod.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution`](#obj-specentityoperatortemplatepodaffinitynodeaffinityrequiredduringschedulingignoredduringexecution)
               * [`fn withNodeSelectorTerms(nodeSelectorTerms)`](#fn-specentityoperatortemplatepodaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionwithnodeselectorterms)
               * [`fn withNodeSelectorTermsMixin(nodeSelectorTerms)`](#fn-specentityoperatortemplatepodaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionwithnodeselectortermsmixin)
+              * [`obj spec.entityOperator.template.pod.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms`](#obj-specentityoperatortemplatepodaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectorterms)
+                * [`fn withMatchExpressions(matchExpressions)`](#fn-specentityoperatortemplatepodaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermswithmatchexpressions)
+                * [`fn withMatchExpressionsMixin(matchExpressions)`](#fn-specentityoperatortemplatepodaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermswithmatchexpressionsmixin)
+                * [`fn withMatchFields(matchFields)`](#fn-specentityoperatortemplatepodaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermswithmatchfields)
+                * [`fn withMatchFieldsMixin(matchFields)`](#fn-specentityoperatortemplatepodaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermswithmatchfieldsmixin)
+                * [`obj spec.entityOperator.template.pod.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchExpressions`](#obj-specentityoperatortemplatepodaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchexpressions)
+                  * [`fn withKey(key)`](#fn-specentityoperatortemplatepodaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchexpressionswithkey)
+                  * [`fn withOperator(operator)`](#fn-specentityoperatortemplatepodaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchexpressionswithoperator)
+                  * [`fn withValues(values)`](#fn-specentityoperatortemplatepodaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchexpressionswithvalues)
+                  * [`fn withValuesMixin(values)`](#fn-specentityoperatortemplatepodaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchexpressionswithvaluesmixin)
+                * [`obj spec.entityOperator.template.pod.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchFields`](#obj-specentityoperatortemplatepodaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchfields)
+                  * [`fn withKey(key)`](#fn-specentityoperatortemplatepodaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchfieldswithkey)
+                  * [`fn withOperator(operator)`](#fn-specentityoperatortemplatepodaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchfieldswithoperator)
+                  * [`fn withValues(values)`](#fn-specentityoperatortemplatepodaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchfieldswithvalues)
+                  * [`fn withValuesMixin(values)`](#fn-specentityoperatortemplatepodaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchfieldswithvaluesmixin)
           * [`obj spec.entityOperator.template.pod.affinity.podAffinity`](#obj-specentityoperatortemplatepodaffinitypodaffinity)
             * [`fn withPreferredDuringSchedulingIgnoredDuringExecution(preferredDuringSchedulingIgnoredDuringExecution)`](#fn-specentityoperatortemplatepodaffinitypodaffinitywithpreferredduringschedulingignoredduringexecution)
             * [`fn withPreferredDuringSchedulingIgnoredDuringExecutionMixin(preferredDuringSchedulingIgnoredDuringExecution)`](#fn-specentityoperatortemplatepodaffinitypodaffinitywithpreferredduringschedulingignoredduringexecutionmixin)
             * [`fn withRequiredDuringSchedulingIgnoredDuringExecution(requiredDuringSchedulingIgnoredDuringExecution)`](#fn-specentityoperatortemplatepodaffinitypodaffinitywithrequiredduringschedulingignoredduringexecution)
             * [`fn withRequiredDuringSchedulingIgnoredDuringExecutionMixin(requiredDuringSchedulingIgnoredDuringExecution)`](#fn-specentityoperatortemplatepodaffinitypodaffinitywithrequiredduringschedulingignoredduringexecutionmixin)
+            * [`obj spec.entityOperator.template.pod.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution`](#obj-specentityoperatortemplatepodaffinitypodaffinitypreferredduringschedulingignoredduringexecution)
+              * [`fn withWeight(weight)`](#fn-specentityoperatortemplatepodaffinitypodaffinitypreferredduringschedulingignoredduringexecutionwithweight)
+              * [`obj spec.entityOperator.template.pod.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm`](#obj-specentityoperatortemplatepodaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinityterm)
+                * [`fn withNamespaces(namespaces)`](#fn-specentityoperatortemplatepodaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermwithnamespaces)
+                * [`fn withNamespacesMixin(namespaces)`](#fn-specentityoperatortemplatepodaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermwithnamespacesmixin)
+                * [`fn withTopologyKey(topologyKey)`](#fn-specentityoperatortemplatepodaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermwithtopologykey)
+                * [`obj spec.entityOperator.template.pod.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector`](#obj-specentityoperatortemplatepodaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselector)
+                  * [`fn withMatchExpressions(matchExpressions)`](#fn-specentityoperatortemplatepodaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectorwithmatchexpressions)
+                  * [`fn withMatchExpressionsMixin(matchExpressions)`](#fn-specentityoperatortemplatepodaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectorwithmatchexpressionsmixin)
+                  * [`fn withMatchLabels(matchLabels)`](#fn-specentityoperatortemplatepodaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectorwithmatchlabels)
+                  * [`fn withMatchLabelsMixin(matchLabels)`](#fn-specentityoperatortemplatepodaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectorwithmatchlabelsmixin)
+                  * [`obj spec.entityOperator.template.pod.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions`](#obj-specentityoperatortemplatepodaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressions)
+                    * [`fn withKey(key)`](#fn-specentityoperatortemplatepodaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressionswithkey)
+                    * [`fn withOperator(operator)`](#fn-specentityoperatortemplatepodaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressionswithoperator)
+                    * [`fn withValues(values)`](#fn-specentityoperatortemplatepodaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressionswithvalues)
+                    * [`fn withValuesMixin(values)`](#fn-specentityoperatortemplatepodaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressionswithvaluesmixin)
+            * [`obj spec.entityOperator.template.pod.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution`](#obj-specentityoperatortemplatepodaffinitypodaffinityrequiredduringschedulingignoredduringexecution)
+              * [`fn withNamespaces(namespaces)`](#fn-specentityoperatortemplatepodaffinitypodaffinityrequiredduringschedulingignoredduringexecutionwithnamespaces)
+              * [`fn withNamespacesMixin(namespaces)`](#fn-specentityoperatortemplatepodaffinitypodaffinityrequiredduringschedulingignoredduringexecutionwithnamespacesmixin)
+              * [`fn withTopologyKey(topologyKey)`](#fn-specentityoperatortemplatepodaffinitypodaffinityrequiredduringschedulingignoredduringexecutionwithtopologykey)
+              * [`obj spec.entityOperator.template.pod.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector`](#obj-specentityoperatortemplatepodaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselector)
+                * [`fn withMatchExpressions(matchExpressions)`](#fn-specentityoperatortemplatepodaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectorwithmatchexpressions)
+                * [`fn withMatchExpressionsMixin(matchExpressions)`](#fn-specentityoperatortemplatepodaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectorwithmatchexpressionsmixin)
+                * [`fn withMatchLabels(matchLabels)`](#fn-specentityoperatortemplatepodaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectorwithmatchlabels)
+                * [`fn withMatchLabelsMixin(matchLabels)`](#fn-specentityoperatortemplatepodaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectorwithmatchlabelsmixin)
+                * [`obj spec.entityOperator.template.pod.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions`](#obj-specentityoperatortemplatepodaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressions)
+                  * [`fn withKey(key)`](#fn-specentityoperatortemplatepodaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressionswithkey)
+                  * [`fn withOperator(operator)`](#fn-specentityoperatortemplatepodaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressionswithoperator)
+                  * [`fn withValues(values)`](#fn-specentityoperatortemplatepodaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressionswithvalues)
+                  * [`fn withValuesMixin(values)`](#fn-specentityoperatortemplatepodaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressionswithvaluesmixin)
           * [`obj spec.entityOperator.template.pod.affinity.podAntiAffinity`](#obj-specentityoperatortemplatepodaffinitypodantiaffinity)
             * [`fn withPreferredDuringSchedulingIgnoredDuringExecution(preferredDuringSchedulingIgnoredDuringExecution)`](#fn-specentityoperatortemplatepodaffinitypodantiaffinitywithpreferredduringschedulingignoredduringexecution)
             * [`fn withPreferredDuringSchedulingIgnoredDuringExecutionMixin(preferredDuringSchedulingIgnoredDuringExecution)`](#fn-specentityoperatortemplatepodaffinitypodantiaffinitywithpreferredduringschedulingignoredduringexecutionmixin)
             * [`fn withRequiredDuringSchedulingIgnoredDuringExecution(requiredDuringSchedulingIgnoredDuringExecution)`](#fn-specentityoperatortemplatepodaffinitypodantiaffinitywithrequiredduringschedulingignoredduringexecution)
             * [`fn withRequiredDuringSchedulingIgnoredDuringExecutionMixin(requiredDuringSchedulingIgnoredDuringExecution)`](#fn-specentityoperatortemplatepodaffinitypodantiaffinitywithrequiredduringschedulingignoredduringexecutionmixin)
+            * [`obj spec.entityOperator.template.pod.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution`](#obj-specentityoperatortemplatepodaffinitypodantiaffinitypreferredduringschedulingignoredduringexecution)
+              * [`fn withWeight(weight)`](#fn-specentityoperatortemplatepodaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionwithweight)
+              * [`obj spec.entityOperator.template.pod.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm`](#obj-specentityoperatortemplatepodaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinityterm)
+                * [`fn withNamespaces(namespaces)`](#fn-specentityoperatortemplatepodaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermwithnamespaces)
+                * [`fn withNamespacesMixin(namespaces)`](#fn-specentityoperatortemplatepodaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermwithnamespacesmixin)
+                * [`fn withTopologyKey(topologyKey)`](#fn-specentityoperatortemplatepodaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermwithtopologykey)
+                * [`obj spec.entityOperator.template.pod.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector`](#obj-specentityoperatortemplatepodaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselector)
+                  * [`fn withMatchExpressions(matchExpressions)`](#fn-specentityoperatortemplatepodaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectorwithmatchexpressions)
+                  * [`fn withMatchExpressionsMixin(matchExpressions)`](#fn-specentityoperatortemplatepodaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectorwithmatchexpressionsmixin)
+                  * [`fn withMatchLabels(matchLabels)`](#fn-specentityoperatortemplatepodaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectorwithmatchlabels)
+                  * [`fn withMatchLabelsMixin(matchLabels)`](#fn-specentityoperatortemplatepodaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectorwithmatchlabelsmixin)
+                  * [`obj spec.entityOperator.template.pod.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions`](#obj-specentityoperatortemplatepodaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressions)
+                    * [`fn withKey(key)`](#fn-specentityoperatortemplatepodaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressionswithkey)
+                    * [`fn withOperator(operator)`](#fn-specentityoperatortemplatepodaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressionswithoperator)
+                    * [`fn withValues(values)`](#fn-specentityoperatortemplatepodaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressionswithvalues)
+                    * [`fn withValuesMixin(values)`](#fn-specentityoperatortemplatepodaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressionswithvaluesmixin)
+            * [`obj spec.entityOperator.template.pod.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution`](#obj-specentityoperatortemplatepodaffinitypodantiaffinityrequiredduringschedulingignoredduringexecution)
+              * [`fn withNamespaces(namespaces)`](#fn-specentityoperatortemplatepodaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionwithnamespaces)
+              * [`fn withNamespacesMixin(namespaces)`](#fn-specentityoperatortemplatepodaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionwithnamespacesmixin)
+              * [`fn withTopologyKey(topologyKey)`](#fn-specentityoperatortemplatepodaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionwithtopologykey)
+              * [`obj spec.entityOperator.template.pod.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector`](#obj-specentityoperatortemplatepodaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselector)
+                * [`fn withMatchExpressions(matchExpressions)`](#fn-specentityoperatortemplatepodaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectorwithmatchexpressions)
+                * [`fn withMatchExpressionsMixin(matchExpressions)`](#fn-specentityoperatortemplatepodaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectorwithmatchexpressionsmixin)
+                * [`fn withMatchLabels(matchLabels)`](#fn-specentityoperatortemplatepodaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectorwithmatchlabels)
+                * [`fn withMatchLabelsMixin(matchLabels)`](#fn-specentityoperatortemplatepodaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectorwithmatchlabelsmixin)
+                * [`obj spec.entityOperator.template.pod.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions`](#obj-specentityoperatortemplatepodaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressions)
+                  * [`fn withKey(key)`](#fn-specentityoperatortemplatepodaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressionswithkey)
+                  * [`fn withOperator(operator)`](#fn-specentityoperatortemplatepodaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressionswithoperator)
+                  * [`fn withValues(values)`](#fn-specentityoperatortemplatepodaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressionswithvalues)
+                  * [`fn withValuesMixin(values)`](#fn-specentityoperatortemplatepodaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressionswithvaluesmixin)
+        * [`obj spec.entityOperator.template.pod.hostAliases`](#obj-specentityoperatortemplatepodhostaliases)
+          * [`fn withHostnames(hostnames)`](#fn-specentityoperatortemplatepodhostaliaseswithhostnames)
+          * [`fn withHostnamesMixin(hostnames)`](#fn-specentityoperatortemplatepodhostaliaseswithhostnamesmixin)
+          * [`fn withIp(ip)`](#fn-specentityoperatortemplatepodhostaliaseswithip)
+        * [`obj spec.entityOperator.template.pod.imagePullSecrets`](#obj-specentityoperatortemplatepodimagepullsecrets)
+          * [`fn withName(name)`](#fn-specentityoperatortemplatepodimagepullsecretswithname)
         * [`obj spec.entityOperator.template.pod.metadata`](#obj-specentityoperatortemplatepodmetadata)
           * [`fn withAnnotations(annotations)`](#fn-specentityoperatortemplatepodmetadatawithannotations)
           * [`fn withAnnotationsMixin(annotations)`](#fn-specentityoperatortemplatepodmetadatawithannotationsmixin)
@@ -313,13 +539,39 @@ permalink: /0.23/kafka/v1beta2/kafka/
           * [`obj spec.entityOperator.template.pod.securityContext.seccompProfile`](#obj-specentityoperatortemplatepodsecuritycontextseccompprofile)
             * [`fn withLocalhostProfile(localhostProfile)`](#fn-specentityoperatortemplatepodsecuritycontextseccompprofilewithlocalhostprofile)
             * [`fn withType(type)`](#fn-specentityoperatortemplatepodsecuritycontextseccompprofilewithtype)
+          * [`obj spec.entityOperator.template.pod.securityContext.sysctls`](#obj-specentityoperatortemplatepodsecuritycontextsysctls)
+            * [`fn withName(name)`](#fn-specentityoperatortemplatepodsecuritycontextsysctlswithname)
+            * [`fn withValue(value)`](#fn-specentityoperatortemplatepodsecuritycontextsysctlswithvalue)
           * [`obj spec.entityOperator.template.pod.securityContext.windowsOptions`](#obj-specentityoperatortemplatepodsecuritycontextwindowsoptions)
             * [`fn withGmsaCredentialSpec(gmsaCredentialSpec)`](#fn-specentityoperatortemplatepodsecuritycontextwindowsoptionswithgmsacredentialspec)
             * [`fn withGmsaCredentialSpecName(gmsaCredentialSpecName)`](#fn-specentityoperatortemplatepodsecuritycontextwindowsoptionswithgmsacredentialspecname)
             * [`fn withRunAsUserName(runAsUserName)`](#fn-specentityoperatortemplatepodsecuritycontextwindowsoptionswithrunasusername)
+        * [`obj spec.entityOperator.template.pod.tolerations`](#obj-specentityoperatortemplatepodtolerations)
+          * [`fn withEffect(effect)`](#fn-specentityoperatortemplatepodtolerationswitheffect)
+          * [`fn withKey(key)`](#fn-specentityoperatortemplatepodtolerationswithkey)
+          * [`fn withOperator(operator)`](#fn-specentityoperatortemplatepodtolerationswithoperator)
+          * [`fn withTolerationSeconds(tolerationSeconds)`](#fn-specentityoperatortemplatepodtolerationswithtolerationseconds)
+          * [`fn withValue(value)`](#fn-specentityoperatortemplatepodtolerationswithvalue)
+        * [`obj spec.entityOperator.template.pod.topologySpreadConstraints`](#obj-specentityoperatortemplatepodtopologyspreadconstraints)
+          * [`fn withMaxSkew(maxSkew)`](#fn-specentityoperatortemplatepodtopologyspreadconstraintswithmaxskew)
+          * [`fn withTopologyKey(topologyKey)`](#fn-specentityoperatortemplatepodtopologyspreadconstraintswithtopologykey)
+          * [`fn withWhenUnsatisfiable(whenUnsatisfiable)`](#fn-specentityoperatortemplatepodtopologyspreadconstraintswithwhenunsatisfiable)
+          * [`obj spec.entityOperator.template.pod.topologySpreadConstraints.labelSelector`](#obj-specentityoperatortemplatepodtopologyspreadconstraintslabelselector)
+            * [`fn withMatchExpressions(matchExpressions)`](#fn-specentityoperatortemplatepodtopologyspreadconstraintslabelselectorwithmatchexpressions)
+            * [`fn withMatchExpressionsMixin(matchExpressions)`](#fn-specentityoperatortemplatepodtopologyspreadconstraintslabelselectorwithmatchexpressionsmixin)
+            * [`fn withMatchLabels(matchLabels)`](#fn-specentityoperatortemplatepodtopologyspreadconstraintslabelselectorwithmatchlabels)
+            * [`fn withMatchLabelsMixin(matchLabels)`](#fn-specentityoperatortemplatepodtopologyspreadconstraintslabelselectorwithmatchlabelsmixin)
+            * [`obj spec.entityOperator.template.pod.topologySpreadConstraints.labelSelector.matchExpressions`](#obj-specentityoperatortemplatepodtopologyspreadconstraintslabelselectormatchexpressions)
+              * [`fn withKey(key)`](#fn-specentityoperatortemplatepodtopologyspreadconstraintslabelselectormatchexpressionswithkey)
+              * [`fn withOperator(operator)`](#fn-specentityoperatortemplatepodtopologyspreadconstraintslabelselectormatchexpressionswithoperator)
+              * [`fn withValues(values)`](#fn-specentityoperatortemplatepodtopologyspreadconstraintslabelselectormatchexpressionswithvalues)
+              * [`fn withValuesMixin(values)`](#fn-specentityoperatortemplatepodtopologyspreadconstraintslabelselectormatchexpressionswithvaluesmixin)
       * [`obj spec.entityOperator.template.tlsSidecarContainer`](#obj-specentityoperatortemplatetlssidecarcontainer)
         * [`fn withEnv(env)`](#fn-specentityoperatortemplatetlssidecarcontainerwithenv)
         * [`fn withEnvMixin(env)`](#fn-specentityoperatortemplatetlssidecarcontainerwithenvmixin)
+        * [`obj spec.entityOperator.template.tlsSidecarContainer.env`](#obj-specentityoperatortemplatetlssidecarcontainerenv)
+          * [`fn withName(name)`](#fn-specentityoperatortemplatetlssidecarcontainerenvwithname)
+          * [`fn withValue(value)`](#fn-specentityoperatortemplatetlssidecarcontainerenvwithvalue)
         * [`obj spec.entityOperator.template.tlsSidecarContainer.securityContext`](#obj-specentityoperatortemplatetlssidecarcontainersecuritycontext)
           * [`fn withAllowPrivilegeEscalation(allowPrivilegeEscalation)`](#fn-specentityoperatortemplatetlssidecarcontainersecuritycontextwithallowprivilegeescalation)
           * [`fn withPrivileged(privileged)`](#fn-specentityoperatortemplatetlssidecarcontainersecuritycontextwithprivileged)
@@ -348,6 +600,9 @@ permalink: /0.23/kafka/v1beta2/kafka/
       * [`obj spec.entityOperator.template.topicOperatorContainer`](#obj-specentityoperatortemplatetopicoperatorcontainer)
         * [`fn withEnv(env)`](#fn-specentityoperatortemplatetopicoperatorcontainerwithenv)
         * [`fn withEnvMixin(env)`](#fn-specentityoperatortemplatetopicoperatorcontainerwithenvmixin)
+        * [`obj spec.entityOperator.template.topicOperatorContainer.env`](#obj-specentityoperatortemplatetopicoperatorcontainerenv)
+          * [`fn withName(name)`](#fn-specentityoperatortemplatetopicoperatorcontainerenvwithname)
+          * [`fn withValue(value)`](#fn-specentityoperatortemplatetopicoperatorcontainerenvwithvalue)
         * [`obj spec.entityOperator.template.topicOperatorContainer.securityContext`](#obj-specentityoperatortemplatetopicoperatorcontainersecuritycontext)
           * [`fn withAllowPrivilegeEscalation(allowPrivilegeEscalation)`](#fn-specentityoperatortemplatetopicoperatorcontainersecuritycontextwithallowprivilegeescalation)
           * [`fn withPrivileged(privileged)`](#fn-specentityoperatortemplatetopicoperatorcontainersecuritycontextwithprivileged)
@@ -376,6 +631,9 @@ permalink: /0.23/kafka/v1beta2/kafka/
       * [`obj spec.entityOperator.template.userOperatorContainer`](#obj-specentityoperatortemplateuseroperatorcontainer)
         * [`fn withEnv(env)`](#fn-specentityoperatortemplateuseroperatorcontainerwithenv)
         * [`fn withEnvMixin(env)`](#fn-specentityoperatortemplateuseroperatorcontainerwithenvmixin)
+        * [`obj spec.entityOperator.template.userOperatorContainer.env`](#obj-specentityoperatortemplateuseroperatorcontainerenv)
+          * [`fn withName(name)`](#fn-specentityoperatortemplateuseroperatorcontainerenvwithname)
+          * [`fn withValue(value)`](#fn-specentityoperatortemplateuseroperatorcontainerenvwithvalue)
         * [`obj spec.entityOperator.template.userOperatorContainer.securityContext`](#obj-specentityoperatortemplateuseroperatorcontainersecuritycontext)
           * [`fn withAllowPrivilegeEscalation(allowPrivilegeEscalation)`](#fn-specentityoperatortemplateuseroperatorcontainersecuritycontextwithallowprivilegeescalation)
           * [`fn withPrivileged(privileged)`](#fn-specentityoperatortemplateuseroperatorcontainersecuritycontextwithprivileged)
@@ -431,10 +689,13 @@ permalink: /0.23/kafka/v1beta2/kafka/
         * [`fn withGcLoggingEnabled(gcLoggingEnabled)`](#fn-specentityoperatortopicoperatorjvmoptionswithgcloggingenabled)
         * [`fn withJavaSystemProperties(javaSystemProperties)`](#fn-specentityoperatortopicoperatorjvmoptionswithjavasystemproperties)
         * [`fn withJavaSystemPropertiesMixin(javaSystemProperties)`](#fn-specentityoperatortopicoperatorjvmoptionswithjavasystempropertiesmixin)
-        * [`fn withXX(XX)`](#fn-specentityoperatortopicoperatorjvmoptionswithxx)
-        * [`fn withXXMixin(XX)`](#fn-specentityoperatortopicoperatorjvmoptionswithxxmixin)
-        * [`fn withXms(Xms)`](#fn-specentityoperatortopicoperatorjvmoptionswithxms)
-        * [`fn withXmx(Xmx)`](#fn-specentityoperatortopicoperatorjvmoptionswithxmx)
+        * [`fn withXX(_XX)`](#fn-specentityoperatortopicoperatorjvmoptionswithxx)
+        * [`fn withXXMixin(_XX)`](#fn-specentityoperatortopicoperatorjvmoptionswithxxmixin)
+        * [`fn withXms(_Xms)`](#fn-specentityoperatortopicoperatorjvmoptionswithxms)
+        * [`fn withXmx(_Xmx)`](#fn-specentityoperatortopicoperatorjvmoptionswithxmx)
+        * [`obj spec.entityOperator.topicOperator.jvmOptions.javaSystemProperties`](#obj-specentityoperatortopicoperatorjvmoptionsjavasystemproperties)
+          * [`fn withName(name)`](#fn-specentityoperatortopicoperatorjvmoptionsjavasystempropertieswithname)
+          * [`fn withValue(value)`](#fn-specentityoperatortopicoperatorjvmoptionsjavasystempropertieswithvalue)
       * [`obj spec.entityOperator.topicOperator.livenessProbe`](#obj-specentityoperatortopicoperatorlivenessprobe)
         * [`fn withFailureThreshold(failureThreshold)`](#fn-specentityoperatortopicoperatorlivenessprobewithfailurethreshold)
         * [`fn withInitialDelaySeconds(initialDelaySeconds)`](#fn-specentityoperatortopicoperatorlivenessprobewithinitialdelayseconds)
@@ -477,10 +738,13 @@ permalink: /0.23/kafka/v1beta2/kafka/
         * [`fn withGcLoggingEnabled(gcLoggingEnabled)`](#fn-specentityoperatoruseroperatorjvmoptionswithgcloggingenabled)
         * [`fn withJavaSystemProperties(javaSystemProperties)`](#fn-specentityoperatoruseroperatorjvmoptionswithjavasystemproperties)
         * [`fn withJavaSystemPropertiesMixin(javaSystemProperties)`](#fn-specentityoperatoruseroperatorjvmoptionswithjavasystempropertiesmixin)
-        * [`fn withXX(XX)`](#fn-specentityoperatoruseroperatorjvmoptionswithxx)
-        * [`fn withXXMixin(XX)`](#fn-specentityoperatoruseroperatorjvmoptionswithxxmixin)
-        * [`fn withXms(Xms)`](#fn-specentityoperatoruseroperatorjvmoptionswithxms)
-        * [`fn withXmx(Xmx)`](#fn-specentityoperatoruseroperatorjvmoptionswithxmx)
+        * [`fn withXX(_XX)`](#fn-specentityoperatoruseroperatorjvmoptionswithxx)
+        * [`fn withXXMixin(_XX)`](#fn-specentityoperatoruseroperatorjvmoptionswithxxmixin)
+        * [`fn withXms(_Xms)`](#fn-specentityoperatoruseroperatorjvmoptionswithxms)
+        * [`fn withXmx(_Xmx)`](#fn-specentityoperatoruseroperatorjvmoptionswithxmx)
+        * [`obj spec.entityOperator.userOperator.jvmOptions.javaSystemProperties`](#obj-specentityoperatoruseroperatorjvmoptionsjavasystemproperties)
+          * [`fn withName(name)`](#fn-specentityoperatoruseroperatorjvmoptionsjavasystempropertieswithname)
+          * [`fn withValue(value)`](#fn-specentityoperatoruseroperatorjvmoptionsjavasystempropertieswithvalue)
       * [`obj spec.entityOperator.userOperator.livenessProbe`](#obj-specentityoperatoruseroperatorlivenessprobe)
         * [`fn withFailureThreshold(failureThreshold)`](#fn-specentityoperatoruseroperatorlivenessprobewithfailurethreshold)
         * [`fn withInitialDelaySeconds(initialDelaySeconds)`](#fn-specentityoperatoruseroperatorlivenessprobewithinitialdelayseconds)
@@ -514,6 +778,20 @@ permalink: /0.23/kafka/v1beta2/kafka/
     * [`fn withLogLevel(logLevel)`](#fn-specjmxtranswithloglevel)
     * [`fn withOutputDefinitions(outputDefinitions)`](#fn-specjmxtranswithoutputdefinitions)
     * [`fn withOutputDefinitionsMixin(outputDefinitions)`](#fn-specjmxtranswithoutputdefinitionsmixin)
+    * [`obj spec.jmxTrans.kafkaQueries`](#obj-specjmxtranskafkaqueries)
+      * [`fn withAttributes(attributes)`](#fn-specjmxtranskafkaquerieswithattributes)
+      * [`fn withAttributesMixin(attributes)`](#fn-specjmxtranskafkaquerieswithattributesmixin)
+      * [`fn withOutputs(outputs)`](#fn-specjmxtranskafkaquerieswithoutputs)
+      * [`fn withOutputsMixin(outputs)`](#fn-specjmxtranskafkaquerieswithoutputsmixin)
+      * [`fn withTargetMBean(targetMBean)`](#fn-specjmxtranskafkaquerieswithtargetmbean)
+    * [`obj spec.jmxTrans.outputDefinitions`](#obj-specjmxtransoutputdefinitions)
+      * [`fn withFlushDelayInSeconds(flushDelayInSeconds)`](#fn-specjmxtransoutputdefinitionswithflushdelayinseconds)
+      * [`fn withHost(host)`](#fn-specjmxtransoutputdefinitionswithhost)
+      * [`fn withName(name)`](#fn-specjmxtransoutputdefinitionswithname)
+      * [`fn withOutputType(outputType)`](#fn-specjmxtransoutputdefinitionswithoutputtype)
+      * [`fn withPort(port)`](#fn-specjmxtransoutputdefinitionswithport)
+      * [`fn withTypeNames(typeNames)`](#fn-specjmxtransoutputdefinitionswithtypenames)
+      * [`fn withTypeNamesMixin(typeNames)`](#fn-specjmxtransoutputdefinitionswithtypenamesmixin)
     * [`obj spec.jmxTrans.resources`](#obj-specjmxtransresources)
       * [`fn withLimits(limits)`](#fn-specjmxtransresourceswithlimits)
       * [`fn withLimitsMixin(limits)`](#fn-specjmxtransresourceswithlimitsmixin)
@@ -523,6 +801,9 @@ permalink: /0.23/kafka/v1beta2/kafka/
       * [`obj spec.jmxTrans.template.container`](#obj-specjmxtranstemplatecontainer)
         * [`fn withEnv(env)`](#fn-specjmxtranstemplatecontainerwithenv)
         * [`fn withEnvMixin(env)`](#fn-specjmxtranstemplatecontainerwithenvmixin)
+        * [`obj spec.jmxTrans.template.container.env`](#obj-specjmxtranstemplatecontainerenv)
+          * [`fn withName(name)`](#fn-specjmxtranstemplatecontainerenvwithname)
+          * [`fn withValue(value)`](#fn-specjmxtranstemplatecontainerenvwithvalue)
         * [`obj spec.jmxTrans.template.container.securityContext`](#obj-specjmxtranstemplatecontainersecuritycontext)
           * [`fn withAllowPrivilegeEscalation(allowPrivilegeEscalation)`](#fn-specjmxtranstemplatecontainersecuritycontextwithallowprivilegeescalation)
           * [`fn withPrivileged(privileged)`](#fn-specjmxtranstemplatecontainersecuritycontextwithprivileged)
@@ -571,19 +852,117 @@ permalink: /0.23/kafka/v1beta2/kafka/
           * [`obj spec.jmxTrans.template.pod.affinity.nodeAffinity`](#obj-specjmxtranstemplatepodaffinitynodeaffinity)
             * [`fn withPreferredDuringSchedulingIgnoredDuringExecution(preferredDuringSchedulingIgnoredDuringExecution)`](#fn-specjmxtranstemplatepodaffinitynodeaffinitywithpreferredduringschedulingignoredduringexecution)
             * [`fn withPreferredDuringSchedulingIgnoredDuringExecutionMixin(preferredDuringSchedulingIgnoredDuringExecution)`](#fn-specjmxtranstemplatepodaffinitynodeaffinitywithpreferredduringschedulingignoredduringexecutionmixin)
+            * [`obj spec.jmxTrans.template.pod.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution`](#obj-specjmxtranstemplatepodaffinitynodeaffinitypreferredduringschedulingignoredduringexecution)
+              * [`fn withWeight(weight)`](#fn-specjmxtranstemplatepodaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionwithweight)
+              * [`obj spec.jmxTrans.template.pod.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference`](#obj-specjmxtranstemplatepodaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreference)
+                * [`fn withMatchExpressions(matchExpressions)`](#fn-specjmxtranstemplatepodaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencewithmatchexpressions)
+                * [`fn withMatchExpressionsMixin(matchExpressions)`](#fn-specjmxtranstemplatepodaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencewithmatchexpressionsmixin)
+                * [`fn withMatchFields(matchFields)`](#fn-specjmxtranstemplatepodaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencewithmatchfields)
+                * [`fn withMatchFieldsMixin(matchFields)`](#fn-specjmxtranstemplatepodaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencewithmatchfieldsmixin)
+                * [`obj spec.jmxTrans.template.pod.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchExpressions`](#obj-specjmxtranstemplatepodaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchexpressions)
+                  * [`fn withKey(key)`](#fn-specjmxtranstemplatepodaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchexpressionswithkey)
+                  * [`fn withOperator(operator)`](#fn-specjmxtranstemplatepodaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchexpressionswithoperator)
+                  * [`fn withValues(values)`](#fn-specjmxtranstemplatepodaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchexpressionswithvalues)
+                  * [`fn withValuesMixin(values)`](#fn-specjmxtranstemplatepodaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchexpressionswithvaluesmixin)
+                * [`obj spec.jmxTrans.template.pod.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchFields`](#obj-specjmxtranstemplatepodaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchfields)
+                  * [`fn withKey(key)`](#fn-specjmxtranstemplatepodaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchfieldswithkey)
+                  * [`fn withOperator(operator)`](#fn-specjmxtranstemplatepodaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchfieldswithoperator)
+                  * [`fn withValues(values)`](#fn-specjmxtranstemplatepodaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchfieldswithvalues)
+                  * [`fn withValuesMixin(values)`](#fn-specjmxtranstemplatepodaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchfieldswithvaluesmixin)
             * [`obj spec.jmxTrans.template.pod.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution`](#obj-specjmxtranstemplatepodaffinitynodeaffinityrequiredduringschedulingignoredduringexecution)
               * [`fn withNodeSelectorTerms(nodeSelectorTerms)`](#fn-specjmxtranstemplatepodaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionwithnodeselectorterms)
               * [`fn withNodeSelectorTermsMixin(nodeSelectorTerms)`](#fn-specjmxtranstemplatepodaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionwithnodeselectortermsmixin)
+              * [`obj spec.jmxTrans.template.pod.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms`](#obj-specjmxtranstemplatepodaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectorterms)
+                * [`fn withMatchExpressions(matchExpressions)`](#fn-specjmxtranstemplatepodaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermswithmatchexpressions)
+                * [`fn withMatchExpressionsMixin(matchExpressions)`](#fn-specjmxtranstemplatepodaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermswithmatchexpressionsmixin)
+                * [`fn withMatchFields(matchFields)`](#fn-specjmxtranstemplatepodaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermswithmatchfields)
+                * [`fn withMatchFieldsMixin(matchFields)`](#fn-specjmxtranstemplatepodaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermswithmatchfieldsmixin)
+                * [`obj spec.jmxTrans.template.pod.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchExpressions`](#obj-specjmxtranstemplatepodaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchexpressions)
+                  * [`fn withKey(key)`](#fn-specjmxtranstemplatepodaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchexpressionswithkey)
+                  * [`fn withOperator(operator)`](#fn-specjmxtranstemplatepodaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchexpressionswithoperator)
+                  * [`fn withValues(values)`](#fn-specjmxtranstemplatepodaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchexpressionswithvalues)
+                  * [`fn withValuesMixin(values)`](#fn-specjmxtranstemplatepodaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchexpressionswithvaluesmixin)
+                * [`obj spec.jmxTrans.template.pod.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchFields`](#obj-specjmxtranstemplatepodaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchfields)
+                  * [`fn withKey(key)`](#fn-specjmxtranstemplatepodaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchfieldswithkey)
+                  * [`fn withOperator(operator)`](#fn-specjmxtranstemplatepodaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchfieldswithoperator)
+                  * [`fn withValues(values)`](#fn-specjmxtranstemplatepodaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchfieldswithvalues)
+                  * [`fn withValuesMixin(values)`](#fn-specjmxtranstemplatepodaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchfieldswithvaluesmixin)
           * [`obj spec.jmxTrans.template.pod.affinity.podAffinity`](#obj-specjmxtranstemplatepodaffinitypodaffinity)
             * [`fn withPreferredDuringSchedulingIgnoredDuringExecution(preferredDuringSchedulingIgnoredDuringExecution)`](#fn-specjmxtranstemplatepodaffinitypodaffinitywithpreferredduringschedulingignoredduringexecution)
             * [`fn withPreferredDuringSchedulingIgnoredDuringExecutionMixin(preferredDuringSchedulingIgnoredDuringExecution)`](#fn-specjmxtranstemplatepodaffinitypodaffinitywithpreferredduringschedulingignoredduringexecutionmixin)
             * [`fn withRequiredDuringSchedulingIgnoredDuringExecution(requiredDuringSchedulingIgnoredDuringExecution)`](#fn-specjmxtranstemplatepodaffinitypodaffinitywithrequiredduringschedulingignoredduringexecution)
             * [`fn withRequiredDuringSchedulingIgnoredDuringExecutionMixin(requiredDuringSchedulingIgnoredDuringExecution)`](#fn-specjmxtranstemplatepodaffinitypodaffinitywithrequiredduringschedulingignoredduringexecutionmixin)
+            * [`obj spec.jmxTrans.template.pod.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution`](#obj-specjmxtranstemplatepodaffinitypodaffinitypreferredduringschedulingignoredduringexecution)
+              * [`fn withWeight(weight)`](#fn-specjmxtranstemplatepodaffinitypodaffinitypreferredduringschedulingignoredduringexecutionwithweight)
+              * [`obj spec.jmxTrans.template.pod.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm`](#obj-specjmxtranstemplatepodaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinityterm)
+                * [`fn withNamespaces(namespaces)`](#fn-specjmxtranstemplatepodaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermwithnamespaces)
+                * [`fn withNamespacesMixin(namespaces)`](#fn-specjmxtranstemplatepodaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermwithnamespacesmixin)
+                * [`fn withTopologyKey(topologyKey)`](#fn-specjmxtranstemplatepodaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermwithtopologykey)
+                * [`obj spec.jmxTrans.template.pod.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector`](#obj-specjmxtranstemplatepodaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselector)
+                  * [`fn withMatchExpressions(matchExpressions)`](#fn-specjmxtranstemplatepodaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectorwithmatchexpressions)
+                  * [`fn withMatchExpressionsMixin(matchExpressions)`](#fn-specjmxtranstemplatepodaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectorwithmatchexpressionsmixin)
+                  * [`fn withMatchLabels(matchLabels)`](#fn-specjmxtranstemplatepodaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectorwithmatchlabels)
+                  * [`fn withMatchLabelsMixin(matchLabels)`](#fn-specjmxtranstemplatepodaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectorwithmatchlabelsmixin)
+                  * [`obj spec.jmxTrans.template.pod.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions`](#obj-specjmxtranstemplatepodaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressions)
+                    * [`fn withKey(key)`](#fn-specjmxtranstemplatepodaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressionswithkey)
+                    * [`fn withOperator(operator)`](#fn-specjmxtranstemplatepodaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressionswithoperator)
+                    * [`fn withValues(values)`](#fn-specjmxtranstemplatepodaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressionswithvalues)
+                    * [`fn withValuesMixin(values)`](#fn-specjmxtranstemplatepodaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressionswithvaluesmixin)
+            * [`obj spec.jmxTrans.template.pod.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution`](#obj-specjmxtranstemplatepodaffinitypodaffinityrequiredduringschedulingignoredduringexecution)
+              * [`fn withNamespaces(namespaces)`](#fn-specjmxtranstemplatepodaffinitypodaffinityrequiredduringschedulingignoredduringexecutionwithnamespaces)
+              * [`fn withNamespacesMixin(namespaces)`](#fn-specjmxtranstemplatepodaffinitypodaffinityrequiredduringschedulingignoredduringexecutionwithnamespacesmixin)
+              * [`fn withTopologyKey(topologyKey)`](#fn-specjmxtranstemplatepodaffinitypodaffinityrequiredduringschedulingignoredduringexecutionwithtopologykey)
+              * [`obj spec.jmxTrans.template.pod.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector`](#obj-specjmxtranstemplatepodaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselector)
+                * [`fn withMatchExpressions(matchExpressions)`](#fn-specjmxtranstemplatepodaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectorwithmatchexpressions)
+                * [`fn withMatchExpressionsMixin(matchExpressions)`](#fn-specjmxtranstemplatepodaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectorwithmatchexpressionsmixin)
+                * [`fn withMatchLabels(matchLabels)`](#fn-specjmxtranstemplatepodaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectorwithmatchlabels)
+                * [`fn withMatchLabelsMixin(matchLabels)`](#fn-specjmxtranstemplatepodaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectorwithmatchlabelsmixin)
+                * [`obj spec.jmxTrans.template.pod.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions`](#obj-specjmxtranstemplatepodaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressions)
+                  * [`fn withKey(key)`](#fn-specjmxtranstemplatepodaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressionswithkey)
+                  * [`fn withOperator(operator)`](#fn-specjmxtranstemplatepodaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressionswithoperator)
+                  * [`fn withValues(values)`](#fn-specjmxtranstemplatepodaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressionswithvalues)
+                  * [`fn withValuesMixin(values)`](#fn-specjmxtranstemplatepodaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressionswithvaluesmixin)
           * [`obj spec.jmxTrans.template.pod.affinity.podAntiAffinity`](#obj-specjmxtranstemplatepodaffinitypodantiaffinity)
             * [`fn withPreferredDuringSchedulingIgnoredDuringExecution(preferredDuringSchedulingIgnoredDuringExecution)`](#fn-specjmxtranstemplatepodaffinitypodantiaffinitywithpreferredduringschedulingignoredduringexecution)
             * [`fn withPreferredDuringSchedulingIgnoredDuringExecutionMixin(preferredDuringSchedulingIgnoredDuringExecution)`](#fn-specjmxtranstemplatepodaffinitypodantiaffinitywithpreferredduringschedulingignoredduringexecutionmixin)
             * [`fn withRequiredDuringSchedulingIgnoredDuringExecution(requiredDuringSchedulingIgnoredDuringExecution)`](#fn-specjmxtranstemplatepodaffinitypodantiaffinitywithrequiredduringschedulingignoredduringexecution)
             * [`fn withRequiredDuringSchedulingIgnoredDuringExecutionMixin(requiredDuringSchedulingIgnoredDuringExecution)`](#fn-specjmxtranstemplatepodaffinitypodantiaffinitywithrequiredduringschedulingignoredduringexecutionmixin)
+            * [`obj spec.jmxTrans.template.pod.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution`](#obj-specjmxtranstemplatepodaffinitypodantiaffinitypreferredduringschedulingignoredduringexecution)
+              * [`fn withWeight(weight)`](#fn-specjmxtranstemplatepodaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionwithweight)
+              * [`obj spec.jmxTrans.template.pod.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm`](#obj-specjmxtranstemplatepodaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinityterm)
+                * [`fn withNamespaces(namespaces)`](#fn-specjmxtranstemplatepodaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermwithnamespaces)
+                * [`fn withNamespacesMixin(namespaces)`](#fn-specjmxtranstemplatepodaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermwithnamespacesmixin)
+                * [`fn withTopologyKey(topologyKey)`](#fn-specjmxtranstemplatepodaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermwithtopologykey)
+                * [`obj spec.jmxTrans.template.pod.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector`](#obj-specjmxtranstemplatepodaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselector)
+                  * [`fn withMatchExpressions(matchExpressions)`](#fn-specjmxtranstemplatepodaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectorwithmatchexpressions)
+                  * [`fn withMatchExpressionsMixin(matchExpressions)`](#fn-specjmxtranstemplatepodaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectorwithmatchexpressionsmixin)
+                  * [`fn withMatchLabels(matchLabels)`](#fn-specjmxtranstemplatepodaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectorwithmatchlabels)
+                  * [`fn withMatchLabelsMixin(matchLabels)`](#fn-specjmxtranstemplatepodaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectorwithmatchlabelsmixin)
+                  * [`obj spec.jmxTrans.template.pod.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions`](#obj-specjmxtranstemplatepodaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressions)
+                    * [`fn withKey(key)`](#fn-specjmxtranstemplatepodaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressionswithkey)
+                    * [`fn withOperator(operator)`](#fn-specjmxtranstemplatepodaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressionswithoperator)
+                    * [`fn withValues(values)`](#fn-specjmxtranstemplatepodaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressionswithvalues)
+                    * [`fn withValuesMixin(values)`](#fn-specjmxtranstemplatepodaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressionswithvaluesmixin)
+            * [`obj spec.jmxTrans.template.pod.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution`](#obj-specjmxtranstemplatepodaffinitypodantiaffinityrequiredduringschedulingignoredduringexecution)
+              * [`fn withNamespaces(namespaces)`](#fn-specjmxtranstemplatepodaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionwithnamespaces)
+              * [`fn withNamespacesMixin(namespaces)`](#fn-specjmxtranstemplatepodaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionwithnamespacesmixin)
+              * [`fn withTopologyKey(topologyKey)`](#fn-specjmxtranstemplatepodaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionwithtopologykey)
+              * [`obj spec.jmxTrans.template.pod.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector`](#obj-specjmxtranstemplatepodaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselector)
+                * [`fn withMatchExpressions(matchExpressions)`](#fn-specjmxtranstemplatepodaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectorwithmatchexpressions)
+                * [`fn withMatchExpressionsMixin(matchExpressions)`](#fn-specjmxtranstemplatepodaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectorwithmatchexpressionsmixin)
+                * [`fn withMatchLabels(matchLabels)`](#fn-specjmxtranstemplatepodaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectorwithmatchlabels)
+                * [`fn withMatchLabelsMixin(matchLabels)`](#fn-specjmxtranstemplatepodaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectorwithmatchlabelsmixin)
+                * [`obj spec.jmxTrans.template.pod.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions`](#obj-specjmxtranstemplatepodaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressions)
+                  * [`fn withKey(key)`](#fn-specjmxtranstemplatepodaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressionswithkey)
+                  * [`fn withOperator(operator)`](#fn-specjmxtranstemplatepodaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressionswithoperator)
+                  * [`fn withValues(values)`](#fn-specjmxtranstemplatepodaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressionswithvalues)
+                  * [`fn withValuesMixin(values)`](#fn-specjmxtranstemplatepodaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressionswithvaluesmixin)
+        * [`obj spec.jmxTrans.template.pod.hostAliases`](#obj-specjmxtranstemplatepodhostaliases)
+          * [`fn withHostnames(hostnames)`](#fn-specjmxtranstemplatepodhostaliaseswithhostnames)
+          * [`fn withHostnamesMixin(hostnames)`](#fn-specjmxtranstemplatepodhostaliaseswithhostnamesmixin)
+          * [`fn withIp(ip)`](#fn-specjmxtranstemplatepodhostaliaseswithip)
+        * [`obj spec.jmxTrans.template.pod.imagePullSecrets`](#obj-specjmxtranstemplatepodimagepullsecrets)
+          * [`fn withName(name)`](#fn-specjmxtranstemplatepodimagepullsecretswithname)
         * [`obj spec.jmxTrans.template.pod.metadata`](#obj-specjmxtranstemplatepodmetadata)
           * [`fn withAnnotations(annotations)`](#fn-specjmxtranstemplatepodmetadatawithannotations)
           * [`fn withAnnotationsMixin(annotations)`](#fn-specjmxtranstemplatepodmetadatawithannotationsmixin)
@@ -607,10 +986,33 @@ permalink: /0.23/kafka/v1beta2/kafka/
           * [`obj spec.jmxTrans.template.pod.securityContext.seccompProfile`](#obj-specjmxtranstemplatepodsecuritycontextseccompprofile)
             * [`fn withLocalhostProfile(localhostProfile)`](#fn-specjmxtranstemplatepodsecuritycontextseccompprofilewithlocalhostprofile)
             * [`fn withType(type)`](#fn-specjmxtranstemplatepodsecuritycontextseccompprofilewithtype)
+          * [`obj spec.jmxTrans.template.pod.securityContext.sysctls`](#obj-specjmxtranstemplatepodsecuritycontextsysctls)
+            * [`fn withName(name)`](#fn-specjmxtranstemplatepodsecuritycontextsysctlswithname)
+            * [`fn withValue(value)`](#fn-specjmxtranstemplatepodsecuritycontextsysctlswithvalue)
           * [`obj spec.jmxTrans.template.pod.securityContext.windowsOptions`](#obj-specjmxtranstemplatepodsecuritycontextwindowsoptions)
             * [`fn withGmsaCredentialSpec(gmsaCredentialSpec)`](#fn-specjmxtranstemplatepodsecuritycontextwindowsoptionswithgmsacredentialspec)
             * [`fn withGmsaCredentialSpecName(gmsaCredentialSpecName)`](#fn-specjmxtranstemplatepodsecuritycontextwindowsoptionswithgmsacredentialspecname)
             * [`fn withRunAsUserName(runAsUserName)`](#fn-specjmxtranstemplatepodsecuritycontextwindowsoptionswithrunasusername)
+        * [`obj spec.jmxTrans.template.pod.tolerations`](#obj-specjmxtranstemplatepodtolerations)
+          * [`fn withEffect(effect)`](#fn-specjmxtranstemplatepodtolerationswitheffect)
+          * [`fn withKey(key)`](#fn-specjmxtranstemplatepodtolerationswithkey)
+          * [`fn withOperator(operator)`](#fn-specjmxtranstemplatepodtolerationswithoperator)
+          * [`fn withTolerationSeconds(tolerationSeconds)`](#fn-specjmxtranstemplatepodtolerationswithtolerationseconds)
+          * [`fn withValue(value)`](#fn-specjmxtranstemplatepodtolerationswithvalue)
+        * [`obj spec.jmxTrans.template.pod.topologySpreadConstraints`](#obj-specjmxtranstemplatepodtopologyspreadconstraints)
+          * [`fn withMaxSkew(maxSkew)`](#fn-specjmxtranstemplatepodtopologyspreadconstraintswithmaxskew)
+          * [`fn withTopologyKey(topologyKey)`](#fn-specjmxtranstemplatepodtopologyspreadconstraintswithtopologykey)
+          * [`fn withWhenUnsatisfiable(whenUnsatisfiable)`](#fn-specjmxtranstemplatepodtopologyspreadconstraintswithwhenunsatisfiable)
+          * [`obj spec.jmxTrans.template.pod.topologySpreadConstraints.labelSelector`](#obj-specjmxtranstemplatepodtopologyspreadconstraintslabelselector)
+            * [`fn withMatchExpressions(matchExpressions)`](#fn-specjmxtranstemplatepodtopologyspreadconstraintslabelselectorwithmatchexpressions)
+            * [`fn withMatchExpressionsMixin(matchExpressions)`](#fn-specjmxtranstemplatepodtopologyspreadconstraintslabelselectorwithmatchexpressionsmixin)
+            * [`fn withMatchLabels(matchLabels)`](#fn-specjmxtranstemplatepodtopologyspreadconstraintslabelselectorwithmatchlabels)
+            * [`fn withMatchLabelsMixin(matchLabels)`](#fn-specjmxtranstemplatepodtopologyspreadconstraintslabelselectorwithmatchlabelsmixin)
+            * [`obj spec.jmxTrans.template.pod.topologySpreadConstraints.labelSelector.matchExpressions`](#obj-specjmxtranstemplatepodtopologyspreadconstraintslabelselectormatchexpressions)
+              * [`fn withKey(key)`](#fn-specjmxtranstemplatepodtopologyspreadconstraintslabelselectormatchexpressionswithkey)
+              * [`fn withOperator(operator)`](#fn-specjmxtranstemplatepodtopologyspreadconstraintslabelselectormatchexpressionswithoperator)
+              * [`fn withValues(values)`](#fn-specjmxtranstemplatepodtopologyspreadconstraintslabelselectormatchexpressionswithvalues)
+              * [`fn withValuesMixin(values)`](#fn-specjmxtranstemplatepodtopologyspreadconstraintslabelselectormatchexpressionswithvaluesmixin)
   * [`obj spec.kafka`](#obj-speckafka)
     * [`fn withBrokerRackInitImage(brokerRackInitImage)`](#fn-speckafkawithbrokerrackinitimage)
     * [`fn withConfig(config)`](#fn-speckafkawithconfig)
@@ -638,6 +1040,9 @@ permalink: /0.23/kafka/v1beta2/kafka/
       * [`fn withTokenEndpointUri(tokenEndpointUri)`](#fn-speckafkaauthorizationwithtokenendpointuri)
       * [`fn withType(type)`](#fn-speckafkaauthorizationwithtype)
       * [`fn withUrl(url)`](#fn-speckafkaauthorizationwithurl)
+      * [`obj spec.kafka.authorization.tlsTrustedCertificates`](#obj-speckafkaauthorizationtlstrustedcertificates)
+        * [`fn withCertificate(certificate)`](#fn-speckafkaauthorizationtlstrustedcertificateswithcertificate)
+        * [`fn withSecretName(secretName)`](#fn-speckafkaauthorizationtlstrustedcertificateswithsecretname)
     * [`obj spec.kafka.jmxOptions`](#obj-speckafkajmxoptions)
       * [`obj spec.kafka.jmxOptions.authentication`](#obj-speckafkajmxoptionsauthentication)
         * [`fn withType(type)`](#fn-speckafkajmxoptionsauthenticationwithtype)
@@ -645,10 +1050,119 @@ permalink: /0.23/kafka/v1beta2/kafka/
       * [`fn withGcLoggingEnabled(gcLoggingEnabled)`](#fn-speckafkajvmoptionswithgcloggingenabled)
       * [`fn withJavaSystemProperties(javaSystemProperties)`](#fn-speckafkajvmoptionswithjavasystemproperties)
       * [`fn withJavaSystemPropertiesMixin(javaSystemProperties)`](#fn-speckafkajvmoptionswithjavasystempropertiesmixin)
-      * [`fn withXX(XX)`](#fn-speckafkajvmoptionswithxx)
-      * [`fn withXXMixin(XX)`](#fn-speckafkajvmoptionswithxxmixin)
-      * [`fn withXms(Xms)`](#fn-speckafkajvmoptionswithxms)
-      * [`fn withXmx(Xmx)`](#fn-speckafkajvmoptionswithxmx)
+      * [`fn withXX(_XX)`](#fn-speckafkajvmoptionswithxx)
+      * [`fn withXXMixin(_XX)`](#fn-speckafkajvmoptionswithxxmixin)
+      * [`fn withXms(_Xms)`](#fn-speckafkajvmoptionswithxms)
+      * [`fn withXmx(_Xmx)`](#fn-speckafkajvmoptionswithxmx)
+      * [`obj spec.kafka.jvmOptions.javaSystemProperties`](#obj-speckafkajvmoptionsjavasystemproperties)
+        * [`fn withName(name)`](#fn-speckafkajvmoptionsjavasystempropertieswithname)
+        * [`fn withValue(value)`](#fn-speckafkajvmoptionsjavasystempropertieswithvalue)
+    * [`obj spec.kafka.listeners`](#obj-speckafkalisteners)
+      * [`fn withName(name)`](#fn-speckafkalistenerswithname)
+      * [`fn withNetworkPolicyPeers(networkPolicyPeers)`](#fn-speckafkalistenerswithnetworkpolicypeers)
+      * [`fn withNetworkPolicyPeersMixin(networkPolicyPeers)`](#fn-speckafkalistenerswithnetworkpolicypeersmixin)
+      * [`fn withPort(port)`](#fn-speckafkalistenerswithport)
+      * [`fn withTls(tls)`](#fn-speckafkalistenerswithtls)
+      * [`fn withType(type)`](#fn-speckafkalistenerswithtype)
+      * [`obj spec.kafka.listeners.authentication`](#obj-speckafkalistenersauthentication)
+        * [`fn withAccessTokenIsJwt(accessTokenIsJwt)`](#fn-speckafkalistenersauthenticationwithaccesstokenisjwt)
+        * [`fn withCheckAccessTokenType(checkAccessTokenType)`](#fn-speckafkalistenersauthenticationwithcheckaccesstokentype)
+        * [`fn withCheckAudience(checkAudience)`](#fn-speckafkalistenersauthenticationwithcheckaudience)
+        * [`fn withCheckIssuer(checkIssuer)`](#fn-speckafkalistenersauthenticationwithcheckissuer)
+        * [`fn withClientId(clientId)`](#fn-speckafkalistenersauthenticationwithclientid)
+        * [`fn withCustomClaimCheck(customClaimCheck)`](#fn-speckafkalistenersauthenticationwithcustomclaimcheck)
+        * [`fn withDisableTlsHostnameVerification(disableTlsHostnameVerification)`](#fn-speckafkalistenersauthenticationwithdisabletlshostnameverification)
+        * [`fn withEnableECDSA(enableECDSA)`](#fn-speckafkalistenersauthenticationwithenableecdsa)
+        * [`fn withEnableOauthBearer(enableOauthBearer)`](#fn-speckafkalistenersauthenticationwithenableoauthbearer)
+        * [`fn withEnablePlain(enablePlain)`](#fn-speckafkalistenersauthenticationwithenableplain)
+        * [`fn withFallbackUserNameClaim(fallbackUserNameClaim)`](#fn-speckafkalistenersauthenticationwithfallbackusernameclaim)
+        * [`fn withFallbackUserNamePrefix(fallbackUserNamePrefix)`](#fn-speckafkalistenersauthenticationwithfallbackusernameprefix)
+        * [`fn withIntrospectionEndpointUri(introspectionEndpointUri)`](#fn-speckafkalistenersauthenticationwithintrospectionendpointuri)
+        * [`fn withJwksEndpointUri(jwksEndpointUri)`](#fn-speckafkalistenersauthenticationwithjwksendpointuri)
+        * [`fn withJwksExpirySeconds(jwksExpirySeconds)`](#fn-speckafkalistenersauthenticationwithjwksexpiryseconds)
+        * [`fn withJwksMinRefreshPauseSeconds(jwksMinRefreshPauseSeconds)`](#fn-speckafkalistenersauthenticationwithjwksminrefreshpauseseconds)
+        * [`fn withJwksRefreshSeconds(jwksRefreshSeconds)`](#fn-speckafkalistenersauthenticationwithjwksrefreshseconds)
+        * [`fn withMaxSecondsWithoutReauthentication(maxSecondsWithoutReauthentication)`](#fn-speckafkalistenersauthenticationwithmaxsecondswithoutreauthentication)
+        * [`fn withTlsTrustedCertificates(tlsTrustedCertificates)`](#fn-speckafkalistenersauthenticationwithtlstrustedcertificates)
+        * [`fn withTlsTrustedCertificatesMixin(tlsTrustedCertificates)`](#fn-speckafkalistenersauthenticationwithtlstrustedcertificatesmixin)
+        * [`fn withTokenEndpointUri(tokenEndpointUri)`](#fn-speckafkalistenersauthenticationwithtokenendpointuri)
+        * [`fn withType(type)`](#fn-speckafkalistenersauthenticationwithtype)
+        * [`fn withUserInfoEndpointUri(userInfoEndpointUri)`](#fn-speckafkalistenersauthenticationwithuserinfoendpointuri)
+        * [`fn withUserNameClaim(userNameClaim)`](#fn-speckafkalistenersauthenticationwithusernameclaim)
+        * [`fn withValidIssuerUri(validIssuerUri)`](#fn-speckafkalistenersauthenticationwithvalidissueruri)
+        * [`fn withValidTokenType(validTokenType)`](#fn-speckafkalistenersauthenticationwithvalidtokentype)
+        * [`obj spec.kafka.listeners.authentication.clientSecret`](#obj-speckafkalistenersauthenticationclientsecret)
+          * [`fn withKey(key)`](#fn-speckafkalistenersauthenticationclientsecretwithkey)
+          * [`fn withSecretName(secretName)`](#fn-speckafkalistenersauthenticationclientsecretwithsecretname)
+        * [`obj spec.kafka.listeners.authentication.tlsTrustedCertificates`](#obj-speckafkalistenersauthenticationtlstrustedcertificates)
+          * [`fn withCertificate(certificate)`](#fn-speckafkalistenersauthenticationtlstrustedcertificateswithcertificate)
+          * [`fn withSecretName(secretName)`](#fn-speckafkalistenersauthenticationtlstrustedcertificateswithsecretname)
+      * [`obj spec.kafka.listeners.configuration`](#obj-speckafkalistenersconfiguration)
+        * [`fn withBrokers(brokers)`](#fn-speckafkalistenersconfigurationwithbrokers)
+        * [`fn withBrokersMixin(brokers)`](#fn-speckafkalistenersconfigurationwithbrokersmixin)
+        * [`fn withClass(class)`](#fn-speckafkalistenersconfigurationwithclass)
+        * [`fn withExternalTrafficPolicy(externalTrafficPolicy)`](#fn-speckafkalistenersconfigurationwithexternaltrafficpolicy)
+        * [`fn withFinalizers(finalizers)`](#fn-speckafkalistenersconfigurationwithfinalizers)
+        * [`fn withFinalizersMixin(finalizers)`](#fn-speckafkalistenersconfigurationwithfinalizersmixin)
+        * [`fn withIpFamilies(ipFamilies)`](#fn-speckafkalistenersconfigurationwithipfamilies)
+        * [`fn withIpFamiliesMixin(ipFamilies)`](#fn-speckafkalistenersconfigurationwithipfamiliesmixin)
+        * [`fn withIpFamilyPolicy(ipFamilyPolicy)`](#fn-speckafkalistenersconfigurationwithipfamilypolicy)
+        * [`fn withLoadBalancerSourceRanges(loadBalancerSourceRanges)`](#fn-speckafkalistenersconfigurationwithloadbalancersourceranges)
+        * [`fn withLoadBalancerSourceRangesMixin(loadBalancerSourceRanges)`](#fn-speckafkalistenersconfigurationwithloadbalancersourcerangesmixin)
+        * [`fn withMaxConnectionCreationRate(maxConnectionCreationRate)`](#fn-speckafkalistenersconfigurationwithmaxconnectioncreationrate)
+        * [`fn withMaxConnections(maxConnections)`](#fn-speckafkalistenersconfigurationwithmaxconnections)
+        * [`fn withPreferredNodePortAddressType(preferredNodePortAddressType)`](#fn-speckafkalistenersconfigurationwithpreferrednodeportaddresstype)
+        * [`fn withUseServiceDnsDomain(useServiceDnsDomain)`](#fn-speckafkalistenersconfigurationwithuseservicednsdomain)
+        * [`obj spec.kafka.listeners.configuration.bootstrap`](#obj-speckafkalistenersconfigurationbootstrap)
+          * [`fn withAlternativeNames(alternativeNames)`](#fn-speckafkalistenersconfigurationbootstrapwithalternativenames)
+          * [`fn withAlternativeNamesMixin(alternativeNames)`](#fn-speckafkalistenersconfigurationbootstrapwithalternativenamesmixin)
+          * [`fn withAnnotations(annotations)`](#fn-speckafkalistenersconfigurationbootstrapwithannotations)
+          * [`fn withAnnotationsMixin(annotations)`](#fn-speckafkalistenersconfigurationbootstrapwithannotationsmixin)
+          * [`fn withHost(host)`](#fn-speckafkalistenersconfigurationbootstrapwithhost)
+          * [`fn withLabels(labels)`](#fn-speckafkalistenersconfigurationbootstrapwithlabels)
+          * [`fn withLabelsMixin(labels)`](#fn-speckafkalistenersconfigurationbootstrapwithlabelsmixin)
+          * [`fn withLoadBalancerIP(loadBalancerIP)`](#fn-speckafkalistenersconfigurationbootstrapwithloadbalancerip)
+          * [`fn withNodePort(nodePort)`](#fn-speckafkalistenersconfigurationbootstrapwithnodeport)
+        * [`obj spec.kafka.listeners.configuration.brokerCertChainAndKey`](#obj-speckafkalistenersconfigurationbrokercertchainandkey)
+          * [`fn withCertificate(certificate)`](#fn-speckafkalistenersconfigurationbrokercertchainandkeywithcertificate)
+          * [`fn withKey(key)`](#fn-speckafkalistenersconfigurationbrokercertchainandkeywithkey)
+          * [`fn withSecretName(secretName)`](#fn-speckafkalistenersconfigurationbrokercertchainandkeywithsecretname)
+        * [`obj spec.kafka.listeners.configuration.brokers`](#obj-speckafkalistenersconfigurationbrokers)
+          * [`fn withAdvertisedHost(advertisedHost)`](#fn-speckafkalistenersconfigurationbrokerswithadvertisedhost)
+          * [`fn withAdvertisedPort(advertisedPort)`](#fn-speckafkalistenersconfigurationbrokerswithadvertisedport)
+          * [`fn withAnnotations(annotations)`](#fn-speckafkalistenersconfigurationbrokerswithannotations)
+          * [`fn withAnnotationsMixin(annotations)`](#fn-speckafkalistenersconfigurationbrokerswithannotationsmixin)
+          * [`fn withBroker(broker)`](#fn-speckafkalistenersconfigurationbrokerswithbroker)
+          * [`fn withHost(host)`](#fn-speckafkalistenersconfigurationbrokerswithhost)
+          * [`fn withLabels(labels)`](#fn-speckafkalistenersconfigurationbrokerswithlabels)
+          * [`fn withLabelsMixin(labels)`](#fn-speckafkalistenersconfigurationbrokerswithlabelsmixin)
+          * [`fn withLoadBalancerIP(loadBalancerIP)`](#fn-speckafkalistenersconfigurationbrokerswithloadbalancerip)
+          * [`fn withNodePort(nodePort)`](#fn-speckafkalistenersconfigurationbrokerswithnodeport)
+      * [`obj spec.kafka.listeners.networkPolicyPeers`](#obj-speckafkalistenersnetworkpolicypeers)
+        * [`obj spec.kafka.listeners.networkPolicyPeers.ipBlock`](#obj-speckafkalistenersnetworkpolicypeersipblock)
+          * [`fn withCidr(cidr)`](#fn-speckafkalistenersnetworkpolicypeersipblockwithcidr)
+          * [`fn withExcept(except)`](#fn-speckafkalistenersnetworkpolicypeersipblockwithexcept)
+          * [`fn withExceptMixin(except)`](#fn-speckafkalistenersnetworkpolicypeersipblockwithexceptmixin)
+        * [`obj spec.kafka.listeners.networkPolicyPeers.namespaceSelector`](#obj-speckafkalistenersnetworkpolicypeersnamespaceselector)
+          * [`fn withMatchExpressions(matchExpressions)`](#fn-speckafkalistenersnetworkpolicypeersnamespaceselectorwithmatchexpressions)
+          * [`fn withMatchExpressionsMixin(matchExpressions)`](#fn-speckafkalistenersnetworkpolicypeersnamespaceselectorwithmatchexpressionsmixin)
+          * [`fn withMatchLabels(matchLabels)`](#fn-speckafkalistenersnetworkpolicypeersnamespaceselectorwithmatchlabels)
+          * [`fn withMatchLabelsMixin(matchLabels)`](#fn-speckafkalistenersnetworkpolicypeersnamespaceselectorwithmatchlabelsmixin)
+          * [`obj spec.kafka.listeners.networkPolicyPeers.namespaceSelector.matchExpressions`](#obj-speckafkalistenersnetworkpolicypeersnamespaceselectormatchexpressions)
+            * [`fn withKey(key)`](#fn-speckafkalistenersnetworkpolicypeersnamespaceselectormatchexpressionswithkey)
+            * [`fn withOperator(operator)`](#fn-speckafkalistenersnetworkpolicypeersnamespaceselectormatchexpressionswithoperator)
+            * [`fn withValues(values)`](#fn-speckafkalistenersnetworkpolicypeersnamespaceselectormatchexpressionswithvalues)
+            * [`fn withValuesMixin(values)`](#fn-speckafkalistenersnetworkpolicypeersnamespaceselectormatchexpressionswithvaluesmixin)
+        * [`obj spec.kafka.listeners.networkPolicyPeers.podSelector`](#obj-speckafkalistenersnetworkpolicypeerspodselector)
+          * [`fn withMatchExpressions(matchExpressions)`](#fn-speckafkalistenersnetworkpolicypeerspodselectorwithmatchexpressions)
+          * [`fn withMatchExpressionsMixin(matchExpressions)`](#fn-speckafkalistenersnetworkpolicypeerspodselectorwithmatchexpressionsmixin)
+          * [`fn withMatchLabels(matchLabels)`](#fn-speckafkalistenersnetworkpolicypeerspodselectorwithmatchlabels)
+          * [`fn withMatchLabelsMixin(matchLabels)`](#fn-speckafkalistenersnetworkpolicypeerspodselectorwithmatchlabelsmixin)
+          * [`obj spec.kafka.listeners.networkPolicyPeers.podSelector.matchExpressions`](#obj-speckafkalistenersnetworkpolicypeerspodselectormatchexpressions)
+            * [`fn withKey(key)`](#fn-speckafkalistenersnetworkpolicypeerspodselectormatchexpressionswithkey)
+            * [`fn withOperator(operator)`](#fn-speckafkalistenersnetworkpolicypeerspodselectormatchexpressionswithoperator)
+            * [`fn withValues(values)`](#fn-speckafkalistenersnetworkpolicypeerspodselectormatchexpressionswithvalues)
+            * [`fn withValuesMixin(values)`](#fn-speckafkalistenersnetworkpolicypeerspodselectormatchexpressionswithvaluesmixin)
     * [`obj spec.kafka.livenessProbe`](#obj-speckafkalivenessprobe)
       * [`fn withFailureThreshold(failureThreshold)`](#fn-speckafkalivenessprobewithfailurethreshold)
       * [`fn withInitialDelaySeconds(initialDelaySeconds)`](#fn-speckafkalivenessprobewithinitialdelayseconds)
@@ -697,6 +1211,23 @@ permalink: /0.23/kafka/v1beta2/kafka/
       * [`fn withType(type)`](#fn-speckafkastoragewithtype)
       * [`fn withVolumes(volumes)`](#fn-speckafkastoragewithvolumes)
       * [`fn withVolumesMixin(volumes)`](#fn-speckafkastoragewithvolumesmixin)
+      * [`obj spec.kafka.storage.overrides`](#obj-speckafkastorageoverrides)
+        * [`fn withBroker(broker)`](#fn-speckafkastorageoverrideswithbroker)
+        * [`fn withClass(class)`](#fn-speckafkastorageoverrideswithclass)
+      * [`obj spec.kafka.storage.volumes`](#obj-speckafkastoragevolumes)
+        * [`fn withClass(class)`](#fn-speckafkastoragevolumeswithclass)
+        * [`fn withDeleteClaim(deleteClaim)`](#fn-speckafkastoragevolumeswithdeleteclaim)
+        * [`fn withId(id)`](#fn-speckafkastoragevolumeswithid)
+        * [`fn withOverrides(overrides)`](#fn-speckafkastoragevolumeswithoverrides)
+        * [`fn withOverridesMixin(overrides)`](#fn-speckafkastoragevolumeswithoverridesmixin)
+        * [`fn withSelector(selector)`](#fn-speckafkastoragevolumeswithselector)
+        * [`fn withSelectorMixin(selector)`](#fn-speckafkastoragevolumeswithselectormixin)
+        * [`fn withSize(size)`](#fn-speckafkastoragevolumeswithsize)
+        * [`fn withSizeLimit(sizeLimit)`](#fn-speckafkastoragevolumeswithsizelimit)
+        * [`fn withType(type)`](#fn-speckafkastoragevolumeswithtype)
+        * [`obj spec.kafka.storage.volumes.overrides`](#obj-speckafkastoragevolumesoverrides)
+          * [`fn withBroker(broker)`](#fn-speckafkastoragevolumesoverrideswithbroker)
+          * [`fn withClass(class)`](#fn-speckafkastoragevolumesoverrideswithclass)
     * [`obj spec.kafka.template`](#obj-speckafkatemplate)
       * [`obj spec.kafka.template.bootstrapService`](#obj-speckafkatemplatebootstrapservice)
         * [`fn withIpFamilies(ipFamilies)`](#fn-speckafkatemplatebootstrapservicewithipfamilies)
@@ -749,6 +1280,9 @@ permalink: /0.23/kafka/v1beta2/kafka/
       * [`obj spec.kafka.template.initContainer`](#obj-speckafkatemplateinitcontainer)
         * [`fn withEnv(env)`](#fn-speckafkatemplateinitcontainerwithenv)
         * [`fn withEnvMixin(env)`](#fn-speckafkatemplateinitcontainerwithenvmixin)
+        * [`obj spec.kafka.template.initContainer.env`](#obj-speckafkatemplateinitcontainerenv)
+          * [`fn withName(name)`](#fn-speckafkatemplateinitcontainerenvwithname)
+          * [`fn withValue(value)`](#fn-speckafkatemplateinitcontainerenvwithvalue)
         * [`obj spec.kafka.template.initContainer.securityContext`](#obj-speckafkatemplateinitcontainersecuritycontext)
           * [`fn withAllowPrivilegeEscalation(allowPrivilegeEscalation)`](#fn-speckafkatemplateinitcontainersecuritycontextwithallowprivilegeescalation)
           * [`fn withPrivileged(privileged)`](#fn-speckafkatemplateinitcontainersecuritycontextwithprivileged)
@@ -777,6 +1311,9 @@ permalink: /0.23/kafka/v1beta2/kafka/
       * [`obj spec.kafka.template.kafkaContainer`](#obj-speckafkatemplatekafkacontainer)
         * [`fn withEnv(env)`](#fn-speckafkatemplatekafkacontainerwithenv)
         * [`fn withEnvMixin(env)`](#fn-speckafkatemplatekafkacontainerwithenvmixin)
+        * [`obj spec.kafka.template.kafkaContainer.env`](#obj-speckafkatemplatekafkacontainerenv)
+          * [`fn withName(name)`](#fn-speckafkatemplatekafkacontainerenvwithname)
+          * [`fn withValue(value)`](#fn-speckafkatemplatekafkacontainerenvwithvalue)
         * [`obj spec.kafka.template.kafkaContainer.securityContext`](#obj-speckafkatemplatekafkacontainersecuritycontext)
           * [`fn withAllowPrivilegeEscalation(allowPrivilegeEscalation)`](#fn-speckafkatemplatekafkacontainersecuritycontextwithallowprivilegeescalation)
           * [`fn withPrivileged(privileged)`](#fn-speckafkatemplatekafkacontainersecuritycontextwithprivileged)
@@ -843,19 +1380,117 @@ permalink: /0.23/kafka/v1beta2/kafka/
           * [`obj spec.kafka.template.pod.affinity.nodeAffinity`](#obj-speckafkatemplatepodaffinitynodeaffinity)
             * [`fn withPreferredDuringSchedulingIgnoredDuringExecution(preferredDuringSchedulingIgnoredDuringExecution)`](#fn-speckafkatemplatepodaffinitynodeaffinitywithpreferredduringschedulingignoredduringexecution)
             * [`fn withPreferredDuringSchedulingIgnoredDuringExecutionMixin(preferredDuringSchedulingIgnoredDuringExecution)`](#fn-speckafkatemplatepodaffinitynodeaffinitywithpreferredduringschedulingignoredduringexecutionmixin)
+            * [`obj spec.kafka.template.pod.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution`](#obj-speckafkatemplatepodaffinitynodeaffinitypreferredduringschedulingignoredduringexecution)
+              * [`fn withWeight(weight)`](#fn-speckafkatemplatepodaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionwithweight)
+              * [`obj spec.kafka.template.pod.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference`](#obj-speckafkatemplatepodaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreference)
+                * [`fn withMatchExpressions(matchExpressions)`](#fn-speckafkatemplatepodaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencewithmatchexpressions)
+                * [`fn withMatchExpressionsMixin(matchExpressions)`](#fn-speckafkatemplatepodaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencewithmatchexpressionsmixin)
+                * [`fn withMatchFields(matchFields)`](#fn-speckafkatemplatepodaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencewithmatchfields)
+                * [`fn withMatchFieldsMixin(matchFields)`](#fn-speckafkatemplatepodaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencewithmatchfieldsmixin)
+                * [`obj spec.kafka.template.pod.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchExpressions`](#obj-speckafkatemplatepodaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchexpressions)
+                  * [`fn withKey(key)`](#fn-speckafkatemplatepodaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchexpressionswithkey)
+                  * [`fn withOperator(operator)`](#fn-speckafkatemplatepodaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchexpressionswithoperator)
+                  * [`fn withValues(values)`](#fn-speckafkatemplatepodaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchexpressionswithvalues)
+                  * [`fn withValuesMixin(values)`](#fn-speckafkatemplatepodaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchexpressionswithvaluesmixin)
+                * [`obj spec.kafka.template.pod.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchFields`](#obj-speckafkatemplatepodaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchfields)
+                  * [`fn withKey(key)`](#fn-speckafkatemplatepodaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchfieldswithkey)
+                  * [`fn withOperator(operator)`](#fn-speckafkatemplatepodaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchfieldswithoperator)
+                  * [`fn withValues(values)`](#fn-speckafkatemplatepodaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchfieldswithvalues)
+                  * [`fn withValuesMixin(values)`](#fn-speckafkatemplatepodaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchfieldswithvaluesmixin)
             * [`obj spec.kafka.template.pod.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution`](#obj-speckafkatemplatepodaffinitynodeaffinityrequiredduringschedulingignoredduringexecution)
               * [`fn withNodeSelectorTerms(nodeSelectorTerms)`](#fn-speckafkatemplatepodaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionwithnodeselectorterms)
               * [`fn withNodeSelectorTermsMixin(nodeSelectorTerms)`](#fn-speckafkatemplatepodaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionwithnodeselectortermsmixin)
+              * [`obj spec.kafka.template.pod.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms`](#obj-speckafkatemplatepodaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectorterms)
+                * [`fn withMatchExpressions(matchExpressions)`](#fn-speckafkatemplatepodaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermswithmatchexpressions)
+                * [`fn withMatchExpressionsMixin(matchExpressions)`](#fn-speckafkatemplatepodaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermswithmatchexpressionsmixin)
+                * [`fn withMatchFields(matchFields)`](#fn-speckafkatemplatepodaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermswithmatchfields)
+                * [`fn withMatchFieldsMixin(matchFields)`](#fn-speckafkatemplatepodaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermswithmatchfieldsmixin)
+                * [`obj spec.kafka.template.pod.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchExpressions`](#obj-speckafkatemplatepodaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchexpressions)
+                  * [`fn withKey(key)`](#fn-speckafkatemplatepodaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchexpressionswithkey)
+                  * [`fn withOperator(operator)`](#fn-speckafkatemplatepodaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchexpressionswithoperator)
+                  * [`fn withValues(values)`](#fn-speckafkatemplatepodaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchexpressionswithvalues)
+                  * [`fn withValuesMixin(values)`](#fn-speckafkatemplatepodaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchexpressionswithvaluesmixin)
+                * [`obj spec.kafka.template.pod.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchFields`](#obj-speckafkatemplatepodaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchfields)
+                  * [`fn withKey(key)`](#fn-speckafkatemplatepodaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchfieldswithkey)
+                  * [`fn withOperator(operator)`](#fn-speckafkatemplatepodaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchfieldswithoperator)
+                  * [`fn withValues(values)`](#fn-speckafkatemplatepodaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchfieldswithvalues)
+                  * [`fn withValuesMixin(values)`](#fn-speckafkatemplatepodaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchfieldswithvaluesmixin)
           * [`obj spec.kafka.template.pod.affinity.podAffinity`](#obj-speckafkatemplatepodaffinitypodaffinity)
             * [`fn withPreferredDuringSchedulingIgnoredDuringExecution(preferredDuringSchedulingIgnoredDuringExecution)`](#fn-speckafkatemplatepodaffinitypodaffinitywithpreferredduringschedulingignoredduringexecution)
             * [`fn withPreferredDuringSchedulingIgnoredDuringExecutionMixin(preferredDuringSchedulingIgnoredDuringExecution)`](#fn-speckafkatemplatepodaffinitypodaffinitywithpreferredduringschedulingignoredduringexecutionmixin)
             * [`fn withRequiredDuringSchedulingIgnoredDuringExecution(requiredDuringSchedulingIgnoredDuringExecution)`](#fn-speckafkatemplatepodaffinitypodaffinitywithrequiredduringschedulingignoredduringexecution)
             * [`fn withRequiredDuringSchedulingIgnoredDuringExecutionMixin(requiredDuringSchedulingIgnoredDuringExecution)`](#fn-speckafkatemplatepodaffinitypodaffinitywithrequiredduringschedulingignoredduringexecutionmixin)
+            * [`obj spec.kafka.template.pod.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution`](#obj-speckafkatemplatepodaffinitypodaffinitypreferredduringschedulingignoredduringexecution)
+              * [`fn withWeight(weight)`](#fn-speckafkatemplatepodaffinitypodaffinitypreferredduringschedulingignoredduringexecutionwithweight)
+              * [`obj spec.kafka.template.pod.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm`](#obj-speckafkatemplatepodaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinityterm)
+                * [`fn withNamespaces(namespaces)`](#fn-speckafkatemplatepodaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermwithnamespaces)
+                * [`fn withNamespacesMixin(namespaces)`](#fn-speckafkatemplatepodaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermwithnamespacesmixin)
+                * [`fn withTopologyKey(topologyKey)`](#fn-speckafkatemplatepodaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermwithtopologykey)
+                * [`obj spec.kafka.template.pod.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector`](#obj-speckafkatemplatepodaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselector)
+                  * [`fn withMatchExpressions(matchExpressions)`](#fn-speckafkatemplatepodaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectorwithmatchexpressions)
+                  * [`fn withMatchExpressionsMixin(matchExpressions)`](#fn-speckafkatemplatepodaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectorwithmatchexpressionsmixin)
+                  * [`fn withMatchLabels(matchLabels)`](#fn-speckafkatemplatepodaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectorwithmatchlabels)
+                  * [`fn withMatchLabelsMixin(matchLabels)`](#fn-speckafkatemplatepodaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectorwithmatchlabelsmixin)
+                  * [`obj spec.kafka.template.pod.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions`](#obj-speckafkatemplatepodaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressions)
+                    * [`fn withKey(key)`](#fn-speckafkatemplatepodaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressionswithkey)
+                    * [`fn withOperator(operator)`](#fn-speckafkatemplatepodaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressionswithoperator)
+                    * [`fn withValues(values)`](#fn-speckafkatemplatepodaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressionswithvalues)
+                    * [`fn withValuesMixin(values)`](#fn-speckafkatemplatepodaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressionswithvaluesmixin)
+            * [`obj spec.kafka.template.pod.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution`](#obj-speckafkatemplatepodaffinitypodaffinityrequiredduringschedulingignoredduringexecution)
+              * [`fn withNamespaces(namespaces)`](#fn-speckafkatemplatepodaffinitypodaffinityrequiredduringschedulingignoredduringexecutionwithnamespaces)
+              * [`fn withNamespacesMixin(namespaces)`](#fn-speckafkatemplatepodaffinitypodaffinityrequiredduringschedulingignoredduringexecutionwithnamespacesmixin)
+              * [`fn withTopologyKey(topologyKey)`](#fn-speckafkatemplatepodaffinitypodaffinityrequiredduringschedulingignoredduringexecutionwithtopologykey)
+              * [`obj spec.kafka.template.pod.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector`](#obj-speckafkatemplatepodaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselector)
+                * [`fn withMatchExpressions(matchExpressions)`](#fn-speckafkatemplatepodaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectorwithmatchexpressions)
+                * [`fn withMatchExpressionsMixin(matchExpressions)`](#fn-speckafkatemplatepodaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectorwithmatchexpressionsmixin)
+                * [`fn withMatchLabels(matchLabels)`](#fn-speckafkatemplatepodaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectorwithmatchlabels)
+                * [`fn withMatchLabelsMixin(matchLabels)`](#fn-speckafkatemplatepodaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectorwithmatchlabelsmixin)
+                * [`obj spec.kafka.template.pod.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions`](#obj-speckafkatemplatepodaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressions)
+                  * [`fn withKey(key)`](#fn-speckafkatemplatepodaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressionswithkey)
+                  * [`fn withOperator(operator)`](#fn-speckafkatemplatepodaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressionswithoperator)
+                  * [`fn withValues(values)`](#fn-speckafkatemplatepodaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressionswithvalues)
+                  * [`fn withValuesMixin(values)`](#fn-speckafkatemplatepodaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressionswithvaluesmixin)
           * [`obj spec.kafka.template.pod.affinity.podAntiAffinity`](#obj-speckafkatemplatepodaffinitypodantiaffinity)
             * [`fn withPreferredDuringSchedulingIgnoredDuringExecution(preferredDuringSchedulingIgnoredDuringExecution)`](#fn-speckafkatemplatepodaffinitypodantiaffinitywithpreferredduringschedulingignoredduringexecution)
             * [`fn withPreferredDuringSchedulingIgnoredDuringExecutionMixin(preferredDuringSchedulingIgnoredDuringExecution)`](#fn-speckafkatemplatepodaffinitypodantiaffinitywithpreferredduringschedulingignoredduringexecutionmixin)
             * [`fn withRequiredDuringSchedulingIgnoredDuringExecution(requiredDuringSchedulingIgnoredDuringExecution)`](#fn-speckafkatemplatepodaffinitypodantiaffinitywithrequiredduringschedulingignoredduringexecution)
             * [`fn withRequiredDuringSchedulingIgnoredDuringExecutionMixin(requiredDuringSchedulingIgnoredDuringExecution)`](#fn-speckafkatemplatepodaffinitypodantiaffinitywithrequiredduringschedulingignoredduringexecutionmixin)
+            * [`obj spec.kafka.template.pod.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution`](#obj-speckafkatemplatepodaffinitypodantiaffinitypreferredduringschedulingignoredduringexecution)
+              * [`fn withWeight(weight)`](#fn-speckafkatemplatepodaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionwithweight)
+              * [`obj spec.kafka.template.pod.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm`](#obj-speckafkatemplatepodaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinityterm)
+                * [`fn withNamespaces(namespaces)`](#fn-speckafkatemplatepodaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermwithnamespaces)
+                * [`fn withNamespacesMixin(namespaces)`](#fn-speckafkatemplatepodaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermwithnamespacesmixin)
+                * [`fn withTopologyKey(topologyKey)`](#fn-speckafkatemplatepodaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermwithtopologykey)
+                * [`obj spec.kafka.template.pod.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector`](#obj-speckafkatemplatepodaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselector)
+                  * [`fn withMatchExpressions(matchExpressions)`](#fn-speckafkatemplatepodaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectorwithmatchexpressions)
+                  * [`fn withMatchExpressionsMixin(matchExpressions)`](#fn-speckafkatemplatepodaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectorwithmatchexpressionsmixin)
+                  * [`fn withMatchLabels(matchLabels)`](#fn-speckafkatemplatepodaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectorwithmatchlabels)
+                  * [`fn withMatchLabelsMixin(matchLabels)`](#fn-speckafkatemplatepodaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectorwithmatchlabelsmixin)
+                  * [`obj spec.kafka.template.pod.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions`](#obj-speckafkatemplatepodaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressions)
+                    * [`fn withKey(key)`](#fn-speckafkatemplatepodaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressionswithkey)
+                    * [`fn withOperator(operator)`](#fn-speckafkatemplatepodaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressionswithoperator)
+                    * [`fn withValues(values)`](#fn-speckafkatemplatepodaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressionswithvalues)
+                    * [`fn withValuesMixin(values)`](#fn-speckafkatemplatepodaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressionswithvaluesmixin)
+            * [`obj spec.kafka.template.pod.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution`](#obj-speckafkatemplatepodaffinitypodantiaffinityrequiredduringschedulingignoredduringexecution)
+              * [`fn withNamespaces(namespaces)`](#fn-speckafkatemplatepodaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionwithnamespaces)
+              * [`fn withNamespacesMixin(namespaces)`](#fn-speckafkatemplatepodaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionwithnamespacesmixin)
+              * [`fn withTopologyKey(topologyKey)`](#fn-speckafkatemplatepodaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionwithtopologykey)
+              * [`obj spec.kafka.template.pod.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector`](#obj-speckafkatemplatepodaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselector)
+                * [`fn withMatchExpressions(matchExpressions)`](#fn-speckafkatemplatepodaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectorwithmatchexpressions)
+                * [`fn withMatchExpressionsMixin(matchExpressions)`](#fn-speckafkatemplatepodaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectorwithmatchexpressionsmixin)
+                * [`fn withMatchLabels(matchLabels)`](#fn-speckafkatemplatepodaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectorwithmatchlabels)
+                * [`fn withMatchLabelsMixin(matchLabels)`](#fn-speckafkatemplatepodaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectorwithmatchlabelsmixin)
+                * [`obj spec.kafka.template.pod.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions`](#obj-speckafkatemplatepodaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressions)
+                  * [`fn withKey(key)`](#fn-speckafkatemplatepodaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressionswithkey)
+                  * [`fn withOperator(operator)`](#fn-speckafkatemplatepodaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressionswithoperator)
+                  * [`fn withValues(values)`](#fn-speckafkatemplatepodaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressionswithvalues)
+                  * [`fn withValuesMixin(values)`](#fn-speckafkatemplatepodaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressionswithvaluesmixin)
+        * [`obj spec.kafka.template.pod.hostAliases`](#obj-speckafkatemplatepodhostaliases)
+          * [`fn withHostnames(hostnames)`](#fn-speckafkatemplatepodhostaliaseswithhostnames)
+          * [`fn withHostnamesMixin(hostnames)`](#fn-speckafkatemplatepodhostaliaseswithhostnamesmixin)
+          * [`fn withIp(ip)`](#fn-speckafkatemplatepodhostaliaseswithip)
+        * [`obj spec.kafka.template.pod.imagePullSecrets`](#obj-speckafkatemplatepodimagepullsecrets)
+          * [`fn withName(name)`](#fn-speckafkatemplatepodimagepullsecretswithname)
         * [`obj spec.kafka.template.pod.metadata`](#obj-speckafkatemplatepodmetadata)
           * [`fn withAnnotations(annotations)`](#fn-speckafkatemplatepodmetadatawithannotations)
           * [`fn withAnnotationsMixin(annotations)`](#fn-speckafkatemplatepodmetadatawithannotationsmixin)
@@ -879,10 +1514,33 @@ permalink: /0.23/kafka/v1beta2/kafka/
           * [`obj spec.kafka.template.pod.securityContext.seccompProfile`](#obj-speckafkatemplatepodsecuritycontextseccompprofile)
             * [`fn withLocalhostProfile(localhostProfile)`](#fn-speckafkatemplatepodsecuritycontextseccompprofilewithlocalhostprofile)
             * [`fn withType(type)`](#fn-speckafkatemplatepodsecuritycontextseccompprofilewithtype)
+          * [`obj spec.kafka.template.pod.securityContext.sysctls`](#obj-speckafkatemplatepodsecuritycontextsysctls)
+            * [`fn withName(name)`](#fn-speckafkatemplatepodsecuritycontextsysctlswithname)
+            * [`fn withValue(value)`](#fn-speckafkatemplatepodsecuritycontextsysctlswithvalue)
           * [`obj spec.kafka.template.pod.securityContext.windowsOptions`](#obj-speckafkatemplatepodsecuritycontextwindowsoptions)
             * [`fn withGmsaCredentialSpec(gmsaCredentialSpec)`](#fn-speckafkatemplatepodsecuritycontextwindowsoptionswithgmsacredentialspec)
             * [`fn withGmsaCredentialSpecName(gmsaCredentialSpecName)`](#fn-speckafkatemplatepodsecuritycontextwindowsoptionswithgmsacredentialspecname)
             * [`fn withRunAsUserName(runAsUserName)`](#fn-speckafkatemplatepodsecuritycontextwindowsoptionswithrunasusername)
+        * [`obj spec.kafka.template.pod.tolerations`](#obj-speckafkatemplatepodtolerations)
+          * [`fn withEffect(effect)`](#fn-speckafkatemplatepodtolerationswitheffect)
+          * [`fn withKey(key)`](#fn-speckafkatemplatepodtolerationswithkey)
+          * [`fn withOperator(operator)`](#fn-speckafkatemplatepodtolerationswithoperator)
+          * [`fn withTolerationSeconds(tolerationSeconds)`](#fn-speckafkatemplatepodtolerationswithtolerationseconds)
+          * [`fn withValue(value)`](#fn-speckafkatemplatepodtolerationswithvalue)
+        * [`obj spec.kafka.template.pod.topologySpreadConstraints`](#obj-speckafkatemplatepodtopologyspreadconstraints)
+          * [`fn withMaxSkew(maxSkew)`](#fn-speckafkatemplatepodtopologyspreadconstraintswithmaxskew)
+          * [`fn withTopologyKey(topologyKey)`](#fn-speckafkatemplatepodtopologyspreadconstraintswithtopologykey)
+          * [`fn withWhenUnsatisfiable(whenUnsatisfiable)`](#fn-speckafkatemplatepodtopologyspreadconstraintswithwhenunsatisfiable)
+          * [`obj spec.kafka.template.pod.topologySpreadConstraints.labelSelector`](#obj-speckafkatemplatepodtopologyspreadconstraintslabelselector)
+            * [`fn withMatchExpressions(matchExpressions)`](#fn-speckafkatemplatepodtopologyspreadconstraintslabelselectorwithmatchexpressions)
+            * [`fn withMatchExpressionsMixin(matchExpressions)`](#fn-speckafkatemplatepodtopologyspreadconstraintslabelselectorwithmatchexpressionsmixin)
+            * [`fn withMatchLabels(matchLabels)`](#fn-speckafkatemplatepodtopologyspreadconstraintslabelselectorwithmatchlabels)
+            * [`fn withMatchLabelsMixin(matchLabels)`](#fn-speckafkatemplatepodtopologyspreadconstraintslabelselectorwithmatchlabelsmixin)
+            * [`obj spec.kafka.template.pod.topologySpreadConstraints.labelSelector.matchExpressions`](#obj-speckafkatemplatepodtopologyspreadconstraintslabelselectormatchexpressions)
+              * [`fn withKey(key)`](#fn-speckafkatemplatepodtopologyspreadconstraintslabelselectormatchexpressionswithkey)
+              * [`fn withOperator(operator)`](#fn-speckafkatemplatepodtopologyspreadconstraintslabelselectormatchexpressionswithoperator)
+              * [`fn withValues(values)`](#fn-speckafkatemplatepodtopologyspreadconstraintslabelselectormatchexpressionswithvalues)
+              * [`fn withValuesMixin(values)`](#fn-speckafkatemplatepodtopologyspreadconstraintslabelselectormatchexpressionswithvaluesmixin)
       * [`obj spec.kafka.template.podDisruptionBudget`](#obj-speckafkatemplatepoddisruptionbudget)
         * [`fn withMaxUnavailable(maxUnavailable)`](#fn-speckafkatemplatepoddisruptionbudgetwithmaxunavailable)
         * [`obj spec.kafka.template.podDisruptionBudget.metadata`](#obj-speckafkatemplatepoddisruptionbudgetmetadata)
@@ -924,6 +1582,9 @@ permalink: /0.23/kafka/v1beta2/kafka/
       * [`obj spec.kafkaExporter.template.container`](#obj-speckafkaexportertemplatecontainer)
         * [`fn withEnv(env)`](#fn-speckafkaexportertemplatecontainerwithenv)
         * [`fn withEnvMixin(env)`](#fn-speckafkaexportertemplatecontainerwithenvmixin)
+        * [`obj spec.kafkaExporter.template.container.env`](#obj-speckafkaexportertemplatecontainerenv)
+          * [`fn withName(name)`](#fn-speckafkaexportertemplatecontainerenvwithname)
+          * [`fn withValue(value)`](#fn-speckafkaexportertemplatecontainerenvwithvalue)
         * [`obj spec.kafkaExporter.template.container.securityContext`](#obj-speckafkaexportertemplatecontainersecuritycontext)
           * [`fn withAllowPrivilegeEscalation(allowPrivilegeEscalation)`](#fn-speckafkaexportertemplatecontainersecuritycontextwithallowprivilegeescalation)
           * [`fn withPrivileged(privileged)`](#fn-speckafkaexportertemplatecontainersecuritycontextwithprivileged)
@@ -972,19 +1633,117 @@ permalink: /0.23/kafka/v1beta2/kafka/
           * [`obj spec.kafkaExporter.template.pod.affinity.nodeAffinity`](#obj-speckafkaexportertemplatepodaffinitynodeaffinity)
             * [`fn withPreferredDuringSchedulingIgnoredDuringExecution(preferredDuringSchedulingIgnoredDuringExecution)`](#fn-speckafkaexportertemplatepodaffinitynodeaffinitywithpreferredduringschedulingignoredduringexecution)
             * [`fn withPreferredDuringSchedulingIgnoredDuringExecutionMixin(preferredDuringSchedulingIgnoredDuringExecution)`](#fn-speckafkaexportertemplatepodaffinitynodeaffinitywithpreferredduringschedulingignoredduringexecutionmixin)
+            * [`obj spec.kafkaExporter.template.pod.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution`](#obj-speckafkaexportertemplatepodaffinitynodeaffinitypreferredduringschedulingignoredduringexecution)
+              * [`fn withWeight(weight)`](#fn-speckafkaexportertemplatepodaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionwithweight)
+              * [`obj spec.kafkaExporter.template.pod.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference`](#obj-speckafkaexportertemplatepodaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreference)
+                * [`fn withMatchExpressions(matchExpressions)`](#fn-speckafkaexportertemplatepodaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencewithmatchexpressions)
+                * [`fn withMatchExpressionsMixin(matchExpressions)`](#fn-speckafkaexportertemplatepodaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencewithmatchexpressionsmixin)
+                * [`fn withMatchFields(matchFields)`](#fn-speckafkaexportertemplatepodaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencewithmatchfields)
+                * [`fn withMatchFieldsMixin(matchFields)`](#fn-speckafkaexportertemplatepodaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencewithmatchfieldsmixin)
+                * [`obj spec.kafkaExporter.template.pod.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchExpressions`](#obj-speckafkaexportertemplatepodaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchexpressions)
+                  * [`fn withKey(key)`](#fn-speckafkaexportertemplatepodaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchexpressionswithkey)
+                  * [`fn withOperator(operator)`](#fn-speckafkaexportertemplatepodaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchexpressionswithoperator)
+                  * [`fn withValues(values)`](#fn-speckafkaexportertemplatepodaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchexpressionswithvalues)
+                  * [`fn withValuesMixin(values)`](#fn-speckafkaexportertemplatepodaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchexpressionswithvaluesmixin)
+                * [`obj spec.kafkaExporter.template.pod.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchFields`](#obj-speckafkaexportertemplatepodaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchfields)
+                  * [`fn withKey(key)`](#fn-speckafkaexportertemplatepodaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchfieldswithkey)
+                  * [`fn withOperator(operator)`](#fn-speckafkaexportertemplatepodaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchfieldswithoperator)
+                  * [`fn withValues(values)`](#fn-speckafkaexportertemplatepodaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchfieldswithvalues)
+                  * [`fn withValuesMixin(values)`](#fn-speckafkaexportertemplatepodaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchfieldswithvaluesmixin)
             * [`obj spec.kafkaExporter.template.pod.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution`](#obj-speckafkaexportertemplatepodaffinitynodeaffinityrequiredduringschedulingignoredduringexecution)
               * [`fn withNodeSelectorTerms(nodeSelectorTerms)`](#fn-speckafkaexportertemplatepodaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionwithnodeselectorterms)
               * [`fn withNodeSelectorTermsMixin(nodeSelectorTerms)`](#fn-speckafkaexportertemplatepodaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionwithnodeselectortermsmixin)
+              * [`obj spec.kafkaExporter.template.pod.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms`](#obj-speckafkaexportertemplatepodaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectorterms)
+                * [`fn withMatchExpressions(matchExpressions)`](#fn-speckafkaexportertemplatepodaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermswithmatchexpressions)
+                * [`fn withMatchExpressionsMixin(matchExpressions)`](#fn-speckafkaexportertemplatepodaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermswithmatchexpressionsmixin)
+                * [`fn withMatchFields(matchFields)`](#fn-speckafkaexportertemplatepodaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermswithmatchfields)
+                * [`fn withMatchFieldsMixin(matchFields)`](#fn-speckafkaexportertemplatepodaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermswithmatchfieldsmixin)
+                * [`obj spec.kafkaExporter.template.pod.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchExpressions`](#obj-speckafkaexportertemplatepodaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchexpressions)
+                  * [`fn withKey(key)`](#fn-speckafkaexportertemplatepodaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchexpressionswithkey)
+                  * [`fn withOperator(operator)`](#fn-speckafkaexportertemplatepodaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchexpressionswithoperator)
+                  * [`fn withValues(values)`](#fn-speckafkaexportertemplatepodaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchexpressionswithvalues)
+                  * [`fn withValuesMixin(values)`](#fn-speckafkaexportertemplatepodaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchexpressionswithvaluesmixin)
+                * [`obj spec.kafkaExporter.template.pod.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchFields`](#obj-speckafkaexportertemplatepodaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchfields)
+                  * [`fn withKey(key)`](#fn-speckafkaexportertemplatepodaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchfieldswithkey)
+                  * [`fn withOperator(operator)`](#fn-speckafkaexportertemplatepodaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchfieldswithoperator)
+                  * [`fn withValues(values)`](#fn-speckafkaexportertemplatepodaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchfieldswithvalues)
+                  * [`fn withValuesMixin(values)`](#fn-speckafkaexportertemplatepodaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchfieldswithvaluesmixin)
           * [`obj spec.kafkaExporter.template.pod.affinity.podAffinity`](#obj-speckafkaexportertemplatepodaffinitypodaffinity)
             * [`fn withPreferredDuringSchedulingIgnoredDuringExecution(preferredDuringSchedulingIgnoredDuringExecution)`](#fn-speckafkaexportertemplatepodaffinitypodaffinitywithpreferredduringschedulingignoredduringexecution)
             * [`fn withPreferredDuringSchedulingIgnoredDuringExecutionMixin(preferredDuringSchedulingIgnoredDuringExecution)`](#fn-speckafkaexportertemplatepodaffinitypodaffinitywithpreferredduringschedulingignoredduringexecutionmixin)
             * [`fn withRequiredDuringSchedulingIgnoredDuringExecution(requiredDuringSchedulingIgnoredDuringExecution)`](#fn-speckafkaexportertemplatepodaffinitypodaffinitywithrequiredduringschedulingignoredduringexecution)
             * [`fn withRequiredDuringSchedulingIgnoredDuringExecutionMixin(requiredDuringSchedulingIgnoredDuringExecution)`](#fn-speckafkaexportertemplatepodaffinitypodaffinitywithrequiredduringschedulingignoredduringexecutionmixin)
+            * [`obj spec.kafkaExporter.template.pod.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution`](#obj-speckafkaexportertemplatepodaffinitypodaffinitypreferredduringschedulingignoredduringexecution)
+              * [`fn withWeight(weight)`](#fn-speckafkaexportertemplatepodaffinitypodaffinitypreferredduringschedulingignoredduringexecutionwithweight)
+              * [`obj spec.kafkaExporter.template.pod.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm`](#obj-speckafkaexportertemplatepodaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinityterm)
+                * [`fn withNamespaces(namespaces)`](#fn-speckafkaexportertemplatepodaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermwithnamespaces)
+                * [`fn withNamespacesMixin(namespaces)`](#fn-speckafkaexportertemplatepodaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermwithnamespacesmixin)
+                * [`fn withTopologyKey(topologyKey)`](#fn-speckafkaexportertemplatepodaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermwithtopologykey)
+                * [`obj spec.kafkaExporter.template.pod.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector`](#obj-speckafkaexportertemplatepodaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselector)
+                  * [`fn withMatchExpressions(matchExpressions)`](#fn-speckafkaexportertemplatepodaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectorwithmatchexpressions)
+                  * [`fn withMatchExpressionsMixin(matchExpressions)`](#fn-speckafkaexportertemplatepodaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectorwithmatchexpressionsmixin)
+                  * [`fn withMatchLabels(matchLabels)`](#fn-speckafkaexportertemplatepodaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectorwithmatchlabels)
+                  * [`fn withMatchLabelsMixin(matchLabels)`](#fn-speckafkaexportertemplatepodaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectorwithmatchlabelsmixin)
+                  * [`obj spec.kafkaExporter.template.pod.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions`](#obj-speckafkaexportertemplatepodaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressions)
+                    * [`fn withKey(key)`](#fn-speckafkaexportertemplatepodaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressionswithkey)
+                    * [`fn withOperator(operator)`](#fn-speckafkaexportertemplatepodaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressionswithoperator)
+                    * [`fn withValues(values)`](#fn-speckafkaexportertemplatepodaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressionswithvalues)
+                    * [`fn withValuesMixin(values)`](#fn-speckafkaexportertemplatepodaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressionswithvaluesmixin)
+            * [`obj spec.kafkaExporter.template.pod.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution`](#obj-speckafkaexportertemplatepodaffinitypodaffinityrequiredduringschedulingignoredduringexecution)
+              * [`fn withNamespaces(namespaces)`](#fn-speckafkaexportertemplatepodaffinitypodaffinityrequiredduringschedulingignoredduringexecutionwithnamespaces)
+              * [`fn withNamespacesMixin(namespaces)`](#fn-speckafkaexportertemplatepodaffinitypodaffinityrequiredduringschedulingignoredduringexecutionwithnamespacesmixin)
+              * [`fn withTopologyKey(topologyKey)`](#fn-speckafkaexportertemplatepodaffinitypodaffinityrequiredduringschedulingignoredduringexecutionwithtopologykey)
+              * [`obj spec.kafkaExporter.template.pod.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector`](#obj-speckafkaexportertemplatepodaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselector)
+                * [`fn withMatchExpressions(matchExpressions)`](#fn-speckafkaexportertemplatepodaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectorwithmatchexpressions)
+                * [`fn withMatchExpressionsMixin(matchExpressions)`](#fn-speckafkaexportertemplatepodaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectorwithmatchexpressionsmixin)
+                * [`fn withMatchLabels(matchLabels)`](#fn-speckafkaexportertemplatepodaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectorwithmatchlabels)
+                * [`fn withMatchLabelsMixin(matchLabels)`](#fn-speckafkaexportertemplatepodaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectorwithmatchlabelsmixin)
+                * [`obj spec.kafkaExporter.template.pod.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions`](#obj-speckafkaexportertemplatepodaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressions)
+                  * [`fn withKey(key)`](#fn-speckafkaexportertemplatepodaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressionswithkey)
+                  * [`fn withOperator(operator)`](#fn-speckafkaexportertemplatepodaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressionswithoperator)
+                  * [`fn withValues(values)`](#fn-speckafkaexportertemplatepodaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressionswithvalues)
+                  * [`fn withValuesMixin(values)`](#fn-speckafkaexportertemplatepodaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressionswithvaluesmixin)
           * [`obj spec.kafkaExporter.template.pod.affinity.podAntiAffinity`](#obj-speckafkaexportertemplatepodaffinitypodantiaffinity)
             * [`fn withPreferredDuringSchedulingIgnoredDuringExecution(preferredDuringSchedulingIgnoredDuringExecution)`](#fn-speckafkaexportertemplatepodaffinitypodantiaffinitywithpreferredduringschedulingignoredduringexecution)
             * [`fn withPreferredDuringSchedulingIgnoredDuringExecutionMixin(preferredDuringSchedulingIgnoredDuringExecution)`](#fn-speckafkaexportertemplatepodaffinitypodantiaffinitywithpreferredduringschedulingignoredduringexecutionmixin)
             * [`fn withRequiredDuringSchedulingIgnoredDuringExecution(requiredDuringSchedulingIgnoredDuringExecution)`](#fn-speckafkaexportertemplatepodaffinitypodantiaffinitywithrequiredduringschedulingignoredduringexecution)
             * [`fn withRequiredDuringSchedulingIgnoredDuringExecutionMixin(requiredDuringSchedulingIgnoredDuringExecution)`](#fn-speckafkaexportertemplatepodaffinitypodantiaffinitywithrequiredduringschedulingignoredduringexecutionmixin)
+            * [`obj spec.kafkaExporter.template.pod.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution`](#obj-speckafkaexportertemplatepodaffinitypodantiaffinitypreferredduringschedulingignoredduringexecution)
+              * [`fn withWeight(weight)`](#fn-speckafkaexportertemplatepodaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionwithweight)
+              * [`obj spec.kafkaExporter.template.pod.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm`](#obj-speckafkaexportertemplatepodaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinityterm)
+                * [`fn withNamespaces(namespaces)`](#fn-speckafkaexportertemplatepodaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermwithnamespaces)
+                * [`fn withNamespacesMixin(namespaces)`](#fn-speckafkaexportertemplatepodaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermwithnamespacesmixin)
+                * [`fn withTopologyKey(topologyKey)`](#fn-speckafkaexportertemplatepodaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermwithtopologykey)
+                * [`obj spec.kafkaExporter.template.pod.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector`](#obj-speckafkaexportertemplatepodaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselector)
+                  * [`fn withMatchExpressions(matchExpressions)`](#fn-speckafkaexportertemplatepodaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectorwithmatchexpressions)
+                  * [`fn withMatchExpressionsMixin(matchExpressions)`](#fn-speckafkaexportertemplatepodaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectorwithmatchexpressionsmixin)
+                  * [`fn withMatchLabels(matchLabels)`](#fn-speckafkaexportertemplatepodaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectorwithmatchlabels)
+                  * [`fn withMatchLabelsMixin(matchLabels)`](#fn-speckafkaexportertemplatepodaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectorwithmatchlabelsmixin)
+                  * [`obj spec.kafkaExporter.template.pod.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions`](#obj-speckafkaexportertemplatepodaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressions)
+                    * [`fn withKey(key)`](#fn-speckafkaexportertemplatepodaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressionswithkey)
+                    * [`fn withOperator(operator)`](#fn-speckafkaexportertemplatepodaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressionswithoperator)
+                    * [`fn withValues(values)`](#fn-speckafkaexportertemplatepodaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressionswithvalues)
+                    * [`fn withValuesMixin(values)`](#fn-speckafkaexportertemplatepodaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressionswithvaluesmixin)
+            * [`obj spec.kafkaExporter.template.pod.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution`](#obj-speckafkaexportertemplatepodaffinitypodantiaffinityrequiredduringschedulingignoredduringexecution)
+              * [`fn withNamespaces(namespaces)`](#fn-speckafkaexportertemplatepodaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionwithnamespaces)
+              * [`fn withNamespacesMixin(namespaces)`](#fn-speckafkaexportertemplatepodaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionwithnamespacesmixin)
+              * [`fn withTopologyKey(topologyKey)`](#fn-speckafkaexportertemplatepodaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionwithtopologykey)
+              * [`obj spec.kafkaExporter.template.pod.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector`](#obj-speckafkaexportertemplatepodaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselector)
+                * [`fn withMatchExpressions(matchExpressions)`](#fn-speckafkaexportertemplatepodaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectorwithmatchexpressions)
+                * [`fn withMatchExpressionsMixin(matchExpressions)`](#fn-speckafkaexportertemplatepodaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectorwithmatchexpressionsmixin)
+                * [`fn withMatchLabels(matchLabels)`](#fn-speckafkaexportertemplatepodaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectorwithmatchlabels)
+                * [`fn withMatchLabelsMixin(matchLabels)`](#fn-speckafkaexportertemplatepodaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectorwithmatchlabelsmixin)
+                * [`obj spec.kafkaExporter.template.pod.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions`](#obj-speckafkaexportertemplatepodaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressions)
+                  * [`fn withKey(key)`](#fn-speckafkaexportertemplatepodaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressionswithkey)
+                  * [`fn withOperator(operator)`](#fn-speckafkaexportertemplatepodaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressionswithoperator)
+                  * [`fn withValues(values)`](#fn-speckafkaexportertemplatepodaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressionswithvalues)
+                  * [`fn withValuesMixin(values)`](#fn-speckafkaexportertemplatepodaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressionswithvaluesmixin)
+        * [`obj spec.kafkaExporter.template.pod.hostAliases`](#obj-speckafkaexportertemplatepodhostaliases)
+          * [`fn withHostnames(hostnames)`](#fn-speckafkaexportertemplatepodhostaliaseswithhostnames)
+          * [`fn withHostnamesMixin(hostnames)`](#fn-speckafkaexportertemplatepodhostaliaseswithhostnamesmixin)
+          * [`fn withIp(ip)`](#fn-speckafkaexportertemplatepodhostaliaseswithip)
+        * [`obj spec.kafkaExporter.template.pod.imagePullSecrets`](#obj-speckafkaexportertemplatepodimagepullsecrets)
+          * [`fn withName(name)`](#fn-speckafkaexportertemplatepodimagepullsecretswithname)
         * [`obj spec.kafkaExporter.template.pod.metadata`](#obj-speckafkaexportertemplatepodmetadata)
           * [`fn withAnnotations(annotations)`](#fn-speckafkaexportertemplatepodmetadatawithannotations)
           * [`fn withAnnotationsMixin(annotations)`](#fn-speckafkaexportertemplatepodmetadatawithannotationsmixin)
@@ -1008,10 +1767,33 @@ permalink: /0.23/kafka/v1beta2/kafka/
           * [`obj spec.kafkaExporter.template.pod.securityContext.seccompProfile`](#obj-speckafkaexportertemplatepodsecuritycontextseccompprofile)
             * [`fn withLocalhostProfile(localhostProfile)`](#fn-speckafkaexportertemplatepodsecuritycontextseccompprofilewithlocalhostprofile)
             * [`fn withType(type)`](#fn-speckafkaexportertemplatepodsecuritycontextseccompprofilewithtype)
+          * [`obj spec.kafkaExporter.template.pod.securityContext.sysctls`](#obj-speckafkaexportertemplatepodsecuritycontextsysctls)
+            * [`fn withName(name)`](#fn-speckafkaexportertemplatepodsecuritycontextsysctlswithname)
+            * [`fn withValue(value)`](#fn-speckafkaexportertemplatepodsecuritycontextsysctlswithvalue)
           * [`obj spec.kafkaExporter.template.pod.securityContext.windowsOptions`](#obj-speckafkaexportertemplatepodsecuritycontextwindowsoptions)
             * [`fn withGmsaCredentialSpec(gmsaCredentialSpec)`](#fn-speckafkaexportertemplatepodsecuritycontextwindowsoptionswithgmsacredentialspec)
             * [`fn withGmsaCredentialSpecName(gmsaCredentialSpecName)`](#fn-speckafkaexportertemplatepodsecuritycontextwindowsoptionswithgmsacredentialspecname)
             * [`fn withRunAsUserName(runAsUserName)`](#fn-speckafkaexportertemplatepodsecuritycontextwindowsoptionswithrunasusername)
+        * [`obj spec.kafkaExporter.template.pod.tolerations`](#obj-speckafkaexportertemplatepodtolerations)
+          * [`fn withEffect(effect)`](#fn-speckafkaexportertemplatepodtolerationswitheffect)
+          * [`fn withKey(key)`](#fn-speckafkaexportertemplatepodtolerationswithkey)
+          * [`fn withOperator(operator)`](#fn-speckafkaexportertemplatepodtolerationswithoperator)
+          * [`fn withTolerationSeconds(tolerationSeconds)`](#fn-speckafkaexportertemplatepodtolerationswithtolerationseconds)
+          * [`fn withValue(value)`](#fn-speckafkaexportertemplatepodtolerationswithvalue)
+        * [`obj spec.kafkaExporter.template.pod.topologySpreadConstraints`](#obj-speckafkaexportertemplatepodtopologyspreadconstraints)
+          * [`fn withMaxSkew(maxSkew)`](#fn-speckafkaexportertemplatepodtopologyspreadconstraintswithmaxskew)
+          * [`fn withTopologyKey(topologyKey)`](#fn-speckafkaexportertemplatepodtopologyspreadconstraintswithtopologykey)
+          * [`fn withWhenUnsatisfiable(whenUnsatisfiable)`](#fn-speckafkaexportertemplatepodtopologyspreadconstraintswithwhenunsatisfiable)
+          * [`obj spec.kafkaExporter.template.pod.topologySpreadConstraints.labelSelector`](#obj-speckafkaexportertemplatepodtopologyspreadconstraintslabelselector)
+            * [`fn withMatchExpressions(matchExpressions)`](#fn-speckafkaexportertemplatepodtopologyspreadconstraintslabelselectorwithmatchexpressions)
+            * [`fn withMatchExpressionsMixin(matchExpressions)`](#fn-speckafkaexportertemplatepodtopologyspreadconstraintslabelselectorwithmatchexpressionsmixin)
+            * [`fn withMatchLabels(matchLabels)`](#fn-speckafkaexportertemplatepodtopologyspreadconstraintslabelselectorwithmatchlabels)
+            * [`fn withMatchLabelsMixin(matchLabels)`](#fn-speckafkaexportertemplatepodtopologyspreadconstraintslabelselectorwithmatchlabelsmixin)
+            * [`obj spec.kafkaExporter.template.pod.topologySpreadConstraints.labelSelector.matchExpressions`](#obj-speckafkaexportertemplatepodtopologyspreadconstraintslabelselectormatchexpressions)
+              * [`fn withKey(key)`](#fn-speckafkaexportertemplatepodtopologyspreadconstraintslabelselectormatchexpressionswithkey)
+              * [`fn withOperator(operator)`](#fn-speckafkaexportertemplatepodtopologyspreadconstraintslabelselectormatchexpressionswithoperator)
+              * [`fn withValues(values)`](#fn-speckafkaexportertemplatepodtopologyspreadconstraintslabelselectormatchexpressionswithvalues)
+              * [`fn withValuesMixin(values)`](#fn-speckafkaexportertemplatepodtopologyspreadconstraintslabelselectormatchexpressionswithvaluesmixin)
       * [`obj spec.kafkaExporter.template.service`](#obj-speckafkaexportertemplateservice)
         * [`obj spec.kafkaExporter.template.service.metadata`](#obj-speckafkaexportertemplateservicemetadata)
           * [`fn withAnnotations(annotations)`](#fn-speckafkaexportertemplateservicemetadatawithannotations)
@@ -1027,10 +1809,13 @@ permalink: /0.23/kafka/v1beta2/kafka/
       * [`fn withGcLoggingEnabled(gcLoggingEnabled)`](#fn-speczookeeperjvmoptionswithgcloggingenabled)
       * [`fn withJavaSystemProperties(javaSystemProperties)`](#fn-speczookeeperjvmoptionswithjavasystemproperties)
       * [`fn withJavaSystemPropertiesMixin(javaSystemProperties)`](#fn-speczookeeperjvmoptionswithjavasystempropertiesmixin)
-      * [`fn withXX(XX)`](#fn-speczookeeperjvmoptionswithxx)
-      * [`fn withXXMixin(XX)`](#fn-speczookeeperjvmoptionswithxxmixin)
-      * [`fn withXms(Xms)`](#fn-speczookeeperjvmoptionswithxms)
-      * [`fn withXmx(Xmx)`](#fn-speczookeeperjvmoptionswithxmx)
+      * [`fn withXX(_XX)`](#fn-speczookeeperjvmoptionswithxx)
+      * [`fn withXXMixin(_XX)`](#fn-speczookeeperjvmoptionswithxxmixin)
+      * [`fn withXms(_Xms)`](#fn-speczookeeperjvmoptionswithxms)
+      * [`fn withXmx(_Xmx)`](#fn-speczookeeperjvmoptionswithxmx)
+      * [`obj spec.zookeeper.jvmOptions.javaSystemProperties`](#obj-speczookeeperjvmoptionsjavasystemproperties)
+        * [`fn withName(name)`](#fn-speczookeeperjvmoptionsjavasystempropertieswithname)
+        * [`fn withValue(value)`](#fn-speczookeeperjvmoptionsjavasystempropertieswithvalue)
     * [`obj spec.zookeeper.livenessProbe`](#obj-speczookeeperlivenessprobe)
       * [`fn withFailureThreshold(failureThreshold)`](#fn-speczookeeperlivenessprobewithfailurethreshold)
       * [`fn withInitialDelaySeconds(initialDelaySeconds)`](#fn-speczookeeperlivenessprobewithinitialdelayseconds)
@@ -1075,6 +1860,9 @@ permalink: /0.23/kafka/v1beta2/kafka/
       * [`fn withSize(size)`](#fn-speczookeeperstoragewithsize)
       * [`fn withSizeLimit(sizeLimit)`](#fn-speczookeeperstoragewithsizelimit)
       * [`fn withType(type)`](#fn-speczookeeperstoragewithtype)
+      * [`obj spec.zookeeper.storage.overrides`](#obj-speczookeeperstorageoverrides)
+        * [`fn withBroker(broker)`](#fn-speczookeeperstorageoverrideswithbroker)
+        * [`fn withClass(class)`](#fn-speczookeeperstorageoverrideswithclass)
     * [`obj spec.zookeeper.template`](#obj-speczookeepertemplate)
       * [`obj spec.zookeeper.template.clientService`](#obj-speczookeepertemplateclientservice)
         * [`fn withIpFamilies(ipFamilies)`](#fn-speczookeepertemplateclientservicewithipfamilies)
@@ -1117,19 +1905,117 @@ permalink: /0.23/kafka/v1beta2/kafka/
           * [`obj spec.zookeeper.template.pod.affinity.nodeAffinity`](#obj-speczookeepertemplatepodaffinitynodeaffinity)
             * [`fn withPreferredDuringSchedulingIgnoredDuringExecution(preferredDuringSchedulingIgnoredDuringExecution)`](#fn-speczookeepertemplatepodaffinitynodeaffinitywithpreferredduringschedulingignoredduringexecution)
             * [`fn withPreferredDuringSchedulingIgnoredDuringExecutionMixin(preferredDuringSchedulingIgnoredDuringExecution)`](#fn-speczookeepertemplatepodaffinitynodeaffinitywithpreferredduringschedulingignoredduringexecutionmixin)
+            * [`obj spec.zookeeper.template.pod.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution`](#obj-speczookeepertemplatepodaffinitynodeaffinitypreferredduringschedulingignoredduringexecution)
+              * [`fn withWeight(weight)`](#fn-speczookeepertemplatepodaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionwithweight)
+              * [`obj spec.zookeeper.template.pod.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference`](#obj-speczookeepertemplatepodaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreference)
+                * [`fn withMatchExpressions(matchExpressions)`](#fn-speczookeepertemplatepodaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencewithmatchexpressions)
+                * [`fn withMatchExpressionsMixin(matchExpressions)`](#fn-speczookeepertemplatepodaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencewithmatchexpressionsmixin)
+                * [`fn withMatchFields(matchFields)`](#fn-speczookeepertemplatepodaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencewithmatchfields)
+                * [`fn withMatchFieldsMixin(matchFields)`](#fn-speczookeepertemplatepodaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencewithmatchfieldsmixin)
+                * [`obj spec.zookeeper.template.pod.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchExpressions`](#obj-speczookeepertemplatepodaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchexpressions)
+                  * [`fn withKey(key)`](#fn-speczookeepertemplatepodaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchexpressionswithkey)
+                  * [`fn withOperator(operator)`](#fn-speczookeepertemplatepodaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchexpressionswithoperator)
+                  * [`fn withValues(values)`](#fn-speczookeepertemplatepodaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchexpressionswithvalues)
+                  * [`fn withValuesMixin(values)`](#fn-speczookeepertemplatepodaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchexpressionswithvaluesmixin)
+                * [`obj spec.zookeeper.template.pod.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchFields`](#obj-speczookeepertemplatepodaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchfields)
+                  * [`fn withKey(key)`](#fn-speczookeepertemplatepodaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchfieldswithkey)
+                  * [`fn withOperator(operator)`](#fn-speczookeepertemplatepodaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchfieldswithoperator)
+                  * [`fn withValues(values)`](#fn-speczookeepertemplatepodaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchfieldswithvalues)
+                  * [`fn withValuesMixin(values)`](#fn-speczookeepertemplatepodaffinitynodeaffinitypreferredduringschedulingignoredduringexecutionpreferencematchfieldswithvaluesmixin)
             * [`obj spec.zookeeper.template.pod.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution`](#obj-speczookeepertemplatepodaffinitynodeaffinityrequiredduringschedulingignoredduringexecution)
               * [`fn withNodeSelectorTerms(nodeSelectorTerms)`](#fn-speczookeepertemplatepodaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionwithnodeselectorterms)
               * [`fn withNodeSelectorTermsMixin(nodeSelectorTerms)`](#fn-speczookeepertemplatepodaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionwithnodeselectortermsmixin)
+              * [`obj spec.zookeeper.template.pod.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms`](#obj-speczookeepertemplatepodaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectorterms)
+                * [`fn withMatchExpressions(matchExpressions)`](#fn-speczookeepertemplatepodaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermswithmatchexpressions)
+                * [`fn withMatchExpressionsMixin(matchExpressions)`](#fn-speczookeepertemplatepodaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermswithmatchexpressionsmixin)
+                * [`fn withMatchFields(matchFields)`](#fn-speczookeepertemplatepodaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermswithmatchfields)
+                * [`fn withMatchFieldsMixin(matchFields)`](#fn-speczookeepertemplatepodaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermswithmatchfieldsmixin)
+                * [`obj spec.zookeeper.template.pod.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchExpressions`](#obj-speczookeepertemplatepodaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchexpressions)
+                  * [`fn withKey(key)`](#fn-speczookeepertemplatepodaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchexpressionswithkey)
+                  * [`fn withOperator(operator)`](#fn-speczookeepertemplatepodaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchexpressionswithoperator)
+                  * [`fn withValues(values)`](#fn-speczookeepertemplatepodaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchexpressionswithvalues)
+                  * [`fn withValuesMixin(values)`](#fn-speczookeepertemplatepodaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchexpressionswithvaluesmixin)
+                * [`obj spec.zookeeper.template.pod.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchFields`](#obj-speczookeepertemplatepodaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchfields)
+                  * [`fn withKey(key)`](#fn-speczookeepertemplatepodaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchfieldswithkey)
+                  * [`fn withOperator(operator)`](#fn-speczookeepertemplatepodaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchfieldswithoperator)
+                  * [`fn withValues(values)`](#fn-speczookeepertemplatepodaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchfieldswithvalues)
+                  * [`fn withValuesMixin(values)`](#fn-speczookeepertemplatepodaffinitynodeaffinityrequiredduringschedulingignoredduringexecutionnodeselectortermsmatchfieldswithvaluesmixin)
           * [`obj spec.zookeeper.template.pod.affinity.podAffinity`](#obj-speczookeepertemplatepodaffinitypodaffinity)
             * [`fn withPreferredDuringSchedulingIgnoredDuringExecution(preferredDuringSchedulingIgnoredDuringExecution)`](#fn-speczookeepertemplatepodaffinitypodaffinitywithpreferredduringschedulingignoredduringexecution)
             * [`fn withPreferredDuringSchedulingIgnoredDuringExecutionMixin(preferredDuringSchedulingIgnoredDuringExecution)`](#fn-speczookeepertemplatepodaffinitypodaffinitywithpreferredduringschedulingignoredduringexecutionmixin)
             * [`fn withRequiredDuringSchedulingIgnoredDuringExecution(requiredDuringSchedulingIgnoredDuringExecution)`](#fn-speczookeepertemplatepodaffinitypodaffinitywithrequiredduringschedulingignoredduringexecution)
             * [`fn withRequiredDuringSchedulingIgnoredDuringExecutionMixin(requiredDuringSchedulingIgnoredDuringExecution)`](#fn-speczookeepertemplatepodaffinitypodaffinitywithrequiredduringschedulingignoredduringexecutionmixin)
+            * [`obj spec.zookeeper.template.pod.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution`](#obj-speczookeepertemplatepodaffinitypodaffinitypreferredduringschedulingignoredduringexecution)
+              * [`fn withWeight(weight)`](#fn-speczookeepertemplatepodaffinitypodaffinitypreferredduringschedulingignoredduringexecutionwithweight)
+              * [`obj spec.zookeeper.template.pod.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm`](#obj-speczookeepertemplatepodaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinityterm)
+                * [`fn withNamespaces(namespaces)`](#fn-speczookeepertemplatepodaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermwithnamespaces)
+                * [`fn withNamespacesMixin(namespaces)`](#fn-speczookeepertemplatepodaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermwithnamespacesmixin)
+                * [`fn withTopologyKey(topologyKey)`](#fn-speczookeepertemplatepodaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermwithtopologykey)
+                * [`obj spec.zookeeper.template.pod.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector`](#obj-speczookeepertemplatepodaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselector)
+                  * [`fn withMatchExpressions(matchExpressions)`](#fn-speczookeepertemplatepodaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectorwithmatchexpressions)
+                  * [`fn withMatchExpressionsMixin(matchExpressions)`](#fn-speczookeepertemplatepodaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectorwithmatchexpressionsmixin)
+                  * [`fn withMatchLabels(matchLabels)`](#fn-speczookeepertemplatepodaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectorwithmatchlabels)
+                  * [`fn withMatchLabelsMixin(matchLabels)`](#fn-speczookeepertemplatepodaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectorwithmatchlabelsmixin)
+                  * [`obj spec.zookeeper.template.pod.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions`](#obj-speczookeepertemplatepodaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressions)
+                    * [`fn withKey(key)`](#fn-speczookeepertemplatepodaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressionswithkey)
+                    * [`fn withOperator(operator)`](#fn-speczookeepertemplatepodaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressionswithoperator)
+                    * [`fn withValues(values)`](#fn-speczookeepertemplatepodaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressionswithvalues)
+                    * [`fn withValuesMixin(values)`](#fn-speczookeepertemplatepodaffinitypodaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressionswithvaluesmixin)
+            * [`obj spec.zookeeper.template.pod.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution`](#obj-speczookeepertemplatepodaffinitypodaffinityrequiredduringschedulingignoredduringexecution)
+              * [`fn withNamespaces(namespaces)`](#fn-speczookeepertemplatepodaffinitypodaffinityrequiredduringschedulingignoredduringexecutionwithnamespaces)
+              * [`fn withNamespacesMixin(namespaces)`](#fn-speczookeepertemplatepodaffinitypodaffinityrequiredduringschedulingignoredduringexecutionwithnamespacesmixin)
+              * [`fn withTopologyKey(topologyKey)`](#fn-speczookeepertemplatepodaffinitypodaffinityrequiredduringschedulingignoredduringexecutionwithtopologykey)
+              * [`obj spec.zookeeper.template.pod.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector`](#obj-speczookeepertemplatepodaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselector)
+                * [`fn withMatchExpressions(matchExpressions)`](#fn-speczookeepertemplatepodaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectorwithmatchexpressions)
+                * [`fn withMatchExpressionsMixin(matchExpressions)`](#fn-speczookeepertemplatepodaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectorwithmatchexpressionsmixin)
+                * [`fn withMatchLabels(matchLabels)`](#fn-speczookeepertemplatepodaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectorwithmatchlabels)
+                * [`fn withMatchLabelsMixin(matchLabels)`](#fn-speczookeepertemplatepodaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectorwithmatchlabelsmixin)
+                * [`obj spec.zookeeper.template.pod.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions`](#obj-speczookeepertemplatepodaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressions)
+                  * [`fn withKey(key)`](#fn-speczookeepertemplatepodaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressionswithkey)
+                  * [`fn withOperator(operator)`](#fn-speczookeepertemplatepodaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressionswithoperator)
+                  * [`fn withValues(values)`](#fn-speczookeepertemplatepodaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressionswithvalues)
+                  * [`fn withValuesMixin(values)`](#fn-speczookeepertemplatepodaffinitypodaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressionswithvaluesmixin)
           * [`obj spec.zookeeper.template.pod.affinity.podAntiAffinity`](#obj-speczookeepertemplatepodaffinitypodantiaffinity)
             * [`fn withPreferredDuringSchedulingIgnoredDuringExecution(preferredDuringSchedulingIgnoredDuringExecution)`](#fn-speczookeepertemplatepodaffinitypodantiaffinitywithpreferredduringschedulingignoredduringexecution)
             * [`fn withPreferredDuringSchedulingIgnoredDuringExecutionMixin(preferredDuringSchedulingIgnoredDuringExecution)`](#fn-speczookeepertemplatepodaffinitypodantiaffinitywithpreferredduringschedulingignoredduringexecutionmixin)
             * [`fn withRequiredDuringSchedulingIgnoredDuringExecution(requiredDuringSchedulingIgnoredDuringExecution)`](#fn-speczookeepertemplatepodaffinitypodantiaffinitywithrequiredduringschedulingignoredduringexecution)
             * [`fn withRequiredDuringSchedulingIgnoredDuringExecutionMixin(requiredDuringSchedulingIgnoredDuringExecution)`](#fn-speczookeepertemplatepodaffinitypodantiaffinitywithrequiredduringschedulingignoredduringexecutionmixin)
+            * [`obj spec.zookeeper.template.pod.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution`](#obj-speczookeepertemplatepodaffinitypodantiaffinitypreferredduringschedulingignoredduringexecution)
+              * [`fn withWeight(weight)`](#fn-speczookeepertemplatepodaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionwithweight)
+              * [`obj spec.zookeeper.template.pod.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm`](#obj-speczookeepertemplatepodaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinityterm)
+                * [`fn withNamespaces(namespaces)`](#fn-speczookeepertemplatepodaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermwithnamespaces)
+                * [`fn withNamespacesMixin(namespaces)`](#fn-speczookeepertemplatepodaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermwithnamespacesmixin)
+                * [`fn withTopologyKey(topologyKey)`](#fn-speczookeepertemplatepodaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermwithtopologykey)
+                * [`obj spec.zookeeper.template.pod.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector`](#obj-speczookeepertemplatepodaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselector)
+                  * [`fn withMatchExpressions(matchExpressions)`](#fn-speczookeepertemplatepodaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectorwithmatchexpressions)
+                  * [`fn withMatchExpressionsMixin(matchExpressions)`](#fn-speczookeepertemplatepodaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectorwithmatchexpressionsmixin)
+                  * [`fn withMatchLabels(matchLabels)`](#fn-speczookeepertemplatepodaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectorwithmatchlabels)
+                  * [`fn withMatchLabelsMixin(matchLabels)`](#fn-speczookeepertemplatepodaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectorwithmatchlabelsmixin)
+                  * [`obj spec.zookeeper.template.pod.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions`](#obj-speczookeepertemplatepodaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressions)
+                    * [`fn withKey(key)`](#fn-speczookeepertemplatepodaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressionswithkey)
+                    * [`fn withOperator(operator)`](#fn-speczookeepertemplatepodaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressionswithoperator)
+                    * [`fn withValues(values)`](#fn-speczookeepertemplatepodaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressionswithvalues)
+                    * [`fn withValuesMixin(values)`](#fn-speczookeepertemplatepodaffinitypodantiaffinitypreferredduringschedulingignoredduringexecutionpodaffinitytermlabelselectormatchexpressionswithvaluesmixin)
+            * [`obj spec.zookeeper.template.pod.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution`](#obj-speczookeepertemplatepodaffinitypodantiaffinityrequiredduringschedulingignoredduringexecution)
+              * [`fn withNamespaces(namespaces)`](#fn-speczookeepertemplatepodaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionwithnamespaces)
+              * [`fn withNamespacesMixin(namespaces)`](#fn-speczookeepertemplatepodaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionwithnamespacesmixin)
+              * [`fn withTopologyKey(topologyKey)`](#fn-speczookeepertemplatepodaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionwithtopologykey)
+              * [`obj spec.zookeeper.template.pod.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector`](#obj-speczookeepertemplatepodaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselector)
+                * [`fn withMatchExpressions(matchExpressions)`](#fn-speczookeepertemplatepodaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectorwithmatchexpressions)
+                * [`fn withMatchExpressionsMixin(matchExpressions)`](#fn-speczookeepertemplatepodaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectorwithmatchexpressionsmixin)
+                * [`fn withMatchLabels(matchLabels)`](#fn-speczookeepertemplatepodaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectorwithmatchlabels)
+                * [`fn withMatchLabelsMixin(matchLabels)`](#fn-speczookeepertemplatepodaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectorwithmatchlabelsmixin)
+                * [`obj spec.zookeeper.template.pod.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions`](#obj-speczookeepertemplatepodaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressions)
+                  * [`fn withKey(key)`](#fn-speczookeepertemplatepodaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressionswithkey)
+                  * [`fn withOperator(operator)`](#fn-speczookeepertemplatepodaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressionswithoperator)
+                  * [`fn withValues(values)`](#fn-speczookeepertemplatepodaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressionswithvalues)
+                  * [`fn withValuesMixin(values)`](#fn-speczookeepertemplatepodaffinitypodantiaffinityrequiredduringschedulingignoredduringexecutionlabelselectormatchexpressionswithvaluesmixin)
+        * [`obj spec.zookeeper.template.pod.hostAliases`](#obj-speczookeepertemplatepodhostaliases)
+          * [`fn withHostnames(hostnames)`](#fn-speczookeepertemplatepodhostaliaseswithhostnames)
+          * [`fn withHostnamesMixin(hostnames)`](#fn-speczookeepertemplatepodhostaliaseswithhostnamesmixin)
+          * [`fn withIp(ip)`](#fn-speczookeepertemplatepodhostaliaseswithip)
+        * [`obj spec.zookeeper.template.pod.imagePullSecrets`](#obj-speczookeepertemplatepodimagepullsecrets)
+          * [`fn withName(name)`](#fn-speczookeepertemplatepodimagepullsecretswithname)
         * [`obj spec.zookeeper.template.pod.metadata`](#obj-speczookeepertemplatepodmetadata)
           * [`fn withAnnotations(annotations)`](#fn-speczookeepertemplatepodmetadatawithannotations)
           * [`fn withAnnotationsMixin(annotations)`](#fn-speczookeepertemplatepodmetadatawithannotationsmixin)
@@ -1153,10 +2039,33 @@ permalink: /0.23/kafka/v1beta2/kafka/
           * [`obj spec.zookeeper.template.pod.securityContext.seccompProfile`](#obj-speczookeepertemplatepodsecuritycontextseccompprofile)
             * [`fn withLocalhostProfile(localhostProfile)`](#fn-speczookeepertemplatepodsecuritycontextseccompprofilewithlocalhostprofile)
             * [`fn withType(type)`](#fn-speczookeepertemplatepodsecuritycontextseccompprofilewithtype)
+          * [`obj spec.zookeeper.template.pod.securityContext.sysctls`](#obj-speczookeepertemplatepodsecuritycontextsysctls)
+            * [`fn withName(name)`](#fn-speczookeepertemplatepodsecuritycontextsysctlswithname)
+            * [`fn withValue(value)`](#fn-speczookeepertemplatepodsecuritycontextsysctlswithvalue)
           * [`obj spec.zookeeper.template.pod.securityContext.windowsOptions`](#obj-speczookeepertemplatepodsecuritycontextwindowsoptions)
             * [`fn withGmsaCredentialSpec(gmsaCredentialSpec)`](#fn-speczookeepertemplatepodsecuritycontextwindowsoptionswithgmsacredentialspec)
             * [`fn withGmsaCredentialSpecName(gmsaCredentialSpecName)`](#fn-speczookeepertemplatepodsecuritycontextwindowsoptionswithgmsacredentialspecname)
             * [`fn withRunAsUserName(runAsUserName)`](#fn-speczookeepertemplatepodsecuritycontextwindowsoptionswithrunasusername)
+        * [`obj spec.zookeeper.template.pod.tolerations`](#obj-speczookeepertemplatepodtolerations)
+          * [`fn withEffect(effect)`](#fn-speczookeepertemplatepodtolerationswitheffect)
+          * [`fn withKey(key)`](#fn-speczookeepertemplatepodtolerationswithkey)
+          * [`fn withOperator(operator)`](#fn-speczookeepertemplatepodtolerationswithoperator)
+          * [`fn withTolerationSeconds(tolerationSeconds)`](#fn-speczookeepertemplatepodtolerationswithtolerationseconds)
+          * [`fn withValue(value)`](#fn-speczookeepertemplatepodtolerationswithvalue)
+        * [`obj spec.zookeeper.template.pod.topologySpreadConstraints`](#obj-speczookeepertemplatepodtopologyspreadconstraints)
+          * [`fn withMaxSkew(maxSkew)`](#fn-speczookeepertemplatepodtopologyspreadconstraintswithmaxskew)
+          * [`fn withTopologyKey(topologyKey)`](#fn-speczookeepertemplatepodtopologyspreadconstraintswithtopologykey)
+          * [`fn withWhenUnsatisfiable(whenUnsatisfiable)`](#fn-speczookeepertemplatepodtopologyspreadconstraintswithwhenunsatisfiable)
+          * [`obj spec.zookeeper.template.pod.topologySpreadConstraints.labelSelector`](#obj-speczookeepertemplatepodtopologyspreadconstraintslabelselector)
+            * [`fn withMatchExpressions(matchExpressions)`](#fn-speczookeepertemplatepodtopologyspreadconstraintslabelselectorwithmatchexpressions)
+            * [`fn withMatchExpressionsMixin(matchExpressions)`](#fn-speczookeepertemplatepodtopologyspreadconstraintslabelselectorwithmatchexpressionsmixin)
+            * [`fn withMatchLabels(matchLabels)`](#fn-speczookeepertemplatepodtopologyspreadconstraintslabelselectorwithmatchlabels)
+            * [`fn withMatchLabelsMixin(matchLabels)`](#fn-speczookeepertemplatepodtopologyspreadconstraintslabelselectorwithmatchlabelsmixin)
+            * [`obj spec.zookeeper.template.pod.topologySpreadConstraints.labelSelector.matchExpressions`](#obj-speczookeepertemplatepodtopologyspreadconstraintslabelselectormatchexpressions)
+              * [`fn withKey(key)`](#fn-speczookeepertemplatepodtopologyspreadconstraintslabelselectormatchexpressionswithkey)
+              * [`fn withOperator(operator)`](#fn-speczookeepertemplatepodtopologyspreadconstraintslabelselectormatchexpressionswithoperator)
+              * [`fn withValues(values)`](#fn-speczookeepertemplatepodtopologyspreadconstraintslabelselectormatchexpressionswithvalues)
+              * [`fn withValuesMixin(values)`](#fn-speczookeepertemplatepodtopologyspreadconstraintslabelselectormatchexpressionswithvaluesmixin)
       * [`obj spec.zookeeper.template.podDisruptionBudget`](#obj-speczookeepertemplatepoddisruptionbudget)
         * [`fn withMaxUnavailable(maxUnavailable)`](#fn-speczookeepertemplatepoddisruptionbudgetwithmaxunavailable)
         * [`obj spec.zookeeper.template.podDisruptionBudget.metadata`](#obj-speczookeepertemplatepoddisruptionbudgetmetadata)
@@ -1174,6 +2083,9 @@ permalink: /0.23/kafka/v1beta2/kafka/
       * [`obj spec.zookeeper.template.zookeeperContainer`](#obj-speczookeepertemplatezookeepercontainer)
         * [`fn withEnv(env)`](#fn-speczookeepertemplatezookeepercontainerwithenv)
         * [`fn withEnvMixin(env)`](#fn-speczookeepertemplatezookeepercontainerwithenvmixin)
+        * [`obj spec.zookeeper.template.zookeeperContainer.env`](#obj-speczookeepertemplatezookeepercontainerenv)
+          * [`fn withName(name)`](#fn-speczookeepertemplatezookeepercontainerenvwithname)
+          * [`fn withValue(value)`](#fn-speczookeepertemplatezookeepercontainerenvwithvalue)
         * [`obj spec.zookeeper.template.zookeeperContainer.securityContext`](#obj-speczookeepertemplatezookeepercontainersecuritycontext)
           * [`fn withAllowPrivilegeEscalation(allowPrivilegeEscalation)`](#fn-speczookeepertemplatezookeepercontainersecuritycontextwithallowprivilegeescalation)
           * [`fn withPrivileged(privileged)`](#fn-speczookeepertemplatezookeepercontainersecuritycontextwithprivileged)
@@ -1313,24 +2225,6 @@ withLabelsMixin(labels)
 ```
 
 "Map of string keys and values that can be used to organize and categorize (scope and select) objects. May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels"
-
-**Note:** This function appends passed data to existing values
-
-### fn metadata.withManagedFields
-
-```ts
-withManagedFields(managedFields)
-```
-
-"ManagedFields maps workflow-id and version to the set of fields that are managed by that workflow. This is mostly for internal housekeeping, and users typically shouldn't need to set or understand this field. A workflow can be the user's name, a controller's name, or the name of a specific apply path like \"ci-cd\". The set of fields is always in the version that the workflow used when modifying the object."
-
-### fn metadata.withManagedFieldsMixin
-
-```ts
-withManagedFieldsMixin(managedFields)
-```
-
-"ManagedFields maps workflow-id and version to the set of fields that are managed by that workflow. This is mostly for internal housekeeping, and users typically shouldn't need to set or understand this field. A workflow can be the user's name, a controller's name, or the name of a specific apply path like \"ci-cd\". The set of fields is always in the version that the workflow used when modifying the object."
 
 **Note:** This function appends passed data to existing values
 
@@ -1601,7 +2495,7 @@ withJavaSystemPropertiesMixin(javaSystemProperties)
 ### fn spec.cruiseControl.jvmOptions.withXX
 
 ```ts
-withXX(XX)
+withXX(_XX)
 ```
 
 "A map of -XX options to the JVM."
@@ -1609,7 +2503,7 @@ withXX(XX)
 ### fn spec.cruiseControl.jvmOptions.withXXMixin
 
 ```ts
-withXXMixin(XX)
+withXXMixin(_XX)
 ```
 
 "A map of -XX options to the JVM."
@@ -1619,7 +2513,7 @@ withXXMixin(XX)
 ### fn spec.cruiseControl.jvmOptions.withXms
 
 ```ts
-withXms(Xms)
+withXms(_Xms)
 ```
 
 "-Xms option to to the JVM."
@@ -1627,10 +2521,30 @@ withXms(Xms)
 ### fn spec.cruiseControl.jvmOptions.withXmx
 
 ```ts
-withXmx(Xmx)
+withXmx(_Xmx)
 ```
 
 "-Xmx option to to the JVM."
+
+## obj spec.cruiseControl.jvmOptions.javaSystemProperties
+
+"A map of additional system properties which will be passed using the `-D` option to the JVM."
+
+### fn spec.cruiseControl.jvmOptions.javaSystemProperties.withName
+
+```ts
+withName(name)
+```
+
+"The system property name."
+
+### fn spec.cruiseControl.jvmOptions.javaSystemProperties.withValue
+
+```ts
+withValue(value)
+```
+
+"The system property value."
 
 ## obj spec.cruiseControl.livenessProbe
 
@@ -1961,6 +2875,26 @@ withEnvMixin(env)
 "Environment variables which should be applied to the container."
 
 **Note:** This function appends passed data to existing values
+
+## obj spec.cruiseControl.template.cruiseControlContainer.env
+
+"Environment variables which should be applied to the container."
+
+### fn spec.cruiseControl.template.cruiseControlContainer.env.withName
+
+```ts
+withName(name)
+```
+
+"The environment variable key."
+
+### fn spec.cruiseControl.template.cruiseControlContainer.env.withValue
+
+```ts
+withValue(value)
+```
+
+"The environment variable value."
 
 ## obj spec.cruiseControl.template.cruiseControlContainer.securityContext
 
@@ -2324,6 +3258,134 @@ withPreferredDuringSchedulingIgnoredDuringExecutionMixin(preferredDuringScheduli
 
 **Note:** This function appends passed data to existing values
 
+## obj spec.cruiseControl.template.pod.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution
+
+
+
+### fn spec.cruiseControl.template.pod.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.withWeight
+
+```ts
+withWeight(weight)
+```
+
+
+
+## obj spec.cruiseControl.template.pod.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference
+
+
+
+### fn spec.cruiseControl.template.pod.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.withMatchExpressions
+
+```ts
+withMatchExpressions(matchExpressions)
+```
+
+
+
+### fn spec.cruiseControl.template.pod.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.withMatchExpressionsMixin
+
+```ts
+withMatchExpressionsMixin(matchExpressions)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.cruiseControl.template.pod.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.withMatchFields
+
+```ts
+withMatchFields(matchFields)
+```
+
+
+
+### fn spec.cruiseControl.template.pod.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.withMatchFieldsMixin
+
+```ts
+withMatchFieldsMixin(matchFields)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.cruiseControl.template.pod.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchExpressions
+
+
+
+### fn spec.cruiseControl.template.pod.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchExpressions.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.cruiseControl.template.pod.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchExpressions.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.cruiseControl.template.pod.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchExpressions.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.cruiseControl.template.pod.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchExpressions.withValuesMixin
+
+```ts
+withValuesMixin(values)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.cruiseControl.template.pod.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchFields
+
+
+
+### fn spec.cruiseControl.template.pod.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchFields.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.cruiseControl.template.pod.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchFields.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.cruiseControl.template.pod.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchFields.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.cruiseControl.template.pod.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchFields.withValuesMixin
+
+```ts
+withValuesMixin(values)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
 ## obj spec.cruiseControl.template.pod.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution
 
 
@@ -2340,6 +3402,122 @@ withNodeSelectorTerms(nodeSelectorTerms)
 
 ```ts
 withNodeSelectorTermsMixin(nodeSelectorTerms)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.cruiseControl.template.pod.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms
+
+
+
+### fn spec.cruiseControl.template.pod.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.withMatchExpressions
+
+```ts
+withMatchExpressions(matchExpressions)
+```
+
+
+
+### fn spec.cruiseControl.template.pod.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.withMatchExpressionsMixin
+
+```ts
+withMatchExpressionsMixin(matchExpressions)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.cruiseControl.template.pod.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.withMatchFields
+
+```ts
+withMatchFields(matchFields)
+```
+
+
+
+### fn spec.cruiseControl.template.pod.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.withMatchFieldsMixin
+
+```ts
+withMatchFieldsMixin(matchFields)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.cruiseControl.template.pod.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchExpressions
+
+
+
+### fn spec.cruiseControl.template.pod.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchExpressions.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.cruiseControl.template.pod.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchExpressions.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.cruiseControl.template.pod.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchExpressions.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.cruiseControl.template.pod.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchExpressions.withValuesMixin
+
+```ts
+withValuesMixin(values)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.cruiseControl.template.pod.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchFields
+
+
+
+### fn spec.cruiseControl.template.pod.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchFields.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.cruiseControl.template.pod.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchFields.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.cruiseControl.template.pod.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchFields.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.cruiseControl.template.pod.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchFields.withValuesMixin
+
+```ts
+withValuesMixin(values)
 ```
 
 
@@ -2386,6 +3564,234 @@ withRequiredDuringSchedulingIgnoredDuringExecutionMixin(requiredDuringScheduling
 
 **Note:** This function appends passed data to existing values
 
+## obj spec.cruiseControl.template.pod.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution
+
+
+
+### fn spec.cruiseControl.template.pod.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.withWeight
+
+```ts
+withWeight(weight)
+```
+
+
+
+## obj spec.cruiseControl.template.pod.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm
+
+
+
+### fn spec.cruiseControl.template.pod.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.withNamespaces
+
+```ts
+withNamespaces(namespaces)
+```
+
+
+
+### fn spec.cruiseControl.template.pod.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.withNamespacesMixin
+
+```ts
+withNamespacesMixin(namespaces)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.cruiseControl.template.pod.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.withTopologyKey
+
+```ts
+withTopologyKey(topologyKey)
+```
+
+
+
+## obj spec.cruiseControl.template.pod.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector
+
+
+
+### fn spec.cruiseControl.template.pod.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.withMatchExpressions
+
+```ts
+withMatchExpressions(matchExpressions)
+```
+
+
+
+### fn spec.cruiseControl.template.pod.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.withMatchExpressionsMixin
+
+```ts
+withMatchExpressionsMixin(matchExpressions)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.cruiseControl.template.pod.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.withMatchLabels
+
+```ts
+withMatchLabels(matchLabels)
+```
+
+
+
+### fn spec.cruiseControl.template.pod.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.withMatchLabelsMixin
+
+```ts
+withMatchLabelsMixin(matchLabels)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.cruiseControl.template.pod.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions
+
+
+
+### fn spec.cruiseControl.template.pod.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.cruiseControl.template.pod.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.cruiseControl.template.pod.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.cruiseControl.template.pod.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions.withValuesMixin
+
+```ts
+withValuesMixin(values)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.cruiseControl.template.pod.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution
+
+
+
+### fn spec.cruiseControl.template.pod.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.withNamespaces
+
+```ts
+withNamespaces(namespaces)
+```
+
+
+
+### fn spec.cruiseControl.template.pod.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.withNamespacesMixin
+
+```ts
+withNamespacesMixin(namespaces)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.cruiseControl.template.pod.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.withTopologyKey
+
+```ts
+withTopologyKey(topologyKey)
+```
+
+
+
+## obj spec.cruiseControl.template.pod.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector
+
+
+
+### fn spec.cruiseControl.template.pod.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.withMatchExpressions
+
+```ts
+withMatchExpressions(matchExpressions)
+```
+
+
+
+### fn spec.cruiseControl.template.pod.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.withMatchExpressionsMixin
+
+```ts
+withMatchExpressionsMixin(matchExpressions)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.cruiseControl.template.pod.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.withMatchLabels
+
+```ts
+withMatchLabels(matchLabels)
+```
+
+
+
+### fn spec.cruiseControl.template.pod.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.withMatchLabelsMixin
+
+```ts
+withMatchLabelsMixin(matchLabels)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.cruiseControl.template.pod.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions
+
+
+
+### fn spec.cruiseControl.template.pod.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.cruiseControl.template.pod.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.cruiseControl.template.pod.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.cruiseControl.template.pod.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions.withValuesMixin
+
+```ts
+withValuesMixin(values)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
 ## obj spec.cruiseControl.template.pod.affinity.podAntiAffinity
 
 
@@ -2425,6 +3831,276 @@ withRequiredDuringSchedulingIgnoredDuringExecutionMixin(requiredDuringScheduling
 
 
 **Note:** This function appends passed data to existing values
+
+## obj spec.cruiseControl.template.pod.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution
+
+
+
+### fn spec.cruiseControl.template.pod.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.withWeight
+
+```ts
+withWeight(weight)
+```
+
+
+
+## obj spec.cruiseControl.template.pod.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm
+
+
+
+### fn spec.cruiseControl.template.pod.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.withNamespaces
+
+```ts
+withNamespaces(namespaces)
+```
+
+
+
+### fn spec.cruiseControl.template.pod.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.withNamespacesMixin
+
+```ts
+withNamespacesMixin(namespaces)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.cruiseControl.template.pod.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.withTopologyKey
+
+```ts
+withTopologyKey(topologyKey)
+```
+
+
+
+## obj spec.cruiseControl.template.pod.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector
+
+
+
+### fn spec.cruiseControl.template.pod.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.withMatchExpressions
+
+```ts
+withMatchExpressions(matchExpressions)
+```
+
+
+
+### fn spec.cruiseControl.template.pod.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.withMatchExpressionsMixin
+
+```ts
+withMatchExpressionsMixin(matchExpressions)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.cruiseControl.template.pod.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.withMatchLabels
+
+```ts
+withMatchLabels(matchLabels)
+```
+
+
+
+### fn spec.cruiseControl.template.pod.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.withMatchLabelsMixin
+
+```ts
+withMatchLabelsMixin(matchLabels)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.cruiseControl.template.pod.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions
+
+
+
+### fn spec.cruiseControl.template.pod.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.cruiseControl.template.pod.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.cruiseControl.template.pod.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.cruiseControl.template.pod.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions.withValuesMixin
+
+```ts
+withValuesMixin(values)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.cruiseControl.template.pod.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution
+
+
+
+### fn spec.cruiseControl.template.pod.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.withNamespaces
+
+```ts
+withNamespaces(namespaces)
+```
+
+
+
+### fn spec.cruiseControl.template.pod.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.withNamespacesMixin
+
+```ts
+withNamespacesMixin(namespaces)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.cruiseControl.template.pod.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.withTopologyKey
+
+```ts
+withTopologyKey(topologyKey)
+```
+
+
+
+## obj spec.cruiseControl.template.pod.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector
+
+
+
+### fn spec.cruiseControl.template.pod.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.withMatchExpressions
+
+```ts
+withMatchExpressions(matchExpressions)
+```
+
+
+
+### fn spec.cruiseControl.template.pod.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.withMatchExpressionsMixin
+
+```ts
+withMatchExpressionsMixin(matchExpressions)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.cruiseControl.template.pod.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.withMatchLabels
+
+```ts
+withMatchLabels(matchLabels)
+```
+
+
+
+### fn spec.cruiseControl.template.pod.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.withMatchLabelsMixin
+
+```ts
+withMatchLabelsMixin(matchLabels)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.cruiseControl.template.pod.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions
+
+
+
+### fn spec.cruiseControl.template.pod.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.cruiseControl.template.pod.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.cruiseControl.template.pod.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.cruiseControl.template.pod.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions.withValuesMixin
+
+```ts
+withValuesMixin(values)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.cruiseControl.template.pod.hostAliases
+
+"The pod's HostAliases. HostAliases is an optional list of hosts and IPs that will be injected into the Pod's hosts file if specified."
+
+### fn spec.cruiseControl.template.pod.hostAliases.withHostnames
+
+```ts
+withHostnames(hostnames)
+```
+
+
+
+### fn spec.cruiseControl.template.pod.hostAliases.withHostnamesMixin
+
+```ts
+withHostnamesMixin(hostnames)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.cruiseControl.template.pod.hostAliases.withIp
+
+```ts
+withIp(ip)
+```
+
+
+
+## obj spec.cruiseControl.template.pod.imagePullSecrets
+
+"List of references to secrets in the same namespace to use for pulling any of the images used by this Pod. When the `STRIMZI_IMAGE_PULL_SECRETS` environment variable in Cluster Operator and the `imagePullSecrets` option are specified, only the `imagePullSecrets` variable is used and the `STRIMZI_IMAGE_PULL_SECRETS` variable is ignored."
+
+### fn spec.cruiseControl.template.pod.imagePullSecrets.withName
+
+```ts
+withName(name)
+```
+
+
 
 ## obj spec.cruiseControl.template.pod.metadata
 
@@ -2602,6 +4278,26 @@ withType(type)
 
 
 
+## obj spec.cruiseControl.template.pod.securityContext.sysctls
+
+
+
+### fn spec.cruiseControl.template.pod.securityContext.sysctls.withName
+
+```ts
+withName(name)
+```
+
+
+
+### fn spec.cruiseControl.template.pod.securityContext.sysctls.withValue
+
+```ts
+withValue(value)
+```
+
+
+
 ## obj spec.cruiseControl.template.pod.securityContext.windowsOptions
 
 
@@ -2629,6 +4325,156 @@ withRunAsUserName(runAsUserName)
 ```
 
 
+
+## obj spec.cruiseControl.template.pod.tolerations
+
+"The pod's tolerations."
+
+### fn spec.cruiseControl.template.pod.tolerations.withEffect
+
+```ts
+withEffect(effect)
+```
+
+
+
+### fn spec.cruiseControl.template.pod.tolerations.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.cruiseControl.template.pod.tolerations.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.cruiseControl.template.pod.tolerations.withTolerationSeconds
+
+```ts
+withTolerationSeconds(tolerationSeconds)
+```
+
+
+
+### fn spec.cruiseControl.template.pod.tolerations.withValue
+
+```ts
+withValue(value)
+```
+
+
+
+## obj spec.cruiseControl.template.pod.topologySpreadConstraints
+
+"The pod's topology spread constraints."
+
+### fn spec.cruiseControl.template.pod.topologySpreadConstraints.withMaxSkew
+
+```ts
+withMaxSkew(maxSkew)
+```
+
+
+
+### fn spec.cruiseControl.template.pod.topologySpreadConstraints.withTopologyKey
+
+```ts
+withTopologyKey(topologyKey)
+```
+
+
+
+### fn spec.cruiseControl.template.pod.topologySpreadConstraints.withWhenUnsatisfiable
+
+```ts
+withWhenUnsatisfiable(whenUnsatisfiable)
+```
+
+
+
+## obj spec.cruiseControl.template.pod.topologySpreadConstraints.labelSelector
+
+
+
+### fn spec.cruiseControl.template.pod.topologySpreadConstraints.labelSelector.withMatchExpressions
+
+```ts
+withMatchExpressions(matchExpressions)
+```
+
+
+
+### fn spec.cruiseControl.template.pod.topologySpreadConstraints.labelSelector.withMatchExpressionsMixin
+
+```ts
+withMatchExpressionsMixin(matchExpressions)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.cruiseControl.template.pod.topologySpreadConstraints.labelSelector.withMatchLabels
+
+```ts
+withMatchLabels(matchLabels)
+```
+
+
+
+### fn spec.cruiseControl.template.pod.topologySpreadConstraints.labelSelector.withMatchLabelsMixin
+
+```ts
+withMatchLabelsMixin(matchLabels)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.cruiseControl.template.pod.topologySpreadConstraints.labelSelector.matchExpressions
+
+
+
+### fn spec.cruiseControl.template.pod.topologySpreadConstraints.labelSelector.matchExpressions.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.cruiseControl.template.pod.topologySpreadConstraints.labelSelector.matchExpressions.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.cruiseControl.template.pod.topologySpreadConstraints.labelSelector.matchExpressions.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.cruiseControl.template.pod.topologySpreadConstraints.labelSelector.matchExpressions.withValuesMixin
+
+```ts
+withValuesMixin(values)
+```
+
+
+
+**Note:** This function appends passed data to existing values
 
 ## obj spec.cruiseControl.template.podDisruptionBudget
 
@@ -2703,6 +4549,26 @@ withEnvMixin(env)
 "Environment variables which should be applied to the container."
 
 **Note:** This function appends passed data to existing values
+
+## obj spec.cruiseControl.template.tlsSidecarContainer.env
+
+"Environment variables which should be applied to the container."
+
+### fn spec.cruiseControl.template.tlsSidecarContainer.env.withName
+
+```ts
+withName(name)
+```
+
+"The environment variable key."
+
+### fn spec.cruiseControl.template.tlsSidecarContainer.env.withValue
+
+```ts
+withValue(value)
+```
+
+"The environment variable value."
 
 ## obj spec.cruiseControl.template.tlsSidecarContainer.securityContext
 
@@ -3222,6 +5088,134 @@ withPreferredDuringSchedulingIgnoredDuringExecutionMixin(preferredDuringScheduli
 
 **Note:** This function appends passed data to existing values
 
+## obj spec.entityOperator.template.pod.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution
+
+
+
+### fn spec.entityOperator.template.pod.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.withWeight
+
+```ts
+withWeight(weight)
+```
+
+
+
+## obj spec.entityOperator.template.pod.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference
+
+
+
+### fn spec.entityOperator.template.pod.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.withMatchExpressions
+
+```ts
+withMatchExpressions(matchExpressions)
+```
+
+
+
+### fn spec.entityOperator.template.pod.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.withMatchExpressionsMixin
+
+```ts
+withMatchExpressionsMixin(matchExpressions)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.entityOperator.template.pod.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.withMatchFields
+
+```ts
+withMatchFields(matchFields)
+```
+
+
+
+### fn spec.entityOperator.template.pod.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.withMatchFieldsMixin
+
+```ts
+withMatchFieldsMixin(matchFields)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.entityOperator.template.pod.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchExpressions
+
+
+
+### fn spec.entityOperator.template.pod.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchExpressions.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.entityOperator.template.pod.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchExpressions.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.entityOperator.template.pod.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchExpressions.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.entityOperator.template.pod.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchExpressions.withValuesMixin
+
+```ts
+withValuesMixin(values)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.entityOperator.template.pod.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchFields
+
+
+
+### fn spec.entityOperator.template.pod.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchFields.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.entityOperator.template.pod.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchFields.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.entityOperator.template.pod.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchFields.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.entityOperator.template.pod.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchFields.withValuesMixin
+
+```ts
+withValuesMixin(values)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
 ## obj spec.entityOperator.template.pod.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution
 
 
@@ -3238,6 +5232,122 @@ withNodeSelectorTerms(nodeSelectorTerms)
 
 ```ts
 withNodeSelectorTermsMixin(nodeSelectorTerms)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.entityOperator.template.pod.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms
+
+
+
+### fn spec.entityOperator.template.pod.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.withMatchExpressions
+
+```ts
+withMatchExpressions(matchExpressions)
+```
+
+
+
+### fn spec.entityOperator.template.pod.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.withMatchExpressionsMixin
+
+```ts
+withMatchExpressionsMixin(matchExpressions)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.entityOperator.template.pod.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.withMatchFields
+
+```ts
+withMatchFields(matchFields)
+```
+
+
+
+### fn spec.entityOperator.template.pod.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.withMatchFieldsMixin
+
+```ts
+withMatchFieldsMixin(matchFields)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.entityOperator.template.pod.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchExpressions
+
+
+
+### fn spec.entityOperator.template.pod.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchExpressions.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.entityOperator.template.pod.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchExpressions.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.entityOperator.template.pod.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchExpressions.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.entityOperator.template.pod.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchExpressions.withValuesMixin
+
+```ts
+withValuesMixin(values)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.entityOperator.template.pod.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchFields
+
+
+
+### fn spec.entityOperator.template.pod.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchFields.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.entityOperator.template.pod.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchFields.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.entityOperator.template.pod.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchFields.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.entityOperator.template.pod.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchFields.withValuesMixin
+
+```ts
+withValuesMixin(values)
 ```
 
 
@@ -3284,6 +5394,234 @@ withRequiredDuringSchedulingIgnoredDuringExecutionMixin(requiredDuringScheduling
 
 **Note:** This function appends passed data to existing values
 
+## obj spec.entityOperator.template.pod.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution
+
+
+
+### fn spec.entityOperator.template.pod.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.withWeight
+
+```ts
+withWeight(weight)
+```
+
+
+
+## obj spec.entityOperator.template.pod.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm
+
+
+
+### fn spec.entityOperator.template.pod.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.withNamespaces
+
+```ts
+withNamespaces(namespaces)
+```
+
+
+
+### fn spec.entityOperator.template.pod.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.withNamespacesMixin
+
+```ts
+withNamespacesMixin(namespaces)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.entityOperator.template.pod.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.withTopologyKey
+
+```ts
+withTopologyKey(topologyKey)
+```
+
+
+
+## obj spec.entityOperator.template.pod.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector
+
+
+
+### fn spec.entityOperator.template.pod.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.withMatchExpressions
+
+```ts
+withMatchExpressions(matchExpressions)
+```
+
+
+
+### fn spec.entityOperator.template.pod.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.withMatchExpressionsMixin
+
+```ts
+withMatchExpressionsMixin(matchExpressions)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.entityOperator.template.pod.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.withMatchLabels
+
+```ts
+withMatchLabels(matchLabels)
+```
+
+
+
+### fn spec.entityOperator.template.pod.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.withMatchLabelsMixin
+
+```ts
+withMatchLabelsMixin(matchLabels)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.entityOperator.template.pod.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions
+
+
+
+### fn spec.entityOperator.template.pod.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.entityOperator.template.pod.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.entityOperator.template.pod.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.entityOperator.template.pod.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions.withValuesMixin
+
+```ts
+withValuesMixin(values)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.entityOperator.template.pod.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution
+
+
+
+### fn spec.entityOperator.template.pod.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.withNamespaces
+
+```ts
+withNamespaces(namespaces)
+```
+
+
+
+### fn spec.entityOperator.template.pod.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.withNamespacesMixin
+
+```ts
+withNamespacesMixin(namespaces)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.entityOperator.template.pod.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.withTopologyKey
+
+```ts
+withTopologyKey(topologyKey)
+```
+
+
+
+## obj spec.entityOperator.template.pod.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector
+
+
+
+### fn spec.entityOperator.template.pod.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.withMatchExpressions
+
+```ts
+withMatchExpressions(matchExpressions)
+```
+
+
+
+### fn spec.entityOperator.template.pod.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.withMatchExpressionsMixin
+
+```ts
+withMatchExpressionsMixin(matchExpressions)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.entityOperator.template.pod.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.withMatchLabels
+
+```ts
+withMatchLabels(matchLabels)
+```
+
+
+
+### fn spec.entityOperator.template.pod.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.withMatchLabelsMixin
+
+```ts
+withMatchLabelsMixin(matchLabels)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.entityOperator.template.pod.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions
+
+
+
+### fn spec.entityOperator.template.pod.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.entityOperator.template.pod.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.entityOperator.template.pod.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.entityOperator.template.pod.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions.withValuesMixin
+
+```ts
+withValuesMixin(values)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
 ## obj spec.entityOperator.template.pod.affinity.podAntiAffinity
 
 
@@ -3323,6 +5661,276 @@ withRequiredDuringSchedulingIgnoredDuringExecutionMixin(requiredDuringScheduling
 
 
 **Note:** This function appends passed data to existing values
+
+## obj spec.entityOperator.template.pod.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution
+
+
+
+### fn spec.entityOperator.template.pod.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.withWeight
+
+```ts
+withWeight(weight)
+```
+
+
+
+## obj spec.entityOperator.template.pod.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm
+
+
+
+### fn spec.entityOperator.template.pod.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.withNamespaces
+
+```ts
+withNamespaces(namespaces)
+```
+
+
+
+### fn spec.entityOperator.template.pod.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.withNamespacesMixin
+
+```ts
+withNamespacesMixin(namespaces)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.entityOperator.template.pod.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.withTopologyKey
+
+```ts
+withTopologyKey(topologyKey)
+```
+
+
+
+## obj spec.entityOperator.template.pod.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector
+
+
+
+### fn spec.entityOperator.template.pod.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.withMatchExpressions
+
+```ts
+withMatchExpressions(matchExpressions)
+```
+
+
+
+### fn spec.entityOperator.template.pod.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.withMatchExpressionsMixin
+
+```ts
+withMatchExpressionsMixin(matchExpressions)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.entityOperator.template.pod.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.withMatchLabels
+
+```ts
+withMatchLabels(matchLabels)
+```
+
+
+
+### fn spec.entityOperator.template.pod.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.withMatchLabelsMixin
+
+```ts
+withMatchLabelsMixin(matchLabels)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.entityOperator.template.pod.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions
+
+
+
+### fn spec.entityOperator.template.pod.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.entityOperator.template.pod.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.entityOperator.template.pod.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.entityOperator.template.pod.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions.withValuesMixin
+
+```ts
+withValuesMixin(values)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.entityOperator.template.pod.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution
+
+
+
+### fn spec.entityOperator.template.pod.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.withNamespaces
+
+```ts
+withNamespaces(namespaces)
+```
+
+
+
+### fn spec.entityOperator.template.pod.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.withNamespacesMixin
+
+```ts
+withNamespacesMixin(namespaces)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.entityOperator.template.pod.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.withTopologyKey
+
+```ts
+withTopologyKey(topologyKey)
+```
+
+
+
+## obj spec.entityOperator.template.pod.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector
+
+
+
+### fn spec.entityOperator.template.pod.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.withMatchExpressions
+
+```ts
+withMatchExpressions(matchExpressions)
+```
+
+
+
+### fn spec.entityOperator.template.pod.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.withMatchExpressionsMixin
+
+```ts
+withMatchExpressionsMixin(matchExpressions)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.entityOperator.template.pod.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.withMatchLabels
+
+```ts
+withMatchLabels(matchLabels)
+```
+
+
+
+### fn spec.entityOperator.template.pod.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.withMatchLabelsMixin
+
+```ts
+withMatchLabelsMixin(matchLabels)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.entityOperator.template.pod.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions
+
+
+
+### fn spec.entityOperator.template.pod.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.entityOperator.template.pod.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.entityOperator.template.pod.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.entityOperator.template.pod.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions.withValuesMixin
+
+```ts
+withValuesMixin(values)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.entityOperator.template.pod.hostAliases
+
+"The pod's HostAliases. HostAliases is an optional list of hosts and IPs that will be injected into the Pod's hosts file if specified."
+
+### fn spec.entityOperator.template.pod.hostAliases.withHostnames
+
+```ts
+withHostnames(hostnames)
+```
+
+
+
+### fn spec.entityOperator.template.pod.hostAliases.withHostnamesMixin
+
+```ts
+withHostnamesMixin(hostnames)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.entityOperator.template.pod.hostAliases.withIp
+
+```ts
+withIp(ip)
+```
+
+
+
+## obj spec.entityOperator.template.pod.imagePullSecrets
+
+"List of references to secrets in the same namespace to use for pulling any of the images used by this Pod. When the `STRIMZI_IMAGE_PULL_SECRETS` environment variable in Cluster Operator and the `imagePullSecrets` option are specified, only the `imagePullSecrets` variable is used and the `STRIMZI_IMAGE_PULL_SECRETS` variable is ignored."
+
+### fn spec.entityOperator.template.pod.imagePullSecrets.withName
+
+```ts
+withName(name)
+```
+
+
 
 ## obj spec.entityOperator.template.pod.metadata
 
@@ -3500,6 +6108,26 @@ withType(type)
 
 
 
+## obj spec.entityOperator.template.pod.securityContext.sysctls
+
+
+
+### fn spec.entityOperator.template.pod.securityContext.sysctls.withName
+
+```ts
+withName(name)
+```
+
+
+
+### fn spec.entityOperator.template.pod.securityContext.sysctls.withValue
+
+```ts
+withValue(value)
+```
+
+
+
 ## obj spec.entityOperator.template.pod.securityContext.windowsOptions
 
 
@@ -3528,6 +6156,156 @@ withRunAsUserName(runAsUserName)
 
 
 
+## obj spec.entityOperator.template.pod.tolerations
+
+"The pod's tolerations."
+
+### fn spec.entityOperator.template.pod.tolerations.withEffect
+
+```ts
+withEffect(effect)
+```
+
+
+
+### fn spec.entityOperator.template.pod.tolerations.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.entityOperator.template.pod.tolerations.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.entityOperator.template.pod.tolerations.withTolerationSeconds
+
+```ts
+withTolerationSeconds(tolerationSeconds)
+```
+
+
+
+### fn spec.entityOperator.template.pod.tolerations.withValue
+
+```ts
+withValue(value)
+```
+
+
+
+## obj spec.entityOperator.template.pod.topologySpreadConstraints
+
+"The pod's topology spread constraints."
+
+### fn spec.entityOperator.template.pod.topologySpreadConstraints.withMaxSkew
+
+```ts
+withMaxSkew(maxSkew)
+```
+
+
+
+### fn spec.entityOperator.template.pod.topologySpreadConstraints.withTopologyKey
+
+```ts
+withTopologyKey(topologyKey)
+```
+
+
+
+### fn spec.entityOperator.template.pod.topologySpreadConstraints.withWhenUnsatisfiable
+
+```ts
+withWhenUnsatisfiable(whenUnsatisfiable)
+```
+
+
+
+## obj spec.entityOperator.template.pod.topologySpreadConstraints.labelSelector
+
+
+
+### fn spec.entityOperator.template.pod.topologySpreadConstraints.labelSelector.withMatchExpressions
+
+```ts
+withMatchExpressions(matchExpressions)
+```
+
+
+
+### fn spec.entityOperator.template.pod.topologySpreadConstraints.labelSelector.withMatchExpressionsMixin
+
+```ts
+withMatchExpressionsMixin(matchExpressions)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.entityOperator.template.pod.topologySpreadConstraints.labelSelector.withMatchLabels
+
+```ts
+withMatchLabels(matchLabels)
+```
+
+
+
+### fn spec.entityOperator.template.pod.topologySpreadConstraints.labelSelector.withMatchLabelsMixin
+
+```ts
+withMatchLabelsMixin(matchLabels)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.entityOperator.template.pod.topologySpreadConstraints.labelSelector.matchExpressions
+
+
+
+### fn spec.entityOperator.template.pod.topologySpreadConstraints.labelSelector.matchExpressions.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.entityOperator.template.pod.topologySpreadConstraints.labelSelector.matchExpressions.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.entityOperator.template.pod.topologySpreadConstraints.labelSelector.matchExpressions.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.entityOperator.template.pod.topologySpreadConstraints.labelSelector.matchExpressions.withValuesMixin
+
+```ts
+withValuesMixin(values)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
 ## obj spec.entityOperator.template.tlsSidecarContainer
 
 "Template for the Entity Operator TLS sidecar container."
@@ -3549,6 +6327,26 @@ withEnvMixin(env)
 "Environment variables which should be applied to the container."
 
 **Note:** This function appends passed data to existing values
+
+## obj spec.entityOperator.template.tlsSidecarContainer.env
+
+"Environment variables which should be applied to the container."
+
+### fn spec.entityOperator.template.tlsSidecarContainer.env.withName
+
+```ts
+withName(name)
+```
+
+"The environment variable key."
+
+### fn spec.entityOperator.template.tlsSidecarContainer.env.withValue
+
+```ts
+withValue(value)
+```
+
+"The environment variable value."
 
 ## obj spec.entityOperator.template.tlsSidecarContainer.securityContext
 
@@ -3756,6 +6554,26 @@ withEnvMixin(env)
 
 **Note:** This function appends passed data to existing values
 
+## obj spec.entityOperator.template.topicOperatorContainer.env
+
+"Environment variables which should be applied to the container."
+
+### fn spec.entityOperator.template.topicOperatorContainer.env.withName
+
+```ts
+withName(name)
+```
+
+"The environment variable key."
+
+### fn spec.entityOperator.template.topicOperatorContainer.env.withValue
+
+```ts
+withValue(value)
+```
+
+"The environment variable value."
+
 ## obj spec.entityOperator.template.topicOperatorContainer.securityContext
 
 "Security context for the container."
@@ -3961,6 +6779,26 @@ withEnvMixin(env)
 "Environment variables which should be applied to the container."
 
 **Note:** This function appends passed data to existing values
+
+## obj spec.entityOperator.template.userOperatorContainer.env
+
+"Environment variables which should be applied to the container."
+
+### fn spec.entityOperator.template.userOperatorContainer.env.withName
+
+```ts
+withName(name)
+```
+
+"The environment variable key."
+
+### fn spec.entityOperator.template.userOperatorContainer.env.withValue
+
+```ts
+withValue(value)
+```
+
+"The environment variable value."
 
 ## obj spec.entityOperator.template.userOperatorContainer.securityContext
 
@@ -4371,7 +7209,7 @@ withJavaSystemPropertiesMixin(javaSystemProperties)
 ### fn spec.entityOperator.topicOperator.jvmOptions.withXX
 
 ```ts
-withXX(XX)
+withXX(_XX)
 ```
 
 "A map of -XX options to the JVM."
@@ -4379,7 +7217,7 @@ withXX(XX)
 ### fn spec.entityOperator.topicOperator.jvmOptions.withXXMixin
 
 ```ts
-withXXMixin(XX)
+withXXMixin(_XX)
 ```
 
 "A map of -XX options to the JVM."
@@ -4389,7 +7227,7 @@ withXXMixin(XX)
 ### fn spec.entityOperator.topicOperator.jvmOptions.withXms
 
 ```ts
-withXms(Xms)
+withXms(_Xms)
 ```
 
 "-Xms option to to the JVM."
@@ -4397,10 +7235,30 @@ withXms(Xms)
 ### fn spec.entityOperator.topicOperator.jvmOptions.withXmx
 
 ```ts
-withXmx(Xmx)
+withXmx(_Xmx)
 ```
 
 "-Xmx option to to the JVM."
+
+## obj spec.entityOperator.topicOperator.jvmOptions.javaSystemProperties
+
+"A map of additional system properties which will be passed using the `-D` option to the JVM."
+
+### fn spec.entityOperator.topicOperator.jvmOptions.javaSystemProperties.withName
+
+```ts
+withName(name)
+```
+
+"The system property name."
+
+### fn spec.entityOperator.topicOperator.jvmOptions.javaSystemProperties.withValue
+
+```ts
+withValue(value)
+```
+
+"The system property value."
 
 ## obj spec.entityOperator.topicOperator.livenessProbe
 
@@ -4713,7 +7571,7 @@ withJavaSystemPropertiesMixin(javaSystemProperties)
 ### fn spec.entityOperator.userOperator.jvmOptions.withXX
 
 ```ts
-withXX(XX)
+withXX(_XX)
 ```
 
 "A map of -XX options to the JVM."
@@ -4721,7 +7579,7 @@ withXX(XX)
 ### fn spec.entityOperator.userOperator.jvmOptions.withXXMixin
 
 ```ts
-withXXMixin(XX)
+withXXMixin(_XX)
 ```
 
 "A map of -XX options to the JVM."
@@ -4731,7 +7589,7 @@ withXXMixin(XX)
 ### fn spec.entityOperator.userOperator.jvmOptions.withXms
 
 ```ts
-withXms(Xms)
+withXms(_Xms)
 ```
 
 "-Xms option to to the JVM."
@@ -4739,10 +7597,30 @@ withXms(Xms)
 ### fn spec.entityOperator.userOperator.jvmOptions.withXmx
 
 ```ts
-withXmx(Xmx)
+withXmx(_Xmx)
 ```
 
 "-Xmx option to to the JVM."
+
+## obj spec.entityOperator.userOperator.jvmOptions.javaSystemProperties
+
+"A map of additional system properties which will be passed using the `-D` option to the JVM."
+
+### fn spec.entityOperator.userOperator.jvmOptions.javaSystemProperties.withName
+
+```ts
+withName(name)
+```
+
+"The system property name."
+
+### fn spec.entityOperator.userOperator.jvmOptions.javaSystemProperties.withValue
+
+```ts
+withValue(value)
+```
+
+"The system property value."
 
 ## obj spec.entityOperator.userOperator.livenessProbe
 
@@ -4990,6 +7868,116 @@ withOutputDefinitionsMixin(outputDefinitions)
 
 **Note:** This function appends passed data to existing values
 
+## obj spec.jmxTrans.kafkaQueries
+
+"Queries to send to the Kafka brokers to define what data should be read from each broker. For more information on these properties see, xref:type-JmxTransQueryTemplate-reference[`JmxTransQueryTemplate` schema reference]."
+
+### fn spec.jmxTrans.kafkaQueries.withAttributes
+
+```ts
+withAttributes(attributes)
+```
+
+"Determine which attributes of the targeted MBean should be included."
+
+### fn spec.jmxTrans.kafkaQueries.withAttributesMixin
+
+```ts
+withAttributesMixin(attributes)
+```
+
+"Determine which attributes of the targeted MBean should be included."
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.jmxTrans.kafkaQueries.withOutputs
+
+```ts
+withOutputs(outputs)
+```
+
+"List of the names of output definitions specified in the spec.kafka.jmxTrans.outputDefinitions that have defined where JMX metrics are pushed to, and in which data format."
+
+### fn spec.jmxTrans.kafkaQueries.withOutputsMixin
+
+```ts
+withOutputsMixin(outputs)
+```
+
+"List of the names of output definitions specified in the spec.kafka.jmxTrans.outputDefinitions that have defined where JMX metrics are pushed to, and in which data format."
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.jmxTrans.kafkaQueries.withTargetMBean
+
+```ts
+withTargetMBean(targetMBean)
+```
+
+"If using wildcards instead of a specific MBean then the data is gathered from multiple MBeans. Otherwise if specifying an MBean then data is gathered from that specified MBean."
+
+## obj spec.jmxTrans.outputDefinitions
+
+"Defines the output hosts that will be referenced later on. For more information on these properties see, xref:type-JmxTransOutputDefinitionTemplate-reference[`JmxTransOutputDefinitionTemplate` schema reference]."
+
+### fn spec.jmxTrans.outputDefinitions.withFlushDelayInSeconds
+
+```ts
+withFlushDelayInSeconds(flushDelayInSeconds)
+```
+
+"How many seconds the JmxTrans waits before pushing a new set of data out."
+
+### fn spec.jmxTrans.outputDefinitions.withHost
+
+```ts
+withHost(host)
+```
+
+"The DNS/hostname of the remote host that the data is pushed to."
+
+### fn spec.jmxTrans.outputDefinitions.withName
+
+```ts
+withName(name)
+```
+
+"Template for setting the name of the output definition. This is used to identify where to send the results of queries should be sent."
+
+### fn spec.jmxTrans.outputDefinitions.withOutputType
+
+```ts
+withOutputType(outputType)
+```
+
+"Template for setting the format of the data that will be pushed.For more information see https://github.com/jmxtrans/jmxtrans/wiki/OutputWriters[JmxTrans OutputWriters]."
+
+### fn spec.jmxTrans.outputDefinitions.withPort
+
+```ts
+withPort(port)
+```
+
+"The port of the remote host that the data is pushed to."
+
+### fn spec.jmxTrans.outputDefinitions.withTypeNames
+
+```ts
+withTypeNames(typeNames)
+```
+
+"Template for filtering data to be included in response to a wildcard query. For more information see https://github.com/jmxtrans/jmxtrans/wiki/Queries[JmxTrans queries]."
+
+### fn spec.jmxTrans.outputDefinitions.withTypeNamesMixin
+
+```ts
+withTypeNamesMixin(typeNames)
+```
+
+"Template for filtering data to be included in response to a wildcard query. For more information see https://github.com/jmxtrans/jmxtrans/wiki/Queries[JmxTrans queries]."
+
+**Note:** This function appends passed data to existing values
+
 ## obj spec.jmxTrans.resources
 
 "CPU and memory resources to reserve."
@@ -5055,6 +8043,26 @@ withEnvMixin(env)
 "Environment variables which should be applied to the container."
 
 **Note:** This function appends passed data to existing values
+
+## obj spec.jmxTrans.template.container.env
+
+"Environment variables which should be applied to the container."
+
+### fn spec.jmxTrans.template.container.env.withName
+
+```ts
+withName(name)
+```
+
+"The environment variable key."
+
+### fn spec.jmxTrans.template.container.env.withValue
+
+```ts
+withValue(value)
+```
+
+"The environment variable value."
 
 ## obj spec.jmxTrans.template.container.securityContext
 
@@ -5418,6 +8426,134 @@ withPreferredDuringSchedulingIgnoredDuringExecutionMixin(preferredDuringScheduli
 
 **Note:** This function appends passed data to existing values
 
+## obj spec.jmxTrans.template.pod.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution
+
+
+
+### fn spec.jmxTrans.template.pod.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.withWeight
+
+```ts
+withWeight(weight)
+```
+
+
+
+## obj spec.jmxTrans.template.pod.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference
+
+
+
+### fn spec.jmxTrans.template.pod.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.withMatchExpressions
+
+```ts
+withMatchExpressions(matchExpressions)
+```
+
+
+
+### fn spec.jmxTrans.template.pod.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.withMatchExpressionsMixin
+
+```ts
+withMatchExpressionsMixin(matchExpressions)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.jmxTrans.template.pod.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.withMatchFields
+
+```ts
+withMatchFields(matchFields)
+```
+
+
+
+### fn spec.jmxTrans.template.pod.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.withMatchFieldsMixin
+
+```ts
+withMatchFieldsMixin(matchFields)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.jmxTrans.template.pod.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchExpressions
+
+
+
+### fn spec.jmxTrans.template.pod.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchExpressions.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.jmxTrans.template.pod.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchExpressions.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.jmxTrans.template.pod.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchExpressions.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.jmxTrans.template.pod.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchExpressions.withValuesMixin
+
+```ts
+withValuesMixin(values)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.jmxTrans.template.pod.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchFields
+
+
+
+### fn spec.jmxTrans.template.pod.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchFields.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.jmxTrans.template.pod.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchFields.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.jmxTrans.template.pod.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchFields.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.jmxTrans.template.pod.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchFields.withValuesMixin
+
+```ts
+withValuesMixin(values)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
 ## obj spec.jmxTrans.template.pod.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution
 
 
@@ -5434,6 +8570,122 @@ withNodeSelectorTerms(nodeSelectorTerms)
 
 ```ts
 withNodeSelectorTermsMixin(nodeSelectorTerms)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.jmxTrans.template.pod.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms
+
+
+
+### fn spec.jmxTrans.template.pod.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.withMatchExpressions
+
+```ts
+withMatchExpressions(matchExpressions)
+```
+
+
+
+### fn spec.jmxTrans.template.pod.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.withMatchExpressionsMixin
+
+```ts
+withMatchExpressionsMixin(matchExpressions)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.jmxTrans.template.pod.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.withMatchFields
+
+```ts
+withMatchFields(matchFields)
+```
+
+
+
+### fn spec.jmxTrans.template.pod.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.withMatchFieldsMixin
+
+```ts
+withMatchFieldsMixin(matchFields)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.jmxTrans.template.pod.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchExpressions
+
+
+
+### fn spec.jmxTrans.template.pod.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchExpressions.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.jmxTrans.template.pod.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchExpressions.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.jmxTrans.template.pod.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchExpressions.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.jmxTrans.template.pod.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchExpressions.withValuesMixin
+
+```ts
+withValuesMixin(values)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.jmxTrans.template.pod.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchFields
+
+
+
+### fn spec.jmxTrans.template.pod.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchFields.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.jmxTrans.template.pod.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchFields.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.jmxTrans.template.pod.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchFields.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.jmxTrans.template.pod.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchFields.withValuesMixin
+
+```ts
+withValuesMixin(values)
 ```
 
 
@@ -5480,6 +8732,234 @@ withRequiredDuringSchedulingIgnoredDuringExecutionMixin(requiredDuringScheduling
 
 **Note:** This function appends passed data to existing values
 
+## obj spec.jmxTrans.template.pod.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution
+
+
+
+### fn spec.jmxTrans.template.pod.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.withWeight
+
+```ts
+withWeight(weight)
+```
+
+
+
+## obj spec.jmxTrans.template.pod.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm
+
+
+
+### fn spec.jmxTrans.template.pod.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.withNamespaces
+
+```ts
+withNamespaces(namespaces)
+```
+
+
+
+### fn spec.jmxTrans.template.pod.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.withNamespacesMixin
+
+```ts
+withNamespacesMixin(namespaces)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.jmxTrans.template.pod.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.withTopologyKey
+
+```ts
+withTopologyKey(topologyKey)
+```
+
+
+
+## obj spec.jmxTrans.template.pod.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector
+
+
+
+### fn spec.jmxTrans.template.pod.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.withMatchExpressions
+
+```ts
+withMatchExpressions(matchExpressions)
+```
+
+
+
+### fn spec.jmxTrans.template.pod.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.withMatchExpressionsMixin
+
+```ts
+withMatchExpressionsMixin(matchExpressions)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.jmxTrans.template.pod.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.withMatchLabels
+
+```ts
+withMatchLabels(matchLabels)
+```
+
+
+
+### fn spec.jmxTrans.template.pod.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.withMatchLabelsMixin
+
+```ts
+withMatchLabelsMixin(matchLabels)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.jmxTrans.template.pod.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions
+
+
+
+### fn spec.jmxTrans.template.pod.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.jmxTrans.template.pod.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.jmxTrans.template.pod.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.jmxTrans.template.pod.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions.withValuesMixin
+
+```ts
+withValuesMixin(values)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.jmxTrans.template.pod.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution
+
+
+
+### fn spec.jmxTrans.template.pod.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.withNamespaces
+
+```ts
+withNamespaces(namespaces)
+```
+
+
+
+### fn spec.jmxTrans.template.pod.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.withNamespacesMixin
+
+```ts
+withNamespacesMixin(namespaces)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.jmxTrans.template.pod.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.withTopologyKey
+
+```ts
+withTopologyKey(topologyKey)
+```
+
+
+
+## obj spec.jmxTrans.template.pod.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector
+
+
+
+### fn spec.jmxTrans.template.pod.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.withMatchExpressions
+
+```ts
+withMatchExpressions(matchExpressions)
+```
+
+
+
+### fn spec.jmxTrans.template.pod.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.withMatchExpressionsMixin
+
+```ts
+withMatchExpressionsMixin(matchExpressions)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.jmxTrans.template.pod.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.withMatchLabels
+
+```ts
+withMatchLabels(matchLabels)
+```
+
+
+
+### fn spec.jmxTrans.template.pod.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.withMatchLabelsMixin
+
+```ts
+withMatchLabelsMixin(matchLabels)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.jmxTrans.template.pod.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions
+
+
+
+### fn spec.jmxTrans.template.pod.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.jmxTrans.template.pod.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.jmxTrans.template.pod.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.jmxTrans.template.pod.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions.withValuesMixin
+
+```ts
+withValuesMixin(values)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
 ## obj spec.jmxTrans.template.pod.affinity.podAntiAffinity
 
 
@@ -5519,6 +8999,276 @@ withRequiredDuringSchedulingIgnoredDuringExecutionMixin(requiredDuringScheduling
 
 
 **Note:** This function appends passed data to existing values
+
+## obj spec.jmxTrans.template.pod.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution
+
+
+
+### fn spec.jmxTrans.template.pod.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.withWeight
+
+```ts
+withWeight(weight)
+```
+
+
+
+## obj spec.jmxTrans.template.pod.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm
+
+
+
+### fn spec.jmxTrans.template.pod.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.withNamespaces
+
+```ts
+withNamespaces(namespaces)
+```
+
+
+
+### fn spec.jmxTrans.template.pod.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.withNamespacesMixin
+
+```ts
+withNamespacesMixin(namespaces)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.jmxTrans.template.pod.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.withTopologyKey
+
+```ts
+withTopologyKey(topologyKey)
+```
+
+
+
+## obj spec.jmxTrans.template.pod.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector
+
+
+
+### fn spec.jmxTrans.template.pod.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.withMatchExpressions
+
+```ts
+withMatchExpressions(matchExpressions)
+```
+
+
+
+### fn spec.jmxTrans.template.pod.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.withMatchExpressionsMixin
+
+```ts
+withMatchExpressionsMixin(matchExpressions)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.jmxTrans.template.pod.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.withMatchLabels
+
+```ts
+withMatchLabels(matchLabels)
+```
+
+
+
+### fn spec.jmxTrans.template.pod.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.withMatchLabelsMixin
+
+```ts
+withMatchLabelsMixin(matchLabels)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.jmxTrans.template.pod.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions
+
+
+
+### fn spec.jmxTrans.template.pod.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.jmxTrans.template.pod.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.jmxTrans.template.pod.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.jmxTrans.template.pod.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions.withValuesMixin
+
+```ts
+withValuesMixin(values)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.jmxTrans.template.pod.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution
+
+
+
+### fn spec.jmxTrans.template.pod.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.withNamespaces
+
+```ts
+withNamespaces(namespaces)
+```
+
+
+
+### fn spec.jmxTrans.template.pod.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.withNamespacesMixin
+
+```ts
+withNamespacesMixin(namespaces)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.jmxTrans.template.pod.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.withTopologyKey
+
+```ts
+withTopologyKey(topologyKey)
+```
+
+
+
+## obj spec.jmxTrans.template.pod.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector
+
+
+
+### fn spec.jmxTrans.template.pod.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.withMatchExpressions
+
+```ts
+withMatchExpressions(matchExpressions)
+```
+
+
+
+### fn spec.jmxTrans.template.pod.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.withMatchExpressionsMixin
+
+```ts
+withMatchExpressionsMixin(matchExpressions)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.jmxTrans.template.pod.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.withMatchLabels
+
+```ts
+withMatchLabels(matchLabels)
+```
+
+
+
+### fn spec.jmxTrans.template.pod.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.withMatchLabelsMixin
+
+```ts
+withMatchLabelsMixin(matchLabels)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.jmxTrans.template.pod.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions
+
+
+
+### fn spec.jmxTrans.template.pod.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.jmxTrans.template.pod.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.jmxTrans.template.pod.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.jmxTrans.template.pod.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions.withValuesMixin
+
+```ts
+withValuesMixin(values)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.jmxTrans.template.pod.hostAliases
+
+"The pod's HostAliases. HostAliases is an optional list of hosts and IPs that will be injected into the Pod's hosts file if specified."
+
+### fn spec.jmxTrans.template.pod.hostAliases.withHostnames
+
+```ts
+withHostnames(hostnames)
+```
+
+
+
+### fn spec.jmxTrans.template.pod.hostAliases.withHostnamesMixin
+
+```ts
+withHostnamesMixin(hostnames)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.jmxTrans.template.pod.hostAliases.withIp
+
+```ts
+withIp(ip)
+```
+
+
+
+## obj spec.jmxTrans.template.pod.imagePullSecrets
+
+"List of references to secrets in the same namespace to use for pulling any of the images used by this Pod. When the `STRIMZI_IMAGE_PULL_SECRETS` environment variable in Cluster Operator and the `imagePullSecrets` option are specified, only the `imagePullSecrets` variable is used and the `STRIMZI_IMAGE_PULL_SECRETS` variable is ignored."
+
+### fn spec.jmxTrans.template.pod.imagePullSecrets.withName
+
+```ts
+withName(name)
+```
+
+
 
 ## obj spec.jmxTrans.template.pod.metadata
 
@@ -5696,6 +9446,26 @@ withType(type)
 
 
 
+## obj spec.jmxTrans.template.pod.securityContext.sysctls
+
+
+
+### fn spec.jmxTrans.template.pod.securityContext.sysctls.withName
+
+```ts
+withName(name)
+```
+
+
+
+### fn spec.jmxTrans.template.pod.securityContext.sysctls.withValue
+
+```ts
+withValue(value)
+```
+
+
+
 ## obj spec.jmxTrans.template.pod.securityContext.windowsOptions
 
 
@@ -5723,6 +9493,156 @@ withRunAsUserName(runAsUserName)
 ```
 
 
+
+## obj spec.jmxTrans.template.pod.tolerations
+
+"The pod's tolerations."
+
+### fn spec.jmxTrans.template.pod.tolerations.withEffect
+
+```ts
+withEffect(effect)
+```
+
+
+
+### fn spec.jmxTrans.template.pod.tolerations.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.jmxTrans.template.pod.tolerations.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.jmxTrans.template.pod.tolerations.withTolerationSeconds
+
+```ts
+withTolerationSeconds(tolerationSeconds)
+```
+
+
+
+### fn spec.jmxTrans.template.pod.tolerations.withValue
+
+```ts
+withValue(value)
+```
+
+
+
+## obj spec.jmxTrans.template.pod.topologySpreadConstraints
+
+"The pod's topology spread constraints."
+
+### fn spec.jmxTrans.template.pod.topologySpreadConstraints.withMaxSkew
+
+```ts
+withMaxSkew(maxSkew)
+```
+
+
+
+### fn spec.jmxTrans.template.pod.topologySpreadConstraints.withTopologyKey
+
+```ts
+withTopologyKey(topologyKey)
+```
+
+
+
+### fn spec.jmxTrans.template.pod.topologySpreadConstraints.withWhenUnsatisfiable
+
+```ts
+withWhenUnsatisfiable(whenUnsatisfiable)
+```
+
+
+
+## obj spec.jmxTrans.template.pod.topologySpreadConstraints.labelSelector
+
+
+
+### fn spec.jmxTrans.template.pod.topologySpreadConstraints.labelSelector.withMatchExpressions
+
+```ts
+withMatchExpressions(matchExpressions)
+```
+
+
+
+### fn spec.jmxTrans.template.pod.topologySpreadConstraints.labelSelector.withMatchExpressionsMixin
+
+```ts
+withMatchExpressionsMixin(matchExpressions)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.jmxTrans.template.pod.topologySpreadConstraints.labelSelector.withMatchLabels
+
+```ts
+withMatchLabels(matchLabels)
+```
+
+
+
+### fn spec.jmxTrans.template.pod.topologySpreadConstraints.labelSelector.withMatchLabelsMixin
+
+```ts
+withMatchLabelsMixin(matchLabels)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.jmxTrans.template.pod.topologySpreadConstraints.labelSelector.matchExpressions
+
+
+
+### fn spec.jmxTrans.template.pod.topologySpreadConstraints.labelSelector.matchExpressions.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.jmxTrans.template.pod.topologySpreadConstraints.labelSelector.matchExpressions.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.jmxTrans.template.pod.topologySpreadConstraints.labelSelector.matchExpressions.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.jmxTrans.template.pod.topologySpreadConstraints.labelSelector.matchExpressions.withValuesMixin
+
+```ts
+withValuesMixin(values)
+```
+
+
+
+**Note:** This function appends passed data to existing values
 
 ## obj spec.kafka
 
@@ -5940,6 +9860,26 @@ withUrl(url)
 
 "The URL used to connect to the Open Policy Agent server. The URL has to include the policy which will be queried by the authorizer. This option is required."
 
+## obj spec.kafka.authorization.tlsTrustedCertificates
+
+"Trusted certificates for TLS connection to the OAuth server."
+
+### fn spec.kafka.authorization.tlsTrustedCertificates.withCertificate
+
+```ts
+withCertificate(certificate)
+```
+
+"The name of the file certificate in the Secret."
+
+### fn spec.kafka.authorization.tlsTrustedCertificates.withSecretName
+
+```ts
+withSecretName(secretName)
+```
+
+"The name of the Secret containing the certificate."
+
 ## obj spec.kafka.jmxOptions
 
 "JMX Options for Kafka brokers."
@@ -5989,7 +9929,7 @@ withJavaSystemPropertiesMixin(javaSystemProperties)
 ### fn spec.kafka.jvmOptions.withXX
 
 ```ts
-withXX(XX)
+withXX(_XX)
 ```
 
 "A map of -XX options to the JVM."
@@ -5997,7 +9937,7 @@ withXX(XX)
 ### fn spec.kafka.jvmOptions.withXXMixin
 
 ```ts
-withXXMixin(XX)
+withXXMixin(_XX)
 ```
 
 "A map of -XX options to the JVM."
@@ -6007,7 +9947,7 @@ withXXMixin(XX)
 ### fn spec.kafka.jvmOptions.withXms
 
 ```ts
-withXms(Xms)
+withXms(_Xms)
 ```
 
 "-Xms option to to the JVM."
@@ -6015,10 +9955,858 @@ withXms(Xms)
 ### fn spec.kafka.jvmOptions.withXmx
 
 ```ts
-withXmx(Xmx)
+withXmx(_Xmx)
 ```
 
 "-Xmx option to to the JVM."
+
+## obj spec.kafka.jvmOptions.javaSystemProperties
+
+"A map of additional system properties which will be passed using the `-D` option to the JVM."
+
+### fn spec.kafka.jvmOptions.javaSystemProperties.withName
+
+```ts
+withName(name)
+```
+
+"The system property name."
+
+### fn spec.kafka.jvmOptions.javaSystemProperties.withValue
+
+```ts
+withValue(value)
+```
+
+"The system property value."
+
+## obj spec.kafka.listeners
+
+
+
+### fn spec.kafka.listeners.withName
+
+```ts
+withName(name)
+```
+
+"Name of the listener. The name will be used to identify the listener and the related Kubernetes objects. The name has to be unique within given a Kafka cluster. The name can consist of lowercase characters and numbers and be up to 11 characters long."
+
+### fn spec.kafka.listeners.withNetworkPolicyPeers
+
+```ts
+withNetworkPolicyPeers(networkPolicyPeers)
+```
+
+"List of peers which should be able to connect to this listener. Peers in this list are combined using a logical OR operation. If this field is empty or missing, all connections will be allowed for this listener. If this field is present and contains at least one item, the listener only allows the traffic which matches at least one item in this list."
+
+### fn spec.kafka.listeners.withNetworkPolicyPeersMixin
+
+```ts
+withNetworkPolicyPeersMixin(networkPolicyPeers)
+```
+
+"List of peers which should be able to connect to this listener. Peers in this list are combined using a logical OR operation. If this field is empty or missing, all connections will be allowed for this listener. If this field is present and contains at least one item, the listener only allows the traffic which matches at least one item in this list."
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.kafka.listeners.withPort
+
+```ts
+withPort(port)
+```
+
+"Port number used by the listener inside Kafka. The port number has to be unique within a given Kafka cluster. Allowed port numbers are 9092 and higher with the exception of ports 9404 and 9999, which are already used for Prometheus and JMX. Depending on the listener type, the port number might not be the same as the port number that connects Kafka clients."
+
+### fn spec.kafka.listeners.withTls
+
+```ts
+withTls(tls)
+```
+
+"Enables TLS encryption on the listener. This is a required property."
+
+### fn spec.kafka.listeners.withType
+
+```ts
+withType(type)
+```
+
+"Type of the listener. Currently the supported types are `internal`, `route`, `loadbalancer`, `nodeport` and `ingress`. \n\n* `internal` type exposes Kafka internally only within the Kubernetes cluster.\n* `route` type uses OpenShift Routes to expose Kafka.\n* `loadbalancer` type uses LoadBalancer type services to expose Kafka.\n* `nodeport` type uses NodePort type services to expose Kafka.\n* `ingress` type uses Kubernetes Nginx Ingress to expose Kafka.\n"
+
+## obj spec.kafka.listeners.authentication
+
+"Authentication configuration for this listener."
+
+### fn spec.kafka.listeners.authentication.withAccessTokenIsJwt
+
+```ts
+withAccessTokenIsJwt(accessTokenIsJwt)
+```
+
+"Configure whether the access token is treated as JWT. This must be set to `false` if the authorization server returns opaque tokens. Defaults to `true`."
+
+### fn spec.kafka.listeners.authentication.withCheckAccessTokenType
+
+```ts
+withCheckAccessTokenType(checkAccessTokenType)
+```
+
+"Configure whether the access token type check is performed or not. This should be set to `false` if the authorization server does not include 'typ' claim in JWT token. Defaults to `true`."
+
+### fn spec.kafka.listeners.authentication.withCheckAudience
+
+```ts
+withCheckAudience(checkAudience)
+```
+
+"Enable or disable audience checking. Audience checks identify the recipients of tokens. If audience checking is enabled, the OAuth Client ID also has to be configured using the `clientId` property. The Kafka broker will reject tokens that do not have its `clientId` in their `aud` (audience) claim.Default value is `false`."
+
+### fn spec.kafka.listeners.authentication.withCheckIssuer
+
+```ts
+withCheckIssuer(checkIssuer)
+```
+
+"Enable or disable issuer checking. By default issuer is checked using the value configured by `validIssuerUri`. Default value is `true`."
+
+### fn spec.kafka.listeners.authentication.withClientId
+
+```ts
+withClientId(clientId)
+```
+
+"OAuth Client ID which the Kafka broker can use to authenticate against the authorization server and use the introspect endpoint URI."
+
+### fn spec.kafka.listeners.authentication.withCustomClaimCheck
+
+```ts
+withCustomClaimCheck(customClaimCheck)
+```
+
+"JsonPath filter query to be applied to the JWT token or to the response of the introspection endpoint for additional token validation. Not set by default."
+
+### fn spec.kafka.listeners.authentication.withDisableTlsHostnameVerification
+
+```ts
+withDisableTlsHostnameVerification(disableTlsHostnameVerification)
+```
+
+"Enable or disable TLS hostname verification. Default value is `false`."
+
+### fn spec.kafka.listeners.authentication.withEnableECDSA
+
+```ts
+withEnableECDSA(enableECDSA)
+```
+
+"Enable or disable ECDSA support by installing BouncyCastle crypto provider. Default value is `false`."
+
+### fn spec.kafka.listeners.authentication.withEnableOauthBearer
+
+```ts
+withEnableOauthBearer(enableOauthBearer)
+```
+
+"Enable or disable OAuth authentication over SASL_OAUTHBEARER. Default value is `true`."
+
+### fn spec.kafka.listeners.authentication.withEnablePlain
+
+```ts
+withEnablePlain(enablePlain)
+```
+
+"Enable or disable OAuth authentication over SASL_PLAIN. There is no re-authentication support when this mechanism is used. Default value is `false`."
+
+### fn spec.kafka.listeners.authentication.withFallbackUserNameClaim
+
+```ts
+withFallbackUserNameClaim(fallbackUserNameClaim)
+```
+
+"The fallback username claim to be used for the user id if the claim specified by `userNameClaim` is not present. This is useful when `client_credentials` authentication only results in the client id being provided in another claim. It only takes effect if `userNameClaim` is set."
+
+### fn spec.kafka.listeners.authentication.withFallbackUserNamePrefix
+
+```ts
+withFallbackUserNamePrefix(fallbackUserNamePrefix)
+```
+
+"The prefix to use with the value of `fallbackUserNameClaim` to construct the user id. This only takes effect if `fallbackUserNameClaim` is true, and the value is present for the claim. Mapping usernames and client ids into the same user id space is useful in preventing name collisions."
+
+### fn spec.kafka.listeners.authentication.withIntrospectionEndpointUri
+
+```ts
+withIntrospectionEndpointUri(introspectionEndpointUri)
+```
+
+"URI of the token introspection endpoint which can be used to validate opaque non-JWT tokens."
+
+### fn spec.kafka.listeners.authentication.withJwksEndpointUri
+
+```ts
+withJwksEndpointUri(jwksEndpointUri)
+```
+
+"URI of the JWKS certificate endpoint, which can be used for local JWT validation."
+
+### fn spec.kafka.listeners.authentication.withJwksExpirySeconds
+
+```ts
+withJwksExpirySeconds(jwksExpirySeconds)
+```
+
+"Configures how often are the JWKS certificates considered valid. The expiry interval has to be at least 60 seconds longer then the refresh interval specified in `jwksRefreshSeconds`. Defaults to 360 seconds."
+
+### fn spec.kafka.listeners.authentication.withJwksMinRefreshPauseSeconds
+
+```ts
+withJwksMinRefreshPauseSeconds(jwksMinRefreshPauseSeconds)
+```
+
+"The minimum pause between two consecutive refreshes. When an unknown signing key is encountered the refresh is scheduled immediately, but will always wait for this minimum pause. Defaults to 1 second."
+
+### fn spec.kafka.listeners.authentication.withJwksRefreshSeconds
+
+```ts
+withJwksRefreshSeconds(jwksRefreshSeconds)
+```
+
+"Configures how often are the JWKS certificates refreshed. The refresh interval has to be at least 60 seconds shorter then the expiry interval specified in `jwksExpirySeconds`. Defaults to 300 seconds."
+
+### fn spec.kafka.listeners.authentication.withMaxSecondsWithoutReauthentication
+
+```ts
+withMaxSecondsWithoutReauthentication(maxSecondsWithoutReauthentication)
+```
+
+"Maximum number of seconds the authenticated session remains valid without re-authentication. This enables Apache Kafka re-authentication feature, and causes sessions to expire when the access token expires. If the access token expires before max time or if max time is reached, the client has to re-authenticate, otherwise the server will drop the connection. Not set by default - the authenticated session does not expire when the access token expires. This option only applies to SASL_OAUTHBEARER authentication mechanism (when `enableOauthBearer` is `true`)."
+
+### fn spec.kafka.listeners.authentication.withTlsTrustedCertificates
+
+```ts
+withTlsTrustedCertificates(tlsTrustedCertificates)
+```
+
+"Trusted certificates for TLS connection to the OAuth server."
+
+### fn spec.kafka.listeners.authentication.withTlsTrustedCertificatesMixin
+
+```ts
+withTlsTrustedCertificatesMixin(tlsTrustedCertificates)
+```
+
+"Trusted certificates for TLS connection to the OAuth server."
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.kafka.listeners.authentication.withTokenEndpointUri
+
+```ts
+withTokenEndpointUri(tokenEndpointUri)
+```
+
+"URI of the Token Endpoint to use with SASL_PLAIN mechanism when the client authenticates with clientId and a secret. "
+
+### fn spec.kafka.listeners.authentication.withType
+
+```ts
+withType(type)
+```
+
+"Authentication type. `oauth` type uses SASL OAUTHBEARER Authentication. `scram-sha-512` type uses SASL SCRAM-SHA-512 Authentication. `tls` type uses TLS Client Authentication. `tls` type is supported only on TLS listeners."
+
+### fn spec.kafka.listeners.authentication.withUserInfoEndpointUri
+
+```ts
+withUserInfoEndpointUri(userInfoEndpointUri)
+```
+
+"URI of the User Info Endpoint to use as a fallback to obtaining the user id when the Introspection Endpoint does not return information that can be used for the user id. "
+
+### fn spec.kafka.listeners.authentication.withUserNameClaim
+
+```ts
+withUserNameClaim(userNameClaim)
+```
+
+"Name of the claim from the JWT authentication token, Introspection Endpoint response or User Info Endpoint response which will be used to extract the user id. Defaults to `sub`."
+
+### fn spec.kafka.listeners.authentication.withValidIssuerUri
+
+```ts
+withValidIssuerUri(validIssuerUri)
+```
+
+"URI of the token issuer used for authentication."
+
+### fn spec.kafka.listeners.authentication.withValidTokenType
+
+```ts
+withValidTokenType(validTokenType)
+```
+
+"Valid value for the `token_type` attribute returned by the Introspection Endpoint. No default value, and not checked by default."
+
+## obj spec.kafka.listeners.authentication.clientSecret
+
+"Link to Kubernetes Secret containing the OAuth client secret which the Kafka broker can use to authenticate against the authorization server and use the introspect endpoint URI."
+
+### fn spec.kafka.listeners.authentication.clientSecret.withKey
+
+```ts
+withKey(key)
+```
+
+"The key under which the secret value is stored in the Kubernetes Secret."
+
+### fn spec.kafka.listeners.authentication.clientSecret.withSecretName
+
+```ts
+withSecretName(secretName)
+```
+
+"The name of the Kubernetes Secret containing the secret value."
+
+## obj spec.kafka.listeners.authentication.tlsTrustedCertificates
+
+"Trusted certificates for TLS connection to the OAuth server."
+
+### fn spec.kafka.listeners.authentication.tlsTrustedCertificates.withCertificate
+
+```ts
+withCertificate(certificate)
+```
+
+"The name of the file certificate in the Secret."
+
+### fn spec.kafka.listeners.authentication.tlsTrustedCertificates.withSecretName
+
+```ts
+withSecretName(secretName)
+```
+
+"The name of the Secret containing the certificate."
+
+## obj spec.kafka.listeners.configuration
+
+"Additional listener configuration."
+
+### fn spec.kafka.listeners.configuration.withBrokers
+
+```ts
+withBrokers(brokers)
+```
+
+"Per-broker configurations."
+
+### fn spec.kafka.listeners.configuration.withBrokersMixin
+
+```ts
+withBrokersMixin(brokers)
+```
+
+"Per-broker configurations."
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.kafka.listeners.configuration.withClass
+
+```ts
+withClass(class)
+```
+
+"Configures the `Ingress` class that defines which `Ingress` controller will be used. This field can be used only with `ingress` type listener. If not specified, the default Ingress controller will be used."
+
+### fn spec.kafka.listeners.configuration.withExternalTrafficPolicy
+
+```ts
+withExternalTrafficPolicy(externalTrafficPolicy)
+```
+
+"Specifies whether the service routes external traffic to node-local or cluster-wide endpoints. `Cluster` may cause a second hop to another node and obscures the client source IP. `Local` avoids a second hop for LoadBalancer and Nodeport type services and preserves the client source IP (when supported by the infrastructure). If unspecified, Kubernetes will use `Cluster` as the default.This field can be used only with `loadbalancer` or `nodeport` type listener."
+
+### fn spec.kafka.listeners.configuration.withFinalizers
+
+```ts
+withFinalizers(finalizers)
+```
+
+"A list of finalizers which will be configured for the `LoadBalancer` type Services created for this listener. If supported by the platform, the finalizer `service.kubernetes.io/load-balancer-cleanup` to make sure that the external load balancer is deleted together with the service.For more information, see https://kubernetes.io/docs/tasks/access-application-cluster/create-external-load-balancer/#garbage-collecting-load-balancers. This field can be used only with `loadbalancer` type listeners."
+
+### fn spec.kafka.listeners.configuration.withFinalizersMixin
+
+```ts
+withFinalizersMixin(finalizers)
+```
+
+"A list of finalizers which will be configured for the `LoadBalancer` type Services created for this listener. If supported by the platform, the finalizer `service.kubernetes.io/load-balancer-cleanup` to make sure that the external load balancer is deleted together with the service.For more information, see https://kubernetes.io/docs/tasks/access-application-cluster/create-external-load-balancer/#garbage-collecting-load-balancers. This field can be used only with `loadbalancer` type listeners."
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.kafka.listeners.configuration.withIpFamilies
+
+```ts
+withIpFamilies(ipFamilies)
+```
+
+"Specifies the IP Families used by the service. Available options are `IPv4` and `IPv6. If unspecified, Kubernetes will choose the default value based on the `ipFamilyPolicy` setting. Available on Kubernetes 1.20 and newer."
+
+### fn spec.kafka.listeners.configuration.withIpFamiliesMixin
+
+```ts
+withIpFamiliesMixin(ipFamilies)
+```
+
+"Specifies the IP Families used by the service. Available options are `IPv4` and `IPv6. If unspecified, Kubernetes will choose the default value based on the `ipFamilyPolicy` setting. Available on Kubernetes 1.20 and newer."
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.kafka.listeners.configuration.withIpFamilyPolicy
+
+```ts
+withIpFamilyPolicy(ipFamilyPolicy)
+```
+
+"Specifies the IP Family Policy used by the service. Available options are `SingleStack`, `PreferDualStack` and `RequireDualStack`. `SingleStack` is for a single IP family. `PreferDualStack` is for two IP families on dual-stack configured clusters or a single IP family on single-stack clusters. `RequireDualStack` fails unless there are two IP families on dual-stack configured clusters. If unspecified, Kubernetes will choose the default value based on the service type. Available on Kubernetes 1.20 and newer."
+
+### fn spec.kafka.listeners.configuration.withLoadBalancerSourceRanges
+
+```ts
+withLoadBalancerSourceRanges(loadBalancerSourceRanges)
+```
+
+"A list of CIDR ranges (for example `10.0.0.0/8` or `130.211.204.1/32`) from which clients can connect to load balancer type listeners. If supported by the platform, traffic through the loadbalancer is restricted to the specified CIDR ranges. This field is applicable only for loadbalancer type services and is ignored if the cloud provider does not support the feature. For more information, see https://v1-17.docs.kubernetes.io/docs/tasks/access-application-cluster/configure-cloud-provider-firewall/. This field can be used only with `loadbalancer` type listener."
+
+### fn spec.kafka.listeners.configuration.withLoadBalancerSourceRangesMixin
+
+```ts
+withLoadBalancerSourceRangesMixin(loadBalancerSourceRanges)
+```
+
+"A list of CIDR ranges (for example `10.0.0.0/8` or `130.211.204.1/32`) from which clients can connect to load balancer type listeners. If supported by the platform, traffic through the loadbalancer is restricted to the specified CIDR ranges. This field is applicable only for loadbalancer type services and is ignored if the cloud provider does not support the feature. For more information, see https://v1-17.docs.kubernetes.io/docs/tasks/access-application-cluster/configure-cloud-provider-firewall/. This field can be used only with `loadbalancer` type listener."
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.kafka.listeners.configuration.withMaxConnectionCreationRate
+
+```ts
+withMaxConnectionCreationRate(maxConnectionCreationRate)
+```
+
+"The maximum connection creation rate we allow in this listener at any time. New connections will be throttled if the limit is reached.Supported only on Kafka 2.7.0 and newer."
+
+### fn spec.kafka.listeners.configuration.withMaxConnections
+
+```ts
+withMaxConnections(maxConnections)
+```
+
+"The maximum number of connections we allow for this listener in the broker at any time. New connections are blocked if the limit is reached."
+
+### fn spec.kafka.listeners.configuration.withPreferredNodePortAddressType
+
+```ts
+withPreferredNodePortAddressType(preferredNodePortAddressType)
+```
+
+"Defines which address type should be used as the node address. Available types are: `ExternalDNS`, `ExternalIP`, `InternalDNS`, `InternalIP` and `Hostname`. By default, the addresses will be used in the following order (the first one found will be used):\n* `ExternalDNS`\n* `ExternalIP`\n* `InternalDNS`\n* `InternalIP`\n* `Hostname`\n\nThis field is used to select the preferred address type, which is checked first. If no address is found for this address type, the other types are checked in the default order. This field can only be used with `nodeport` type listener."
+
+### fn spec.kafka.listeners.configuration.withUseServiceDnsDomain
+
+```ts
+withUseServiceDnsDomain(useServiceDnsDomain)
+```
+
+"Configures whether the Kubernetes service DNS domain should be used or not. If set to `true`, the generated addresses will contain the service DNS domain suffix (by default `.cluster.local`, can be configured using environment variable `KUBERNETES_SERVICE_DNS_DOMAIN`). Defaults to `false`.This field can be used only with `internal` type listener."
+
+## obj spec.kafka.listeners.configuration.bootstrap
+
+"Bootstrap configuration."
+
+### fn spec.kafka.listeners.configuration.bootstrap.withAlternativeNames
+
+```ts
+withAlternativeNames(alternativeNames)
+```
+
+"Additional alternative names for the bootstrap service. The alternative names will be added to the list of subject alternative names of the TLS certificates."
+
+### fn spec.kafka.listeners.configuration.bootstrap.withAlternativeNamesMixin
+
+```ts
+withAlternativeNamesMixin(alternativeNames)
+```
+
+"Additional alternative names for the bootstrap service. The alternative names will be added to the list of subject alternative names of the TLS certificates."
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.kafka.listeners.configuration.bootstrap.withAnnotations
+
+```ts
+withAnnotations(annotations)
+```
+
+"Annotations that will be added to the `Ingress`, `Route`, or `Service` resource. You can use this field to configure DNS providers such as External DNS. This field can be used only with `loadbalancer`, `nodeport`, `route`, or `ingress` type listeners."
+
+### fn spec.kafka.listeners.configuration.bootstrap.withAnnotationsMixin
+
+```ts
+withAnnotationsMixin(annotations)
+```
+
+"Annotations that will be added to the `Ingress`, `Route`, or `Service` resource. You can use this field to configure DNS providers such as External DNS. This field can be used only with `loadbalancer`, `nodeport`, `route`, or `ingress` type listeners."
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.kafka.listeners.configuration.bootstrap.withHost
+
+```ts
+withHost(host)
+```
+
+"The bootstrap host. This field will be used in the Ingress resource or in the Route resource to specify the desired hostname. This field can be used only with `route` (optional) or `ingress` (required) type listeners."
+
+### fn spec.kafka.listeners.configuration.bootstrap.withLabels
+
+```ts
+withLabels(labels)
+```
+
+"Labels that will be added to the `Ingress`, `Route`, or `Service` resource. This field can be used only with `loadbalancer`, `nodeport`, `route`, or `ingress` type listeners."
+
+### fn spec.kafka.listeners.configuration.bootstrap.withLabelsMixin
+
+```ts
+withLabelsMixin(labels)
+```
+
+"Labels that will be added to the `Ingress`, `Route`, or `Service` resource. This field can be used only with `loadbalancer`, `nodeport`, `route`, or `ingress` type listeners."
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.kafka.listeners.configuration.bootstrap.withLoadBalancerIP
+
+```ts
+withLoadBalancerIP(loadBalancerIP)
+```
+
+"The loadbalancer is requested with the IP address specified in this field. This feature depends on whether the underlying cloud provider supports specifying the `loadBalancerIP` when a load balancer is created. This field is ignored if the cloud provider does not support the feature.This field can be used only with `loadbalancer` type listener."
+
+### fn spec.kafka.listeners.configuration.bootstrap.withNodePort
+
+```ts
+withNodePort(nodePort)
+```
+
+"Node port for the bootstrap service. This field can be used only with `nodeport` type listener."
+
+## obj spec.kafka.listeners.configuration.brokerCertChainAndKey
+
+"Reference to the `Secret` which holds the certificate and private key pair which will be used for this listener. The certificate can optionally contain the whole chain. This field can be used only with listeners with enabled TLS encryption."
+
+### fn spec.kafka.listeners.configuration.brokerCertChainAndKey.withCertificate
+
+```ts
+withCertificate(certificate)
+```
+
+"The name of the file certificate in the Secret."
+
+### fn spec.kafka.listeners.configuration.brokerCertChainAndKey.withKey
+
+```ts
+withKey(key)
+```
+
+"The name of the private key in the Secret."
+
+### fn spec.kafka.listeners.configuration.brokerCertChainAndKey.withSecretName
+
+```ts
+withSecretName(secretName)
+```
+
+"The name of the Secret containing the certificate."
+
+## obj spec.kafka.listeners.configuration.brokers
+
+"Per-broker configurations."
+
+### fn spec.kafka.listeners.configuration.brokers.withAdvertisedHost
+
+```ts
+withAdvertisedHost(advertisedHost)
+```
+
+"The host name which will be used in the brokers' `advertised.brokers`."
+
+### fn spec.kafka.listeners.configuration.brokers.withAdvertisedPort
+
+```ts
+withAdvertisedPort(advertisedPort)
+```
+
+"The port number which will be used in the brokers' `advertised.brokers`."
+
+### fn spec.kafka.listeners.configuration.brokers.withAnnotations
+
+```ts
+withAnnotations(annotations)
+```
+
+"Annotations that will be added to the `Ingress` or `Service` resource. You can use this field to configure DNS providers such as External DNS. This field can be used only with `loadbalancer`, `nodeport`, or `ingress` type listeners."
+
+### fn spec.kafka.listeners.configuration.brokers.withAnnotationsMixin
+
+```ts
+withAnnotationsMixin(annotations)
+```
+
+"Annotations that will be added to the `Ingress` or `Service` resource. You can use this field to configure DNS providers such as External DNS. This field can be used only with `loadbalancer`, `nodeport`, or `ingress` type listeners."
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.kafka.listeners.configuration.brokers.withBroker
+
+```ts
+withBroker(broker)
+```
+
+"ID of the kafka broker (broker identifier). Broker IDs start from 0 and correspond to the number of broker replicas."
+
+### fn spec.kafka.listeners.configuration.brokers.withHost
+
+```ts
+withHost(host)
+```
+
+"The broker host. This field will be used in the Ingress resource or in the Route resource to specify the desired hostname. This field can be used only with `route` (optional) or `ingress` (required) type listeners."
+
+### fn spec.kafka.listeners.configuration.brokers.withLabels
+
+```ts
+withLabels(labels)
+```
+
+"Labels that will be added to the `Ingress`, `Route`, or `Service` resource. This field can be used only with `loadbalancer`, `nodeport`, `route`, or `ingress` type listeners."
+
+### fn spec.kafka.listeners.configuration.brokers.withLabelsMixin
+
+```ts
+withLabelsMixin(labels)
+```
+
+"Labels that will be added to the `Ingress`, `Route`, or `Service` resource. This field can be used only with `loadbalancer`, `nodeport`, `route`, or `ingress` type listeners."
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.kafka.listeners.configuration.brokers.withLoadBalancerIP
+
+```ts
+withLoadBalancerIP(loadBalancerIP)
+```
+
+"The loadbalancer is requested with the IP address specified in this field. This feature depends on whether the underlying cloud provider supports specifying the `loadBalancerIP` when a load balancer is created. This field is ignored if the cloud provider does not support the feature.This field can be used only with `loadbalancer` type listener."
+
+### fn spec.kafka.listeners.configuration.brokers.withNodePort
+
+```ts
+withNodePort(nodePort)
+```
+
+"Node port for the per-broker service. This field can be used only with `nodeport` type listener."
+
+## obj spec.kafka.listeners.networkPolicyPeers
+
+"List of peers which should be able to connect to this listener. Peers in this list are combined using a logical OR operation. If this field is empty or missing, all connections will be allowed for this listener. If this field is present and contains at least one item, the listener only allows the traffic which matches at least one item in this list."
+
+## obj spec.kafka.listeners.networkPolicyPeers.ipBlock
+
+
+
+### fn spec.kafka.listeners.networkPolicyPeers.ipBlock.withCidr
+
+```ts
+withCidr(cidr)
+```
+
+
+
+### fn spec.kafka.listeners.networkPolicyPeers.ipBlock.withExcept
+
+```ts
+withExcept(except)
+```
+
+
+
+### fn spec.kafka.listeners.networkPolicyPeers.ipBlock.withExceptMixin
+
+```ts
+withExceptMixin(except)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.kafka.listeners.networkPolicyPeers.namespaceSelector
+
+
+
+### fn spec.kafka.listeners.networkPolicyPeers.namespaceSelector.withMatchExpressions
+
+```ts
+withMatchExpressions(matchExpressions)
+```
+
+
+
+### fn spec.kafka.listeners.networkPolicyPeers.namespaceSelector.withMatchExpressionsMixin
+
+```ts
+withMatchExpressionsMixin(matchExpressions)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.kafka.listeners.networkPolicyPeers.namespaceSelector.withMatchLabels
+
+```ts
+withMatchLabels(matchLabels)
+```
+
+
+
+### fn spec.kafka.listeners.networkPolicyPeers.namespaceSelector.withMatchLabelsMixin
+
+```ts
+withMatchLabelsMixin(matchLabels)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.kafka.listeners.networkPolicyPeers.namespaceSelector.matchExpressions
+
+
+
+### fn spec.kafka.listeners.networkPolicyPeers.namespaceSelector.matchExpressions.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.kafka.listeners.networkPolicyPeers.namespaceSelector.matchExpressions.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.kafka.listeners.networkPolicyPeers.namespaceSelector.matchExpressions.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.kafka.listeners.networkPolicyPeers.namespaceSelector.matchExpressions.withValuesMixin
+
+```ts
+withValuesMixin(values)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.kafka.listeners.networkPolicyPeers.podSelector
+
+
+
+### fn spec.kafka.listeners.networkPolicyPeers.podSelector.withMatchExpressions
+
+```ts
+withMatchExpressions(matchExpressions)
+```
+
+
+
+### fn spec.kafka.listeners.networkPolicyPeers.podSelector.withMatchExpressionsMixin
+
+```ts
+withMatchExpressionsMixin(matchExpressions)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.kafka.listeners.networkPolicyPeers.podSelector.withMatchLabels
+
+```ts
+withMatchLabels(matchLabels)
+```
+
+
+
+### fn spec.kafka.listeners.networkPolicyPeers.podSelector.withMatchLabelsMixin
+
+```ts
+withMatchLabelsMixin(matchLabels)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.kafka.listeners.networkPolicyPeers.podSelector.matchExpressions
+
+
+
+### fn spec.kafka.listeners.networkPolicyPeers.podSelector.matchExpressions.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.kafka.listeners.networkPolicyPeers.podSelector.matchExpressions.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.kafka.listeners.networkPolicyPeers.podSelector.matchExpressions.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.kafka.listeners.networkPolicyPeers.podSelector.matchExpressions.withValuesMixin
+
+```ts
+withValuesMixin(values)
+```
+
+
+
+**Note:** This function appends passed data to existing values
 
 ## obj spec.kafka.livenessProbe
 
@@ -6371,6 +11159,134 @@ withVolumesMixin(volumes)
 "List of volumes as Storage objects representing the JBOD disks array."
 
 **Note:** This function appends passed data to existing values
+
+## obj spec.kafka.storage.overrides
+
+"Overrides for individual brokers. The `overrides` field allows to specify a different configuration for different brokers."
+
+### fn spec.kafka.storage.overrides.withBroker
+
+```ts
+withBroker(broker)
+```
+
+"Id of the kafka broker (broker identifier)."
+
+### fn spec.kafka.storage.overrides.withClass
+
+```ts
+withClass(class)
+```
+
+"The storage class to use for dynamic volume allocation for this broker."
+
+## obj spec.kafka.storage.volumes
+
+"List of volumes as Storage objects representing the JBOD disks array."
+
+### fn spec.kafka.storage.volumes.withClass
+
+```ts
+withClass(class)
+```
+
+"The storage class to use for dynamic volume allocation."
+
+### fn spec.kafka.storage.volumes.withDeleteClaim
+
+```ts
+withDeleteClaim(deleteClaim)
+```
+
+"Specifies if the persistent volume claim has to be deleted when the cluster is un-deployed."
+
+### fn spec.kafka.storage.volumes.withId
+
+```ts
+withId(id)
+```
+
+"Storage identification number. It is mandatory only for storage volumes defined in a storage of type 'jbod'."
+
+### fn spec.kafka.storage.volumes.withOverrides
+
+```ts
+withOverrides(overrides)
+```
+
+"Overrides for individual brokers. The `overrides` field allows to specify a different configuration for different brokers."
+
+### fn spec.kafka.storage.volumes.withOverridesMixin
+
+```ts
+withOverridesMixin(overrides)
+```
+
+"Overrides for individual brokers. The `overrides` field allows to specify a different configuration for different brokers."
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.kafka.storage.volumes.withSelector
+
+```ts
+withSelector(selector)
+```
+
+"Specifies a specific persistent volume to use. It contains key:value pairs representing labels for selecting such a volume."
+
+### fn spec.kafka.storage.volumes.withSelectorMixin
+
+```ts
+withSelectorMixin(selector)
+```
+
+"Specifies a specific persistent volume to use. It contains key:value pairs representing labels for selecting such a volume."
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.kafka.storage.volumes.withSize
+
+```ts
+withSize(size)
+```
+
+"When type=persistent-claim, defines the size of the persistent volume claim (i.e 1Gi). Mandatory when type=persistent-claim."
+
+### fn spec.kafka.storage.volumes.withSizeLimit
+
+```ts
+withSizeLimit(sizeLimit)
+```
+
+"When type=ephemeral, defines the total amount of local storage required for this EmptyDir volume (for example 1Gi)."
+
+### fn spec.kafka.storage.volumes.withType
+
+```ts
+withType(type)
+```
+
+"Storage type, must be either 'ephemeral' or 'persistent-claim'."
+
+## obj spec.kafka.storage.volumes.overrides
+
+"Overrides for individual brokers. The `overrides` field allows to specify a different configuration for different brokers."
+
+### fn spec.kafka.storage.volumes.overrides.withBroker
+
+```ts
+withBroker(broker)
+```
+
+"Id of the kafka broker (broker identifier)."
+
+### fn spec.kafka.storage.volumes.overrides.withClass
+
+```ts
+withClass(class)
+```
+
+"The storage class to use for dynamic volume allocation for this broker."
 
 ## obj spec.kafka.template
 
@@ -6758,6 +11674,26 @@ withEnvMixin(env)
 
 **Note:** This function appends passed data to existing values
 
+## obj spec.kafka.template.initContainer.env
+
+"Environment variables which should be applied to the container."
+
+### fn spec.kafka.template.initContainer.env.withName
+
+```ts
+withName(name)
+```
+
+"The environment variable key."
+
+### fn spec.kafka.template.initContainer.env.withValue
+
+```ts
+withValue(value)
+```
+
+"The environment variable value."
+
 ## obj spec.kafka.template.initContainer.securityContext
 
 "Security context for the container."
@@ -6963,6 +11899,26 @@ withEnvMixin(env)
 "Environment variables which should be applied to the container."
 
 **Note:** This function appends passed data to existing values
+
+## obj spec.kafka.template.kafkaContainer.env
+
+"Environment variables which should be applied to the container."
+
+### fn spec.kafka.template.kafkaContainer.env.withName
+
+```ts
+withName(name)
+```
+
+"The environment variable key."
+
+### fn spec.kafka.template.kafkaContainer.env.withValue
+
+```ts
+withValue(value)
+```
+
+"The environment variable value."
 
 ## obj spec.kafka.template.kafkaContainer.securityContext
 
@@ -7458,6 +12414,134 @@ withPreferredDuringSchedulingIgnoredDuringExecutionMixin(preferredDuringScheduli
 
 **Note:** This function appends passed data to existing values
 
+## obj spec.kafka.template.pod.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution
+
+
+
+### fn spec.kafka.template.pod.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.withWeight
+
+```ts
+withWeight(weight)
+```
+
+
+
+## obj spec.kafka.template.pod.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference
+
+
+
+### fn spec.kafka.template.pod.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.withMatchExpressions
+
+```ts
+withMatchExpressions(matchExpressions)
+```
+
+
+
+### fn spec.kafka.template.pod.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.withMatchExpressionsMixin
+
+```ts
+withMatchExpressionsMixin(matchExpressions)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.kafka.template.pod.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.withMatchFields
+
+```ts
+withMatchFields(matchFields)
+```
+
+
+
+### fn spec.kafka.template.pod.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.withMatchFieldsMixin
+
+```ts
+withMatchFieldsMixin(matchFields)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.kafka.template.pod.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchExpressions
+
+
+
+### fn spec.kafka.template.pod.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchExpressions.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.kafka.template.pod.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchExpressions.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.kafka.template.pod.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchExpressions.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.kafka.template.pod.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchExpressions.withValuesMixin
+
+```ts
+withValuesMixin(values)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.kafka.template.pod.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchFields
+
+
+
+### fn spec.kafka.template.pod.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchFields.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.kafka.template.pod.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchFields.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.kafka.template.pod.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchFields.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.kafka.template.pod.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchFields.withValuesMixin
+
+```ts
+withValuesMixin(values)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
 ## obj spec.kafka.template.pod.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution
 
 
@@ -7474,6 +12558,122 @@ withNodeSelectorTerms(nodeSelectorTerms)
 
 ```ts
 withNodeSelectorTermsMixin(nodeSelectorTerms)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.kafka.template.pod.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms
+
+
+
+### fn spec.kafka.template.pod.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.withMatchExpressions
+
+```ts
+withMatchExpressions(matchExpressions)
+```
+
+
+
+### fn spec.kafka.template.pod.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.withMatchExpressionsMixin
+
+```ts
+withMatchExpressionsMixin(matchExpressions)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.kafka.template.pod.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.withMatchFields
+
+```ts
+withMatchFields(matchFields)
+```
+
+
+
+### fn spec.kafka.template.pod.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.withMatchFieldsMixin
+
+```ts
+withMatchFieldsMixin(matchFields)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.kafka.template.pod.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchExpressions
+
+
+
+### fn spec.kafka.template.pod.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchExpressions.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.kafka.template.pod.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchExpressions.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.kafka.template.pod.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchExpressions.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.kafka.template.pod.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchExpressions.withValuesMixin
+
+```ts
+withValuesMixin(values)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.kafka.template.pod.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchFields
+
+
+
+### fn spec.kafka.template.pod.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchFields.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.kafka.template.pod.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchFields.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.kafka.template.pod.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchFields.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.kafka.template.pod.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchFields.withValuesMixin
+
+```ts
+withValuesMixin(values)
 ```
 
 
@@ -7520,6 +12720,234 @@ withRequiredDuringSchedulingIgnoredDuringExecutionMixin(requiredDuringScheduling
 
 **Note:** This function appends passed data to existing values
 
+## obj spec.kafka.template.pod.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution
+
+
+
+### fn spec.kafka.template.pod.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.withWeight
+
+```ts
+withWeight(weight)
+```
+
+
+
+## obj spec.kafka.template.pod.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm
+
+
+
+### fn spec.kafka.template.pod.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.withNamespaces
+
+```ts
+withNamespaces(namespaces)
+```
+
+
+
+### fn spec.kafka.template.pod.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.withNamespacesMixin
+
+```ts
+withNamespacesMixin(namespaces)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.kafka.template.pod.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.withTopologyKey
+
+```ts
+withTopologyKey(topologyKey)
+```
+
+
+
+## obj spec.kafka.template.pod.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector
+
+
+
+### fn spec.kafka.template.pod.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.withMatchExpressions
+
+```ts
+withMatchExpressions(matchExpressions)
+```
+
+
+
+### fn spec.kafka.template.pod.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.withMatchExpressionsMixin
+
+```ts
+withMatchExpressionsMixin(matchExpressions)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.kafka.template.pod.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.withMatchLabels
+
+```ts
+withMatchLabels(matchLabels)
+```
+
+
+
+### fn spec.kafka.template.pod.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.withMatchLabelsMixin
+
+```ts
+withMatchLabelsMixin(matchLabels)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.kafka.template.pod.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions
+
+
+
+### fn spec.kafka.template.pod.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.kafka.template.pod.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.kafka.template.pod.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.kafka.template.pod.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions.withValuesMixin
+
+```ts
+withValuesMixin(values)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.kafka.template.pod.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution
+
+
+
+### fn spec.kafka.template.pod.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.withNamespaces
+
+```ts
+withNamespaces(namespaces)
+```
+
+
+
+### fn spec.kafka.template.pod.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.withNamespacesMixin
+
+```ts
+withNamespacesMixin(namespaces)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.kafka.template.pod.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.withTopologyKey
+
+```ts
+withTopologyKey(topologyKey)
+```
+
+
+
+## obj spec.kafka.template.pod.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector
+
+
+
+### fn spec.kafka.template.pod.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.withMatchExpressions
+
+```ts
+withMatchExpressions(matchExpressions)
+```
+
+
+
+### fn spec.kafka.template.pod.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.withMatchExpressionsMixin
+
+```ts
+withMatchExpressionsMixin(matchExpressions)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.kafka.template.pod.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.withMatchLabels
+
+```ts
+withMatchLabels(matchLabels)
+```
+
+
+
+### fn spec.kafka.template.pod.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.withMatchLabelsMixin
+
+```ts
+withMatchLabelsMixin(matchLabels)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.kafka.template.pod.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions
+
+
+
+### fn spec.kafka.template.pod.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.kafka.template.pod.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.kafka.template.pod.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.kafka.template.pod.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions.withValuesMixin
+
+```ts
+withValuesMixin(values)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
 ## obj spec.kafka.template.pod.affinity.podAntiAffinity
 
 
@@ -7559,6 +12987,276 @@ withRequiredDuringSchedulingIgnoredDuringExecutionMixin(requiredDuringScheduling
 
 
 **Note:** This function appends passed data to existing values
+
+## obj spec.kafka.template.pod.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution
+
+
+
+### fn spec.kafka.template.pod.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.withWeight
+
+```ts
+withWeight(weight)
+```
+
+
+
+## obj spec.kafka.template.pod.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm
+
+
+
+### fn spec.kafka.template.pod.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.withNamespaces
+
+```ts
+withNamespaces(namespaces)
+```
+
+
+
+### fn spec.kafka.template.pod.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.withNamespacesMixin
+
+```ts
+withNamespacesMixin(namespaces)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.kafka.template.pod.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.withTopologyKey
+
+```ts
+withTopologyKey(topologyKey)
+```
+
+
+
+## obj spec.kafka.template.pod.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector
+
+
+
+### fn spec.kafka.template.pod.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.withMatchExpressions
+
+```ts
+withMatchExpressions(matchExpressions)
+```
+
+
+
+### fn spec.kafka.template.pod.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.withMatchExpressionsMixin
+
+```ts
+withMatchExpressionsMixin(matchExpressions)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.kafka.template.pod.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.withMatchLabels
+
+```ts
+withMatchLabels(matchLabels)
+```
+
+
+
+### fn spec.kafka.template.pod.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.withMatchLabelsMixin
+
+```ts
+withMatchLabelsMixin(matchLabels)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.kafka.template.pod.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions
+
+
+
+### fn spec.kafka.template.pod.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.kafka.template.pod.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.kafka.template.pod.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.kafka.template.pod.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions.withValuesMixin
+
+```ts
+withValuesMixin(values)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.kafka.template.pod.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution
+
+
+
+### fn spec.kafka.template.pod.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.withNamespaces
+
+```ts
+withNamespaces(namespaces)
+```
+
+
+
+### fn spec.kafka.template.pod.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.withNamespacesMixin
+
+```ts
+withNamespacesMixin(namespaces)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.kafka.template.pod.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.withTopologyKey
+
+```ts
+withTopologyKey(topologyKey)
+```
+
+
+
+## obj spec.kafka.template.pod.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector
+
+
+
+### fn spec.kafka.template.pod.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.withMatchExpressions
+
+```ts
+withMatchExpressions(matchExpressions)
+```
+
+
+
+### fn spec.kafka.template.pod.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.withMatchExpressionsMixin
+
+```ts
+withMatchExpressionsMixin(matchExpressions)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.kafka.template.pod.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.withMatchLabels
+
+```ts
+withMatchLabels(matchLabels)
+```
+
+
+
+### fn spec.kafka.template.pod.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.withMatchLabelsMixin
+
+```ts
+withMatchLabelsMixin(matchLabels)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.kafka.template.pod.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions
+
+
+
+### fn spec.kafka.template.pod.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.kafka.template.pod.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.kafka.template.pod.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.kafka.template.pod.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions.withValuesMixin
+
+```ts
+withValuesMixin(values)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.kafka.template.pod.hostAliases
+
+"The pod's HostAliases. HostAliases is an optional list of hosts and IPs that will be injected into the Pod's hosts file if specified."
+
+### fn spec.kafka.template.pod.hostAliases.withHostnames
+
+```ts
+withHostnames(hostnames)
+```
+
+
+
+### fn spec.kafka.template.pod.hostAliases.withHostnamesMixin
+
+```ts
+withHostnamesMixin(hostnames)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.kafka.template.pod.hostAliases.withIp
+
+```ts
+withIp(ip)
+```
+
+
+
+## obj spec.kafka.template.pod.imagePullSecrets
+
+"List of references to secrets in the same namespace to use for pulling any of the images used by this Pod. When the `STRIMZI_IMAGE_PULL_SECRETS` environment variable in Cluster Operator and the `imagePullSecrets` option are specified, only the `imagePullSecrets` variable is used and the `STRIMZI_IMAGE_PULL_SECRETS` variable is ignored."
+
+### fn spec.kafka.template.pod.imagePullSecrets.withName
+
+```ts
+withName(name)
+```
+
+
 
 ## obj spec.kafka.template.pod.metadata
 
@@ -7736,6 +13434,26 @@ withType(type)
 
 
 
+## obj spec.kafka.template.pod.securityContext.sysctls
+
+
+
+### fn spec.kafka.template.pod.securityContext.sysctls.withName
+
+```ts
+withName(name)
+```
+
+
+
+### fn spec.kafka.template.pod.securityContext.sysctls.withValue
+
+```ts
+withValue(value)
+```
+
+
+
 ## obj spec.kafka.template.pod.securityContext.windowsOptions
 
 
@@ -7763,6 +13481,156 @@ withRunAsUserName(runAsUserName)
 ```
 
 
+
+## obj spec.kafka.template.pod.tolerations
+
+"The pod's tolerations."
+
+### fn spec.kafka.template.pod.tolerations.withEffect
+
+```ts
+withEffect(effect)
+```
+
+
+
+### fn spec.kafka.template.pod.tolerations.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.kafka.template.pod.tolerations.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.kafka.template.pod.tolerations.withTolerationSeconds
+
+```ts
+withTolerationSeconds(tolerationSeconds)
+```
+
+
+
+### fn spec.kafka.template.pod.tolerations.withValue
+
+```ts
+withValue(value)
+```
+
+
+
+## obj spec.kafka.template.pod.topologySpreadConstraints
+
+"The pod's topology spread constraints."
+
+### fn spec.kafka.template.pod.topologySpreadConstraints.withMaxSkew
+
+```ts
+withMaxSkew(maxSkew)
+```
+
+
+
+### fn spec.kafka.template.pod.topologySpreadConstraints.withTopologyKey
+
+```ts
+withTopologyKey(topologyKey)
+```
+
+
+
+### fn spec.kafka.template.pod.topologySpreadConstraints.withWhenUnsatisfiable
+
+```ts
+withWhenUnsatisfiable(whenUnsatisfiable)
+```
+
+
+
+## obj spec.kafka.template.pod.topologySpreadConstraints.labelSelector
+
+
+
+### fn spec.kafka.template.pod.topologySpreadConstraints.labelSelector.withMatchExpressions
+
+```ts
+withMatchExpressions(matchExpressions)
+```
+
+
+
+### fn spec.kafka.template.pod.topologySpreadConstraints.labelSelector.withMatchExpressionsMixin
+
+```ts
+withMatchExpressionsMixin(matchExpressions)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.kafka.template.pod.topologySpreadConstraints.labelSelector.withMatchLabels
+
+```ts
+withMatchLabels(matchLabels)
+```
+
+
+
+### fn spec.kafka.template.pod.topologySpreadConstraints.labelSelector.withMatchLabelsMixin
+
+```ts
+withMatchLabelsMixin(matchLabels)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.kafka.template.pod.topologySpreadConstraints.labelSelector.matchExpressions
+
+
+
+### fn spec.kafka.template.pod.topologySpreadConstraints.labelSelector.matchExpressions.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.kafka.template.pod.topologySpreadConstraints.labelSelector.matchExpressions.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.kafka.template.pod.topologySpreadConstraints.labelSelector.matchExpressions.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.kafka.template.pod.topologySpreadConstraints.labelSelector.matchExpressions.withValuesMixin
+
+```ts
+withValuesMixin(values)
+```
+
+
+
+**Note:** This function appends passed data to existing values
 
 ## obj spec.kafka.template.podDisruptionBudget
 
@@ -8065,6 +13933,26 @@ withEnvMixin(env)
 "Environment variables which should be applied to the container."
 
 **Note:** This function appends passed data to existing values
+
+## obj spec.kafkaExporter.template.container.env
+
+"Environment variables which should be applied to the container."
+
+### fn spec.kafkaExporter.template.container.env.withName
+
+```ts
+withName(name)
+```
+
+"The environment variable key."
+
+### fn spec.kafkaExporter.template.container.env.withValue
+
+```ts
+withValue(value)
+```
+
+"The environment variable value."
 
 ## obj spec.kafkaExporter.template.container.securityContext
 
@@ -8428,6 +14316,134 @@ withPreferredDuringSchedulingIgnoredDuringExecutionMixin(preferredDuringScheduli
 
 **Note:** This function appends passed data to existing values
 
+## obj spec.kafkaExporter.template.pod.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution
+
+
+
+### fn spec.kafkaExporter.template.pod.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.withWeight
+
+```ts
+withWeight(weight)
+```
+
+
+
+## obj spec.kafkaExporter.template.pod.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference
+
+
+
+### fn spec.kafkaExporter.template.pod.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.withMatchExpressions
+
+```ts
+withMatchExpressions(matchExpressions)
+```
+
+
+
+### fn spec.kafkaExporter.template.pod.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.withMatchExpressionsMixin
+
+```ts
+withMatchExpressionsMixin(matchExpressions)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.kafkaExporter.template.pod.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.withMatchFields
+
+```ts
+withMatchFields(matchFields)
+```
+
+
+
+### fn spec.kafkaExporter.template.pod.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.withMatchFieldsMixin
+
+```ts
+withMatchFieldsMixin(matchFields)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.kafkaExporter.template.pod.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchExpressions
+
+
+
+### fn spec.kafkaExporter.template.pod.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchExpressions.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.kafkaExporter.template.pod.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchExpressions.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.kafkaExporter.template.pod.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchExpressions.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.kafkaExporter.template.pod.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchExpressions.withValuesMixin
+
+```ts
+withValuesMixin(values)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.kafkaExporter.template.pod.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchFields
+
+
+
+### fn spec.kafkaExporter.template.pod.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchFields.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.kafkaExporter.template.pod.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchFields.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.kafkaExporter.template.pod.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchFields.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.kafkaExporter.template.pod.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchFields.withValuesMixin
+
+```ts
+withValuesMixin(values)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
 ## obj spec.kafkaExporter.template.pod.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution
 
 
@@ -8444,6 +14460,122 @@ withNodeSelectorTerms(nodeSelectorTerms)
 
 ```ts
 withNodeSelectorTermsMixin(nodeSelectorTerms)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.kafkaExporter.template.pod.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms
+
+
+
+### fn spec.kafkaExporter.template.pod.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.withMatchExpressions
+
+```ts
+withMatchExpressions(matchExpressions)
+```
+
+
+
+### fn spec.kafkaExporter.template.pod.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.withMatchExpressionsMixin
+
+```ts
+withMatchExpressionsMixin(matchExpressions)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.kafkaExporter.template.pod.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.withMatchFields
+
+```ts
+withMatchFields(matchFields)
+```
+
+
+
+### fn spec.kafkaExporter.template.pod.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.withMatchFieldsMixin
+
+```ts
+withMatchFieldsMixin(matchFields)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.kafkaExporter.template.pod.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchExpressions
+
+
+
+### fn spec.kafkaExporter.template.pod.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchExpressions.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.kafkaExporter.template.pod.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchExpressions.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.kafkaExporter.template.pod.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchExpressions.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.kafkaExporter.template.pod.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchExpressions.withValuesMixin
+
+```ts
+withValuesMixin(values)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.kafkaExporter.template.pod.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchFields
+
+
+
+### fn spec.kafkaExporter.template.pod.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchFields.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.kafkaExporter.template.pod.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchFields.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.kafkaExporter.template.pod.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchFields.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.kafkaExporter.template.pod.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchFields.withValuesMixin
+
+```ts
+withValuesMixin(values)
 ```
 
 
@@ -8490,6 +14622,234 @@ withRequiredDuringSchedulingIgnoredDuringExecutionMixin(requiredDuringScheduling
 
 **Note:** This function appends passed data to existing values
 
+## obj spec.kafkaExporter.template.pod.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution
+
+
+
+### fn spec.kafkaExporter.template.pod.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.withWeight
+
+```ts
+withWeight(weight)
+```
+
+
+
+## obj spec.kafkaExporter.template.pod.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm
+
+
+
+### fn spec.kafkaExporter.template.pod.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.withNamespaces
+
+```ts
+withNamespaces(namespaces)
+```
+
+
+
+### fn spec.kafkaExporter.template.pod.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.withNamespacesMixin
+
+```ts
+withNamespacesMixin(namespaces)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.kafkaExporter.template.pod.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.withTopologyKey
+
+```ts
+withTopologyKey(topologyKey)
+```
+
+
+
+## obj spec.kafkaExporter.template.pod.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector
+
+
+
+### fn spec.kafkaExporter.template.pod.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.withMatchExpressions
+
+```ts
+withMatchExpressions(matchExpressions)
+```
+
+
+
+### fn spec.kafkaExporter.template.pod.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.withMatchExpressionsMixin
+
+```ts
+withMatchExpressionsMixin(matchExpressions)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.kafkaExporter.template.pod.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.withMatchLabels
+
+```ts
+withMatchLabels(matchLabels)
+```
+
+
+
+### fn spec.kafkaExporter.template.pod.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.withMatchLabelsMixin
+
+```ts
+withMatchLabelsMixin(matchLabels)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.kafkaExporter.template.pod.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions
+
+
+
+### fn spec.kafkaExporter.template.pod.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.kafkaExporter.template.pod.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.kafkaExporter.template.pod.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.kafkaExporter.template.pod.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions.withValuesMixin
+
+```ts
+withValuesMixin(values)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.kafkaExporter.template.pod.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution
+
+
+
+### fn spec.kafkaExporter.template.pod.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.withNamespaces
+
+```ts
+withNamespaces(namespaces)
+```
+
+
+
+### fn spec.kafkaExporter.template.pod.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.withNamespacesMixin
+
+```ts
+withNamespacesMixin(namespaces)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.kafkaExporter.template.pod.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.withTopologyKey
+
+```ts
+withTopologyKey(topologyKey)
+```
+
+
+
+## obj spec.kafkaExporter.template.pod.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector
+
+
+
+### fn spec.kafkaExporter.template.pod.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.withMatchExpressions
+
+```ts
+withMatchExpressions(matchExpressions)
+```
+
+
+
+### fn spec.kafkaExporter.template.pod.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.withMatchExpressionsMixin
+
+```ts
+withMatchExpressionsMixin(matchExpressions)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.kafkaExporter.template.pod.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.withMatchLabels
+
+```ts
+withMatchLabels(matchLabels)
+```
+
+
+
+### fn spec.kafkaExporter.template.pod.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.withMatchLabelsMixin
+
+```ts
+withMatchLabelsMixin(matchLabels)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.kafkaExporter.template.pod.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions
+
+
+
+### fn spec.kafkaExporter.template.pod.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.kafkaExporter.template.pod.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.kafkaExporter.template.pod.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.kafkaExporter.template.pod.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions.withValuesMixin
+
+```ts
+withValuesMixin(values)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
 ## obj spec.kafkaExporter.template.pod.affinity.podAntiAffinity
 
 
@@ -8529,6 +14889,276 @@ withRequiredDuringSchedulingIgnoredDuringExecutionMixin(requiredDuringScheduling
 
 
 **Note:** This function appends passed data to existing values
+
+## obj spec.kafkaExporter.template.pod.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution
+
+
+
+### fn spec.kafkaExporter.template.pod.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.withWeight
+
+```ts
+withWeight(weight)
+```
+
+
+
+## obj spec.kafkaExporter.template.pod.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm
+
+
+
+### fn spec.kafkaExporter.template.pod.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.withNamespaces
+
+```ts
+withNamespaces(namespaces)
+```
+
+
+
+### fn spec.kafkaExporter.template.pod.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.withNamespacesMixin
+
+```ts
+withNamespacesMixin(namespaces)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.kafkaExporter.template.pod.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.withTopologyKey
+
+```ts
+withTopologyKey(topologyKey)
+```
+
+
+
+## obj spec.kafkaExporter.template.pod.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector
+
+
+
+### fn spec.kafkaExporter.template.pod.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.withMatchExpressions
+
+```ts
+withMatchExpressions(matchExpressions)
+```
+
+
+
+### fn spec.kafkaExporter.template.pod.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.withMatchExpressionsMixin
+
+```ts
+withMatchExpressionsMixin(matchExpressions)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.kafkaExporter.template.pod.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.withMatchLabels
+
+```ts
+withMatchLabels(matchLabels)
+```
+
+
+
+### fn spec.kafkaExporter.template.pod.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.withMatchLabelsMixin
+
+```ts
+withMatchLabelsMixin(matchLabels)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.kafkaExporter.template.pod.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions
+
+
+
+### fn spec.kafkaExporter.template.pod.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.kafkaExporter.template.pod.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.kafkaExporter.template.pod.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.kafkaExporter.template.pod.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions.withValuesMixin
+
+```ts
+withValuesMixin(values)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.kafkaExporter.template.pod.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution
+
+
+
+### fn spec.kafkaExporter.template.pod.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.withNamespaces
+
+```ts
+withNamespaces(namespaces)
+```
+
+
+
+### fn spec.kafkaExporter.template.pod.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.withNamespacesMixin
+
+```ts
+withNamespacesMixin(namespaces)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.kafkaExporter.template.pod.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.withTopologyKey
+
+```ts
+withTopologyKey(topologyKey)
+```
+
+
+
+## obj spec.kafkaExporter.template.pod.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector
+
+
+
+### fn spec.kafkaExporter.template.pod.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.withMatchExpressions
+
+```ts
+withMatchExpressions(matchExpressions)
+```
+
+
+
+### fn spec.kafkaExporter.template.pod.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.withMatchExpressionsMixin
+
+```ts
+withMatchExpressionsMixin(matchExpressions)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.kafkaExporter.template.pod.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.withMatchLabels
+
+```ts
+withMatchLabels(matchLabels)
+```
+
+
+
+### fn spec.kafkaExporter.template.pod.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.withMatchLabelsMixin
+
+```ts
+withMatchLabelsMixin(matchLabels)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.kafkaExporter.template.pod.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions
+
+
+
+### fn spec.kafkaExporter.template.pod.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.kafkaExporter.template.pod.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.kafkaExporter.template.pod.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.kafkaExporter.template.pod.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions.withValuesMixin
+
+```ts
+withValuesMixin(values)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.kafkaExporter.template.pod.hostAliases
+
+"The pod's HostAliases. HostAliases is an optional list of hosts and IPs that will be injected into the Pod's hosts file if specified."
+
+### fn spec.kafkaExporter.template.pod.hostAliases.withHostnames
+
+```ts
+withHostnames(hostnames)
+```
+
+
+
+### fn spec.kafkaExporter.template.pod.hostAliases.withHostnamesMixin
+
+```ts
+withHostnamesMixin(hostnames)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.kafkaExporter.template.pod.hostAliases.withIp
+
+```ts
+withIp(ip)
+```
+
+
+
+## obj spec.kafkaExporter.template.pod.imagePullSecrets
+
+"List of references to secrets in the same namespace to use for pulling any of the images used by this Pod. When the `STRIMZI_IMAGE_PULL_SECRETS` environment variable in Cluster Operator and the `imagePullSecrets` option are specified, only the `imagePullSecrets` variable is used and the `STRIMZI_IMAGE_PULL_SECRETS` variable is ignored."
+
+### fn spec.kafkaExporter.template.pod.imagePullSecrets.withName
+
+```ts
+withName(name)
+```
+
+
 
 ## obj spec.kafkaExporter.template.pod.metadata
 
@@ -8706,6 +15336,26 @@ withType(type)
 
 
 
+## obj spec.kafkaExporter.template.pod.securityContext.sysctls
+
+
+
+### fn spec.kafkaExporter.template.pod.securityContext.sysctls.withName
+
+```ts
+withName(name)
+```
+
+
+
+### fn spec.kafkaExporter.template.pod.securityContext.sysctls.withValue
+
+```ts
+withValue(value)
+```
+
+
+
 ## obj spec.kafkaExporter.template.pod.securityContext.windowsOptions
 
 
@@ -8733,6 +15383,156 @@ withRunAsUserName(runAsUserName)
 ```
 
 
+
+## obj spec.kafkaExporter.template.pod.tolerations
+
+"The pod's tolerations."
+
+### fn spec.kafkaExporter.template.pod.tolerations.withEffect
+
+```ts
+withEffect(effect)
+```
+
+
+
+### fn spec.kafkaExporter.template.pod.tolerations.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.kafkaExporter.template.pod.tolerations.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.kafkaExporter.template.pod.tolerations.withTolerationSeconds
+
+```ts
+withTolerationSeconds(tolerationSeconds)
+```
+
+
+
+### fn spec.kafkaExporter.template.pod.tolerations.withValue
+
+```ts
+withValue(value)
+```
+
+
+
+## obj spec.kafkaExporter.template.pod.topologySpreadConstraints
+
+"The pod's topology spread constraints."
+
+### fn spec.kafkaExporter.template.pod.topologySpreadConstraints.withMaxSkew
+
+```ts
+withMaxSkew(maxSkew)
+```
+
+
+
+### fn spec.kafkaExporter.template.pod.topologySpreadConstraints.withTopologyKey
+
+```ts
+withTopologyKey(topologyKey)
+```
+
+
+
+### fn spec.kafkaExporter.template.pod.topologySpreadConstraints.withWhenUnsatisfiable
+
+```ts
+withWhenUnsatisfiable(whenUnsatisfiable)
+```
+
+
+
+## obj spec.kafkaExporter.template.pod.topologySpreadConstraints.labelSelector
+
+
+
+### fn spec.kafkaExporter.template.pod.topologySpreadConstraints.labelSelector.withMatchExpressions
+
+```ts
+withMatchExpressions(matchExpressions)
+```
+
+
+
+### fn spec.kafkaExporter.template.pod.topologySpreadConstraints.labelSelector.withMatchExpressionsMixin
+
+```ts
+withMatchExpressionsMixin(matchExpressions)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.kafkaExporter.template.pod.topologySpreadConstraints.labelSelector.withMatchLabels
+
+```ts
+withMatchLabels(matchLabels)
+```
+
+
+
+### fn spec.kafkaExporter.template.pod.topologySpreadConstraints.labelSelector.withMatchLabelsMixin
+
+```ts
+withMatchLabelsMixin(matchLabels)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.kafkaExporter.template.pod.topologySpreadConstraints.labelSelector.matchExpressions
+
+
+
+### fn spec.kafkaExporter.template.pod.topologySpreadConstraints.labelSelector.matchExpressions.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.kafkaExporter.template.pod.topologySpreadConstraints.labelSelector.matchExpressions.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.kafkaExporter.template.pod.topologySpreadConstraints.labelSelector.matchExpressions.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.kafkaExporter.template.pod.topologySpreadConstraints.labelSelector.matchExpressions.withValuesMixin
+
+```ts
+withValuesMixin(values)
+```
+
+
+
+**Note:** This function appends passed data to existing values
 
 ## obj spec.kafkaExporter.template.service
 
@@ -8849,7 +15649,7 @@ withJavaSystemPropertiesMixin(javaSystemProperties)
 ### fn spec.zookeeper.jvmOptions.withXX
 
 ```ts
-withXX(XX)
+withXX(_XX)
 ```
 
 "A map of -XX options to the JVM."
@@ -8857,7 +15657,7 @@ withXX(XX)
 ### fn spec.zookeeper.jvmOptions.withXXMixin
 
 ```ts
-withXXMixin(XX)
+withXXMixin(_XX)
 ```
 
 "A map of -XX options to the JVM."
@@ -8867,7 +15667,7 @@ withXXMixin(XX)
 ### fn spec.zookeeper.jvmOptions.withXms
 
 ```ts
-withXms(Xms)
+withXms(_Xms)
 ```
 
 "-Xms option to to the JVM."
@@ -8875,10 +15675,30 @@ withXms(Xms)
 ### fn spec.zookeeper.jvmOptions.withXmx
 
 ```ts
-withXmx(Xmx)
+withXmx(_Xmx)
 ```
 
 "-Xmx option to to the JVM."
+
+## obj spec.zookeeper.jvmOptions.javaSystemProperties
+
+"A map of additional system properties which will be passed using the `-D` option to the JVM."
+
+### fn spec.zookeeper.jvmOptions.javaSystemProperties.withName
+
+```ts
+withName(name)
+```
+
+"The system property name."
+
+### fn spec.zookeeper.jvmOptions.javaSystemProperties.withValue
+
+```ts
+withValue(value)
+```
+
+"The system property value."
 
 ## obj spec.zookeeper.livenessProbe
 
@@ -9202,6 +16022,26 @@ withType(type)
 
 "Storage type, must be either 'ephemeral' or 'persistent-claim'."
 
+## obj spec.zookeeper.storage.overrides
+
+"Overrides for individual brokers. The `overrides` field allows to specify a different configuration for different brokers."
+
+### fn spec.zookeeper.storage.overrides.withBroker
+
+```ts
+withBroker(broker)
+```
+
+"Id of the kafka broker (broker identifier)."
+
+### fn spec.zookeeper.storage.overrides.withClass
+
+```ts
+withClass(class)
+```
+
+"The storage class to use for dynamic volume allocation for this broker."
+
 ## obj spec.zookeeper.template
 
 "Template for ZooKeeper cluster resources. The template allows users to specify how are the `StatefulSet`, `Pods` and `Services` generated."
@@ -9524,6 +16364,134 @@ withPreferredDuringSchedulingIgnoredDuringExecutionMixin(preferredDuringScheduli
 
 **Note:** This function appends passed data to existing values
 
+## obj spec.zookeeper.template.pod.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution
+
+
+
+### fn spec.zookeeper.template.pod.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.withWeight
+
+```ts
+withWeight(weight)
+```
+
+
+
+## obj spec.zookeeper.template.pod.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference
+
+
+
+### fn spec.zookeeper.template.pod.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.withMatchExpressions
+
+```ts
+withMatchExpressions(matchExpressions)
+```
+
+
+
+### fn spec.zookeeper.template.pod.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.withMatchExpressionsMixin
+
+```ts
+withMatchExpressionsMixin(matchExpressions)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.zookeeper.template.pod.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.withMatchFields
+
+```ts
+withMatchFields(matchFields)
+```
+
+
+
+### fn spec.zookeeper.template.pod.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.withMatchFieldsMixin
+
+```ts
+withMatchFieldsMixin(matchFields)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.zookeeper.template.pod.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchExpressions
+
+
+
+### fn spec.zookeeper.template.pod.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchExpressions.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.zookeeper.template.pod.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchExpressions.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.zookeeper.template.pod.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchExpressions.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.zookeeper.template.pod.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchExpressions.withValuesMixin
+
+```ts
+withValuesMixin(values)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.zookeeper.template.pod.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchFields
+
+
+
+### fn spec.zookeeper.template.pod.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchFields.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.zookeeper.template.pod.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchFields.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.zookeeper.template.pod.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchFields.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.zookeeper.template.pod.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution.preference.matchFields.withValuesMixin
+
+```ts
+withValuesMixin(values)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
 ## obj spec.zookeeper.template.pod.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution
 
 
@@ -9540,6 +16508,122 @@ withNodeSelectorTerms(nodeSelectorTerms)
 
 ```ts
 withNodeSelectorTermsMixin(nodeSelectorTerms)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.zookeeper.template.pod.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms
+
+
+
+### fn spec.zookeeper.template.pod.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.withMatchExpressions
+
+```ts
+withMatchExpressions(matchExpressions)
+```
+
+
+
+### fn spec.zookeeper.template.pod.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.withMatchExpressionsMixin
+
+```ts
+withMatchExpressionsMixin(matchExpressions)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.zookeeper.template.pod.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.withMatchFields
+
+```ts
+withMatchFields(matchFields)
+```
+
+
+
+### fn spec.zookeeper.template.pod.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.withMatchFieldsMixin
+
+```ts
+withMatchFieldsMixin(matchFields)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.zookeeper.template.pod.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchExpressions
+
+
+
+### fn spec.zookeeper.template.pod.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchExpressions.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.zookeeper.template.pod.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchExpressions.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.zookeeper.template.pod.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchExpressions.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.zookeeper.template.pod.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchExpressions.withValuesMixin
+
+```ts
+withValuesMixin(values)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.zookeeper.template.pod.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchFields
+
+
+
+### fn spec.zookeeper.template.pod.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchFields.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.zookeeper.template.pod.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchFields.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.zookeeper.template.pod.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchFields.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.zookeeper.template.pod.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms.matchFields.withValuesMixin
+
+```ts
+withValuesMixin(values)
 ```
 
 
@@ -9586,6 +16670,234 @@ withRequiredDuringSchedulingIgnoredDuringExecutionMixin(requiredDuringScheduling
 
 **Note:** This function appends passed data to existing values
 
+## obj spec.zookeeper.template.pod.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution
+
+
+
+### fn spec.zookeeper.template.pod.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.withWeight
+
+```ts
+withWeight(weight)
+```
+
+
+
+## obj spec.zookeeper.template.pod.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm
+
+
+
+### fn spec.zookeeper.template.pod.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.withNamespaces
+
+```ts
+withNamespaces(namespaces)
+```
+
+
+
+### fn spec.zookeeper.template.pod.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.withNamespacesMixin
+
+```ts
+withNamespacesMixin(namespaces)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.zookeeper.template.pod.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.withTopologyKey
+
+```ts
+withTopologyKey(topologyKey)
+```
+
+
+
+## obj spec.zookeeper.template.pod.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector
+
+
+
+### fn spec.zookeeper.template.pod.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.withMatchExpressions
+
+```ts
+withMatchExpressions(matchExpressions)
+```
+
+
+
+### fn spec.zookeeper.template.pod.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.withMatchExpressionsMixin
+
+```ts
+withMatchExpressionsMixin(matchExpressions)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.zookeeper.template.pod.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.withMatchLabels
+
+```ts
+withMatchLabels(matchLabels)
+```
+
+
+
+### fn spec.zookeeper.template.pod.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.withMatchLabelsMixin
+
+```ts
+withMatchLabelsMixin(matchLabels)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.zookeeper.template.pod.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions
+
+
+
+### fn spec.zookeeper.template.pod.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.zookeeper.template.pod.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.zookeeper.template.pod.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.zookeeper.template.pod.affinity.podAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions.withValuesMixin
+
+```ts
+withValuesMixin(values)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.zookeeper.template.pod.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution
+
+
+
+### fn spec.zookeeper.template.pod.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.withNamespaces
+
+```ts
+withNamespaces(namespaces)
+```
+
+
+
+### fn spec.zookeeper.template.pod.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.withNamespacesMixin
+
+```ts
+withNamespacesMixin(namespaces)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.zookeeper.template.pod.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.withTopologyKey
+
+```ts
+withTopologyKey(topologyKey)
+```
+
+
+
+## obj spec.zookeeper.template.pod.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector
+
+
+
+### fn spec.zookeeper.template.pod.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.withMatchExpressions
+
+```ts
+withMatchExpressions(matchExpressions)
+```
+
+
+
+### fn spec.zookeeper.template.pod.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.withMatchExpressionsMixin
+
+```ts
+withMatchExpressionsMixin(matchExpressions)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.zookeeper.template.pod.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.withMatchLabels
+
+```ts
+withMatchLabels(matchLabels)
+```
+
+
+
+### fn spec.zookeeper.template.pod.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.withMatchLabelsMixin
+
+```ts
+withMatchLabelsMixin(matchLabels)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.zookeeper.template.pod.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions
+
+
+
+### fn spec.zookeeper.template.pod.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.zookeeper.template.pod.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.zookeeper.template.pod.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.zookeeper.template.pod.affinity.podAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions.withValuesMixin
+
+```ts
+withValuesMixin(values)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
 ## obj spec.zookeeper.template.pod.affinity.podAntiAffinity
 
 
@@ -9625,6 +16937,276 @@ withRequiredDuringSchedulingIgnoredDuringExecutionMixin(requiredDuringScheduling
 
 
 **Note:** This function appends passed data to existing values
+
+## obj spec.zookeeper.template.pod.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution
+
+
+
+### fn spec.zookeeper.template.pod.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.withWeight
+
+```ts
+withWeight(weight)
+```
+
+
+
+## obj spec.zookeeper.template.pod.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm
+
+
+
+### fn spec.zookeeper.template.pod.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.withNamespaces
+
+```ts
+withNamespaces(namespaces)
+```
+
+
+
+### fn spec.zookeeper.template.pod.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.withNamespacesMixin
+
+```ts
+withNamespacesMixin(namespaces)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.zookeeper.template.pod.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.withTopologyKey
+
+```ts
+withTopologyKey(topologyKey)
+```
+
+
+
+## obj spec.zookeeper.template.pod.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector
+
+
+
+### fn spec.zookeeper.template.pod.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.withMatchExpressions
+
+```ts
+withMatchExpressions(matchExpressions)
+```
+
+
+
+### fn spec.zookeeper.template.pod.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.withMatchExpressionsMixin
+
+```ts
+withMatchExpressionsMixin(matchExpressions)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.zookeeper.template.pod.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.withMatchLabels
+
+```ts
+withMatchLabels(matchLabels)
+```
+
+
+
+### fn spec.zookeeper.template.pod.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.withMatchLabelsMixin
+
+```ts
+withMatchLabelsMixin(matchLabels)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.zookeeper.template.pod.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions
+
+
+
+### fn spec.zookeeper.template.pod.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.zookeeper.template.pod.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.zookeeper.template.pod.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.zookeeper.template.pod.affinity.podAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution.podAffinityTerm.labelSelector.matchExpressions.withValuesMixin
+
+```ts
+withValuesMixin(values)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.zookeeper.template.pod.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution
+
+
+
+### fn spec.zookeeper.template.pod.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.withNamespaces
+
+```ts
+withNamespaces(namespaces)
+```
+
+
+
+### fn spec.zookeeper.template.pod.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.withNamespacesMixin
+
+```ts
+withNamespacesMixin(namespaces)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.zookeeper.template.pod.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.withTopologyKey
+
+```ts
+withTopologyKey(topologyKey)
+```
+
+
+
+## obj spec.zookeeper.template.pod.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector
+
+
+
+### fn spec.zookeeper.template.pod.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.withMatchExpressions
+
+```ts
+withMatchExpressions(matchExpressions)
+```
+
+
+
+### fn spec.zookeeper.template.pod.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.withMatchExpressionsMixin
+
+```ts
+withMatchExpressionsMixin(matchExpressions)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.zookeeper.template.pod.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.withMatchLabels
+
+```ts
+withMatchLabels(matchLabels)
+```
+
+
+
+### fn spec.zookeeper.template.pod.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.withMatchLabelsMixin
+
+```ts
+withMatchLabelsMixin(matchLabels)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.zookeeper.template.pod.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions
+
+
+
+### fn spec.zookeeper.template.pod.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.zookeeper.template.pod.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.zookeeper.template.pod.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.zookeeper.template.pod.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution.labelSelector.matchExpressions.withValuesMixin
+
+```ts
+withValuesMixin(values)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.zookeeper.template.pod.hostAliases
+
+"The pod's HostAliases. HostAliases is an optional list of hosts and IPs that will be injected into the Pod's hosts file if specified."
+
+### fn spec.zookeeper.template.pod.hostAliases.withHostnames
+
+```ts
+withHostnames(hostnames)
+```
+
+
+
+### fn spec.zookeeper.template.pod.hostAliases.withHostnamesMixin
+
+```ts
+withHostnamesMixin(hostnames)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.zookeeper.template.pod.hostAliases.withIp
+
+```ts
+withIp(ip)
+```
+
+
+
+## obj spec.zookeeper.template.pod.imagePullSecrets
+
+"List of references to secrets in the same namespace to use for pulling any of the images used by this Pod. When the `STRIMZI_IMAGE_PULL_SECRETS` environment variable in Cluster Operator and the `imagePullSecrets` option are specified, only the `imagePullSecrets` variable is used and the `STRIMZI_IMAGE_PULL_SECRETS` variable is ignored."
+
+### fn spec.zookeeper.template.pod.imagePullSecrets.withName
+
+```ts
+withName(name)
+```
+
+
 
 ## obj spec.zookeeper.template.pod.metadata
 
@@ -9802,6 +17384,26 @@ withType(type)
 
 
 
+## obj spec.zookeeper.template.pod.securityContext.sysctls
+
+
+
+### fn spec.zookeeper.template.pod.securityContext.sysctls.withName
+
+```ts
+withName(name)
+```
+
+
+
+### fn spec.zookeeper.template.pod.securityContext.sysctls.withValue
+
+```ts
+withValue(value)
+```
+
+
+
 ## obj spec.zookeeper.template.pod.securityContext.windowsOptions
 
 
@@ -9829,6 +17431,156 @@ withRunAsUserName(runAsUserName)
 ```
 
 
+
+## obj spec.zookeeper.template.pod.tolerations
+
+"The pod's tolerations."
+
+### fn spec.zookeeper.template.pod.tolerations.withEffect
+
+```ts
+withEffect(effect)
+```
+
+
+
+### fn spec.zookeeper.template.pod.tolerations.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.zookeeper.template.pod.tolerations.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.zookeeper.template.pod.tolerations.withTolerationSeconds
+
+```ts
+withTolerationSeconds(tolerationSeconds)
+```
+
+
+
+### fn spec.zookeeper.template.pod.tolerations.withValue
+
+```ts
+withValue(value)
+```
+
+
+
+## obj spec.zookeeper.template.pod.topologySpreadConstraints
+
+"The pod's topology spread constraints."
+
+### fn spec.zookeeper.template.pod.topologySpreadConstraints.withMaxSkew
+
+```ts
+withMaxSkew(maxSkew)
+```
+
+
+
+### fn spec.zookeeper.template.pod.topologySpreadConstraints.withTopologyKey
+
+```ts
+withTopologyKey(topologyKey)
+```
+
+
+
+### fn spec.zookeeper.template.pod.topologySpreadConstraints.withWhenUnsatisfiable
+
+```ts
+withWhenUnsatisfiable(whenUnsatisfiable)
+```
+
+
+
+## obj spec.zookeeper.template.pod.topologySpreadConstraints.labelSelector
+
+
+
+### fn spec.zookeeper.template.pod.topologySpreadConstraints.labelSelector.withMatchExpressions
+
+```ts
+withMatchExpressions(matchExpressions)
+```
+
+
+
+### fn spec.zookeeper.template.pod.topologySpreadConstraints.labelSelector.withMatchExpressionsMixin
+
+```ts
+withMatchExpressionsMixin(matchExpressions)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.zookeeper.template.pod.topologySpreadConstraints.labelSelector.withMatchLabels
+
+```ts
+withMatchLabels(matchLabels)
+```
+
+
+
+### fn spec.zookeeper.template.pod.topologySpreadConstraints.labelSelector.withMatchLabelsMixin
+
+```ts
+withMatchLabelsMixin(matchLabels)
+```
+
+
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.zookeeper.template.pod.topologySpreadConstraints.labelSelector.matchExpressions
+
+
+
+### fn spec.zookeeper.template.pod.topologySpreadConstraints.labelSelector.matchExpressions.withKey
+
+```ts
+withKey(key)
+```
+
+
+
+### fn spec.zookeeper.template.pod.topologySpreadConstraints.labelSelector.matchExpressions.withOperator
+
+```ts
+withOperator(operator)
+```
+
+
+
+### fn spec.zookeeper.template.pod.topologySpreadConstraints.labelSelector.matchExpressions.withValues
+
+```ts
+withValues(values)
+```
+
+
+
+### fn spec.zookeeper.template.pod.topologySpreadConstraints.labelSelector.matchExpressions.withValuesMixin
+
+```ts
+withValuesMixin(values)
+```
+
+
+
+**Note:** This function appends passed data to existing values
 
 ## obj spec.zookeeper.template.podDisruptionBudget
 
@@ -9955,6 +17707,26 @@ withEnvMixin(env)
 "Environment variables which should be applied to the container."
 
 **Note:** This function appends passed data to existing values
+
+## obj spec.zookeeper.template.zookeeperContainer.env
+
+"Environment variables which should be applied to the container."
+
+### fn spec.zookeeper.template.zookeeperContainer.env.withName
+
+```ts
+withName(name)
+```
+
+"The environment variable key."
+
+### fn spec.zookeeper.template.zookeeperContainer.env.withValue
+
+```ts
+withValue(value)
+```
+
+"The environment variable value."
 
 ## obj spec.zookeeper.template.zookeeperContainer.securityContext
 
