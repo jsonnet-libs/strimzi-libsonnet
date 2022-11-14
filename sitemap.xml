@@ -2,197 +2,302 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://jsonnet-libs.github.io/strimzi-libsonnet/</loc>
-         <lastmod>2022-06-14</lastmod>
+         <lastmod>2022-11-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/strimzi-libsonnet/0.23/</loc>
-         <lastmod>2022-06-14</lastmod>
+         <lastmod>2022-11-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/strimzi-libsonnet/0.23/kafka/</loc>
-         <lastmod>2022-06-14</lastmod>
+         <lastmod>2022-11-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/strimzi-libsonnet/0.23/kafka/v1alpha1/</loc>
-         <lastmod>2022-06-14</lastmod>
+         <lastmod>2022-11-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/strimzi-libsonnet/0.23/kafka/v1alpha1/kafkaTopic/</loc>
-         <lastmod>2022-06-14</lastmod>
+         <lastmod>2022-11-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/strimzi-libsonnet/0.23/kafka/v1alpha1/kafkaUser/</loc>
-         <lastmod>2022-06-14</lastmod>
+         <lastmod>2022-11-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/strimzi-libsonnet/0.23/kafka/v1beta1/</loc>
-         <lastmod>2022-06-14</lastmod>
+         <lastmod>2022-11-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/strimzi-libsonnet/0.23/kafka/v1beta1/kafkaTopic/</loc>
-         <lastmod>2022-06-14</lastmod>
+         <lastmod>2022-11-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/strimzi-libsonnet/0.23/kafka/v1beta1/kafkaUser/</loc>
-         <lastmod>2022-06-14</lastmod>
+         <lastmod>2022-11-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/strimzi-libsonnet/0.23/kafka/v1beta2/</loc>
-         <lastmod>2022-06-14</lastmod>
+         <lastmod>2022-11-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/strimzi-libsonnet/0.23/kafka/v1beta2/kafka/</loc>
-         <lastmod>2022-06-14</lastmod>
+         <lastmod>2022-11-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/strimzi-libsonnet/0.23/kafka/v1beta2/kafkaBridge/</loc>
-         <lastmod>2022-06-14</lastmod>
+         <lastmod>2022-11-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/strimzi-libsonnet/0.23/kafka/v1beta2/kafkaConnect/</loc>
-         <lastmod>2022-06-14</lastmod>
+         <lastmod>2022-11-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/strimzi-libsonnet/0.23/kafka/v1beta2/kafkaConnectS2I/</loc>
-         <lastmod>2022-06-14</lastmod>
+         <lastmod>2022-11-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/strimzi-libsonnet/0.23/kafka/v1beta2/kafkaConnector/</loc>
-         <lastmod>2022-06-14</lastmod>
+         <lastmod>2022-11-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/strimzi-libsonnet/0.23/kafka/v1beta2/kafkaMirrorMaker/</loc>
-         <lastmod>2022-06-14</lastmod>
+         <lastmod>2022-11-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/strimzi-libsonnet/0.23/kafka/v1beta2/kafkaMirrorMaker2/</loc>
-         <lastmod>2022-06-14</lastmod>
+         <lastmod>2022-11-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/strimzi-libsonnet/0.23/kafka/v1beta2/kafkaRebalance/</loc>
-         <lastmod>2022-06-14</lastmod>
+         <lastmod>2022-11-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/strimzi-libsonnet/0.23/kafka/v1beta2/kafkaTopic/</loc>
-         <lastmod>2022-06-14</lastmod>
+         <lastmod>2022-11-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/strimzi-libsonnet/0.23/kafka/v1beta2/kafkaUser/</loc>
-         <lastmod>2022-06-14</lastmod>
+         <lastmod>2022-11-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/strimzi-libsonnet/0.24/</loc>
-         <lastmod>2022-06-14</lastmod>
+         <lastmod>2022-11-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/strimzi-libsonnet/0.24/kafka/</loc>
-         <lastmod>2022-06-14</lastmod>
+         <lastmod>2022-11-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/strimzi-libsonnet/0.24/kafka/v1alpha1/</loc>
-         <lastmod>2022-06-14</lastmod>
+         <lastmod>2022-11-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/strimzi-libsonnet/0.24/kafka/v1alpha1/kafkaTopic/</loc>
-         <lastmod>2022-06-14</lastmod>
+         <lastmod>2022-11-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/strimzi-libsonnet/0.24/kafka/v1alpha1/kafkaUser/</loc>
-         <lastmod>2022-06-14</lastmod>
+         <lastmod>2022-11-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/strimzi-libsonnet/0.24/kafka/v1beta1/</loc>
-         <lastmod>2022-06-14</lastmod>
+         <lastmod>2022-11-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/strimzi-libsonnet/0.24/kafka/v1beta1/kafkaTopic/</loc>
-         <lastmod>2022-06-14</lastmod>
+         <lastmod>2022-11-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/strimzi-libsonnet/0.24/kafka/v1beta1/kafkaUser/</loc>
-         <lastmod>2022-06-14</lastmod>
+         <lastmod>2022-11-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/strimzi-libsonnet/0.24/kafka/v1beta2/</loc>
-         <lastmod>2022-06-14</lastmod>
+         <lastmod>2022-11-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/strimzi-libsonnet/0.24/kafka/v1beta2/kafka/</loc>
-         <lastmod>2022-06-14</lastmod>
+         <lastmod>2022-11-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/strimzi-libsonnet/0.24/kafka/v1beta2/kafkaBridge/</loc>
-         <lastmod>2022-06-14</lastmod>
+         <lastmod>2022-11-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/strimzi-libsonnet/0.24/kafka/v1beta2/kafkaConnect/</loc>
-         <lastmod>2022-06-14</lastmod>
+         <lastmod>2022-11-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/strimzi-libsonnet/0.24/kafka/v1beta2/kafkaConnectS2I/</loc>
-         <lastmod>2022-06-14</lastmod>
+         <lastmod>2022-11-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/strimzi-libsonnet/0.24/kafka/v1beta2/kafkaConnector/</loc>
-         <lastmod>2022-06-14</lastmod>
+         <lastmod>2022-11-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/strimzi-libsonnet/0.24/kafka/v1beta2/kafkaMirrorMaker/</loc>
-         <lastmod>2022-06-14</lastmod>
+         <lastmod>2022-11-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/strimzi-libsonnet/0.24/kafka/v1beta2/kafkaMirrorMaker2/</loc>
-         <lastmod>2022-06-14</lastmod>
+         <lastmod>2022-11-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/strimzi-libsonnet/0.24/kafka/v1beta2/kafkaRebalance/</loc>
-         <lastmod>2022-06-14</lastmod>
+         <lastmod>2022-11-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/strimzi-libsonnet/0.24/kafka/v1beta2/kafkaTopic/</loc>
-         <lastmod>2022-06-14</lastmod>
+         <lastmod>2022-11-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/strimzi-libsonnet/0.24/kafka/v1beta2/kafkaUser/</loc>
-         <lastmod>2022-06-14</lastmod>
+         <lastmod>2022-11-14</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://jsonnet-libs.github.io/strimzi-libsonnet/0.32/</loc>
+         <lastmod>2022-11-14</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://jsonnet-libs.github.io/strimzi-libsonnet/0.32/core/</loc>
+         <lastmod>2022-11-14</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://jsonnet-libs.github.io/strimzi-libsonnet/0.32/core/v1beta2/</loc>
+         <lastmod>2022-11-14</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://jsonnet-libs.github.io/strimzi-libsonnet/0.32/core/v1beta2/strimziPodSet/</loc>
+         <lastmod>2022-11-14</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://jsonnet-libs.github.io/strimzi-libsonnet/0.32/kafka/</loc>
+         <lastmod>2022-11-14</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://jsonnet-libs.github.io/strimzi-libsonnet/0.32/kafka/v1alpha1/</loc>
+         <lastmod>2022-11-14</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://jsonnet-libs.github.io/strimzi-libsonnet/0.32/kafka/v1alpha1/kafkaTopic/</loc>
+         <lastmod>2022-11-14</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://jsonnet-libs.github.io/strimzi-libsonnet/0.32/kafka/v1alpha1/kafkaUser/</loc>
+         <lastmod>2022-11-14</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://jsonnet-libs.github.io/strimzi-libsonnet/0.32/kafka/v1beta1/</loc>
+         <lastmod>2022-11-14</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://jsonnet-libs.github.io/strimzi-libsonnet/0.32/kafka/v1beta1/kafkaTopic/</loc>
+         <lastmod>2022-11-14</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://jsonnet-libs.github.io/strimzi-libsonnet/0.32/kafka/v1beta1/kafkaUser/</loc>
+         <lastmod>2022-11-14</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://jsonnet-libs.github.io/strimzi-libsonnet/0.32/kafka/v1beta2/</loc>
+         <lastmod>2022-11-14</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://jsonnet-libs.github.io/strimzi-libsonnet/0.32/kafka/v1beta2/kafka/</loc>
+         <lastmod>2022-11-14</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://jsonnet-libs.github.io/strimzi-libsonnet/0.32/kafka/v1beta2/kafkaBridge/</loc>
+         <lastmod>2022-11-14</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://jsonnet-libs.github.io/strimzi-libsonnet/0.32/kafka/v1beta2/kafkaConnect/</loc>
+         <lastmod>2022-11-14</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://jsonnet-libs.github.io/strimzi-libsonnet/0.32/kafka/v1beta2/kafkaConnector/</loc>
+         <lastmod>2022-11-14</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://jsonnet-libs.github.io/strimzi-libsonnet/0.32/kafka/v1beta2/kafkaMirrorMaker/</loc>
+         <lastmod>2022-11-14</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://jsonnet-libs.github.io/strimzi-libsonnet/0.32/kafka/v1beta2/kafkaMirrorMaker2/</loc>
+         <lastmod>2022-11-14</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://jsonnet-libs.github.io/strimzi-libsonnet/0.32/kafka/v1beta2/kafkaRebalance/</loc>
+         <lastmod>2022-11-14</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://jsonnet-libs.github.io/strimzi-libsonnet/0.32/kafka/v1beta2/kafkaTopic/</loc>
+         <lastmod>2022-11-14</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://jsonnet-libs.github.io/strimzi-libsonnet/0.32/kafka/v1beta2/kafkaUser/</loc>
+         <lastmod>2022-11-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
